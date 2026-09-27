@@ -75,21 +75,39 @@ class ClaimsSummarizationAgent:
                 f"which concluded as '{top_p.claim_status}'."
             )
 
-        # 4. Executive Summary Synthesis
-        if risk_output and risk_output.risk_tier == "High":
-            tone = "HIGH-RISK ALERT: Comprehensive forensic review required prior to payout."
-        elif risk_output and risk_output.risk_tier == "Medium":
-            tone = "MODERATE RISK: Standard adjuster verification and documentation review recommended."
-        else:
-            tone = "LOW RISK: Fast-track straight-through processing eligible."
+        # 4. Executive Summary Synthesis (Generative LLM via Gemini with Grounded Fallback)
+        from backend.agents.llm_service import get_llm_service
+        llm_service = get_llm_service()
 
-        exec_summary = (
-            f"Executive Summary for {claim_id}: {tone}\n"
-            f"• Incident: {narrative[:180]}...\n"
-            f"• Exposure: ${claim_amt:,.2f} against ${limit:,.2f} limit ({risk_output.coverage_exposure_ratio*100:.1f}%).\n"
-            f"• Precedent Context: {precedent_text}\n"
-            f"• Anomaly Findings: {anomaly_output.anomaly_deep_dive_summary if anomaly_output else 'Standard'}"
+        shap_dicts = [sf.model_dump() for sf in (risk_output.top_shap_factors if risk_output else [])]
+        llm_res = llm_service.generate_executive_summary(
+            claim_data=claim_data,
+            precedent_text=precedent_text,
+            risk_tier=risk_output.risk_tier if risk_output else "Low",
+            risk_score=risk_output.risk_score if risk_output else 0,
+            shap_factors=shap_dicts,
+            anomaly_summary=anomaly_output.anomaly_deep_dive_summary if anomaly_output else "Standard",
+            flagged_anomalies=anomaly_output.flagged_anomaly_categories if anomaly_output else []
         )
+
+        if llm_res:
+            exec_summary, key_drivers = llm_res
+        else:
+            # Deterministic Grounded Fallback
+            if risk_output and risk_output.risk_tier == "High":
+                tone = "HIGH-RISK ALERT: Comprehensive forensic review required prior to payout."
+            elif risk_output and risk_output.risk_tier == "Medium":
+                tone = "MODERATE RISK: Standard adjuster verification and documentation review recommended."
+            else:
+                tone = "LOW RISK: Fast-track straight-through processing eligible."
+
+            exec_summary = (
+                f"Executive Summary for {claim_id}: {tone}\n"
+                f"• Incident: {narrative[:180]}...\n"
+                f"• Exposure: ${claim_amt:,.2f} against ${limit:,.2f} limit ({risk_output.coverage_exposure_ratio*100:.1f}%).\n"
+                f"• Precedent Context: {precedent_text}\n"
+                f"• Anomaly Findings: {anomaly_output.anomaly_deep_dive_summary if anomaly_output else 'Standard'}"
+            )
 
         # 5. Citations
         citations = [

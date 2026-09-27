@@ -170,3 +170,6 @@ class HealthResponse(BaseModel):
     database_connected: bool = False
     vector_store_connected: bool = False
     graph_store_loaded: bool = False
+    llm_provider: str = "Google Gemini"
+    llm_active: bool = False
+    llm_model: str = "gemini-1.5-flash"

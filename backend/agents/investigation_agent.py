@@ -62,38 +62,53 @@ class InvestigationSupportAgent:
             disposition = "Fast-Track Approval"
             priority = "LOW"
 
-        # 2. Formulate Recommended Actions for the Human Adjuster
-        actions = []
-        if disposition == "Priority SIU Referral":
-            actions.append("Freeze automated disbursement and route file to Special Investigation Unit (SIU).")
-            actions.append("Request unredacted police accident report and recorded statements from all vehicle occupants.")
-            actions.append("Perform independent forensic vehicle/property damage inspection for prior or mismatched damage.")
-            actions.append("Cross-reference medical billing codes against state provider fraud index.")
-        elif disposition == "Standard Adjuster Review":
-            actions.append("Verify original repair estimates against regional labor rate benchmarks.")
-            actions.append("Confirm policyholder identity and policy active status at exact time of incident.")
-            actions.append("Check for overlapping claims filed with other insurance carriers via shared industry database.")
-        else:
-            actions.append("Verify policy coverage limits are active and deductible is met.")
-            actions.append("Approve claim for fast-track automated payout.")
+        # 2 & 3. Formulate Recommended Actions & Interview Questions (Generative LLM via Gemini with Fallback)
+        from backend.agents.llm_service import get_llm_service
+        llm_service = get_llm_service()
 
-        # 3. Formulate Specific Interview Questions
-        questions = []
-        if policy_line == "Auto":
-            questions.append("Can you provide the exact sequence of events leading up to the collision?")
-            questions.append("Were there any independent witnesses or dashcam/surveillance footage available?")
-            if filing_delay > 14:
-                questions.append(f"What caused the {filing_delay}-day delay between the incident date and filing date?")
-            if siu_needed:
-                questions.append("How did you select the repair facility and legal representation retained for this claim?")
-        elif policy_line == "Fire":
-            questions.append("Was the premises occupied at the exact time the fire ignited?")
-            questions.append("Can you provide itemized purchase receipts or tax documentation for claimed high-value items?")
-            if siu_needed:
-                questions.append("Has the local fire marshal concluded their official origin-and-cause investigation?")
+        llm_probes = llm_service.generate_investigation_probes(
+            claim_data=claim_data,
+            risk_score=risk_score,
+            risk_tier=risk_tier,
+            flagged_anomalies=anomalies,
+            exec_summary=summarizer_output.executive_summary if summarizer_output else ""
+        )
+
+        if llm_probes:
+            actions, questions = llm_probes
         else:
-            questions.append("Can you describe the circumstances and environmental conditions when the loss occurred?")
-            questions.append("Are there timestamped photos of the damaged property prior to mitigation efforts?")
+            # Deterministic Fallback Actions
+            actions = []
+            if disposition == "Priority SIU Referral":
+                actions.append("Freeze automated disbursement and route file to Special Investigation Unit (SIU).")
+                actions.append("Request unredacted police accident report and recorded statements from all vehicle occupants.")
+                actions.append("Perform independent forensic vehicle/property damage inspection for prior or mismatched damage.")
+                actions.append("Cross-reference medical billing codes against state provider fraud index.")
+            elif disposition == "Standard Adjuster Review":
+                actions.append("Verify original repair estimates against regional labor rate benchmarks.")
+                actions.append("Confirm policyholder identity and policy active status at exact time of incident.")
+                actions.append("Check for overlapping claims filed with other insurance carriers via shared industry database.")
+            else:
+                actions.append("Verify policy coverage limits are active and deductible is met.")
+                actions.append("Approve claim for fast-track automated payout.")
+
+            # Deterministic Fallback Questions
+            questions = []
+            if policy_line == "Auto":
+                questions.append("Can you provide the exact sequence of events leading up to the collision?")
+                questions.append("Were there any independent witnesses or dashcam/surveillance footage available?")
+                if filing_delay > 14:
+                    questions.append(f"What caused the {filing_delay}-day delay between the incident date and filing date?")
+                if siu_needed:
+                    questions.append("How did you select the repair facility and legal representation retained for this claim?")
+            elif policy_line == "Fire":
+                questions.append("Was the premises occupied at the exact time the fire ignited?")
+                questions.append("Can you provide itemized purchase receipts or tax documentation for claimed high-value items?")
+                if siu_needed:
+                    questions.append("Has the local fire marshal concluded their official origin-and-cause investigation?")
+            else:
+                questions.append("Can you describe the circumstances and environmental conditions when the loss occurred?")
+                questions.append("Are there timestamped photos of the damaged property prior to mitigation efforts?")
 
         # 4. Investigation Notes
         notes = (

@@ -97,6 +97,16 @@ def health_check():
     # Check agents (just verify orchestrator instance, don't re-init if not loaded)
     status.agents_ready = _orchestrator is not None
 
+    # Check Gemini LLM Service
+    try:
+        from backend.agents.llm_service import get_llm_service
+        llm = get_llm_service()
+        status.llm_active = llm.is_available()
+        status.llm_provider = "Google Gemini"
+        status.llm_model = llm.model_name
+    except Exception:
+        status.llm_active = False
+
     return status
 
 

@@ -164,6 +164,20 @@ async function loadHealth() {
     document.getElementById('status-vector').textContent = data.vector_store_connected ? 'Indexed (all-MiniLM)' : 'Offline';
     document.getElementById('status-graph').textContent = data.graph_store_loaded ? 'Active' : 'Offline';
     document.getElementById('status-agents').textContent = data.agents_ready ? 'Ready' : 'Standby';
+
+    const llmEl = document.getElementById('status-llm');
+    const dotLlm = document.getElementById('dot-llm');
+    if (llmEl) {
+      if (data.llm_active) {
+        llmEl.textContent = `${data.llm_model || 'Gemini 1.5 Flash'} (Active)`;
+        llmEl.style.color = '#34d399';
+        if (dotLlm) { dotLlm.style.background = '#10b981'; dotLlm.style.boxShadow = '0 0 8px #10b981'; }
+      } else {
+        llmEl.textContent = 'Grounded (Key pending in .env)';
+        llmEl.style.color = '#f59e0b';
+        if (dotLlm) { dotLlm.style.background = '#f59e0b'; dotLlm.style.boxShadow = '0 0 8px #f59e0b'; }
+      }
+    }
   } catch (err) {
     console.warn('Health check error:', err);
   }
