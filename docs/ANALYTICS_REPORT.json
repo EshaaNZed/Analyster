@@ -1,0 +1,61 @@
+{
+  "pipeline": "Task 2 \u2014 4-Layer Ensemble Anomaly Detection",
+  "elapsed_sec": 190.46,
+  "models": {
+    "xgboost": {
+      "cv_mean_auc": 0.9184,
+      "cv_std": 0.0246,
+      "cv_pr_auc": 0.6454,
+      "f1": 0.6354,
+      "precision": 0.4685,
+      "recall": 0.9873
+    },
+    "random_forest": {
+      "cv_mean_auc": 0.9123,
+      "train_auc": 0.9552,
+      "f1": 0.583,
+      "top_features": [
+        [
+          "log_claim_amount",
+          0.286
+        ],
+        [
+          "claim_to_limit_ratio",
+          0.2465
+        ],
+        [
+          "subtype_claim_ratio_delta",
+          0.233
+        ]
+      ]
+    },
+    "isolation_forest": {
+      "roc_auc": 0.7386,
+      "avg_precision": 0.3398,
+      "flagged_anomaly": 180
+    }
+  },
+  "stability_check": {
+    "xgb_cv_auc": 0.9184,
+    "rf_cv_auc": 0.9123,
+    "gap": 0.0061,
+    "stability_check": "STABLE",
+    "recommendation": "Models are in agreement. XGBoost selected as primary."
+  },
+  "triage_distribution": {
+    "Low": 1165,
+    "Medium": 283,
+    "High": 52
+  },
+  "gt_anomaly_triage": {
+    "Medium": 102,
+    "High": 49,
+    "Low": 7
+  },
+  "ensemble_weights": {
+    "xgboost": "50%",
+    "random_forest": "25%",
+    "isolation_forest": "15%",
+    "rule_engine": "10%"
+  }
+}

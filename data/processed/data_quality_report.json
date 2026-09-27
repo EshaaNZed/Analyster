@@ -1,0 +1,93 @@
+{
+  "audit_timestamp": "2026-09-26T20:33:52.419753",
+  "overall_status": "PASSED",
+  "total_assertions": 11,
+  "passed_count": 11,
+  "failed_count": 0,
+  "assertions": [
+    {
+      "assertion": "dim_customers_pk_uniqueness",
+      "status": "PASSED",
+      "details": "Unique: 9822/9822"
+    },
+    {
+      "assertion": "dim_policies_pk_uniqueness",
+      "status": "PASSED",
+      "details": "Unique: 15546/15546"
+    },
+    {
+      "assertion": "fact_claims_pk_uniqueness",
+      "status": "PASSED",
+      "details": "Unique: 1500/1500"
+    },
+    {
+      "assertion": "fact_claims_completeness",
+      "status": "PASSED",
+      "details": "Total null values: 0"
+    },
+    {
+      "assertion": "dim_customers_completeness",
+      "status": "PASSED",
+      "details": "Total null values: 0"
+    },
+    {
+      "assertion": "claims_to_customer_fk_integrity",
+      "status": "PASSED",
+      "details": "100% of claims map to existing customer"
+    },
+    {
+      "assertion": "claims_to_policy_fk_integrity",
+      "status": "PASSED",
+      "details": "100% of claims map to existing policy"
+    },
+    {
+      "assertion": "policies_to_customer_fk_integrity",
+      "status": "PASSED",
+      "details": "100% of policies map to existing customer"
+    },
+    {
+      "assertion": "claims_positive_amounts",
+      "status": "PASSED",
+      "details": "All claim amounts are strictly positive"
+    },
+    {
+      "assertion": "claims_non_negative_delay",
+      "status": "PASSED",
+      "details": "All filing delays are non-negative integers"
+    },
+    {
+      "assertion": "claims_status_domain_check",
+      "status": "PASSED",
+      "details": "Statuses found: {'Open', 'Approved', 'Under Investigation', 'Settled'}"
+    }
+  ],
+  "table_metrics": {
+    "dim_customers": {
+      "row_count": 9822,
+      "column_count": 104,
+      "subtypes_covered": 40
+    },
+    "dim_policies": {
+      "row_count": 15546,
+      "policy_lines": {
+        "Fire": 5358,
+        "Auto": 4997,
+        "Third Party": 3919,
+        "Caravan": 586,
+        "Life Insurance": 514,
+        "Property": 82,
+        "Boat": 45,
+        "Private Accident": 45
+      },
+      "total_premium_volume_usd": 15936500.0
+    },
+    "fact_claims": {
+      "row_count": 1500,
+      "anomalous_claims_count": 158,
+      "total_claimed_usd": 52881011.129999995,
+      "avg_claim_usd": 35254.01,
+      "min_claim_usd": 724.65,
+      "max_claim_usd": 367151.75
+    }
+  }
+}

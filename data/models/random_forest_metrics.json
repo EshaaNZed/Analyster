@@ -1,0 +1,40 @@
+{
+  "model": "Random Forest (Calibrated)",
+  "cv_auc_scores": [
+    0.923,
+    0.9514,
+    0.9333,
+    0.8724,
+    0.8813
+  ],
+  "cv_mean_auc": 0.9123,
+  "cv_std_auc": 0.0305,
+  "train_auc": 0.9552,
+  "precision": 0.809,
+  "recall": 0.4557,
+  "f1_score": 0.583,
+  "feature_importances": {
+    "log_claim_amount": 0.286,
+    "claim_to_limit_ratio": 0.2465,
+    "subtype_claim_ratio_delta": 0.233,
+    "claim_to_premium_ratio": 0.1193,
+    "filing_delay_days": 0.086,
+    "log_annual_spend": 0.0121,
+    "purchasing_power_tier": 0.0067,
+    "household_size": 0.0057,
+    "customer_total_policies": 0.0047
+  },
+  "calibration_method": "isotonic",
+  "n_train_samples": 1500,
+  "feature_names": [
+    "log_claim_amount",
+    "filing_delay_days",
+    "claim_to_limit_ratio",
+    "claim_to_premium_ratio",
+    "customer_total_policies",
+    "log_annual_spend",
+    "household_size",
+    "purchasing_power_tier",
+    "subtype_claim_ratio_delta"
+  ]
+}

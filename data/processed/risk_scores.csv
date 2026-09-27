@@ -1,0 +1,1501 @@
+claim_id,customer_id,policy_line,claim_amount_usd,claim_status,risk_score,risk_level,triage_action,xgb_score,rf_score,if_score,rule_score,rule_flags_count,xgb_rf_agreement,is_anomaly_gt
+CLM-2024-00413,CUST-00003,Fire,8558.6,Settled,9,Low,Fast-Track Approval — Routine Processing,3,0,38,14,1,STRONG,0
+CLM-2024-00954,CUST-00004,Auto,8207.2,Open,10,Low,Fast-Track Approval — Routine Processing,9,0,39,0,0,STRONG,0
+CLM-2024-00715,CUST-00007,Auto,1046.79,Settled,8,Low,Fast-Track Approval — Routine Processing,2,0,43,0,0,STRONG,0
+CLM-2024-00985,CUST-00007,Auto,4218.62,Settled,7,Low,Fast-Track Approval — Routine Processing,2,0,40,0,0,STRONG,0
+CLM-2024-01222,CUST-00046,Caravan,3254.13,Settled,11,Low,Fast-Track Approval — Routine Processing,7,0,42,14,1,STRONG,0
+CLM-2024-00875,CUST-00047,Fire,50864.33,Open,11,Low,Fast-Track Approval — Routine Processing,4,1,44,14,1,STRONG,0
+CLM-2024-01367,CUST-00051,Auto,8406.87,Settled,8,Low,Fast-Track Approval — Routine Processing,5,0,38,0,0,STRONG,0
+CLM-2024-00097,CUST-00055,Auto,16215.05,Settled,45,Medium,Standard Adjuster Review — Verify Supporting Documentation,67,21,39,0,0,DIVERGENT,1
+CLM-2024-01300,CUST-00062,Fire,81220.11,Settled,12,Low,Fast-Track Approval — Routine Processing,5,2,43,31,2,STRONG,0
+CLM-2024-01028,CUST-00066,Auto,2970.45,Settled,7,Low,Fast-Track Approval — Routine Processing,2,0,41,0,0,STRONG,0
+CLM-2024-01093,CUST-00085,Auto,19907.11,Approved,47,Medium,Standard Adjuster Review — Verify Supporting Documentation,67,30,39,0,0,DIVERGENT,0
+CLM-2024-00282,CUST-00088,Auto,1696.59,Settled,7,Low,Fast-Track Approval — Routine Processing,1,0,43,0,0,STRONG,0
+CLM-2024-00960,CUST-00105,Auto,16767.25,Settled,45,Medium,Standard Adjuster Review — Verify Supporting Documentation,68,21,38,0,0,DIVERGENT,0
+CLM-2024-00906,CUST-00110,Fire,32164.84,Settled,10,Low,Fast-Track Approval — Routine Processing,3,0,43,14,1,STRONG,0
+CLM-2024-01121,CUST-00112,Fire,17006.26,Settled,44,Medium,Standard Adjuster Review — Verify Supporting Documentation,62,16,49,14,1,DIVERGENT,1
+CLM-2024-01439,CUST-00117,Auto,58760.45,Under Investigation,81,High,Priority Manual Investigation — Consider SIU Referral,94,100,47,20,1,STRONG,1
+CLM-2024-00656,CUST-00120,Auto,3488.43,Open,9,Low,Fast-Track Approval — Routine Processing,6,0,39,0,0,STRONG,0
+CLM-2024-00810,CUST-00124,Auto,4437.29,Approved,10,Low,Fast-Track Approval — Routine Processing,7,0,41,0,0,STRONG,0
+CLM-2024-01482,CUST-00129,Auto,3267.57,Settled,7,Low,Fast-Track Approval — Routine Processing,2,0,40,0,0,STRONG,0
+CLM-2024-01359,CUST-00137,Fire,9200.94,Settled,9,Low,Fast-Track Approval — Routine Processing,3,0,37,14,1,STRONG,0
+CLM-2024-00364,CUST-00139,Fire,53480.75,Settled,14,Low,Fast-Track Approval — Routine Processing,3,2,50,43,3,STRONG,0
+CLM-2024-00074,CUST-00150,Auto,5801.03,Settled,9,Low,Fast-Track Approval — Routine Processing,5,0,40,0,0,STRONG,0
+CLM-2024-00031,CUST-00173,Fire,43368.46,Settled,12,Low,Fast-Track Approval — Routine Processing,8,5,39,14,1,STRONG,0
+CLM-2024-00341,CUST-00174,Fire,37358.61,Settled,14,Low,Fast-Track Approval — Routine Processing,12,2,41,14,1,STRONG,0
+CLM-2024-00224,CUST-00179,Fire,27011.25,Settled,23,Low,Fast-Track Approval — Routine Processing,22,2,46,43,3,DIVERGENT,0
+CLM-2024-00216,CUST-00180,Caravan,4613.16,Open,15,Low,Fast-Track Approval — Routine Processing,10,1,46,31,2,STRONG,0
+CLM-2024-00134,CUST-00183,Fire,167097.04,Open,37,Low,Fast-Track Approval — Routine Processing,44,15,52,31,2,DIVERGENT,0
+CLM-2024-00971,CUST-00200,Auto,8955.32,Settled,19,Low,Fast-Track Approval — Routine Processing,23,1,45,0,0,DIVERGENT,0
+CLM-2024-00314,CUST-00202,Auto,6840.93,Settled,8,Low,Fast-Track Approval — Routine Processing,4,0,39,0,0,STRONG,0
+CLM-2024-00914,CUST-00206,Fire,9919.26,Approved,16,Low,Fast-Track Approval — Routine Processing,16,0,42,14,1,DIVERGENT,0
+CLM-2024-01005,CUST-00207,Boat,9196.0,Approved,14,Low,Fast-Track Approval — Routine Processing,10,0,53,14,1,STRONG,0
+CLM-2024-00765,CUST-00221,Auto,27872.53,Settled,41,Medium,Standard Adjuster Review — Verify Supporting Documentation,57,19,43,17,1,DIVERGENT,0
+CLM-2024-00711,CUST-00227,Auto,2039.71,Settled,9,Low,Fast-Track Approval — Routine Processing,5,0,44,0,0,STRONG,0
+CLM-2024-00986,CUST-00231,Fire,39179.95,Approved,13,Low,Fast-Track Approval — Routine Processing,5,1,50,26,2,STRONG,0
+CLM-2024-00256,CUST-00233,Auto,16737.56,Settled,41,Medium,Standard Adjuster Review — Verify Supporting Documentation,59,21,38,0,0,DIVERGENT,0
+CLM-2024-01464,CUST-00241,Auto,26446.54,Under Investigation,39,Low,Fast-Track Approval — Routine Processing,49,20,39,37,2,DIVERGENT,1
+CLM-2024-00335,CUST-00265,Fire,82711.87,Settled,14,Low,Fast-Track Approval — Routine Processing,6,2,46,31,2,STRONG,0
+CLM-2024-00873,CUST-00266,Fire,68398.98,Under Investigation,15,Low,Fast-Track Approval — Routine Processing,6,2,46,51,3,STRONG,0
+CLM-2024-01386,CUST-00290,Fire,4205.06,Settled,12,Low,Fast-Track Approval — Routine Processing,6,0,49,14,1,STRONG,0
+CLM-2024-01392,CUST-00299,Auto,3350.97,Approved,8,Low,Fast-Track Approval — Routine Processing,2,0,46,0,0,STRONG,0
+CLM-2024-01312,CUST-00300,Fire,133179.38,Open,41,Medium,Standard Adjuster Review — Verify Supporting Documentation,51,24,45,31,2,DIVERGENT,0
+CLM-2024-01104,CUST-00304,Fire,124141.43,Settled,40,Medium,Standard Adjuster Review — Verify Supporting Documentation,52,15,47,31,2,DIVERGENT,0
+CLM-2024-00879,CUST-00319,Fire,30934.3,Settled,10,Low,Fast-Track Approval — Routine Processing,4,0,40,14,1,STRONG,0
+CLM-2024-00736,CUST-00335,Fire,18532.52,Approved,31,Low,Fast-Track Approval — Routine Processing,41,9,48,14,1,DIVERGENT,0
+CLM-2024-01413,CUST-00338,Fire,11552.18,Approved,11,Low,Fast-Track Approval — Routine Processing,6,0,41,14,1,STRONG,0
+CLM-2024-00107,CUST-00339,Auto,3351.03,Open,11,Low,Fast-Track Approval — Routine Processing,7,0,45,0,0,STRONG,0
+CLM-2024-00561,CUST-00341,Auto,5409.0,Under Investigation,10,Low,Fast-Track Approval — Routine Processing,3,0,45,20,1,STRONG,0
+CLM-2024-00737,CUST-00350,Fire,60244.74,Approved,15,Low,Fast-Track Approval — Routine Processing,8,2,48,31,2,STRONG,0
+CLM-2024-00528,CUST-00357,Caravan,6746.64,Approved,41,Medium,Standard Adjuster Review — Verify Supporting Documentation,56,9,49,31,2,DIVERGENT,0
+CLM-2024-00519,CUST-00362,Auto,3642.13,Approved,9,Low,Fast-Track Approval — Routine Processing,6,0,40,0,0,STRONG,0
+CLM-2024-01070,CUST-00363,Fire,2383.15,Settled,10,Low,Fast-Track Approval — Routine Processing,6,0,42,0,0,STRONG,0
+CLM-2024-00007,CUST-00400,Auto,69571.73,Settled,56,Medium,Standard Adjuster Review — Verify Supporting Documentation,69,45,46,31,2,DIVERGENT,0
+CLM-2024-01358,CUST-00409,Fire,17073.68,Approved,20,Low,Fast-Track Approval — Routine Processing,20,15,37,14,1,STRONG,0
+CLM-2024-00129,CUST-00431,Auto,8398.05,Approved,9,Low,Fast-Track Approval — Routine Processing,8,0,37,0,0,STRONG,0
+CLM-2024-00649,CUST-00432,Auto,12032.08,Settled,9,Low,Fast-Track Approval — Routine Processing,7,0,37,0,0,STRONG,0
+CLM-2024-00444,CUST-00437,Fire,6151.27,Approved,16,Low,Fast-Track Approval — Routine Processing,17,0,43,14,1,DIVERGENT,0
+CLM-2024-00852,CUST-00449,Auto,93166.13,Settled,53,Medium,Standard Adjuster Review — Verify Supporting Documentation,68,37,49,31,2,DIVERGENT,0
+CLM-2024-01153,CUST-00462,Auto,67633.39,Under Investigation,84,High,Priority Manual Investigation — Consider SIU Referral,97,100,49,34,2,STRONG,1
+CLM-2024-00375,CUST-00462,Fire,25485.46,Approved,24,Low,Fast-Track Approval — Routine Processing,30,9,37,14,1,DIVERGENT,0
+CLM-2024-00692,CUST-00464,Auto,69163.51,Under Investigation,84,High,Priority Manual Investigation — Consider SIU Referral,98,100,48,34,2,STRONG,1
+CLM-2024-01455,CUST-00470,Fire,7041.98,Settled,9,Low,Fast-Track Approval — Routine Processing,2,0,42,14,1,STRONG,0
+CLM-2024-00447,CUST-00484,Fire,55104.04,Settled,11,Low,Fast-Track Approval — Routine Processing,6,1,38,14,1,STRONG,0
+CLM-2024-00354,CUST-00499,Auto,2318.99,Settled,7,Low,Fast-Track Approval — Routine Processing,2,0,38,0,0,STRONG,0
+CLM-2024-00400,CUST-00501,Fire,19379.54,Settled,22,Low,Fast-Track Approval — Routine Processing,24,8,43,14,1,DIVERGENT,0
+CLM-2024-00453,CUST-00505,Auto,1392.52,Approved,7,Low,Fast-Track Approval — Routine Processing,2,0,41,0,0,STRONG,0
+CLM-2024-01032,CUST-00517,Auto,1642.16,Settled,10,Low,Fast-Track Approval — Routine Processing,7,0,45,0,0,STRONG,0
+CLM-2024-00336,CUST-00523,Auto,2456.13,Settled,8,Low,Fast-Track Approval — Routine Processing,4,0,38,0,0,STRONG,0
+CLM-2024-01431,CUST-00531,Auto,20992.07,Approved,45,Medium,Standard Adjuster Review — Verify Supporting Documentation,62,30,41,0,0,DIVERGENT,0
+CLM-2024-00426,CUST-00551,Fire,31304.38,Settled,10,Low,Fast-Track Approval — Routine Processing,5,1,41,14,1,STRONG,0
+CLM-2024-00874,CUST-00553,Fire,27354.74,Under Investigation,37,Low,Fast-Track Approval — Routine Processing,49,9,47,34,2,DIVERGENT,0
+CLM-2024-01315,CUST-00558,Fire,182479.06,Under Investigation,64,Medium,Standard Adjuster Review — Verify Supporting Documentation,83,43,53,34,2,DIVERGENT,1
+CLM-2024-00233,CUST-00569,Fire,3459.42,Settled,10,Low,Fast-Track Approval — Routine Processing,8,0,38,0,0,STRONG,0
+CLM-2024-00184,CUST-00574,Fire,181574.02,Under Investigation,64,Medium,Standard Adjuster Review — Verify Supporting Documentation,86,32,52,51,3,DIVERGENT,1
+CLM-2024-00838,CUST-00576,Auto,5337.62,Under Investigation,15,Low,Fast-Track Approval — Routine Processing,13,1,40,20,1,STRONG,0
+CLM-2024-00685,CUST-00577,Auto,50139.97,Settled,57,Medium,Standard Adjuster Review — Verify Supporting Documentation,80,41,47,0,0,DIVERGENT,0
+CLM-2024-00840,CUST-00581,Fire,76767.61,Settled,60,Medium,Standard Adjuster Review — Verify Supporting Documentation,77,41,47,43,3,DIVERGENT,0
+CLM-2024-01180,CUST-00596,Fire,3460.23,Settled,11,Low,Fast-Track Approval — Routine Processing,5,0,46,14,1,STRONG,0
+CLM-2024-00199,CUST-00610,Auto,7309.42,Settled,10,Low,Fast-Track Approval — Routine Processing,8,0,38,0,0,STRONG,0
+CLM-2024-00559,CUST-00610,Auto,1903.25,Settled,8,Low,Fast-Track Approval — Routine Processing,3,0,40,0,0,STRONG,0
+CLM-2024-00338,CUST-00610,Fire,112592.32,Settled,13,Low,Fast-Track Approval — Routine Processing,5,2,44,31,2,STRONG,0
+CLM-2024-00755,CUST-00629,Fire,60868.08,Under Investigation,17,Low,Fast-Track Approval — Routine Processing,9,2,53,43,3,STRONG,0
+CLM-2024-00568,CUST-00630,Auto,4782.62,Settled,7,Low,Fast-Track Approval — Routine Processing,2,0,42,0,0,STRONG,0
+CLM-2024-00531,CUST-00638,Fire,16122.55,Open,22,Low,Fast-Track Approval — Routine Processing,25,9,44,14,1,DIVERGENT,0
+CLM-2024-00556,CUST-00638,Fire,4301.85,Settled,10,Low,Fast-Track Approval — Routine Processing,3,0,44,14,1,STRONG,0
+CLM-2024-00826,CUST-00669,Auto,2441.74,Approved,9,Low,Fast-Track Approval — Routine Processing,5,0,44,0,0,STRONG,0
+CLM-2024-01205,CUST-00673,Fire,13403.63,Settled,12,Low,Fast-Track Approval — Routine Processing,8,0,41,14,1,STRONG,0
+CLM-2024-00012,CUST-00675,Auto,5440.22,Settled,7,Low,Fast-Track Approval — Routine Processing,2,0,40,0,0,STRONG,0
+CLM-2024-00768,CUST-00676,Fire,2826.95,Settled,8,Low,Fast-Track Approval — Routine Processing,3,0,43,0,0,STRONG,0
+CLM-2024-00059,CUST-00681,Fire,116033.12,Settled,12,Low,Fast-Track Approval — Routine Processing,2,1,46,31,2,STRONG,0
+CLM-2024-00367,CUST-00687,Fire,159365.34,Under Investigation,58,Medium,Standard Adjuster Review — Verify Supporting Documentation,78,32,54,34,2,DIVERGENT,1
+CLM-2024-01097,CUST-00695,Fire,38039.36,Settled,12,Low,Fast-Track Approval — Routine Processing,7,1,44,14,1,STRONG,0
+CLM-2024-01271,CUST-00705,Fire,109903.42,Settled,13,Low,Fast-Track Approval — Routine Processing,4,1,50,31,2,STRONG,0
+CLM-2024-01499,CUST-00706,Auto,29163.46,Under Investigation,51,Medium,Standard Adjuster Review — Verify Supporting Documentation,69,29,38,37,2,DIVERGENT,1
+CLM-2024-01103,CUST-00715,Auto,24353.07,Open,59,Medium,Standard Adjuster Review — Verify Supporting Documentation,83,42,44,0,0,DIVERGENT,1
+CLM-2024-01249,CUST-00724,Auto,2922.17,Open,8,Low,Fast-Track Approval — Routine Processing,3,0,39,0,0,STRONG,0
+CLM-2024-00653,CUST-00725,Fire,34877.41,Approved,11,Low,Fast-Track Approval — Routine Processing,7,1,40,14,1,STRONG,0
+CLM-2024-00524,CUST-00726,Fire,310277.01,Under Investigation,84,High,Priority Manual Investigation — Consider SIU Referral,97,93,58,34,2,STRONG,1
+CLM-2024-01114,CUST-00729,Fire,40518.11,Settled,10,Low,Fast-Track Approval — Routine Processing,4,0,41,14,1,STRONG,0
+CLM-2024-00431,CUST-00731,Fire,55817.25,Under Investigation,16,Low,Fast-Track Approval — Routine Processing,4,2,46,71,5,STRONG,0
+CLM-2024-01226,CUST-00733,Auto,13539.77,Open,8,Low,Fast-Track Approval — Routine Processing,4,0,43,0,0,STRONG,0
+CLM-2024-00964,CUST-00747,Fire,148274.17,Settled,48,Medium,Standard Adjuster Review — Verify Supporting Documentation,64,24,49,31,2,DIVERGENT,0
+CLM-2024-00491,CUST-00753,Auto,4102.24,Approved,7,Low,Fast-Track Approval — Routine Processing,2,0,39,0,0,STRONG,0
+CLM-2024-00397,CUST-00755,Fire,9956.75,Open,10,Low,Fast-Track Approval — Routine Processing,3,0,43,14,1,STRONG,0
+CLM-2024-00202,CUST-00756,Fire,63409.32,Open,10,Low,Fast-Track Approval — Routine Processing,3,1,42,14,1,STRONG,0
+CLM-2024-00002,CUST-00762,Fire,7118.46,Settled,10,Low,Fast-Track Approval — Routine Processing,3,0,46,14,1,STRONG,0
+CLM-2024-00141,CUST-00763,Caravan,5311.54,Settled,23,Low,Fast-Track Approval — Routine Processing,21,5,52,31,2,DIVERGENT,0
+CLM-2024-00417,CUST-00772,Auto,5617.32,Approved,7,Low,Fast-Track Approval — Routine Processing,2,0,41,0,0,STRONG,0
+CLM-2024-00931,CUST-00772,Auto,2889.46,Settled,8,Low,Fast-Track Approval — Routine Processing,2,0,42,0,0,STRONG,0
+CLM-2024-00087,CUST-00773,Fire,9745.96,Settled,12,Low,Fast-Track Approval — Routine Processing,9,0,38,14,1,STRONG,0
+CLM-2024-00885,CUST-00807,Auto,3920.68,Approved,7,Low,Fast-Track Approval — Routine Processing,2,0,40,0,0,STRONG,0
+CLM-2024-01447,CUST-00808,Fire,53854.47,Under Investigation,63,Medium,Standard Adjuster Review — Verify Supporting Documentation,81,32,49,71,5,DIVERGENT,1
+CLM-2024-01471,CUST-00808,Fire,35473.67,Settled,15,Low,Fast-Track Approval — Routine Processing,5,2,47,51,4,STRONG,0
+CLM-2024-01069,CUST-00811,Auto,5162.69,Approved,7,Low,Fast-Track Approval — Routine Processing,2,0,41,0,0,STRONG,0
+CLM-2024-00705,CUST-00812,Auto,14057.06,Settled,11,Low,Fast-Track Approval — Routine Processing,10,0,39,0,0,STRONG,0
+CLM-2024-00654,CUST-00816,Auto,2267.42,Settled,7,Low,Fast-Track Approval — Routine Processing,2,0,40,0,0,STRONG,0
+CLM-2024-01250,CUST-00829,Auto,34026.87,Under Investigation,51,Medium,Standard Adjuster Review — Verify Supporting Documentation,68,19,45,51,3,DIVERGENT,1
+CLM-2024-01074,CUST-00832,Fire,40533.02,Settled,10,Low,Fast-Track Approval — Routine Processing,4,0,46,14,1,STRONG,0
+CLM-2024-01194,CUST-00833,Auto,9272.5,Settled,9,Low,Fast-Track Approval — Routine Processing,7,0,37,0,0,STRONG,0
+CLM-2024-00599,CUST-00834,Auto,4149.18,Approved,7,Low,Fast-Track Approval — Routine Processing,2,0,39,0,0,STRONG,0
+CLM-2024-00288,CUST-00835,Caravan,5986.93,Approved,27,Low,Fast-Track Approval — Routine Processing,31,5,48,31,2,DIVERGENT,0
+CLM-2024-01177,CUST-00843,Fire,31965.9,Settled,14,Low,Fast-Track Approval — Routine Processing,10,2,45,14,1,STRONG,0
+CLM-2024-00343,CUST-00858,Auto,52208.69,Under Investigation,80,High,Priority Manual Investigation — Consider SIU Referral,97,90,47,20,1,STRONG,1
+CLM-2024-01111,CUST-00860,Fire,20814.99,Settled,48,Medium,Standard Adjuster Review — Verify Supporting Documentation,69,25,41,14,1,DIVERGENT,1
+CLM-2024-00077,CUST-00869,Private Accident,20118.72,Settled,55,Medium,Standard Adjuster Review — Verify Supporting Documentation,79,23,47,31,2,DIVERGENT,0
+CLM-2024-00721,CUST-00885,Auto,7212.02,Approved,8,Low,Fast-Track Approval — Routine Processing,4,0,38,0,0,STRONG,0
+CLM-2024-00080,CUST-00885,Fire,72390.27,Approved,13,Low,Fast-Track Approval — Routine Processing,11,1,41,14,1,STRONG,0
+CLM-2024-00067,CUST-00890,Fire,6934.29,Approved,11,Low,Fast-Track Approval — Routine Processing,7,0,43,14,1,STRONG,0
+CLM-2024-00127,CUST-00898,Fire,53612.25,Settled,28,Low,Fast-Track Approval — Routine Processing,25,15,53,34,3,STRONG,0
+CLM-2024-00306,CUST-00917,Auto,4832.13,Under Investigation,9,Low,Fast-Track Approval — Routine Processing,2,0,39,20,1,STRONG,0
+CLM-2024-00154,CUST-00927,Auto,2825.76,Settled,8,Low,Fast-Track Approval — Routine Processing,2,0,43,0,0,STRONG,0
+CLM-2024-00332,CUST-00928,Auto,8306.51,Settled,8,Low,Fast-Track Approval — Routine Processing,4,0,39,0,0,STRONG,0
+CLM-2024-00582,CUST-00929,Fire,150000.0,Settled,45,Medium,Standard Adjuster Review — Verify Supporting Documentation,51,30,55,43,3,DIVERGENT,0
+CLM-2024-00901,CUST-00929,Fire,150000.0,Settled,35,Low,Fast-Track Approval — Routine Processing,35,23,54,43,3,STRONG,0
+CLM-2024-00949,CUST-00931,Auto,9442.03,Settled,9,Low,Fast-Track Approval — Routine Processing,7,0,37,0,0,STRONG,0
+CLM-2024-01033,CUST-00933,Auto,57152.0,Under Investigation,82,High,Priority Manual Investigation — Consider SIU Referral,95,94,47,34,2,STRONG,1
+CLM-2024-00505,CUST-00933,Fire,62326.47,Settled,18,Low,Fast-Track Approval — Routine Processing,13,2,44,43,3,STRONG,0
+CLM-2024-00329,CUST-00935,Fire,4640.15,Approved,7,Low,Fast-Track Approval — Routine Processing,3,0,39,0,0,STRONG,0
+CLM-2024-00771,CUST-00941,Fire,50299.99,Settled,31,Low,Fast-Track Approval — Routine Processing,31,15,49,51,4,DIVERGENT,0
+CLM-2024-00443,CUST-00945,Auto,2735.25,Settled,7,Low,Fast-Track Approval — Routine Processing,2,0,40,0,0,STRONG,0
+CLM-2024-01073,CUST-00978,Fire,34363.51,Settled,17,Low,Fast-Track Approval — Routine Processing,6,2,56,51,4,STRONG,0
+CLM-2024-00539,CUST-00980,Auto,7235.32,Open,9,Low,Fast-Track Approval — Routine Processing,6,0,37,0,0,STRONG,0
+CLM-2024-00401,CUST-01001,Fire,5482.62,Approved,8,Low,Fast-Track Approval — Routine Processing,2,0,46,0,0,STRONG,0
+CLM-2024-00438,CUST-01002,Fire,12140.01,Under Investigation,12,Low,Fast-Track Approval — Routine Processing,4,0,46,34,2,STRONG,0
+CLM-2024-00270,CUST-01006,Auto,11903.61,Settled,8,Low,Fast-Track Approval — Routine Processing,3,0,42,0,0,STRONG,0
+CLM-2024-01478,CUST-01015,Auto,21597.05,Approved,42,Medium,Standard Adjuster Review — Verify Supporting Documentation,57,30,40,0,0,DIVERGENT,0
+CLM-2024-00580,CUST-01017,Auto,8496.06,Open,8,Low,Fast-Track Approval — Routine Processing,5,0,37,0,0,STRONG,0
+CLM-2024-00019,CUST-01033,Auto,4456.61,Under Investigation,11,Low,Fast-Track Approval — Routine Processing,6,0,42,20,1,STRONG,0
+CLM-2024-00346,CUST-01033,Auto,41062.42,Settled,30,Low,Fast-Track Approval — Routine Processing,36,13,44,17,1,DIVERGENT,0
+CLM-2024-00604,CUST-01040,Auto,1333.88,Settled,8,Low,Fast-Track Approval — Routine Processing,2,0,45,0,0,STRONG,0
+CLM-2024-01059,CUST-01050,Fire,62640.24,Open,17,Low,Fast-Track Approval — Routine Processing,13,8,45,14,1,STRONG,0
+CLM-2024-01166,CUST-01053,Auto,2454.98,Settled,7,Low,Fast-Track Approval — Routine Processing,2,0,40,0,0,STRONG,0
+CLM-2024-00650,CUST-01060,Fire,8985.14,Settled,8,Low,Fast-Track Approval — Routine Processing,4,0,40,0,0,STRONG,0
+CLM-2024-00298,CUST-01064,Fire,124999.43,Approved,43,Medium,Standard Adjuster Review — Verify Supporting Documentation,44,31,51,51,4,STRONG,0
+CLM-2024-01366,CUST-01085,Fire,12788.52,Under Investigation,11,Low,Fast-Track Approval — Routine Processing,3,0,40,34,2,STRONG,0
+CLM-2024-01049,CUST-01092,Fire,151445.66,Settled,44,Medium,Standard Adjuster Review — Verify Supporting Documentation,60,15,46,31,2,DIVERGENT,0
+CLM-2024-00781,CUST-01096,Auto,26229.63,Open,35,Low,Fast-Track Approval — Routine Processing,46,19,40,17,1,DIVERGENT,0
+CLM-2024-01372,CUST-01096,Auto,21623.32,Settled,49,Medium,Standard Adjuster Review — Verify Supporting Documentation,70,32,41,0,0,DIVERGENT,0
+CLM-2024-00667,CUST-01102,Auto,6507.16,Settled,10,Low,Fast-Track Approval — Routine Processing,7,0,42,0,0,STRONG,0
+CLM-2024-00037,CUST-01109,Fire,25206.58,Settled,22,Low,Fast-Track Approval — Routine Processing,22,5,45,26,2,DIVERGENT,0
+CLM-2024-00870,CUST-01117,Auto,71630.14,Settled,36,Low,Fast-Track Approval — Routine Processing,39,24,50,31,2,DIVERGENT,0
+CLM-2024-01272,CUST-01119,Auto,28157.02,Settled,44,Medium,Standard Adjuster Review — Verify Supporting Documentation,61,20,42,17,1,DIVERGENT,0
+CLM-2024-00193,CUST-01127,Auto,4302.83,Settled,7,Low,Fast-Track Approval — Routine Processing,2,0,39,0,0,STRONG,0
+CLM-2024-00903,CUST-01131,Auto,1844.48,Settled,7,Low,Fast-Track Approval — Routine Processing,1,0,44,0,0,STRONG,0
+CLM-2024-01292,CUST-01134,Auto,2001.55,Settled,8,Low,Fast-Track Approval — Routine Processing,2,0,45,0,0,STRONG,0
+CLM-2024-01289,CUST-01135,Fire,19653.55,Open,50,Medium,Standard Adjuster Review — Verify Supporting Documentation,71,27,41,14,1,DIVERGENT,1
+CLM-2024-00173,CUST-01136,Fire,112844.18,Approved,16,Low,Fast-Track Approval — Routine Processing,8,6,52,23,2,STRONG,0
+CLM-2024-01259,CUST-01137,Fire,161966.36,Settled,36,Low,Fast-Track Approval — Routine Processing,43,15,51,31,2,DIVERGENT,0
+CLM-2024-00621,CUST-01149,Fire,42925.16,Settled,13,Low,Fast-Track Approval — Routine Processing,4,1,42,43,3,STRONG,0
+CLM-2024-00797,CUST-01157,Auto,2403.05,Settled,8,Low,Fast-Track Approval — Routine Processing,4,0,38,0,0,STRONG,0
+CLM-2024-01343,CUST-01158,Auto,57964.88,Under Investigation,70,High,Priority Manual Investigation — Consider SIU Referral,91,51,45,51,3,DIVERGENT,1
+CLM-2024-01390,CUST-01170,Auto,3412.68,Approved,7,Low,Fast-Track Approval — Routine Processing,2,0,40,0,0,STRONG,0
+CLM-2024-00995,CUST-01173,Auto,9871.06,Settled,12,Low,Fast-Track Approval — Routine Processing,12,0,39,0,0,STRONG,0
+CLM-2024-00679,CUST-01182,Auto,5140.83,Settled,7,Low,Fast-Track Approval — Routine Processing,3,0,39,0,0,STRONG,0
+CLM-2024-00557,CUST-01191,Fire,67730.76,Settled,12,Low,Fast-Track Approval — Routine Processing,4,1,45,31,2,STRONG,0
+CLM-2024-00615,CUST-01191,Fire,102107.36,Settled,23,Low,Fast-Track Approval — Routine Processing,22,5,46,31,2,DIVERGENT,0
+CLM-2024-01329,CUST-01211,Auto,7938.91,Settled,8,Low,Fast-Track Approval — Routine Processing,5,0,38,0,0,STRONG,0
+CLM-2024-01276,CUST-01213,Auto,4095.89,Settled,7,Low,Fast-Track Approval — Routine Processing,1,0,43,0,0,STRONG,0
+CLM-2024-00366,CUST-01242,Auto,2438.04,Settled,10,Low,Fast-Track Approval — Routine Processing,7,0,44,0,0,STRONG,0
+CLM-2024-01267,CUST-01242,Auto,7267.55,Under Investigation,16,Low,Fast-Track Approval — Routine Processing,13,4,42,20,1,STRONG,0
+CLM-2024-00743,CUST-01282,Fire,15828.1,Settled,46,Medium,Standard Adjuster Review — Verify Supporting Documentation,62,27,41,14,1,DIVERGENT,0
+CLM-2024-00934,CUST-01282,Fire,6948.18,Settled,12,Low,Fast-Track Approval — Routine Processing,12,0,40,0,0,STRONG,0
+CLM-2024-01429,CUST-01287,Fire,15207.57,Open,36,Low,Fast-Track Approval — Routine Processing,53,5,42,14,1,DIVERGENT,1
+CLM-2024-01218,CUST-01303,Auto,27437.12,Open,44,Medium,Standard Adjuster Review — Verify Supporting Documentation,63,20,38,17,1,DIVERGENT,1
+CLM-2024-00139,CUST-01305,Auto,91904.86,Under Investigation,88,High,Priority Manual Investigation — Consider SIU Referral,98,100,59,51,4,STRONG,1
+CLM-2024-00187,CUST-01314,Auto,1443.26,Settled,10,Low,Fast-Track Approval — Routine Processing,6,0,43,0,0,STRONG,0
+CLM-2024-01421,CUST-01320,Auto,13802.48,Settled,8,Low,Fast-Track Approval — Routine Processing,4,0,41,0,0,STRONG,0
+CLM-2024-01419,CUST-01338,Auto,10128.42,Settled,8,Low,Fast-Track Approval — Routine Processing,4,0,40,0,0,STRONG,0
+CLM-2024-01361,CUST-01341,Fire,23956.13,Settled,28,Low,Fast-Track Approval — Routine Processing,35,8,44,14,1,DIVERGENT,0
+CLM-2024-00038,CUST-01343,Fire,67716.77,Approved,14,Low,Fast-Track Approval — Routine Processing,11,1,43,14,1,STRONG,0
+CLM-2024-00651,CUST-01347,Auto,8856.18,Settled,11,Low,Fast-Track Approval — Routine Processing,11,0,38,0,0,STRONG,0
+CLM-2024-00889,CUST-01347,Auto,2161.27,Settled,7,Low,Fast-Track Approval — Routine Processing,2,0,39,0,0,STRONG,0
+CLM-2024-00609,CUST-01354,Auto,1099.86,Settled,9,Low,Fast-Track Approval — Routine Processing,5,0,46,0,0,STRONG,0
+CLM-2024-00602,CUST-01355,Fire,177934.29,Open,44,Medium,Standard Adjuster Review — Verify Supporting Documentation,56,24,46,31,2,DIVERGENT,0
+CLM-2024-01270,CUST-01370,Fire,179302.49,Settled,55,Medium,Standard Adjuster Review — Verify Supporting Documentation,78,24,49,31,2,DIVERGENT,0
+CLM-2024-00541,CUST-01383,Auto,3564.55,Settled,8,Low,Fast-Track Approval — Routine Processing,5,0,40,0,0,STRONG,0
+CLM-2024-00706,CUST-01388,Caravan,10562.08,Settled,60,Medium,Standard Adjuster Review — Verify Supporting Documentation,82,32,49,31,2,DIVERGENT,0
+CLM-2024-00063,CUST-01392,Auto,2123.86,Approved,7,Low,Fast-Track Approval — Routine Processing,2,0,43,0,0,STRONG,0
+CLM-2024-01004,CUST-01405,Fire,7218.3,Approved,9,Low,Fast-Track Approval — Routine Processing,2,0,39,14,1,STRONG,0
+CLM-2024-00938,CUST-01406,Auto,1823.75,Settled,8,Low,Fast-Track Approval — Routine Processing,2,0,45,0,0,STRONG,0
+CLM-2024-00993,CUST-01417,Auto,25484.36,Settled,39,Low,Fast-Track Approval — Routine Processing,51,20,41,17,1,DIVERGENT,0
+CLM-2024-01310,CUST-01421,Auto,45038.64,Under Investigation,67,Medium,Standard Adjuster Review — Verify Supporting Documentation,88,41,46,60,4,DIVERGENT,1
+CLM-2024-01154,CUST-01422,Fire,8845.14,Settled,10,Low,Fast-Track Approval — Routine Processing,4,0,42,14,1,STRONG,0
+CLM-2024-00732,CUST-01431,Auto,1653.45,Approved,7,Low,Fast-Track Approval — Routine Processing,3,0,41,0,0,STRONG,0
+CLM-2024-00197,CUST-01434,Auto,15979.25,Under Investigation,42,Medium,Standard Adjuster Review — Verify Supporting Documentation,59,13,47,20,1,DIVERGENT,0
+CLM-2024-01369,CUST-01436,Auto,7370.04,Settled,9,Low,Fast-Track Approval — Routine Processing,6,0,41,0,0,STRONG,0
+CLM-2024-01134,CUST-01440,Auto,3276.41,Settled,10,Low,Fast-Track Approval — Routine Processing,7,0,40,0,0,STRONG,0
+CLM-2024-00884,CUST-01441,Auto,1534.86,Approved,8,Low,Fast-Track Approval — Routine Processing,3,0,47,0,0,STRONG,0
+CLM-2024-00275,CUST-01442,Fire,9906.58,Settled,9,Low,Fast-Track Approval — Routine Processing,3,0,38,14,1,STRONG,0
+CLM-2024-00167,CUST-01456,Fire,71427.78,Settled,14,Low,Fast-Track Approval — Routine Processing,6,1,47,31,2,STRONG,0
+CLM-2024-00442,CUST-01458,Auto,5017.58,Settled,9,Low,Fast-Track Approval — Routine Processing,5,0,43,0,0,STRONG,0
+CLM-2024-00151,CUST-01472,Auto,6236.15,Settled,9,Low,Fast-Track Approval — Routine Processing,5,0,44,0,0,STRONG,0
+CLM-2024-00459,CUST-01472,Fire,127655.76,Open,17,Low,Fast-Track Approval — Routine Processing,12,2,50,31,2,STRONG,0
+CLM-2024-00011,CUST-01479,Fire,16709.83,Settled,43,Medium,Standard Adjuster Review — Verify Supporting Documentation,57,20,54,14,1,DIVERGENT,0
+CLM-2024-00361,CUST-01480,Auto,2806.13,Settled,9,Low,Fast-Track Approval — Routine Processing,5,0,39,0,0,STRONG,0
+CLM-2024-00492,CUST-01480,Fire,17778.78,Settled,23,Low,Fast-Track Approval — Routine Processing,25,15,38,14,1,STRONG,0
+CLM-2024-00308,CUST-01484,Fire,5448.54,Approved,8,Low,Fast-Track Approval — Routine Processing,4,0,41,0,0,STRONG,0
+CLM-2024-00427,CUST-01484,Fire,16331.58,Settled,26,Low,Fast-Track Approval — Routine Processing,31,11,41,14,1,DIVERGENT,0
+CLM-2024-00209,CUST-01500,Auto,4134.81,Settled,7,Low,Fast-Track Approval — Routine Processing,2,0,42,0,0,STRONG,0
+CLM-2024-00937,CUST-01524,Auto,9350.53,Approved,10,Low,Fast-Track Approval — Routine Processing,9,0,40,0,0,STRONG,0
+CLM-2024-00241,CUST-01525,Auto,1542.45,Open,9,Low,Fast-Track Approval — Routine Processing,4,0,46,0,0,STRONG,0
+CLM-2024-01395,CUST-01542,Auto,3826.82,Open,8,Low,Fast-Track Approval — Routine Processing,3,0,43,0,0,STRONG,0
+CLM-2024-00147,CUST-01549,Auto,27102.51,Approved,38,Low,Fast-Track Approval — Routine Processing,54,19,41,0,0,DIVERGENT,0
+CLM-2024-01189,CUST-01550,Fire,4688.47,Approved,8,Low,Fast-Track Approval — Routine Processing,3,0,41,0,0,STRONG,0
+CLM-2024-00928,CUST-01551,Auto,1290.23,Settled,8,Low,Fast-Track Approval — Routine Processing,3,0,43,0,0,STRONG,0
+CLM-2024-01354,CUST-01551,Fire,162406.99,Under Investigation,59,Medium,Standard Adjuster Review — Verify Supporting Documentation,76,35,48,51,3,DIVERGENT,1
+CLM-2024-01466,CUST-01558,Fire,57424.79,Settled,11,Low,Fast-Track Approval — Routine Processing,5,1,43,14,1,STRONG,0
+CLM-2024-01130,CUST-01577,Fire,113656.04,Approved,39,Low,Fast-Track Approval — Routine Processing,49,15,51,31,2,DIVERGENT,0
+CLM-2024-00250,CUST-01586,Fire,62547.38,Settled,12,Low,Fast-Track Approval — Routine Processing,8,2,39,14,1,STRONG,0
+CLM-2024-00627,CUST-01595,Auto,2001.15,Settled,7,Low,Fast-Track Approval — Routine Processing,2,0,41,0,0,STRONG,0
+CLM-2024-00351,CUST-01598,Fire,37399.27,Settled,10,Low,Fast-Track Approval — Routine Processing,3,1,41,23,2,STRONG,0
+CLM-2024-00977,CUST-01607,Auto,3537.03,Settled,8,Low,Fast-Track Approval — Routine Processing,3,0,43,0,0,STRONG,0
+CLM-2024-01495,CUST-01607,Auto,1296.3,Settled,8,Low,Fast-Track Approval — Routine Processing,2,0,46,0,0,STRONG,0
+CLM-2024-00713,CUST-01615,Auto,1300.17,Settled,11,Low,Fast-Track Approval — Routine Processing,9,0,43,0,0,STRONG,0
+CLM-2024-00377,CUST-01618,Auto,47394.72,Settled,39,Low,Fast-Track Approval — Routine Processing,50,24,41,17,1,DIVERGENT,0
+CLM-2024-00242,CUST-01619,Auto,26147.07,Settled,37,Low,Fast-Track Approval — Routine Processing,49,20,41,17,1,DIVERGENT,0
+CLM-2024-00660,CUST-01628,Auto,1273.74,Approved,8,Low,Fast-Track Approval — Routine Processing,2,0,44,0,0,STRONG,0
+CLM-2024-00191,CUST-01628,Fire,77064.34,Settled,11,Low,Fast-Track Approval — Routine Processing,5,2,45,14,1,STRONG,0
+CLM-2024-01139,CUST-01628,Caravan,8699.91,Settled,50,Medium,Standard Adjuster Review — Verify Supporting Documentation,68,21,49,31,2,DIVERGENT,0
+CLM-2024-01081,CUST-01643,Fire,10986.9,Open,10,Low,Fast-Track Approval — Routine Processing,4,0,41,14,1,STRONG,0
+CLM-2024-00836,CUST-01660,Auto,2122.83,Settled,7,Low,Fast-Track Approval — Routine Processing,2,0,40,0,0,STRONG,0
+CLM-2024-00356,CUST-01666,Fire,8098.0,Approved,16,Low,Fast-Track Approval — Routine Processing,15,1,48,14,1,STRONG,0
+CLM-2024-00035,CUST-01669,Auto,34707.97,Settled,30,Low,Fast-Track Approval — Routine Processing,33,29,41,0,0,STRONG,0
+CLM-2024-00824,CUST-01673,Auto,71007.94,Settled,69,Medium,Standard Adjuster Review — Verify Supporting Documentation,90,58,45,31,2,DIVERGENT,0
+CLM-2024-00895,CUST-01673,Auto,2186.51,Settled,9,Low,Fast-Track Approval — Routine Processing,5,0,40,0,0,STRONG,0
+CLM-2024-01007,CUST-01676,Auto,12829.01,Settled,13,Low,Fast-Track Approval — Routine Processing,11,5,43,0,0,STRONG,0
+CLM-2024-00978,CUST-01684,Auto,6480.0,Settled,9,Low,Fast-Track Approval — Routine Processing,4,0,45,0,0,STRONG,0
+CLM-2024-00226,CUST-01696,Auto,1551.83,Settled,8,Low,Fast-Track Approval — Routine Processing,3,0,45,0,0,STRONG,0
+CLM-2024-00440,CUST-01697,Fire,16515.19,Approved,25,Low,Fast-Track Approval — Routine Processing,28,15,40,14,1,STRONG,0
+CLM-2024-00245,CUST-01721,Auto,10244.08,Under Investigation,12,Low,Fast-Track Approval — Routine Processing,9,0,38,20,1,STRONG,0
+CLM-2024-01055,CUST-01728,Auto,20688.44,Open,36,Low,Fast-Track Approval — Routine Processing,44,19,45,31,2,DIVERGENT,0
+CLM-2024-00902,CUST-01733,Fire,17017.07,Settled,19,Low,Fast-Track Approval — Routine Processing,17,9,45,14,1,STRONG,0
+CLM-2024-00238,CUST-01741,Fire,6083.99,Settled,8,Low,Fast-Track Approval — Routine Processing,4,0,39,0,0,STRONG,0
+CLM-2024-01167,CUST-01744,Auto,3109.56,Settled,7,Low,Fast-Track Approval — Routine Processing,2,0,41,0,0,STRONG,0
+CLM-2024-00999,CUST-01747,Auto,28716.16,Open,55,Medium,Standard Adjuster Review — Verify Supporting Documentation,79,32,41,17,1,DIVERGENT,1
+CLM-2024-01051,CUST-01750,Fire,11876.91,Approved,13,Low,Fast-Track Approval — Routine Processing,11,1,38,14,1,STRONG,0
+CLM-2024-00185,CUST-01751,Auto,14466.28,Settled,23,Low,Fast-Track Approval — Routine Processing,34,2,38,0,0,DIVERGENT,0
+CLM-2024-00739,CUST-01752,Auto,9608.06,Settled,9,Low,Fast-Track Approval — Routine Processing,5,0,40,0,0,STRONG,0
+CLM-2024-00981,CUST-01777,Fire,28814.61,Settled,20,Low,Fast-Track Approval — Routine Processing,25,1,38,14,1,DIVERGENT,0
+CLM-2024-00101,CUST-01778,Auto,1350.9,Approved,8,Low,Fast-Track Approval — Routine Processing,3,0,43,0,0,STRONG,0
+CLM-2024-01462,CUST-01782,Fire,155046.07,Approved,35,Low,Fast-Track Approval — Routine Processing,37,21,55,31,2,DIVERGENT,0
+CLM-2024-01480,CUST-01783,Fire,8806.96,Settled,7,Low,Fast-Track Approval — Routine Processing,3,0,37,0,0,STRONG,0
+CLM-2024-00027,CUST-01798,Auto,27603.09,Under Investigation,61,Medium,Standard Adjuster Review — Verify Supporting Documentation,85,32,43,34,2,DIVERGENT,1
+CLM-2024-00753,CUST-01800,Auto,2702.82,Settled,7,Low,Fast-Track Approval — Routine Processing,1,0,44,0,0,STRONG,0
+CLM-2024-00974,CUST-01800,Auto,4741.03,Settled,7,Low,Fast-Track Approval — Routine Processing,1,0,43,0,0,STRONG,0
+CLM-2024-00260,CUST-01800,Fire,10452.56,Under Investigation,11,Low,Fast-Track Approval — Routine Processing,2,0,43,34,2,STRONG,0
+CLM-2024-01477,CUST-01801,Auto,26679.33,Open,33,Low,Fast-Track Approval — Routine Processing,39,19,45,17,1,DIVERGENT,0
+CLM-2024-01294,CUST-01801,Fire,4623.59,Settled,9,Low,Fast-Track Approval — Routine Processing,2,0,45,14,1,STRONG,0
+CLM-2024-00991,CUST-01809,Fire,46240.03,Settled,9,Low,Fast-Track Approval — Routine Processing,3,2,39,14,1,STRONG,0
+CLM-2024-00096,CUST-01811,Auto,2505.12,Approved,10,Low,Fast-Track Approval — Routine Processing,6,0,45,0,0,STRONG,0
+CLM-2024-01204,CUST-01814,Auto,91515.58,Under Investigation,72,High,Priority Manual Investigation — Consider SIU Referral,88,67,49,37,2,DIVERGENT,1
+CLM-2024-01313,CUST-01822,Fire,203053.15,Under Investigation,56,Medium,Standard Adjuster Review — Verify Supporting Documentation,70,32,54,51,3,DIVERGENT,1
+CLM-2024-01196,CUST-01826,Auto,1062.1,Settled,7,Low,Fast-Track Approval — Routine Processing,2,0,42,0,0,STRONG,0
+CLM-2024-00514,CUST-01828,Fire,89095.15,Settled,15,Low,Fast-Track Approval — Routine Processing,8,10,45,14,1,STRONG,0
+CLM-2024-00657,CUST-01852,Auto,1656.36,Approved,10,Low,Fast-Track Approval — Routine Processing,6,0,43,0,0,STRONG,0
+CLM-2024-01279,CUST-01853,Fire,68153.02,Approved,28,Low,Fast-Track Approval — Routine Processing,28,5,51,51,4,DIVERGENT,0
+CLM-2024-01099,CUST-01863,Fire,40358.76,Settled,11,Low,Fast-Track Approval — Routine Processing,5,5,39,14,1,STRONG,0
+CLM-2024-01362,CUST-01867,Fire,37060.36,Settled,10,Low,Fast-Track Approval — Routine Processing,4,1,44,14,1,STRONG,0
+CLM-2024-00878,CUST-01872,Fire,48124.62,Settled,15,Low,Fast-Track Approval — Routine Processing,12,6,39,14,1,STRONG,0
+CLM-2024-01034,CUST-01882,Auto,2071.57,Settled,10,Low,Fast-Track Approval — Routine Processing,8,0,42,0,0,STRONG,0
+CLM-2024-00465,CUST-01886,Auto,16464.17,Approved,43,Medium,Standard Adjuster Review — Verify Supporting Documentation,58,29,40,14,1,DIVERGENT,0
+CLM-2024-00544,CUST-01887,Fire,10350.51,Approved,9,Low,Fast-Track Approval — Routine Processing,3,0,42,14,1,STRONG,0
+CLM-2024-01240,CUST-01887,Fire,327268.27,Settled,50,Medium,Standard Adjuster Review — Verify Supporting Documentation,61,32,54,31,2,DIVERGENT,0
+CLM-2024-00583,CUST-01897,Auto,94245.95,Approved,53,Medium,Standard Adjuster Review — Verify Supporting Documentation,69,32,48,31,2,DIVERGENT,0
+CLM-2024-00807,CUST-01920,Auto,2009.17,Settled,8,Low,Fast-Track Approval — Routine Processing,5,0,40,0,0,STRONG,0
+CLM-2024-01045,CUST-01929,Auto,15336.9,Under Investigation,56,Medium,Standard Adjuster Review — Verify Supporting Documentation,81,30,44,20,1,DIVERGENT,1
+CLM-2024-01048,CUST-01931,Auto,17882.13,Settled,56,Medium,Standard Adjuster Review — Verify Supporting Documentation,84,32,39,0,0,DIVERGENT,1
+CLM-2024-00723,CUST-01932,Fire,9830.95,Settled,10,Low,Fast-Track Approval — Routine Processing,4,0,45,14,1,STRONG,0
+CLM-2024-01254,CUST-01935,Fire,33694.08,Approved,13,Low,Fast-Track Approval — Routine Processing,4,1,48,34,3,STRONG,0
+CLM-2024-00283,CUST-01937,Auto,2345.68,Approved,9,Low,Fast-Track Approval — Routine Processing,5,0,39,0,0,STRONG,0
+CLM-2024-01071,CUST-01940,Auto,10902.65,Approved,11,Low,Fast-Track Approval — Routine Processing,10,0,40,0,0,STRONG,0
+CLM-2024-00327,CUST-01940,Fire,26091.26,Settled,30,Low,Fast-Track Approval — Routine Processing,40,8,40,14,1,DIVERGENT,0
+CLM-2024-00989,CUST-01955,Auto,12881.14,Settled,18,Low,Fast-Track Approval — Routine Processing,20,5,46,0,0,STRONG,0
+CLM-2024-01077,CUST-01985,Fire,7335.68,Settled,9,Low,Fast-Track Approval — Routine Processing,3,0,40,14,1,STRONG,0
+CLM-2024-00269,CUST-01993,Auto,25299.32,Settled,30,Low,Fast-Track Approval — Routine Processing,34,19,44,17,1,DIVERGENT,0
+CLM-2024-01380,CUST-02049,Auto,12154.33,Approved,13,Low,Fast-Track Approval — Routine Processing,14,0,39,0,0,STRONG,0
+CLM-2024-00220,CUST-02052,Fire,78908.43,Under Investigation,13,Low,Fast-Track Approval — Routine Processing,7,2,41,34,2,STRONG,0
+CLM-2024-00333,CUST-02052,Fire,7389.08,Open,10,Low,Fast-Track Approval — Routine Processing,5,0,38,14,1,STRONG,0
+CLM-2024-01075,CUST-02061,Auto,24661.19,Under Investigation,69,Medium,Standard Adjuster Review — Verify Supporting Documentation,95,53,43,20,1,DIVERGENT,1
+CLM-2024-01363,CUST-02068,Fire,17254.35,Settled,19,Low,Fast-Track Approval — Routine Processing,18,5,46,14,1,STRONG,0
+CLM-2024-00385,CUST-02095,Auto,2230.08,Settled,8,Low,Fast-Track Approval — Routine Processing,2,0,44,0,0,STRONG,0
+CLM-2024-01089,CUST-02096,Caravan,3874.78,Settled,14,Low,Fast-Track Approval — Routine Processing,7,0,45,31,2,STRONG,0
+CLM-2024-00248,CUST-02111,Auto,5268.2,Settled,7,Low,Fast-Track Approval — Routine Processing,2,0,39,0,0,STRONG,0
+CLM-2024-00853,CUST-02117,Auto,1188.09,Settled,8,Low,Fast-Track Approval — Routine Processing,2,0,47,0,0,STRONG,0
+CLM-2024-01425,CUST-02142,Fire,6217.32,Settled,12,Low,Fast-Track Approval — Routine Processing,8,0,43,14,1,STRONG,0
+CLM-2024-01397,CUST-02143,Fire,56582.37,Open,14,Low,Fast-Track Approval — Routine Processing,10,13,38,0,0,STRONG,0
+CLM-2024-00495,CUST-02149,Fire,15733.27,Settled,18,Low,Fast-Track Approval — Routine Processing,18,5,43,14,1,STRONG,0
+CLM-2024-00015,CUST-02153,Caravan,13125.0,Approved,40,Medium,Standard Adjuster Review — Verify Supporting Documentation,47,20,52,31,2,DIVERGENT,0
+CLM-2024-01107,CUST-02160,Auto,10503.55,Settled,9,Low,Fast-Track Approval — Routine Processing,7,0,38,0,0,STRONG,0
+CLM-2024-00117,CUST-02169,Auto,15336.97,Settled,33,Low,Fast-Track Approval — Routine Processing,45,13,48,0,0,DIVERGENT,0
+CLM-2024-00924,CUST-02187,Auto,12496.35,Settled,10,Low,Fast-Track Approval — Routine Processing,8,0,38,0,0,STRONG,0
+CLM-2024-00468,CUST-02193,Auto,27968.95,Open,64,Medium,Standard Adjuster Review — Verify Supporting Documentation,93,40,48,0,0,DIVERGENT,1
+CLM-2024-01192,CUST-02194,Fire,37130.88,Settled,10,Low,Fast-Track Approval — Routine Processing,5,1,39,14,1,STRONG,0
+CLM-2024-00480,CUST-02201,Auto,4842.63,Approved,8,Low,Fast-Track Approval — Routine Processing,3,0,41,0,0,STRONG,0
+CLM-2024-00408,CUST-02202,Auto,1956.59,Settled,8,Low,Fast-Track Approval — Routine Processing,4,0,43,0,0,STRONG,0
+CLM-2024-00566,CUST-02217,Auto,1855.31,Approved,11,Low,Fast-Track Approval — Routine Processing,7,0,48,0,0,STRONG,0
+CLM-2024-00536,CUST-02221,Fire,40100.63,Approved,10,Low,Fast-Track Approval — Routine Processing,5,0,42,14,1,STRONG,0
+CLM-2024-00231,CUST-02226,Fire,5325.34,Approved,9,Low,Fast-Track Approval — Routine Processing,2,0,44,14,1,STRONG,0
+CLM-2024-01243,CUST-02255,Fire,67524.18,Open,13,Low,Fast-Track Approval — Routine Processing,4,1,51,31,2,STRONG,0
+CLM-2024-00600,CUST-02258,Auto,1943.36,Settled,7,Low,Fast-Track Approval — Routine Processing,2,0,41,0,0,STRONG,0
+CLM-2024-01293,CUST-02259,Auto,3861.54,Settled,8,Low,Fast-Track Approval — Routine Processing,4,0,41,0,0,STRONG,0
+CLM-2024-00961,CUST-02272,Auto,13381.31,Settled,12,Low,Fast-Track Approval — Routine Processing,12,0,38,0,0,STRONG,0
+CLM-2024-00280,CUST-02278,Fire,144385.83,Under Investigation,47,Medium,Standard Adjuster Review — Verify Supporting Documentation,63,15,47,51,3,DIVERGENT,1
+CLM-2024-00025,CUST-02279,Auto,59568.79,Under Investigation,83,High,Priority Manual Investigation — Consider SIU Referral,98,100,49,20,1,STRONG,1
+CLM-2024-01014,CUST-02280,Fire,9924.58,Open,11,Low,Fast-Track Approval — Routine Processing,6,0,40,14,1,STRONG,0
+CLM-2024-00099,CUST-02290,Auto,4059.66,Settled,9,Low,Fast-Track Approval — Routine Processing,3,0,45,0,0,STRONG,0
+CLM-2024-01285,CUST-02293,Fire,25572.82,Open,47,Medium,Standard Adjuster Review — Verify Supporting Documentation,70,15,48,14,1,DIVERGENT,1
+CLM-2024-00948,CUST-02309,Auto,25191.01,Settled,41,Medium,Standard Adjuster Review — Verify Supporting Documentation,55,20,41,17,1,DIVERGENT,1
+CLM-2024-00854,CUST-02312,Auto,4406.9,Settled,8,Low,Fast-Track Approval — Routine Processing,2,0,42,0,0,STRONG,0
+CLM-2024-01286,CUST-02317,Fire,95265.75,Settled,22,Low,Fast-Track Approval — Routine Processing,21,5,51,31,2,DIVERGENT,0
+CLM-2024-00051,CUST-02325,Fire,43711.24,Settled,10,Low,Fast-Track Approval — Routine Processing,5,1,38,14,1,STRONG,0
+CLM-2024-01488,CUST-02343,Fire,41372.09,Settled,9,Low,Fast-Track Approval — Routine Processing,3,0,41,14,1,STRONG,0
+CLM-2024-01011,CUST-02345,Auto,2902.16,Settled,8,Low,Fast-Track Approval — Routine Processing,2,0,43,0,0,STRONG,0
+CLM-2024-01078,CUST-02353,Fire,95030.93,Settled,12,Low,Fast-Track Approval — Routine Processing,5,1,41,31,2,STRONG,0
+CLM-2024-01437,CUST-02379,Fire,15339.27,Open,21,Low,Fast-Track Approval — Routine Processing,23,6,44,14,1,DIVERGENT,0
+CLM-2024-01094,CUST-02386,Auto,8232.9,Settled,8,Low,Fast-Track Approval — Routine Processing,5,0,38,0,0,STRONG,0
+CLM-2024-01278,CUST-02388,Fire,2879.03,Settled,8,Low,Fast-Track Approval — Routine Processing,3,0,46,0,0,STRONG,0
+CLM-2024-00607,CUST-02390,Auto,23093.59,Open,51,Medium,Standard Adjuster Review — Verify Supporting Documentation,75,32,38,0,0,DIVERGENT,1
+CLM-2024-01324,CUST-02390,Auto,8175.88,Settled,8,Low,Fast-Track Approval — Routine Processing,4,0,37,0,0,STRONG,0
+CLM-2024-00162,CUST-02400,Fire,11248.32,Settled,9,Low,Fast-Track Approval — Routine Processing,4,0,39,14,1,STRONG,0
+CLM-2024-00102,CUST-02402,Auto,2767.95,Approved,8,Low,Fast-Track Approval — Routine Processing,2,0,43,0,0,STRONG,0
+CLM-2024-00675,CUST-02410,Fire,93750.0,Approved,40,Medium,Standard Adjuster Review — Verify Supporting Documentation,39,32,52,51,4,STRONG,0
+CLM-2024-01144,CUST-02418,Auto,94853.1,Settled,48,Medium,Standard Adjuster Review — Verify Supporting Documentation,58,32,49,31,2,DIVERGENT,0
+CLM-2024-01394,CUST-02418,Auto,15189.19,Settled,40,Medium,Standard Adjuster Review — Verify Supporting Documentation,59,19,39,0,0,DIVERGENT,0
+CLM-2024-01346,CUST-02421,Fire,59872.93,Settled,10,Low,Fast-Track Approval — Routine Processing,5,1,42,14,1,STRONG,0
+CLM-2024-01047,CUST-02422,Auto,4679.77,Settled,7,Low,Fast-Track Approval — Routine Processing,2,0,39,0,0,STRONG,0
+CLM-2024-01174,CUST-02422,Fire,201444.62,Under Investigation,62,Medium,Standard Adjuster Review — Verify Supporting Documentation,81,37,49,51,3,DIVERGENT,1
+CLM-2024-01197,CUST-02424,Boat,23180.92,Open,48,Medium,Standard Adjuster Review — Verify Supporting Documentation,70,20,42,14,1,DIVERGENT,0
+CLM-2024-00119,CUST-02436,Fire,77170.74,Approved,17,Low,Fast-Track Approval — Routine Processing,12,5,51,23,2,STRONG,0
+CLM-2024-00357,CUST-02438,Auto,65390.25,Under Investigation,63,Medium,Standard Adjuster Review — Verify Supporting Documentation,82,40,49,51,3,DIVERGENT,1
+CLM-2024-00032,CUST-02438,Fire,86973.69,Under Investigation,14,Low,Fast-Track Approval — Routine Processing,2,1,48,51,3,STRONG,0
+CLM-2024-00499,CUST-02442,Auto,5526.28,Settled,7,Low,Fast-Track Approval — Routine Processing,2,0,39,0,0,STRONG,0
+CLM-2024-00926,CUST-02443,Auto,2194.89,Approved,8,Low,Fast-Track Approval — Routine Processing,2,0,45,0,0,STRONG,0
+CLM-2024-00462,CUST-02448,Auto,3762.09,Settled,7,Low,Fast-Track Approval — Routine Processing,2,0,40,0,0,STRONG,0
+CLM-2024-00690,CUST-02449,Auto,9232.1,Settled,10,Low,Fast-Track Approval — Routine Processing,8,0,38,0,0,STRONG,0
+CLM-2024-00028,CUST-02450,Auto,2016.73,Settled,9,Low,Fast-Track Approval — Routine Processing,5,0,41,0,0,STRONG,0
+CLM-2024-01283,CUST-02463,Auto,3674.09,Settled,8,Low,Fast-Track Approval — Routine Processing,4,0,38,0,0,STRONG,0
+CLM-2024-00704,CUST-02476,Auto,8238.35,Approved,8,Low,Fast-Track Approval — Routine Processing,4,0,40,0,0,STRONG,0
+CLM-2024-00569,CUST-02479,Fire,15373.76,Settled,25,Low,Fast-Track Approval — Routine Processing,29,11,39,14,1,DIVERGENT,0
+CLM-2024-00538,CUST-02482,Fire,6961.21,Approved,9,Low,Fast-Track Approval — Routine Processing,3,0,39,14,1,STRONG,0
+CLM-2024-00142,CUST-02486,Auto,2393.35,Approved,8,Low,Fast-Track Approval — Routine Processing,3,0,41,0,0,STRONG,0
+CLM-2024-00886,CUST-02492,Fire,18609.17,Settled,19,Low,Fast-Track Approval — Routine Processing,19,9,39,14,1,STRONG,0
+CLM-2024-00374,CUST-02503,Auto,3884.06,Approved,7,Low,Fast-Track Approval — Routine Processing,2,0,41,0,0,STRONG,0
+CLM-2024-00234,CUST-02506,Fire,38225.25,Settled,11,Low,Fast-Track Approval — Routine Processing,6,1,40,14,1,STRONG,0
+CLM-2024-00779,CUST-02509,Auto,10917.52,Approved,8,Low,Fast-Track Approval — Routine Processing,4,0,38,0,0,STRONG,0
+CLM-2024-00998,CUST-02517,Fire,40404.1,Open,10,Low,Fast-Track Approval — Routine Processing,5,1,41,14,1,STRONG,0
+CLM-2024-00814,CUST-02525,Fire,3201.13,Settled,13,Low,Fast-Track Approval — Routine Processing,12,1,48,0,0,STRONG,0
+CLM-2024-00997,CUST-02525,Fire,49951.28,Approved,10,Low,Fast-Track Approval — Routine Processing,3,0,45,14,1,STRONG,0
+CLM-2024-00437,CUST-02530,Fire,159476.02,Open,44,Medium,Standard Adjuster Review — Verify Supporting Documentation,56,24,46,31,2,DIVERGENT,0
+CLM-2024-00486,CUST-02531,Fire,10678.94,Settled,10,Low,Fast-Track Approval — Routine Processing,4,0,42,14,1,STRONG,0
+CLM-2024-00477,CUST-02539,Fire,74228.92,Approved,33,Low,Fast-Track Approval — Routine Processing,36,15,44,43,3,DIVERGENT,0
+CLM-2024-01330,CUST-02562,Fire,11299.64,Settled,8,Low,Fast-Track Approval — Routine Processing,5,0,39,0,0,STRONG,0
+CLM-2024-00287,CUST-02565,Auto,2796.68,Settled,9,Low,Fast-Track Approval — Routine Processing,6,0,39,0,0,STRONG,0
+CLM-2024-00716,CUST-02568,Auto,9600.32,Settled,10,Low,Fast-Track Approval — Routine Processing,9,0,38,0,0,STRONG,0
+CLM-2024-01137,CUST-02569,Auto,2326.05,Settled,7,Low,Fast-Track Approval — Routine Processing,2,0,40,0,0,STRONG,0
+CLM-2024-00865,CUST-02574,Auto,6448.76,Settled,10,Low,Fast-Track Approval — Routine Processing,7,0,38,0,0,STRONG,0
+CLM-2024-01090,CUST-02584,Auto,16262.23,Open,63,Medium,Standard Adjuster Review — Verify Supporting Documentation,91,45,43,0,0,DIVERGENT,1
+CLM-2024-01026,CUST-02587,Fire,12870.16,Settled,10,Low,Fast-Track Approval — Routine Processing,3,0,43,14,1,STRONG,0
+CLM-2024-00240,CUST-02600,Fire,72617.38,Settled,13,Low,Fast-Track Approval — Routine Processing,5,1,46,31,2,STRONG,0
+CLM-2024-00552,CUST-02603,Auto,6719.6,Settled,13,Low,Fast-Track Approval — Routine Processing,12,0,49,0,0,STRONG,0
+CLM-2024-00629,CUST-02609,Auto,2487.27,Settled,7,Low,Fast-Track Approval — Routine Processing,2,0,43,0,0,STRONG,0
+CLM-2024-00222,CUST-02616,Fire,30963.27,Under Investigation,23,Low,Fast-Track Approval — Routine Processing,23,13,39,20,1,STRONG,0
+CLM-2024-00382,CUST-02629,Fire,4889.14,Open,10,Low,Fast-Track Approval — Routine Processing,4,0,44,14,1,STRONG,0
+CLM-2024-00284,CUST-02634,Caravan,9017.02,Under Investigation,54,Medium,Standard Adjuster Review — Verify Supporting Documentation,71,21,53,51,3,DIVERGENT,1
+CLM-2024-00537,CUST-02640,Auto,61058.12,Under Investigation,70,High,Priority Manual Investigation — Consider SIU Referral,90,54,44,51,3,DIVERGENT,1
+CLM-2024-01321,CUST-02641,Auto,1521.62,Settled,8,Low,Fast-Track Approval — Routine Processing,2,0,47,0,0,STRONG,0
+CLM-2024-00344,CUST-02645,Auto,2489.83,Under Investigation,13,Low,Fast-Track Approval — Routine Processing,8,0,48,20,1,STRONG,0
+CLM-2024-00244,CUST-02645,Fire,267147.12,Under Investigation,61,Medium,Standard Adjuster Review — Verify Supporting Documentation,79,32,52,51,3,DIVERGENT,1
+CLM-2024-01440,CUST-02651,Fire,204371.32,Under Investigation,82,High,Priority Manual Investigation — Consider SIU Referral,96,89,53,34,2,STRONG,1
+CLM-2024-01384,CUST-02665,Auto,1425.15,Settled,8,Low,Fast-Track Approval — Routine Processing,2,0,42,0,0,STRONG,0
+CLM-2024-00033,CUST-02665,Caravan,8478.87,Open,44,Medium,Standard Adjuster Review — Verify Supporting Documentation,59,20,46,31,2,DIVERGENT,0
+CLM-2024-00362,CUST-02667,Fire,2555.82,Approved,8,Low,Fast-Track Approval — Routine Processing,1,0,45,0,0,STRONG,0
+CLM-2024-01322,CUST-02684,Auto,6046.08,Settled,7,Low,Fast-Track Approval — Routine Processing,2,0,40,0,0,STRONG,0
+CLM-2024-01136,CUST-02684,Caravan,7069.58,Under Investigation,56,Medium,Standard Adjuster Review — Verify Supporting Documentation,77,23,48,51,3,DIVERGENT,1
+CLM-2024-01427,CUST-02697,Fire,7743.93,Under Investigation,13,Low,Fast-Track Approval — Routine Processing,7,0,39,34,2,STRONG,0
+CLM-2024-00412,CUST-02707,Auto,2479.18,Settled,8,Low,Fast-Track Approval — Routine Processing,5,0,39,0,0,STRONG,0
+CLM-2024-01238,CUST-02710,Fire,12983.36,Approved,9,Low,Fast-Track Approval — Routine Processing,4,0,40,14,1,STRONG,0
+CLM-2024-01327,CUST-02724,Auto,5092.09,Settled,7,Low,Fast-Track Approval — Routine Processing,2,0,37,0,0,STRONG,0
+CLM-2024-00646,CUST-02731,Auto,51244.68,Under Investigation,66,Medium,Standard Adjuster Review — Verify Supporting Documentation,88,45,43,46,3,DIVERGENT,1
+CLM-2024-01138,CUST-02731,Auto,2004.64,Settled,7,Low,Fast-Track Approval — Routine Processing,2,0,40,0,0,STRONG,0
+CLM-2024-00066,CUST-02731,Fire,12310.41,Settled,10,Low,Fast-Track Approval — Routine Processing,4,0,46,14,1,STRONG,0
+CLM-2024-00896,CUST-02744,Auto,6302.98,Open,10,Low,Fast-Track Approval — Routine Processing,6,0,44,0,0,STRONG,0
+CLM-2024-00112,CUST-02760,Auto,34354.68,Settled,25,Low,Fast-Track Approval — Routine Processing,27,15,39,17,1,STRONG,0
+CLM-2024-00115,CUST-02764,Fire,128232.9,Settled,17,Low,Fast-Track Approval — Routine Processing,13,9,45,14,1,STRONG,0
+CLM-2024-00263,CUST-02768,Auto,49799.67,Settled,58,Medium,Standard Adjuster Review — Verify Supporting Documentation,79,36,44,31,2,DIVERGENT,0
+CLM-2024-00410,CUST-02780,Fire,19046.17,Settled,21,Low,Fast-Track Approval — Routine Processing,23,5,42,14,1,DIVERGENT,0
+CLM-2024-00624,CUST-02791,Auto,28565.05,Under Investigation,35,Low,Fast-Track Approval — Routine Processing,40,19,44,37,2,DIVERGENT,0
+CLM-2024-00457,CUST-02798,Boat,2192.47,Approved,7,Low,Fast-Track Approval — Routine Processing,3,0,38,0,0,STRONG,0
+CLM-2024-00061,CUST-02803,Auto,42400.28,Under Investigation,56,Medium,Standard Adjuster Review — Verify Supporting Documentation,82,21,42,37,2,DIVERGENT,1
+CLM-2024-00157,CUST-02808,Fire,150000.0,Settled,30,Low,Fast-Track Approval — Routine Processing,21,21,57,51,4,STRONG,0
+CLM-2024-01412,CUST-02808,Fire,6627.76,Open,10,Low,Fast-Track Approval — Routine Processing,2,0,49,14,1,STRONG,0
+CLM-2024-00267,CUST-02819,Fire,24299.17,Approved,32,Low,Fast-Track Approval — Routine Processing,44,9,43,14,1,DIVERGENT,0
+CLM-2024-00337,CUST-02819,Fire,15909.03,Settled,26,Low,Fast-Track Approval — Routine Processing,34,5,42,14,1,DIVERGENT,0
+CLM-2024-00804,CUST-02824,Fire,72334.31,Settled,11,Low,Fast-Track Approval — Routine Processing,6,1,43,14,1,STRONG,0
+CLM-2024-01122,CUST-02824,Fire,46421.56,Open,10,Low,Fast-Track Approval — Routine Processing,4,0,41,14,1,STRONG,0
+CLM-2024-01284,CUST-02832,Auto,6872.68,Settled,8,Low,Fast-Track Approval — Routine Processing,4,0,37,0,0,STRONG,0
+CLM-2024-01435,CUST-02861,Fire,114062.87,Open,54,Medium,Standard Adjuster Review — Verify Supporting Documentation,69,31,50,43,3,DIVERGENT,0
+CLM-2024-01087,CUST-02866,Fire,14692.02,Approved,19,Low,Fast-Track Approval — Routine Processing,22,1,40,14,1,DIVERGENT,0
+CLM-2024-01454,CUST-02875,Fire,73450.91,Approved,11,Low,Fast-Track Approval — Routine Processing,3,1,45,23,2,STRONG,0
+CLM-2024-00152,CUST-02876,Fire,150769.34,Approved,28,Low,Fast-Track Approval — Routine Processing,28,15,47,31,2,STRONG,0
+CLM-2024-00837,CUST-02896,Fire,206316.58,Approved,48,Medium,Standard Adjuster Review — Verify Supporting Documentation,56,32,54,40,3,DIVERGENT,0
+CLM-2024-00523,CUST-02897,Auto,64988.39,Open,73,High,Priority Manual Investigation — Consider SIU Referral,91,77,48,14,1,STRONG,0
+CLM-2024-01423,CUST-02926,Auto,5498.08,Settled,8,Low,Fast-Track Approval — Routine Processing,2,0,44,0,0,STRONG,0
+CLM-2024-01233,CUST-02930,Fire,109340.95,Approved,56,Medium,Standard Adjuster Review — Verify Supporting Documentation,72,41,47,26,2,DIVERGENT,0
+CLM-2024-00188,CUST-02933,Auto,1627.94,Settled,8,Low,Fast-Track Approval — Routine Processing,3,0,41,0,0,STRONG,0
+CLM-2024-01232,CUST-02938,Auto,835.03,Approved,8,Low,Fast-Track Approval — Routine Processing,2,0,49,0,0,STRONG,0
+CLM-2024-00708,CUST-02947,Fire,25470.2,Under Investigation,25,Low,Fast-Track Approval — Routine Processing,27,8,39,34,2,DIVERGENT,0
+CLM-2024-00347,CUST-02952,Fire,62407.58,Settled,12,Low,Fast-Track Approval — Routine Processing,8,1,42,14,1,STRONG,0
+CLM-2024-00674,CUST-02954,Auto,2191.66,Settled,8,Low,Fast-Track Approval — Routine Processing,3,0,44,0,0,STRONG,0
+CLM-2024-01215,CUST-02956,Fire,99175.58,Settled,12,Low,Fast-Track Approval — Routine Processing,4,1,44,31,2,STRONG,0
+CLM-2024-00450,CUST-02967,Fire,5700.19,Settled,9,Low,Fast-Track Approval — Routine Processing,6,0,40,0,0,STRONG,0
+CLM-2024-00891,CUST-02969,Auto,1269.24,Approved,11,Low,Fast-Track Approval — Routine Processing,7,0,47,0,0,STRONG,0
+CLM-2024-00313,CUST-02976,Auto,40938.74,Settled,63,Medium,Standard Adjuster Review — Verify Supporting Documentation,87,43,49,14,1,DIVERGENT,0
+CLM-2024-01128,CUST-02985,Fire,30418.54,Settled,14,Low,Fast-Track Approval — Routine Processing,13,1,43,14,1,STRONG,0
+CLM-2024-00511,CUST-02988,Auto,21770.15,Approved,48,Medium,Standard Adjuster Review — Verify Supporting Documentation,68,32,39,0,0,DIVERGENT,0
+CLM-2024-00780,CUST-02988,Fire,49660.93,Settled,10,Low,Fast-Track Approval — Routine Processing,5,2,38,14,1,STRONG,0
+CLM-2024-00668,CUST-02990,Auto,12681.15,Settled,9,Low,Fast-Track Approval — Routine Processing,7,0,38,0,0,STRONG,0
+CLM-2024-00021,CUST-02999,Auto,19570.39,Settled,45,Medium,Standard Adjuster Review — Verify Supporting Documentation,65,30,38,0,0,DIVERGENT,0
+CLM-2024-01016,CUST-03006,Fire,70373.19,Open,14,Low,Fast-Track Approval — Routine Processing,11,2,42,14,1,STRONG,0
+CLM-2024-00348,CUST-03008,Auto,2683.02,Settled,10,Low,Fast-Track Approval — Routine Processing,6,0,44,0,0,STRONG,0
+CLM-2024-01133,CUST-03027,Fire,19504.56,Settled,52,Medium,Standard Adjuster Review — Verify Supporting Documentation,76,27,39,14,1,DIVERGENT,1
+CLM-2024-00762,CUST-03029,Auto,3464.7,Settled,10,Low,Fast-Track Approval — Routine Processing,5,0,47,0,0,STRONG,0
+CLM-2024-00334,CUST-03029,Fire,6121.74,Settled,9,Low,Fast-Track Approval — Routine Processing,3,0,48,0,0,STRONG,0
+CLM-2024-01473,CUST-03037,Fire,45768.9,Approved,12,Low,Fast-Track Approval — Routine Processing,9,1,38,14,1,STRONG,0
+CLM-2024-01179,CUST-03039,Fire,20121.3,Settled,38,Low,Fast-Track Approval — Routine Processing,53,15,40,14,1,DIVERGENT,0
+CLM-2024-00309,CUST-03044,Auto,3383.64,Settled,9,Low,Fast-Track Approval — Routine Processing,6,0,39,0,0,STRONG,0
+CLM-2024-00548,CUST-03048,Auto,2041.97,Settled,7,Low,Fast-Track Approval — Routine Processing,2,0,40,0,0,STRONG,0
+CLM-2024-00330,CUST-03051,Fire,72977.03,Settled,15,Low,Fast-Track Approval — Routine Processing,8,2,46,31,2,STRONG,0
+CLM-2024-00305,CUST-03054,Fire,166009.37,Approved,40,Medium,Standard Adjuster Review — Verify Supporting Documentation,45,24,52,31,2,DIVERGENT,0
+CLM-2024-01221,CUST-03057,Auto,24782.41,Settled,58,Medium,Standard Adjuster Review — Verify Supporting Documentation,84,32,41,17,1,DIVERGENT,0
+CLM-2024-01257,CUST-03059,Auto,1906.0,Approved,7,Low,Fast-Track Approval — Routine Processing,2,0,38,0,0,STRONG,0
+CLM-2024-01225,CUST-03071,Fire,20204.78,Approved,32,Low,Fast-Track Approval — Routine Processing,42,15,37,14,1,DIVERGENT,0
+CLM-2024-00812,CUST-03079,Auto,55506.76,Under Investigation,83,High,Priority Manual Investigation — Consider SIU Referral,97,100,51,20,1,STRONG,1
+CLM-2024-01132,CUST-03081,Fire,11207.84,Settled,10,Low,Fast-Track Approval — Routine Processing,2,0,46,14,1,STRONG,0
+CLM-2024-00626,CUST-03089,Caravan,8305.95,Approved,53,Medium,Standard Adjuster Review — Verify Supporting Documentation,73,21,56,31,2,DIVERGENT,0
+CLM-2024-00670,CUST-03089,Caravan,2341.66,Approved,15,Low,Fast-Track Approval — Routine Processing,11,0,52,14,1,STRONG,0
+CLM-2024-01001,CUST-03094,Auto,34248.79,Settled,25,Low,Fast-Track Approval — Routine Processing,28,15,39,17,1,STRONG,0
+CLM-2024-00460,CUST-03108,Auto,1197.35,Settled,7,Low,Fast-Track Approval — Routine Processing,3,0,40,0,0,STRONG,0
+CLM-2024-01148,CUST-03108,Fire,14235.06,Settled,13,Low,Fast-Track Approval — Routine Processing,12,0,37,14,1,STRONG,0
+CLM-2024-00215,CUST-03111,Fire,161434.13,Settled,26,Low,Fast-Track Approval — Routine Processing,23,15,47,31,2,STRONG,0
+CLM-2024-01465,CUST-03112,Auto,9900.11,Open,10,Low,Fast-Track Approval — Routine Processing,8,0,41,0,0,STRONG,0
+CLM-2024-00943,CUST-03117,Auto,2405.53,Settled,7,Low,Fast-Track Approval — Routine Processing,2,0,42,0,0,STRONG,0
+CLM-2024-01009,CUST-03126,Auto,2089.95,Settled,8,Low,Fast-Track Approval — Routine Processing,3,0,41,0,0,STRONG,0
+CLM-2024-01116,CUST-03130,Auto,22670.88,Settled,53,Medium,Standard Adjuster Review — Verify Supporting Documentation,78,32,40,0,0,DIVERGENT,0
+CLM-2024-01376,CUST-03148,Fire,7994.67,Approved,14,Low,Fast-Track Approval — Routine Processing,13,0,43,14,1,STRONG,0
+CLM-2024-00039,CUST-03158,Fire,23431.12,Settled,27,Low,Fast-Track Approval — Routine Processing,37,2,43,14,1,DIVERGENT,0
+CLM-2024-00109,CUST-03165,Fire,6943.93,Settled,12,Low,Fast-Track Approval — Routine Processing,8,0,45,14,1,STRONG,0
+CLM-2024-01430,CUST-03165,Fire,16054.87,Settled,26,Low,Fast-Track Approval — Routine Processing,30,9,44,14,1,DIVERGENT,0
+CLM-2024-01169,CUST-03178,Fire,18501.26,Settled,26,Low,Fast-Track Approval — Routine Processing,32,6,49,14,1,DIVERGENT,0
+CLM-2024-00815,CUST-03183,Auto,1249.29,Settled,9,Low,Fast-Track Approval — Routine Processing,6,0,44,0,0,STRONG,0
+CLM-2024-00194,CUST-03184,Fire,224152.69,Under Investigation,86,High,Priority Manual Investigation — Consider SIU Referral,95,98,62,51,4,STRONG,1
+CLM-2024-00671,CUST-03187,Fire,87204.22,Settled,11,Low,Fast-Track Approval — Routine Processing,2,1,46,31,2,STRONG,0
+CLM-2024-01265,CUST-03196,Fire,8183.15,Settled,13,Low,Fast-Track Approval — Routine Processing,11,0,39,14,1,STRONG,0
+CLM-2024-00909,CUST-03201,Fire,58704.99,Approved,11,Low,Fast-Track Approval — Routine Processing,3,1,49,14,1,STRONG,0
+CLM-2024-01162,CUST-03204,Fire,37913.77,Settled,12,Low,Fast-Track Approval — Routine Processing,6,5,50,0,0,STRONG,0
+CLM-2024-00163,CUST-03225,Boat,99124.69,Under Investigation,79,High,Priority Manual Investigation — Consider SIU Referral,95,77,57,34,2,DIVERGENT,1
+CLM-2024-00658,CUST-03225,Boat,10985.78,Settled,11,Low,Fast-Track Approval — Routine Processing,7,0,39,14,1,STRONG,0
+CLM-2024-01325,CUST-03227,Fire,33756.87,Settled,13,Low,Fast-Track Approval — Routine Processing,8,1,44,14,1,STRONG,0
+CLM-2024-00579,CUST-03236,Caravan,2341.86,Settled,14,Low,Fast-Track Approval — Routine Processing,11,1,45,14,1,STRONG,0
+CLM-2024-00746,CUST-03236,Caravan,6628.27,Open,30,Low,Fast-Track Approval — Routine Processing,36,8,46,31,2,DIVERGENT,0
+CLM-2024-01387,CUST-03238,Auto,46224.03,Open,36,Low,Fast-Track Approval — Routine Processing,45,21,42,17,1,DIVERGENT,0
+CLM-2024-00867,CUST-03241,Auto,28515.79,Settled,41,Medium,Standard Adjuster Review — Verify Supporting Documentation,57,20,38,17,1,DIVERGENT,0
+CLM-2024-00448,CUST-03262,Fire,61611.22,Settled,12,Low,Fast-Track Approval — Routine Processing,6,2,43,23,2,STRONG,0
+CLM-2024-01237,CUST-03265,Auto,4257.49,Approved,7,Low,Fast-Track Approval — Routine Processing,2,0,40,0,0,STRONG,0
+CLM-2024-01052,CUST-03276,Auto,2093.86,Settled,7,Low,Fast-Track Approval — Routine Processing,2,0,42,0,0,STRONG,0
+CLM-2024-01256,CUST-03284,Fire,132573.38,Settled,51,Medium,Standard Adjuster Review — Verify Supporting Documentation,63,32,48,40,3,DIVERGENT,0
+CLM-2024-00198,CUST-03286,Fire,45379.51,Approved,15,Low,Fast-Track Approval — Routine Processing,5,1,50,43,3,STRONG,0
+CLM-2024-01182,CUST-03293,Auto,42560.47,Settled,34,Low,Fast-Track Approval — Routine Processing,41,19,42,26,2,DIVERGENT,0
+CLM-2024-00639,CUST-03299,Auto,2137.52,Settled,8,Low,Fast-Track Approval — Routine Processing,3,0,40,0,0,STRONG,0
+CLM-2024-00689,CUST-03310,Fire,100073.72,Settled,15,Low,Fast-Track Approval — Routine Processing,9,2,47,31,2,STRONG,0
+CLM-2024-01088,CUST-03310,Fire,57499.41,Settled,18,Low,Fast-Track Approval — Routine Processing,14,9,49,14,1,STRONG,0
+CLM-2024-00945,CUST-03325,Auto,2241.07,Settled,8,Low,Fast-Track Approval — Routine Processing,3,0,43,0,0,STRONG,0
+CLM-2024-00982,CUST-03335,Private Accident,19681.0,Under Investigation,61,Medium,Standard Adjuster Review — Verify Supporting Documentation,78,32,57,51,3,DIVERGENT,1
+CLM-2024-00183,CUST-03344,Auto,44346.86,Settled,55,Medium,Standard Adjuster Review — Verify Supporting Documentation,79,32,47,9,1,DIVERGENT,0
+CLM-2024-01091,CUST-03355,Auto,2312.48,Settled,7,Low,Fast-Track Approval — Routine Processing,3,0,39,0,0,STRONG,0
+CLM-2024-01476,CUST-03359,Auto,2551.06,Open,8,Low,Fast-Track Approval — Routine Processing,3,0,39,0,0,STRONG,0
+CLM-2024-00189,CUST-03360,Fire,38403.37,Settled,11,Low,Fast-Track Approval — Routine Processing,3,1,44,23,2,STRONG,0
+CLM-2024-00549,CUST-03361,Caravan,4924.17,Approved,15,Low,Fast-Track Approval — Routine Processing,9,0,47,31,2,STRONG,0
+CLM-2024-00399,CUST-03364,Auto,2180.21,Under Investigation,10,Low,Fast-Track Approval — Routine Processing,4,0,39,20,1,STRONG,0
+CLM-2024-00696,CUST-03368,Fire,5169.03,Settled,9,Low,Fast-Track Approval — Routine Processing,3,0,41,14,1,STRONG,0
+CLM-2024-01129,CUST-03389,Fire,7592.72,Approved,13,Low,Fast-Track Approval — Routine Processing,11,1,42,14,1,STRONG,0
+CLM-2024-01459,CUST-03401,Fire,13802.62,Open,10,Low,Fast-Track Approval — Routine Processing,5,0,39,14,1,STRONG,0
+CLM-2024-00932,CUST-03405,Fire,8210.54,Settled,9,Low,Fast-Track Approval — Routine Processing,5,0,39,0,0,STRONG,0
+CLM-2024-00823,CUST-03409,Auto,2638.53,Settled,8,Low,Fast-Track Approval — Routine Processing,3,0,42,0,0,STRONG,0
+CLM-2024-00126,CUST-03426,Auto,6769.57,Settled,7,Low,Fast-Track Approval — Routine Processing,3,0,40,0,0,STRONG,0
+CLM-2024-00069,CUST-03432,Auto,32861.38,Open,25,Low,Fast-Track Approval — Routine Processing,27,15,39,17,1,STRONG,0
+CLM-2024-01335,CUST-03438,Auto,13615.7,Settled,20,Low,Fast-Track Approval — Routine Processing,26,5,39,0,0,DIVERGENT,0
+CLM-2024-00407,CUST-03441,Auto,4023.85,Settled,9,Low,Fast-Track Approval — Routine Processing,6,0,39,0,0,STRONG,0
+CLM-2024-00358,CUST-03451,Auto,85880.98,Under Investigation,84,High,Priority Manual Investigation — Consider SIU Referral,96,100,50,34,2,STRONG,1
+CLM-2024-01119,CUST-03462,Auto,6397.22,Settled,12,Low,Fast-Track Approval — Routine Processing,10,0,45,0,0,STRONG,0
+CLM-2024-00040,CUST-03470,Fire,201652.03,Under Investigation,84,High,Priority Manual Investigation — Consider SIU Referral,97,90,56,43,3,STRONG,1
+CLM-2024-00848,CUST-03482,Auto,4273.76,Settled,7,Low,Fast-Track Approval — Routine Processing,3,0,38,0,0,STRONG,0
+CLM-2024-00504,CUST-03494,Fire,6986.57,Settled,8,Low,Fast-Track Approval — Routine Processing,5,0,40,0,0,STRONG,0
+CLM-2024-00727,CUST-03509,Auto,68273.11,Settled,64,Medium,Standard Adjuster Review — Verify Supporting Documentation,82,51,46,31,2,DIVERGENT,0
+CLM-2024-00064,CUST-03519,Fire,70076.57,Settled,12,Low,Fast-Track Approval — Routine Processing,6,1,45,23,2,STRONG,0
+CLM-2024-00522,CUST-03557,Caravan,8204.63,Settled,41,Medium,Standard Adjuster Review — Verify Supporting Documentation,51,20,50,31,2,DIVERGENT,0
+CLM-2024-00295,CUST-03568,Auto,814.56,Settled,7,Low,Fast-Track Approval — Routine Processing,2,0,42,0,0,STRONG,0
+CLM-2024-01403,CUST-03574,Fire,3388.01,Settled,11,Low,Fast-Track Approval — Routine Processing,9,0,41,0,0,STRONG,0
+CLM-2024-00497,CUST-03580,Fire,26376.49,Open,18,Low,Fast-Track Approval — Routine Processing,19,1,43,14,1,DIVERGENT,0
+CLM-2024-00731,CUST-03580,Fire,18553.38,Open,34,Low,Fast-Track Approval — Routine Processing,43,16,44,14,1,DIVERGENT,0
+CLM-2024-00360,CUST-03591,Fire,72720.17,Under Investigation,16,Low,Fast-Track Approval — Routine Processing,7,2,46,51,3,STRONG,0
+CLM-2024-01054,CUST-03594,Fire,169379.24,Under Investigation,50,Medium,Standard Adjuster Review — Verify Supporting Documentation,64,24,46,51,3,DIVERGENT,1
+CLM-2024-01140,CUST-03598,Auto,4426.66,Open,8,Low,Fast-Track Approval — Routine Processing,4,0,41,0,0,STRONG,0
+CLM-2024-01050,CUST-03608,Fire,10877.04,Open,11,Low,Fast-Track Approval — Routine Processing,6,0,44,14,1,STRONG,0
+CLM-2024-01287,CUST-03608,Fire,10950.71,Settled,11,Low,Fast-Track Approval — Routine Processing,5,0,44,14,1,STRONG,0
+CLM-2024-00255,CUST-03634,Auto,925.1,Settled,10,Low,Fast-Track Approval — Routine Processing,7,0,43,0,0,STRONG,0
+CLM-2024-00451,CUST-03639,Auto,11984.67,Approved,11,Low,Fast-Track Approval — Routine Processing,10,0,39,0,0,STRONG,0
+CLM-2024-00540,CUST-03645,Fire,25220.89,Under Investigation,57,Medium,Standard Adjuster Review — Verify Supporting Documentation,82,21,47,34,2,DIVERGENT,1
+CLM-2024-01382,CUST-03658,Auto,3079.99,Open,7,Low,Fast-Track Approval — Routine Processing,2,0,40,0,0,STRONG,0
+CLM-2024-00509,CUST-03671,Auto,1734.88,Settled,9,Low,Fast-Track Approval — Routine Processing,5,0,43,0,0,STRONG,0
+CLM-2024-01389,CUST-03671,Auto,10032.29,Settled,12,Low,Fast-Track Approval — Routine Processing,11,0,43,0,0,STRONG,0
+CLM-2024-01333,CUST-03688,Fire,22867.42,Settled,54,Medium,Standard Adjuster Review — Verify Supporting Documentation,77,31,39,14,1,DIVERGENT,0
+CLM-2024-00420,CUST-03705,Fire,39850.25,Open,10,Low,Fast-Track Approval — Routine Processing,5,1,38,14,1,STRONG,0
+CLM-2024-00866,CUST-03706,Fire,22944.81,Settled,34,Low,Fast-Track Approval — Routine Processing,45,15,41,14,1,DIVERGENT,0
+CLM-2024-00398,CUST-03710,Fire,41849.36,Settled,13,Low,Fast-Track Approval — Routine Processing,7,5,43,23,2,STRONG,0
+CLM-2024-01126,CUST-03710,Fire,157603.41,Open,25,Low,Fast-Track Approval — Routine Processing,27,8,49,23,2,DIVERGENT,0
+CLM-2024-01344,CUST-03714,Fire,14797.03,Open,53,Medium,Standard Adjuster Review — Verify Supporting Documentation,75,27,45,14,1,DIVERGENT,1
+CLM-2024-00726,CUST-03721,Auto,2743.56,Approved,7,Low,Fast-Track Approval — Routine Processing,2,0,42,0,0,STRONG,0
+CLM-2024-00817,CUST-03731,Auto,5492.57,Approved,7,Low,Fast-Track Approval — Routine Processing,2,0,40,0,0,STRONG,0
+CLM-2024-00564,CUST-03734,Auto,2210.23,Settled,8,Low,Fast-Track Approval — Routine Processing,2,0,43,0,0,STRONG,0
+CLM-2024-00662,CUST-03737,Fire,9644.38,Settled,10,Low,Fast-Track Approval — Routine Processing,3,0,45,14,1,STRONG,0
+CLM-2024-01260,CUST-03738,Fire,2835.07,Settled,7,Low,Fast-Track Approval — Routine Processing,2,0,41,0,0,STRONG,0
+CLM-2024-00749,CUST-03741,Auto,27270.22,Settled,41,Medium,Standard Adjuster Review — Verify Supporting Documentation,56,20,43,17,1,DIVERGENT,0
+CLM-2024-00632,CUST-03747,Auto,10550.88,Settled,9,Low,Fast-Track Approval — Routine Processing,6,0,39,0,0,STRONG,0
+CLM-2024-00839,CUST-03749,Fire,4664.46,Settled,10,Low,Fast-Track Approval — Routine Processing,3,0,44,14,1,STRONG,0
+CLM-2024-01377,CUST-03757,Auto,3373.87,Settled,7,Low,Fast-Track Approval — Routine Processing,2,0,38,0,0,STRONG,0
+CLM-2024-00278,CUST-03758,Fire,202673.95,Settled,59,Medium,Standard Adjuster Review — Verify Supporting Documentation,78,36,54,31,2,DIVERGENT,0
+CLM-2024-01373,CUST-03761,Fire,198285.25,Under Investigation,62,Medium,Standard Adjuster Review — Verify Supporting Documentation,81,37,49,51,3,DIVERGENT,1
+CLM-2024-00919,CUST-03763,Fire,158609.06,Open,32,Low,Fast-Track Approval — Routine Processing,36,15,48,31,2,DIVERGENT,0
+CLM-2024-00972,CUST-03764,Auto,22797.49,Settled,45,Medium,Standard Adjuster Review — Verify Supporting Documentation,71,15,41,0,0,DIVERGENT,1
+CLM-2024-01150,CUST-03768,Auto,34534.53,Settled,49,Medium,Standard Adjuster Review — Verify Supporting Documentation,69,18,50,31,2,DIVERGENT,0
+CLM-2024-00217,CUST-03772,Fire,39481.02,Settled,13,Low,Fast-Track Approval — Routine Processing,7,1,46,23,2,STRONG,0
+CLM-2024-01281,CUST-03776,Fire,44335.57,Settled,9,Low,Fast-Track Approval — Routine Processing,2,0,45,14,1,STRONG,0
+CLM-2024-01092,CUST-03778,Caravan,5785.49,Settled,26,Low,Fast-Track Approval — Routine Processing,29,5,44,31,2,DIVERGENT,0
+CLM-2024-01326,CUST-03778,Caravan,14582.02,Under Investigation,70,High,Priority Manual Investigation — Consider SIU Referral,91,51,53,34,2,DIVERGENT,1
+CLM-2024-01031,CUST-03780,Fire,5227.79,Approved,11,Low,Fast-Track Approval — Routine Processing,5,0,49,14,1,STRONG,0
+CLM-2024-01417,CUST-03783,Caravan,2618.12,Settled,13,Low,Fast-Track Approval — Routine Processing,9,1,42,14,1,STRONG,0
+CLM-2024-00979,CUST-03787,Auto,2773.53,Settled,8,Low,Fast-Track Approval — Routine Processing,5,0,39,0,0,STRONG,0
+CLM-2024-01255,CUST-03796,Auto,1984.04,Approved,7,Low,Fast-Track Approval — Routine Processing,2,0,40,0,0,STRONG,0
+CLM-2024-01181,CUST-03797,Auto,11328.14,Open,9,Low,Fast-Track Approval — Routine Processing,7,0,37,0,0,STRONG,0
+CLM-2024-00458,CUST-03802,Auto,23678.63,Open,59,Medium,Standard Adjuster Review — Verify Supporting Documentation,83,45,42,0,0,DIVERGENT,1
+CLM-2024-00798,CUST-03815,Auto,1669.97,Under Investigation,11,Low,Fast-Track Approval — Routine Processing,5,0,40,20,1,STRONG,0
+CLM-2024-01316,CUST-03817,Fire,316185.2,Settled,41,Medium,Standard Adjuster Review — Verify Supporting Documentation,46,24,55,31,2,DIVERGENT,0
+CLM-2024-00635,CUST-03824,Fire,85683.04,Approved,13,Low,Fast-Track Approval — Routine Processing,4,1,47,31,2,STRONG,0
+CLM-2024-01441,CUST-03835,Caravan,8776.19,Settled,48,Medium,Standard Adjuster Review — Verify Supporting Documentation,60,30,49,31,2,DIVERGENT,0
+CLM-2024-00230,CUST-03839,Auto,1451.3,Settled,10,Low,Fast-Track Approval — Routine Processing,6,0,43,0,0,STRONG,0
+CLM-2024-00963,CUST-03846,Fire,7955.48,Open,9,Low,Fast-Track Approval — Routine Processing,2,0,40,14,1,STRONG,0
+CLM-2024-00075,CUST-03854,Fire,81235.49,Settled,13,Low,Fast-Track Approval — Routine Processing,8,5,41,14,1,STRONG,0
+CLM-2024-00821,CUST-03856,Fire,176181.24,Settled,25,Low,Fast-Track Approval — Routine Processing,26,8,46,31,2,DIVERGENT,0
+CLM-2024-00620,CUST-03866,Fire,4363.78,Approved,10,Low,Fast-Track Approval — Routine Processing,5,0,42,14,1,STRONG,0
+CLM-2024-00950,CUST-03877,Auto,16152.36,Settled,43,Medium,Standard Adjuster Review — Verify Supporting Documentation,64,21,38,0,0,DIVERGENT,1
+CLM-2024-00593,CUST-03884,Fire,25659.33,Under Investigation,41,Medium,Standard Adjuster Review — Verify Supporting Documentation,58,11,37,34,2,DIVERGENT,1
+CLM-2024-01457,CUST-03900,Auto,6275.57,Settled,10,Low,Fast-Track Approval — Routine Processing,8,0,39,0,0,STRONG,0
+CLM-2024-00565,CUST-03908,Auto,39914.56,Settled,28,Low,Fast-Track Approval — Routine Processing,34,13,40,17,1,DIVERGENT,0
+CLM-2024-01469,CUST-03908,Fire,24929.16,Approved,29,Low,Fast-Track Approval — Routine Processing,40,8,38,14,1,DIVERGENT,0
+CLM-2024-00769,CUST-03913,Auto,3346.54,Settled,7,Low,Fast-Track Approval — Routine Processing,2,0,41,0,0,STRONG,0
+CLM-2024-00507,CUST-03926,Auto,6154.71,Settled,15,Low,Fast-Track Approval — Routine Processing,15,5,42,0,0,STRONG,0
+CLM-2024-01172,CUST-03926,Auto,2351.35,Settled,8,Low,Fast-Track Approval — Routine Processing,3,0,41,0,0,STRONG,0
+CLM-2024-01483,CUST-03934,Fire,160336.09,Approved,35,Low,Fast-Track Approval — Routine Processing,43,15,47,31,2,DIVERGENT,0
+CLM-2024-00219,CUST-03936,Auto,2180.22,Settled,7,Low,Fast-Track Approval — Routine Processing,3,0,38,0,0,STRONG,0
+CLM-2024-00182,CUST-03951,Caravan,6779.89,Settled,36,Low,Fast-Track Approval — Routine Processing,46,8,49,31,2,DIVERGENT,0
+CLM-2024-01187,CUST-03964,Auto,3719.32,Settled,8,Low,Fast-Track Approval — Routine Processing,3,0,45,0,0,STRONG,0
+CLM-2024-01252,CUST-03966,Auto,8801.9,Settled,9,Low,Fast-Track Approval — Routine Processing,7,0,39,0,0,STRONG,0
+CLM-2024-00008,CUST-03966,Fire,96272.82,Under Investigation,53,Medium,Standard Adjuster Review — Verify Supporting Documentation,63,32,45,63,4,DIVERGENT,1
+CLM-2024-01414,CUST-03971,Auto,4521.72,Approved,7,Low,Fast-Track Approval — Routine Processing,2,0,39,0,0,STRONG,0
+CLM-2024-00868,CUST-03972,Fire,27672.31,Settled,17,Low,Fast-Track Approval — Routine Processing,18,1,40,14,1,DIVERGENT,0
+CLM-2024-00286,CUST-03973,Fire,14326.81,Approved,13,Low,Fast-Track Approval — Routine Processing,10,0,41,14,1,STRONG,0
+CLM-2024-01474,CUST-03975,Auto,2437.28,Settled,12,Low,Fast-Track Approval — Routine Processing,9,0,49,0,0,STRONG,0
+CLM-2024-01118,CUST-03997,Auto,37616.46,Settled,31,Low,Fast-Track Approval — Routine Processing,37,13,42,26,2,DIVERGENT,0
+CLM-2024-00473,CUST-03997,Fire,151212.48,Settled,44,Medium,Standard Adjuster Review — Verify Supporting Documentation,49,32,49,40,3,DIVERGENT,0
+CLM-2024-00425,CUST-04006,Auto,18963.8,Settled,45,Medium,Standard Adjuster Review — Verify Supporting Documentation,60,30,47,0,0,DIVERGENT,0
+CLM-2024-00686,CUST-04012,Fire,21489.89,Under Investigation,57,Medium,Standard Adjuster Review — Verify Supporting Documentation,80,29,39,34,2,DIVERGENT,1
+CLM-2024-00133,CUST-04025,Fire,30334.94,Settled,14,Low,Fast-Track Approval — Routine Processing,9,1,44,23,2,STRONG,0
+CLM-2024-00575,CUST-04027,Auto,4148.11,Approved,8,Low,Fast-Track Approval — Routine Processing,4,0,41,0,0,STRONG,0
+CLM-2024-01269,CUST-04027,Auto,1328.15,Approved,7,Low,Fast-Track Approval — Routine Processing,2,0,42,0,0,STRONG,0
+CLM-2024-00558,CUST-04028,Auto,3625.38,Settled,7,Low,Fast-Track Approval — Routine Processing,1,0,42,0,0,STRONG,0
+CLM-2024-00292,CUST-04028,Fire,66335.39,Settled,10,Low,Fast-Track Approval — Routine Processing,3,1,45,14,1,STRONG,0
+CLM-2024-01489,CUST-04028,Caravan,5367.66,Settled,28,Low,Fast-Track Approval — Routine Processing,32,5,48,31,2,DIVERGENT,0
+CLM-2024-00388,CUST-04029,Auto,3416.78,Settled,11,Low,Fast-Track Approval — Routine Processing,8,0,48,0,0,STRONG,0
+CLM-2024-00299,CUST-04029,Fire,35619.54,Settled,13,Low,Fast-Track Approval — Routine Processing,7,2,48,14,1,STRONG,0
+CLM-2024-01428,CUST-04030,Auto,80044.11,Under Investigation,85,High,Priority Manual Investigation — Consider SIU Referral,98,100,49,34,2,STRONG,1
+CLM-2024-00271,CUST-04032,Auto,4998.52,Approved,9,Low,Fast-Track Approval — Routine Processing,6,0,38,0,0,STRONG,0
+CLM-2024-01199,CUST-04051,Fire,4162.34,Settled,10,Low,Fast-Track Approval — Routine Processing,7,0,40,0,0,STRONG,0
+CLM-2024-00785,CUST-04056,Auto,2211.04,Settled,8,Low,Fast-Track Approval — Routine Processing,4,0,42,0,0,STRONG,0
+CLM-2024-00758,CUST-04065,Fire,53089.73,Approved,12,Low,Fast-Track Approval — Routine Processing,8,1,44,14,1,STRONG,0
+CLM-2024-01244,CUST-04070,Auto,18510.27,Approved,43,Medium,Standard Adjuster Review — Verify Supporting Documentation,60,30,37,0,0,DIVERGENT,0
+CLM-2024-00262,CUST-04070,Fire,209751.22,Settled,54,Medium,Standard Adjuster Review — Verify Supporting Documentation,72,32,48,31,2,DIVERGENT,0
+CLM-2024-00020,CUST-04074,Auto,3265.19,Settled,7,Low,Fast-Track Approval — Routine Processing,3,0,39,0,0,STRONG,0
+CLM-2024-00302,CUST-04074,Auto,16404.66,Settled,45,Medium,Standard Adjuster Review — Verify Supporting Documentation,69,21,39,0,0,DIVERGENT,0
+CLM-2024-01268,CUST-04086,Auto,44900.1,Settled,64,Medium,Standard Adjuster Review — Verify Supporting Documentation,87,41,45,40,3,DIVERGENT,0
+CLM-2024-00485,CUST-04129,Fire,7157.54,Approved,9,Low,Fast-Track Approval — Routine Processing,2,0,41,14,1,STRONG,0
+CLM-2024-01080,CUST-04131,Auto,10245.85,Settled,8,Low,Fast-Track Approval — Routine Processing,2,0,48,0,0,STRONG,0
+CLM-2024-00881,CUST-04137,Fire,14083.87,Settled,9,Low,Fast-Track Approval — Routine Processing,3,0,39,14,1,STRONG,0
+CLM-2024-00907,CUST-04148,Fire,11668.43,Settled,16,Low,Fast-Track Approval — Routine Processing,15,2,45,14,1,STRONG,0
+CLM-2024-00153,CUST-04154,Auto,71477.36,Approved,71,High,Priority Manual Investigation — Consider SIU Referral,85,68,47,40,3,DIVERGENT,0
+CLM-2024-00802,CUST-04155,Auto,2813.4,Settled,7,Low,Fast-Track Approval — Routine Processing,2,0,39,0,0,STRONG,0
+CLM-2024-00322,CUST-04157,Fire,3583.99,Settled,9,Low,Fast-Track Approval — Routine Processing,3,0,40,14,1,STRONG,0
+CLM-2024-00034,CUST-04169,Fire,3255.58,Approved,9,Low,Fast-Track Approval — Routine Processing,2,0,41,14,1,STRONG,0
+CLM-2024-01141,CUST-04171,Auto,29956.09,Settled,14,Low,Fast-Track Approval — Routine Processing,7,10,45,17,1,STRONG,0
+CLM-2024-01044,CUST-04179,Caravan,10612.86,Under Investigation,62,Medium,Standard Adjuster Review — Verify Supporting Documentation,85,35,51,34,2,DIVERGENT,1
+CLM-2024-00783,CUST-04182,Auto,93087.17,Under Investigation,69,Medium,Standard Adjuster Review — Verify Supporting Documentation,85,51,53,51,3,DIVERGENT,1
+CLM-2024-00778,CUST-04216,Auto,6203.91,Approved,9,Low,Fast-Track Approval — Routine Processing,6,0,42,0,0,STRONG,0
+CLM-2024-00588,CUST-04222,Auto,1523.56,Settled,11,Low,Fast-Track Approval — Routine Processing,8,0,47,0,0,STRONG,0
+CLM-2024-00300,CUST-04228,Fire,14704.43,Open,46,Medium,Standard Adjuster Review — Verify Supporting Documentation,72,14,48,0,0,DIVERGENT,1
+CLM-2024-00249,CUST-04229,Auto,2744.98,Approved,7,Low,Fast-Track Approval — Routine Processing,2,0,38,0,0,STRONG,0
+CLM-2024-00201,CUST-04229,Fire,39499.54,Approved,12,Low,Fast-Track Approval — Routine Processing,9,2,39,14,1,STRONG,0
+CLM-2024-00636,CUST-04243,Auto,852.23,Approved,8,Low,Fast-Track Approval — Routine Processing,2,0,42,0,0,STRONG,0
+CLM-2024-00429,CUST-04245,Fire,8988.1,Settled,13,Low,Fast-Track Approval — Routine Processing,8,0,46,14,1,STRONG,0
+CLM-2024-01173,CUST-04252,Fire,39091.69,Under Investigation,13,Low,Fast-Track Approval — Routine Processing,4,1,48,34,2,STRONG,0
+CLM-2024-00406,CUST-04269,Auto,7499.4,Settled,9,Low,Fast-Track Approval — Routine Processing,5,0,41,0,0,STRONG,0
+CLM-2024-00847,CUST-04269,Auto,1722.51,Settled,14,Low,Fast-Track Approval — Routine Processing,8,0,56,9,1,STRONG,0
+CLM-2024-00384,CUST-04270,Fire,48512.78,Settled,11,Low,Fast-Track Approval — Routine Processing,4,0,42,23,2,STRONG,0
+CLM-2024-00754,CUST-04270,Fire,8209.87,Settled,13,Low,Fast-Track Approval — Routine Processing,9,0,43,14,1,STRONG,0
+CLM-2024-00730,CUST-04272,Fire,3659.2,Approved,9,Low,Fast-Track Approval — Routine Processing,3,0,40,14,1,STRONG,0
+CLM-2024-01331,CUST-04277,Fire,10318.03,Settled,11,Low,Fast-Track Approval — Routine Processing,8,0,40,14,1,STRONG,0
+CLM-2024-00712,CUST-04291,Auto,55720.22,Under Investigation,71,High,Priority Manual Investigation — Consider SIU Referral,90,56,51,37,2,DIVERGENT,1
+CLM-2024-01498,CUST-04291,Fire,144783.21,Settled,17,Low,Fast-Track Approval — Routine Processing,9,6,50,31,2,STRONG,0
+CLM-2024-01408,CUST-04292,Auto,3605.65,Settled,7,Low,Fast-Track Approval — Routine Processing,2,0,37,0,0,STRONG,0
+CLM-2024-00748,CUST-04295,Auto,4267.18,Approved,9,Low,Fast-Track Approval — Routine Processing,5,0,41,0,0,STRONG,0
+CLM-2024-01025,CUST-04303,Fire,57086.57,Approved,12,Low,Fast-Track Approval — Routine Processing,6,1,51,14,1,STRONG,0
+CLM-2024-01282,CUST-04313,Caravan,4609.64,Settled,14,Low,Fast-Track Approval — Routine Processing,8,0,42,31,2,STRONG,0
+CLM-2024-00695,CUST-04316,Fire,112915.05,Settled,26,Low,Fast-Track Approval — Routine Processing,27,15,50,14,1,STRONG,0
+CLM-2024-01266,CUST-04324,Fire,41121.16,Settled,9,Low,Fast-Track Approval — Routine Processing,4,0,40,14,1,STRONG,0
+CLM-2024-00596,CUST-04326,Fire,128941.62,Under Investigation,61,Medium,Standard Adjuster Review — Verify Supporting Documentation,80,32,50,60,4,DIVERGENT,1
+CLM-2024-00637,CUST-04331,Auto,3935.53,Under Investigation,9,Low,Fast-Track Approval — Routine Processing,2,0,42,20,1,STRONG,0
+CLM-2024-01347,CUST-04335,Fire,100807.13,Settled,39,Low,Fast-Track Approval — Routine Processing,42,21,52,43,3,DIVERGENT,0
+CLM-2024-00803,CUST-04336,Fire,99656.48,Settled,18,Low,Fast-Track Approval — Routine Processing,14,2,47,31,2,STRONG,0
+CLM-2024-00775,CUST-04344,Auto,3586.16,Settled,7,Low,Fast-Track Approval — Routine Processing,2,0,41,0,0,STRONG,0
+CLM-2024-00090,CUST-04344,Fire,174095.5,Under Investigation,80,High,Priority Manual Investigation — Consider SIU Referral,93,85,52,43,3,STRONG,1
+CLM-2024-00416,CUST-04355,Auto,81564.23,Under Investigation,72,High,Priority Manual Investigation — Consider SIU Referral,87,60,50,60,4,DIVERGENT,1
+CLM-2024-01217,CUST-04358,Fire,23857.45,Settled,52,Medium,Standard Adjuster Review — Verify Supporting Documentation,76,27,40,14,1,DIVERGENT,1
+CLM-2024-01407,CUST-04358,Fire,97014.29,Settled,14,Low,Fast-Track Approval — Routine Processing,7,2,44,31,2,STRONG,0
+CLM-2024-00089,CUST-04369,Fire,28898.65,Settled,45,Medium,Standard Adjuster Review — Verify Supporting Documentation,62,23,48,14,1,DIVERGENT,0
+CLM-2024-00808,CUST-04375,Auto,7048.84,Settled,8,Low,Fast-Track Approval — Routine Processing,5,0,37,0,0,STRONG,0
+CLM-2024-00315,CUST-04375,Fire,64084.38,Settled,12,Low,Fast-Track Approval — Routine Processing,4,1,42,31,2,STRONG,0
+CLM-2024-00661,CUST-04392,Fire,2481.57,Settled,9,Low,Fast-Track Approval — Routine Processing,2,0,42,14,1,STRONG,0
+CLM-2024-00294,CUST-04394,Auto,4515.11,Settled,8,Low,Fast-Track Approval — Routine Processing,5,0,38,0,0,STRONG,0
+CLM-2024-01213,CUST-04409,Auto,2594.78,Settled,9,Low,Fast-Track Approval — Routine Processing,5,0,43,0,0,STRONG,0
+CLM-2024-00214,CUST-04412,Fire,5911.96,Approved,8,Low,Fast-Track Approval — Routine Processing,3,0,46,0,0,STRONG,0
+CLM-2024-01178,CUST-04419,Fire,16241.28,Settled,42,Medium,Standard Adjuster Review — Verify Supporting Documentation,57,25,37,14,1,DIVERGENT,0
+CLM-2024-00570,CUST-04422,Auto,3819.92,Settled,7,Low,Fast-Track Approval — Routine Processing,2,0,39,0,0,STRONG,0
+CLM-2024-00694,CUST-04435,Auto,2458.6,Settled,8,Low,Fast-Track Approval — Routine Processing,2,0,47,0,0,STRONG,0
+CLM-2024-00553,CUST-04440,Auto,3289.38,Settled,7,Low,Fast-Track Approval — Routine Processing,2,0,43,0,0,STRONG,0
+CLM-2024-01165,CUST-04442,Fire,1595.57,Settled,9,Low,Fast-Track Approval — Routine Processing,2,0,48,0,0,STRONG,0
+CLM-2024-00285,CUST-04443,Fire,36836.94,Settled,9,Low,Fast-Track Approval — Routine Processing,3,0,42,14,1,STRONG,0
+CLM-2024-00759,CUST-04444,Caravan,10748.44,Under Investigation,61,Medium,Standard Adjuster Review — Verify Supporting Documentation,82,30,50,51,3,DIVERGENT,1
+CLM-2024-00573,CUST-04449,Auto,1538.08,Settled,14,Low,Fast-Track Approval — Routine Processing,10,0,55,9,1,STRONG,0
+CLM-2024-01248,CUST-04466,Auto,1903.58,Settled,8,Low,Fast-Track Approval — Routine Processing,3,0,44,0,0,STRONG,0
+CLM-2024-00655,CUST-04487,Auto,1842.24,Settled,8,Low,Fast-Track Approval — Routine Processing,5,0,39,0,0,STRONG,0
+CLM-2024-01143,CUST-04488,Auto,10408.47,Approved,9,Low,Fast-Track Approval — Routine Processing,7,0,38,0,0,STRONG,0
+CLM-2024-00017,CUST-04510,Fire,4900.11,Settled,7,Low,Fast-Track Approval — Routine Processing,2,0,40,0,0,STRONG,0
+CLM-2024-00498,CUST-04512,Auto,5495.62,Settled,7,Low,Fast-Track Approval — Routine Processing,3,0,39,0,0,STRONG,0
+CLM-2024-00123,CUST-04517,Auto,58219.26,Settled,68,Medium,Standard Adjuster Review — Verify Supporting Documentation,90,60,45,14,1,DIVERGENT,0
+CLM-2024-00682,CUST-04522,Fire,73793.08,Approved,14,Low,Fast-Track Approval — Routine Processing,5,2,48,40,3,STRONG,0
+CLM-2024-00542,CUST-04529,Fire,150000.0,Under Investigation,56,Medium,Standard Adjuster Review — Verify Supporting Documentation,68,36,58,46,3,DIVERGENT,0
+CLM-2024-01208,CUST-04537,Caravan,6506.22,Open,40,Medium,Standard Adjuster Review — Verify Supporting Documentation,54,13,45,31,2,DIVERGENT,0
+CLM-2024-01424,CUST-04539,Fire,65336.7,Settled,13,Low,Fast-Track Approval — Routine Processing,3,1,47,40,3,STRONG,0
+CLM-2024-00339,CUST-04542,Auto,5007.02,Settled,7,Low,Fast-Track Approval — Routine Processing,2,0,37,0,0,STRONG,0
+CLM-2024-00543,CUST-04557,Fire,145172.57,Settled,36,Low,Fast-Track Approval — Routine Processing,36,23,53,43,3,STRONG,0
+CLM-2024-01125,CUST-04565,Auto,22940.73,Under Investigation,48,Medium,Standard Adjuster Review — Verify Supporting Documentation,64,32,37,20,1,DIVERGENT,0
+CLM-2024-00801,CUST-04571,Fire,209484.97,Under Investigation,60,Medium,Standard Adjuster Review — Verify Supporting Documentation,80,32,46,51,3,DIVERGENT,1
+CLM-2024-00145,CUST-04572,Auto,1072.84,Settled,8,Low,Fast-Track Approval — Routine Processing,2,0,45,0,0,STRONG,0
+CLM-2024-00883,CUST-04579,Auto,1795.88,Settled,8,Low,Fast-Track Approval — Routine Processing,3,0,43,0,0,STRONG,0
+CLM-2024-00720,CUST-04580,Fire,8363.98,Approved,9,Low,Fast-Track Approval — Routine Processing,2,0,46,14,1,STRONG,0
+CLM-2024-00845,CUST-04580,Fire,6903.45,Settled,10,Low,Fast-Track Approval — Routine Processing,6,0,47,0,0,STRONG,0
+CLM-2024-00882,CUST-04582,Auto,8301.38,Approved,9,Low,Fast-Track Approval — Routine Processing,7,0,39,0,0,STRONG,0
+CLM-2024-00135,CUST-04587,Fire,206248.15,Settled,65,Medium,Standard Adjuster Review — Verify Supporting Documentation,86,51,49,14,1,DIVERGENT,0
+CLM-2024-01364,CUST-04588,Fire,7338.81,Settled,12,Low,Fast-Track Approval — Routine Processing,9,0,42,14,1,STRONG,0
+CLM-2024-01385,CUST-04588,Fire,171854.61,Settled,37,Low,Fast-Track Approval — Routine Processing,44,20,48,31,2,DIVERGENT,0
+CLM-2024-01043,CUST-04593,Auto,2035.64,Settled,7,Low,Fast-Track Approval — Routine Processing,2,0,41,0,0,STRONG,0
+CLM-2024-00585,CUST-04614,Fire,4836.14,Open,10,Low,Fast-Track Approval — Routine Processing,9,0,39,0,0,STRONG,0
+CLM-2024-00208,CUST-04623,Auto,1135.12,Settled,9,Low,Fast-Track Approval — Routine Processing,2,0,51,0,0,STRONG,0
+CLM-2024-00432,CUST-04630,Fire,7721.82,Approved,13,Low,Fast-Track Approval — Routine Processing,11,0,39,14,1,STRONG,0
+CLM-2024-01184,CUST-04633,Fire,6893.11,Approved,7,Low,Fast-Track Approval — Routine Processing,4,0,37,0,0,STRONG,0
+CLM-2024-00464,CUST-04636,Auto,3630.76,Approved,7,Low,Fast-Track Approval — Routine Processing,2,0,41,0,0,STRONG,0
+CLM-2024-00004,CUST-04639,Fire,30388.81,Approved,13,Low,Fast-Track Approval — Routine Processing,6,1,44,26,2,STRONG,0
+CLM-2024-01241,CUST-04654,Fire,73632.86,Under Investigation,53,Medium,Standard Adjuster Review — Verify Supporting Documentation,71,15,49,63,4,DIVERGENT,1
+CLM-2024-00414,CUST-04665,Auto,2352.64,Settled,9,Low,Fast-Track Approval — Routine Processing,5,0,45,0,0,STRONG,0
+CLM-2024-00190,CUST-04672,Auto,724.65,Settled,8,Low,Fast-Track Approval — Routine Processing,2,0,46,0,0,STRONG,0
+CLM-2024-01209,CUST-04672,Auto,83684.0,Under Investigation,66,Medium,Standard Adjuster Review — Verify Supporting Documentation,83,49,50,51,3,DIVERGENT,1
+CLM-2024-00446,CUST-04678,Auto,30616.64,Settled,20,Low,Fast-Track Approval — Routine Processing,18,13,42,17,1,STRONG,0
+CLM-2024-00861,CUST-04681,Fire,10899.96,Settled,10,Low,Fast-Track Approval — Routine Processing,5,0,40,14,1,STRONG,0
+CLM-2024-00207,CUST-04687,Fire,6906.79,Settled,8,Low,Fast-Track Approval — Routine Processing,4,0,42,0,0,STRONG,0
+CLM-2024-01010,CUST-04697,Fire,103001.08,Settled,13,Low,Fast-Track Approval — Routine Processing,4,1,49,31,2,STRONG,0
+CLM-2024-00104,CUST-04699,Auto,4187.89,Settled,9,Low,Fast-Track Approval — Routine Processing,6,0,38,0,0,STRONG,0
+CLM-2024-00095,CUST-04716,Fire,29665.39,Approved,10,Low,Fast-Track Approval — Routine Processing,4,1,39,14,1,STRONG,0
+CLM-2024-00992,CUST-04723,Fire,12243.0,Settled,9,Low,Fast-Track Approval — Routine Processing,3,0,38,14,1,STRONG,0
+CLM-2024-00603,CUST-04728,Auto,25959.19,Settled,36,Low,Fast-Track Approval — Routine Processing,46,20,43,17,1,DIVERGENT,0
+CLM-2024-01168,CUST-04732,Caravan,14447.04,Under Investigation,66,Medium,Standard Adjuster Review — Verify Supporting Documentation,88,43,54,34,2,DIVERGENT,1
+CLM-2024-00630,CUST-04734,Auto,81275.93,Under Investigation,85,High,Priority Manual Investigation — Consider SIU Referral,96,100,51,43,3,STRONG,1
+CLM-2024-00586,CUST-04740,Auto,20508.07,Settled,54,Medium,Standard Adjuster Review — Verify Supporting Documentation,79,37,40,0,0,DIVERGENT,0
+CLM-2024-00016,CUST-04747,Auto,16017.9,Open,64,Medium,Standard Adjuster Review — Verify Supporting Documentation,93,45,41,0,0,DIVERGENT,1
+CLM-2024-00415,CUST-04751,Fire,7447.53,Approved,15,Low,Fast-Track Approval — Routine Processing,12,1,48,14,1,STRONG,0
+CLM-2024-01400,CUST-04753,Fire,109214.61,Settled,52,Medium,Standard Adjuster Review — Verify Supporting Documentation,65,32,51,43,3,DIVERGENT,0
+CLM-2024-00700,CUST-04754,Fire,17945.2,Approved,24,Low,Fast-Track Approval — Routine Processing,24,15,44,14,1,STRONG,0
+CLM-2024-00591,CUST-04762,Caravan,13125.0,Settled,35,Low,Fast-Track Approval — Routine Processing,33,29,54,31,2,STRONG,0
+CLM-2024-00953,CUST-04771,Fire,35859.55,Under Investigation,13,Low,Fast-Track Approval — Routine Processing,6,1,42,34,2,STRONG,0
+CLM-2024-00664,CUST-04775,Auto,1328.35,Open,11,Low,Fast-Track Approval — Routine Processing,8,0,49,0,0,STRONG,0
+CLM-2024-01076,CUST-04800,Auto,15791.36,Settled,59,Medium,Standard Adjuster Review — Verify Supporting Documentation,85,37,40,14,1,DIVERGENT,1
+CLM-2024-00501,CUST-04817,Auto,81854.39,Under Investigation,72,High,Priority Manual Investigation — Consider SIU Referral,89,58,49,51,3,DIVERGENT,1
+CLM-2024-01402,CUST-04817,Auto,2837.35,Settled,9,Low,Fast-Track Approval — Routine Processing,5,0,43,0,0,STRONG,0
+CLM-2024-00003,CUST-04819,Auto,21217.82,Open,69,Medium,Standard Adjuster Review — Verify Supporting Documentation,96,54,48,0,0,DIVERGENT,1
+CLM-2024-01432,CUST-04821,Fire,2672.4,Settled,11,Low,Fast-Track Approval — Routine Processing,10,0,42,0,0,STRONG,0
+CLM-2024-00042,CUST-04823,Auto,3916.25,Settled,7,Low,Fast-Track Approval — Routine Processing,2,0,39,0,0,STRONG,0
+CLM-2024-00927,CUST-04830,Fire,17922.93,Under Investigation,22,Low,Fast-Track Approval — Routine Processing,22,5,43,34,2,DIVERGENT,0
+CLM-2024-01065,CUST-04838,Fire,114363.2,Approved,54,Medium,Standard Adjuster Review — Verify Supporting Documentation,64,41,56,34,3,DIVERGENT,0
+CLM-2024-01350,CUST-04838,Fire,10408.04,Approved,11,Low,Fast-Track Approval — Routine Processing,4,0,50,14,1,STRONG,0
+CLM-2024-01015,CUST-04844,Caravan,5913.98,Settled,24,Low,Fast-Track Approval — Routine Processing,26,5,45,31,2,DIVERGENT,0
+CLM-2024-01336,CUST-04844,Caravan,11760.31,Settled,35,Low,Fast-Track Approval — Routine Processing,39,21,50,31,2,DIVERGENT,0
+CLM-2024-00261,CUST-04851,Fire,99589.63,Approved,51,Medium,Standard Adjuster Review — Verify Supporting Documentation,67,24,48,43,3,DIVERGENT,0
+CLM-2024-00355,CUST-04877,Fire,27508.2,Approved,22,Low,Fast-Track Approval — Routine Processing,28,5,39,14,1,DIVERGENT,0
+CLM-2024-00813,CUST-04882,Auto,3385.88,Settled,10,Low,Fast-Track Approval — Routine Processing,5,0,46,0,0,STRONG,0
+CLM-2024-00166,CUST-04882,Fire,68226.09,Settled,21,Low,Fast-Track Approval — Routine Processing,20,6,52,14,1,STRONG,0
+CLM-2024-00100,CUST-04895,Auto,2586.98,Settled,13,Low,Fast-Track Approval — Routine Processing,9,0,54,9,1,STRONG,0
+CLM-2024-01018,CUST-04897,Caravan,8624.95,Settled,41,Medium,Standard Adjuster Review — Verify Supporting Documentation,52,19,48,31,2,DIVERGENT,0
+CLM-2024-01446,CUST-04897,Caravan,3967.69,Open,14,Low,Fast-Track Approval — Routine Processing,8,0,45,31,2,STRONG,0
+CLM-2024-01304,CUST-04903,Fire,29135.15,Settled,23,Low,Fast-Track Approval — Routine Processing,27,5,46,14,1,DIVERGENT,0
+CLM-2024-00055,CUST-04914,Auto,1671.95,Settled,7,Low,Fast-Track Approval — Routine Processing,2,0,43,0,0,STRONG,0
+CLM-2024-00571,CUST-04914,Auto,2591.4,Approved,7,Low,Fast-Track Approval — Routine Processing,2,0,42,0,0,STRONG,0
+CLM-2024-01206,CUST-04917,Fire,8023.04,Under Investigation,12,Low,Fast-Track Approval — Routine Processing,5,0,41,34,2,STRONG,0
+CLM-2024-01332,CUST-04917,Fire,336639.11,Under Investigation,85,High,Priority Manual Investigation — Consider SIU Referral,97,96,59,34,2,STRONG,1
+CLM-2024-00181,CUST-04948,Auto,2178.4,Settled,7,Low,Fast-Track Approval — Routine Processing,2,0,41,0,0,STRONG,0
+CLM-2024-00254,CUST-04951,Fire,18074.25,Settled,25,Low,Fast-Track Approval — Routine Processing,29,15,37,14,1,STRONG,0
+CLM-2024-00213,CUST-04952,Fire,39691.65,Settled,16,Low,Fast-Track Approval — Routine Processing,10,2,49,26,2,STRONG,0
+CLM-2024-00503,CUST-04953,Auto,6080.6,Settled,7,Low,Fast-Track Approval — Routine Processing,3,0,38,0,0,STRONG,0
+CLM-2024-00276,CUST-04956,Auto,50340.83,Open,51,Medium,Standard Adjuster Review — Verify Supporting Documentation,70,32,44,17,1,DIVERGENT,0
+CLM-2024-00611,CUST-04958,Auto,70808.25,Under Investigation,71,High,Priority Manual Investigation — Consider SIU Referral,90,59,44,51,3,DIVERGENT,1
+CLM-2024-00962,CUST-04972,Private Accident,24958.35,Settled,51,Medium,Standard Adjuster Review — Verify Supporting Documentation,76,15,43,31,2,DIVERGENT,0
+CLM-2024-00757,CUST-04977,Fire,14797.88,Settled,24,Low,Fast-Track Approval — Routine Processing,32,5,40,14,1,DIVERGENT,0
+CLM-2024-01061,CUST-04979,Auto,6788.8,Settled,7,Low,Fast-Track Approval — Routine Processing,3,0,37,0,0,STRONG,0
+CLM-2024-00820,CUST-04981,Auto,14879.42,Approved,24,Low,Fast-Track Approval — Routine Processing,32,9,40,0,0,DIVERGENT,0
+CLM-2024-00180,CUST-04986,Auto,62750.48,Approved,50,Medium,Standard Adjuster Review — Verify Supporting Documentation,65,24,53,31,2,DIVERGENT,0
+CLM-2024-00009,CUST-04988,Fire,126821.08,Approved,40,Medium,Standard Adjuster Review — Verify Supporting Documentation,52,19,46,31,2,DIVERGENT,0
+CLM-2024-00846,CUST-04993,Fire,51090.51,Settled,15,Low,Fast-Track Approval — Routine Processing,5,2,45,51,4,STRONG,0
+CLM-2024-00577,CUST-04995,Auto,6858.63,Open,7,Low,Fast-Track Approval — Routine Processing,2,0,41,0,0,STRONG,0
+CLM-2024-01176,CUST-04995,Auto,1117.23,Settled,7,Low,Fast-Track Approval — Routine Processing,1,0,45,0,0,STRONG,0
+CLM-2024-00170,CUST-04997,Auto,10617.05,Approved,8,Low,Fast-Track Approval — Routine Processing,4,0,40,0,0,STRONG,0
+CLM-2024-00281,CUST-04997,Auto,46150.33,Under Investigation,50,Medium,Standard Adjuster Review — Verify Supporting Documentation,67,24,44,37,2,DIVERGENT,0
+CLM-2024-00372,CUST-05000,Auto,48338.32,Under Investigation,61,Medium,Standard Adjuster Review — Verify Supporting Documentation,74,41,47,60,4,DIVERGENT,1
+CLM-2024-00318,CUST-05004,Auto,3301.44,Settled,7,Low,Fast-Track Approval — Routine Processing,2,0,38,0,0,STRONG,0
+CLM-2024-01396,CUST-05007,Fire,15831.78,Open,36,Low,Fast-Track Approval — Routine Processing,49,16,38,14,1,DIVERGENT,1
+CLM-2024-00105,CUST-05020,Fire,47172.94,Settled,12,Low,Fast-Track Approval — Routine Processing,6,2,46,14,1,STRONG,0
+CLM-2024-01245,CUST-05021,Fire,3156.95,Settled,13,Low,Fast-Track Approval — Routine Processing,11,0,43,14,1,STRONG,0
+CLM-2024-01275,CUST-05021,Fire,113458.82,Under Investigation,53,Medium,Standard Adjuster Review — Verify Supporting Documentation,64,31,48,63,4,DIVERGENT,1
+CLM-2024-00939,CUST-05023,Fire,153586.85,Settled,41,Medium,Standard Adjuster Review — Verify Supporting Documentation,50,24,49,31,2,DIVERGENT,0
+CLM-2024-00381,CUST-05026,Fire,170252.37,Under Investigation,80,High,Priority Manual Investigation — Consider SIU Referral,94,85,54,34,2,STRONG,1
+CLM-2024-00550,CUST-05040,Caravan,1962.42,Settled,11,Low,Fast-Track Approval — Routine Processing,7,0,40,14,1,STRONG,0
+CLM-2024-00669,CUST-05041,Auto,2241.01,Approved,9,Low,Fast-Track Approval — Routine Processing,5,0,44,0,0,STRONG,0
+CLM-2024-00073,CUST-05070,Fire,219413.71,Under Investigation,53,Medium,Standard Adjuster Review — Verify Supporting Documentation,65,32,48,51,3,DIVERGENT,1
+CLM-2024-00411,CUST-05084,Fire,96572.48,Settled,12,Low,Fast-Track Approval — Routine Processing,5,1,42,31,2,STRONG,0
+CLM-2024-00290,CUST-05090,Auto,82824.99,Under Investigation,85,High,Priority Manual Investigation — Consider SIU Referral,98,100,51,34,2,STRONG,1
+CLM-2024-00709,CUST-05101,Fire,44034.37,Approved,11,Low,Fast-Track Approval — Routine Processing,4,0,46,23,2,STRONG,0
+CLM-2024-00510,CUST-05114,Fire,126834.89,Approved,43,Medium,Standard Adjuster Review — Verify Supporting Documentation,56,19,52,31,2,DIVERGENT,0
+CLM-2024-00500,CUST-05118,Auto,2093.49,Settled,10,Low,Fast-Track Approval — Routine Processing,6,0,43,0,0,STRONG,0
+CLM-2024-01131,CUST-05118,Auto,62707.87,Approved,59,Medium,Standard Adjuster Review — Verify Supporting Documentation,78,40,47,31,2,DIVERGENT,0
+CLM-2024-00005,CUST-05120,Fire,201503.01,Under Investigation,81,High,Priority Manual Investigation — Consider SIU Referral,93,87,55,43,3,STRONG,1
+CLM-2024-01063,CUST-05128,Fire,96162.53,Settled,13,Low,Fast-Track Approval — Routine Processing,7,5,41,14,1,STRONG,0
+CLM-2024-00526,CUST-05131,Fire,87968.29,Approved,14,Low,Fast-Track Approval — Routine Processing,6,2,47,31,2,STRONG,0
+CLM-2024-00898,CUST-05137,Auto,1424.45,Settled,8,Low,Fast-Track Approval — Routine Processing,2,0,46,0,0,STRONG,0
+CLM-2024-00246,CUST-05142,Fire,17310.03,Open,32,Low,Fast-Track Approval — Routine Processing,43,15,38,14,1,DIVERGENT,0
+CLM-2024-01365,CUST-05144,Fire,81517.23,Settled,14,Low,Fast-Track Approval — Routine Processing,7,2,47,31,2,STRONG,0
+CLM-2024-01057,CUST-05147,Fire,204964.1,Settled,53,Medium,Standard Adjuster Review — Verify Supporting Documentation,71,32,45,31,2,DIVERGENT,0
+CLM-2024-01100,CUST-05161,Auto,4321.74,Approved,10,Low,Fast-Track Approval — Routine Processing,7,0,42,0,0,STRONG,0
+CLM-2024-01064,CUST-05169,Auto,5660.31,Open,8,Low,Fast-Track Approval — Routine Processing,4,0,40,0,0,STRONG,0
+CLM-2024-00211,CUST-05170,Auto,2804.96,Settled,10,Low,Fast-Track Approval — Routine Processing,7,0,43,0,0,STRONG,0
+CLM-2024-01308,CUST-05173,Auto,2594.45,Settled,8,Low,Fast-Track Approval — Routine Processing,2,0,44,0,0,STRONG,0
+CLM-2024-01211,CUST-05173,Fire,31466.86,Under Investigation,12,Low,Fast-Track Approval — Routine Processing,4,0,43,34,2,STRONG,0
+CLM-2024-00373,CUST-05175,Fire,32447.1,Settled,16,Low,Fast-Track Approval — Routine Processing,15,5,40,14,1,STRONG,0
+CLM-2024-00871,CUST-05184,Auto,82085.18,Approved,64,Medium,Standard Adjuster Review — Verify Supporting Documentation,82,49,50,31,2,DIVERGENT,0
+CLM-2024-00352,CUST-05223,Caravan,11635.46,Settled,49,Medium,Standard Adjuster Review — Verify Supporting Documentation,62,29,51,31,2,DIVERGENT,0
+CLM-2024-00204,CUST-05224,Fire,10361.66,Approved,13,Low,Fast-Track Approval — Routine Processing,11,0,40,14,1,STRONG,0
+CLM-2024-00176,CUST-05231,Caravan,7480.75,Settled,47,Medium,Standard Adjuster Review — Verify Supporting Documentation,65,20,46,31,2,DIVERGENT,0
+CLM-2024-00888,CUST-05236,Auto,1737.69,Settled,7,Low,Fast-Track Approval — Routine Processing,2,0,40,0,0,STRONG,0
+CLM-2024-01291,CUST-05239,Auto,20666.79,Settled,54,Medium,Standard Adjuster Review — Verify Supporting Documentation,75,31,39,31,2,DIVERGENT,0
+CLM-2024-00488,CUST-05239,Fire,42943.24,Settled,35,Low,Fast-Track Approval — Routine Processing,43,9,44,43,3,DIVERGENT,0
+CLM-2024-00475,CUST-05242,Fire,302520.99,Under Investigation,85,High,Priority Manual Investigation — Consider SIU Referral,96,95,60,43,3,STRONG,1
+CLM-2024-00108,CUST-05250,Auto,3022.76,Settled,7,Low,Fast-Track Approval — Routine Processing,2,0,39,0,0,STRONG,0
+CLM-2024-00312,CUST-05254,Fire,9984.76,Settled,10,Low,Fast-Track Approval — Routine Processing,5,0,41,14,1,STRONG,0
+CLM-2024-01393,CUST-05254,Fire,26507.75,Settled,30,Low,Fast-Track Approval — Routine Processing,36,15,44,14,1,DIVERGENT,0
+CLM-2024-01410,CUST-05270,Auto,1539.81,Settled,8,Low,Fast-Track Approval — Routine Processing,3,0,42,0,0,STRONG,0
+CLM-2024-00158,CUST-05272,Fire,8410.59,Settled,11,Low,Fast-Track Approval — Routine Processing,7,0,41,14,1,STRONG,0
+CLM-2024-00554,CUST-05275,Fire,20205.87,Settled,27,Low,Fast-Track Approval — Routine Processing,34,8,44,14,1,DIVERGENT,0
+CLM-2024-00394,CUST-05276,Fire,4214.78,Approved,12,Low,Fast-Track Approval — Routine Processing,10,0,39,14,1,STRONG,0
+CLM-2024-01328,CUST-05298,Auto,1670.32,Approved,8,Low,Fast-Track Approval — Routine Processing,4,0,44,0,0,STRONG,0
+CLM-2024-00436,CUST-05304,Auto,3821.89,Settled,12,Low,Fast-Track Approval — Routine Processing,8,0,50,0,0,STRONG,0
+CLM-2024-01017,CUST-05306,Fire,177064.43,Settled,39,Low,Fast-Track Approval — Routine Processing,46,24,49,31,2,DIVERGENT,0
+CLM-2024-01228,CUST-05308,Caravan,13125.0,Settled,59,Medium,Standard Adjuster Review — Verify Supporting Documentation,79,37,54,14,1,DIVERGENT,0
+CLM-2024-01120,CUST-05311,Caravan,8046.68,Settled,53,Medium,Standard Adjuster Review — Verify Supporting Documentation,77,24,50,14,1,DIVERGENT,0
+CLM-2024-00958,CUST-05316,Auto,24989.66,Settled,44,Medium,Standard Adjuster Review — Verify Supporting Documentation,57,32,38,17,1,DIVERGENT,0
+CLM-2024-00816,CUST-05319,Fire,3861.74,Settled,15,Low,Fast-Track Approval — Routine Processing,11,0,50,14,1,STRONG,0
+CLM-2024-01170,CUST-05321,Caravan,8146.67,Settled,42,Medium,Standard Adjuster Review — Verify Supporting Documentation,55,19,46,31,2,DIVERGENT,0
+CLM-2024-00136,CUST-05323,Auto,1648.63,Approved,7,Low,Fast-Track Approval — Routine Processing,2,0,42,0,0,STRONG,0
+CLM-2024-00634,CUST-05323,Auto,46549.76,Under Investigation,52,Medium,Standard Adjuster Review — Verify Supporting Documentation,72,21,44,37,2,DIVERGENT,0
+CLM-2024-01042,CUST-05328,Auto,4554.51,Settled,9,Low,Fast-Track Approval — Routine Processing,5,0,39,0,0,STRONG,0
+CLM-2024-00376,CUST-05329,Fire,324788.99,Under Investigation,84,High,Priority Manual Investigation — Consider SIU Referral,98,93,53,34,2,STRONG,1
+CLM-2024-01274,CUST-05329,Fire,208453.44,Settled,38,Low,Fast-Track Approval — Routine Processing,47,19,44,31,2,DIVERGENT,0
+CLM-2024-00535,CUST-05331,Fire,60996.81,Approved,56,Medium,Standard Adjuster Review — Verify Supporting Documentation,71,41,47,34,3,DIVERGENT,0
+CLM-2024-00742,CUST-05332,Auto,25180.91,Settled,42,Medium,Standard Adjuster Review — Verify Supporting Documentation,56,21,46,17,1,DIVERGENT,0
+CLM-2024-00752,CUST-05337,Fire,89754.2,Under Investigation,85,High,Priority Manual Investigation — Consider SIU Referral,96,91,60,54,4,STRONG,1
+CLM-2024-00391,CUST-05342,Fire,124338.8,Approved,48,Medium,Standard Adjuster Review — Verify Supporting Documentation,55,32,50,51,4,DIVERGENT,0
+CLM-2024-00297,CUST-05351,Fire,109136.52,Approved,13,Low,Fast-Track Approval — Routine Processing,7,2,43,31,2,STRONG,0
+CLM-2024-01214,CUST-05353,Auto,4192.6,Settled,11,Low,Fast-Track Approval — Routine Processing,8,1,42,0,0,STRONG,0
+CLM-2024-00146,CUST-05355,Auto,5763.15,Settled,8,Low,Fast-Track Approval — Routine Processing,4,0,39,0,0,STRONG,0
+CLM-2024-01124,CUST-05362,Auto,11091.67,Open,9,Low,Fast-Track Approval — Routine Processing,6,0,42,0,0,STRONG,0
+CLM-2024-01082,CUST-05364,Fire,41836.77,Approved,14,Low,Fast-Track Approval — Routine Processing,3,1,46,51,4,STRONG,0
+CLM-2024-00831,CUST-05366,Fire,59734.03,Settled,23,Low,Fast-Track Approval — Routine Processing,22,2,49,43,3,DIVERGENT,0
+CLM-2024-01264,CUST-05370,Caravan,2529.53,Settled,16,Low,Fast-Track Approval — Routine Processing,13,5,42,14,1,STRONG,0
+CLM-2024-00987,CUST-05374,Fire,6651.15,Settled,7,Low,Fast-Track Approval — Routine Processing,3,0,39,0,0,STRONG,0
+CLM-2024-00697,CUST-05379,Auto,14054.03,Settled,11,Low,Fast-Track Approval — Routine Processing,10,0,41,0,0,STRONG,0
+CLM-2024-00830,CUST-05424,Fire,29283.26,Settled,21,Low,Fast-Track Approval — Routine Processing,26,3,38,14,1,DIVERGENT,0
+CLM-2024-00345,CUST-05435,Auto,2328.91,Settled,9,Low,Fast-Track Approval — Routine Processing,5,0,41,0,0,STRONG,0
+CLM-2024-01357,CUST-05449,Auto,2770.06,Settled,8,Low,Fast-Track Approval — Routine Processing,2,0,47,0,0,STRONG,0
+CLM-2024-00701,CUST-05459,Fire,64350.74,Settled,13,Low,Fast-Track Approval — Routine Processing,6,2,44,31,2,STRONG,0
+CLM-2024-01318,CUST-05465,Auto,72593.51,Settled,61,Medium,Standard Adjuster Review — Verify Supporting Documentation,78,49,44,31,2,DIVERGENT,0
+CLM-2024-01251,CUST-05477,Auto,3625.59,Open,7,Low,Fast-Track Approval — Routine Processing,2,0,40,0,0,STRONG,0
+CLM-2024-01102,CUST-05490,Fire,50192.75,Settled,13,Low,Fast-Track Approval — Routine Processing,8,2,46,14,1,STRONG,0
+CLM-2024-00910,CUST-05491,Fire,130648.1,Settled,42,Medium,Standard Adjuster Review — Verify Supporting Documentation,43,32,49,51,4,STRONG,0
+CLM-2024-00610,CUST-05494,Auto,5345.09,Approved,7,Low,Fast-Track Approval — Routine Processing,3,0,40,0,0,STRONG,0
+CLM-2024-00111,CUST-05504,Fire,139115.65,Settled,45,Medium,Standard Adjuster Review — Verify Supporting Documentation,56,21,57,31,2,DIVERGENT,0
+CLM-2024-01370,CUST-05505,Auto,46344.44,Under Investigation,70,High,Priority Manual Investigation — Consider SIU Referral,93,49,44,51,3,DIVERGENT,1
+CLM-2024-00666,CUST-05510,Fire,41260.11,Settled,17,Low,Fast-Track Approval — Routine Processing,10,9,45,26,2,STRONG,0
+CLM-2024-00860,CUST-05510,Fire,4348.17,Open,12,Low,Fast-Track Approval — Routine Processing,10,0,39,14,1,STRONG,0
+CLM-2024-00273,CUST-05518,Fire,95423.59,Open,15,Low,Fast-Track Approval — Routine Processing,11,5,46,14,1,STRONG,0
+CLM-2024-01348,CUST-05528,Fire,271064.6,Approved,56,Medium,Standard Adjuster Review — Verify Supporting Documentation,74,32,49,31,2,DIVERGENT,0
+CLM-2024-00904,CUST-05542,Fire,25893.06,Settled,36,Low,Fast-Track Approval — Routine Processing,52,9,40,14,1,DIVERGENT,0
+CLM-2024-00975,CUST-05545,Fire,145571.92,Settled,30,Low,Fast-Track Approval — Routine Processing,33,15,46,31,2,DIVERGENT,0
+CLM-2024-00054,CUST-05546,Fire,7944.23,Approved,12,Low,Fast-Track Approval — Routine Processing,7,0,45,14,1,STRONG,0
+CLM-2024-00829,CUST-05549,Fire,58781.63,Settled,19,Low,Fast-Track Approval — Routine Processing,17,6,48,14,1,STRONG,0
+CLM-2024-00790,CUST-05552,Auto,4022.78,Under Investigation,9,Low,Fast-Track Approval — Routine Processing,2,0,39,20,1,STRONG,0
+CLM-2024-00825,CUST-05560,Auto,36613.72,Under Investigation,49,Medium,Standard Adjuster Review — Verify Supporting Documentation,70,16,42,37,2,DIVERGENT,1
+CLM-2024-00006,CUST-05570,Fire,4786.8,Settled,10,Low,Fast-Track Approval — Routine Processing,4,0,41,14,1,STRONG,0
+CLM-2024-00822,CUST-05573,Fire,56677.26,Settled,11,Low,Fast-Track Approval — Routine Processing,6,1,42,14,1,STRONG,0
+CLM-2024-00113,CUST-05580,Caravan,2420.56,Under Investigation,13,Low,Fast-Track Approval — Routine Processing,5,0,46,34,2,STRONG,0
+CLM-2024-00973,CUST-05589,Auto,8758.92,Open,10,Low,Fast-Track Approval — Routine Processing,6,0,43,0,0,STRONG,0
+CLM-2024-00227,CUST-05591,Fire,27870.74,Under Investigation,15,Low,Fast-Track Approval — Routine Processing,10,4,40,34,2,STRONG,0
+CLM-2024-00257,CUST-05591,Fire,41484.82,Settled,9,Low,Fast-Track Approval — Routine Processing,2,0,41,14,1,STRONG,0
+CLM-2024-00908,CUST-05592,Fire,21560.93,Open,37,Low,Fast-Track Approval — Routine Processing,53,9,42,14,1,DIVERGENT,1
+CLM-2024-00402,CUST-05598,Auto,2638.59,Settled,9,Low,Fast-Track Approval — Routine Processing,5,0,44,0,0,STRONG,0
+CLM-2024-00272,CUST-05600,Auto,4049.85,Under Investigation,10,Low,Fast-Track Approval — Routine Processing,4,0,41,20,1,STRONG,0
+CLM-2024-00490,CUST-05610,Auto,1027.82,Settled,8,Low,Fast-Track Approval — Routine Processing,2,0,43,0,0,STRONG,0
+CLM-2024-01220,CUST-05613,Auto,1126.14,Open,8,Low,Fast-Track Approval — Routine Processing,2,0,44,0,0,STRONG,0
+CLM-2024-00605,CUST-05620,Boat,2256.57,Settled,9,Low,Fast-Track Approval — Routine Processing,4,0,40,14,1,STRONG,0
+CLM-2024-00659,CUST-05622,Fire,107974.33,Approved,14,Low,Fast-Track Approval — Routine Processing,10,6,41,14,1,STRONG,0
+CLM-2024-00966,CUST-05622,Fire,11729.37,Settled,9,Low,Fast-Track Approval — Routine Processing,5,0,40,0,0,STRONG,0
+CLM-2024-01171,CUST-05627,Fire,24365.94,Settled,21,Low,Fast-Track Approval — Routine Processing,21,15,42,0,0,STRONG,0
+CLM-2024-00811,CUST-05632,Auto,2473.79,Settled,8,Low,Fast-Track Approval — Routine Processing,3,0,47,0,0,STRONG,0
+CLM-2024-00091,CUST-05634,Auto,43833.14,Under Investigation,83,High,Priority Manual Investigation — Consider SIU Referral,97,86,54,43,3,STRONG,1
+CLM-2024-01085,CUST-05664,Fire,59950.36,Settled,12,Low,Fast-Track Approval — Routine Processing,6,8,48,0,0,STRONG,0
+CLM-2024-00918,CUST-05671,Auto,3217.06,Settled,11,Low,Fast-Track Approval — Routine Processing,9,0,41,0,0,STRONG,0
+CLM-2024-01084,CUST-05671,Auto,1759.37,Approved,8,Low,Fast-Track Approval — Routine Processing,3,0,41,0,0,STRONG,0
+CLM-2024-00149,CUST-05674,Fire,36660.97,Settled,10,Low,Fast-Track Approval — Routine Processing,3,0,45,14,1,STRONG,0
+CLM-2024-00851,CUST-05677,Auto,37939.74,Settled,22,Low,Fast-Track Approval — Routine Processing,20,13,45,17,1,STRONG,0
+CLM-2024-00022,CUST-05692,Fire,8089.07,Settled,9,Low,Fast-Track Approval — Routine Processing,6,0,38,0,0,STRONG,0
+CLM-2024-01022,CUST-05708,Auto,51752.52,Under Investigation,79,High,Priority Manual Investigation — Consider SIU Referral,97,83,54,20,1,STRONG,1
+CLM-2024-00018,CUST-05712,Caravan,5114.95,Approved,18,Low,Fast-Track Approval — Routine Processing,14,0,51,31,2,STRONG,0
+CLM-2024-00082,CUST-05728,Auto,3136.68,Settled,7,Low,Fast-Track Approval — Routine Processing,2,0,42,0,0,STRONG,0
+CLM-2024-01149,CUST-05741,Fire,4990.36,Settled,10,Low,Fast-Track Approval — Routine Processing,7,0,42,0,0,STRONG,0
+CLM-2024-00403,CUST-05741,Caravan,13125.0,Settled,59,Medium,Standard Adjuster Review — Verify Supporting Documentation,80,37,56,14,1,DIVERGENT,0
+CLM-2024-01481,CUST-05749,Fire,181451.58,Settled,44,Medium,Standard Adjuster Review — Verify Supporting Documentation,55,24,48,31,2,DIVERGENT,0
+CLM-2024-00967,CUST-05752,Fire,150000.0,Approved,34,Low,Fast-Track Approval — Routine Processing,33,23,55,43,3,STRONG,0
+CLM-2024-00469,CUST-05762,Fire,29359.59,Settled,22,Low,Fast-Track Approval — Routine Processing,26,3,41,14,1,DIVERGENT,1
+CLM-2024-01161,CUST-05768,Fire,36013.97,Settled,11,Low,Fast-Track Approval — Routine Processing,6,0,40,14,1,STRONG,0
+CLM-2024-00864,CUST-05769,Fire,144258.17,Settled,38,Low,Fast-Track Approval — Routine Processing,50,15,45,31,2,DIVERGENT,0
+CLM-2024-00887,CUST-05788,Auto,5636.09,Settled,8,Low,Fast-Track Approval — Routine Processing,4,0,42,0,0,STRONG,0
+CLM-2024-01142,CUST-05795,Fire,58554.77,Under Investigation,66,Medium,Standard Adjuster Review — Verify Supporting Documentation,87,32,51,63,4,DIVERGENT,1
+CLM-2024-00206,CUST-05808,Auto,3198.45,Settled,7,Low,Fast-Track Approval — Routine Processing,3,0,38,0,0,STRONG,0
+CLM-2024-00647,CUST-05811,Auto,6876.63,Approved,9,Low,Fast-Track Approval — Routine Processing,6,0,38,0,0,STRONG,0
+CLM-2024-00587,CUST-05820,Auto,8637.58,Settled,13,Low,Fast-Track Approval — Routine Processing,14,0,39,0,0,STRONG,0
+CLM-2024-00777,CUST-05821,Auto,84703.8,Settled,51,Medium,Standard Adjuster Review — Verify Supporting Documentation,60,44,47,31,2,DIVERGENT,0
+CLM-2024-00236,CUST-05824,Auto,52356.73,Settled,55,Medium,Standard Adjuster Review — Verify Supporting Documentation,72,40,50,17,1,DIVERGENT,0
+CLM-2024-01041,CUST-05840,Fire,3116.89,Approved,11,Low,Fast-Track Approval — Routine Processing,7,0,50,0,0,STRONG,0
+CLM-2024-00192,CUST-05855,Fire,12448.36,Approved,13,Low,Fast-Track Approval — Routine Processing,9,0,43,14,1,STRONG,0
+CLM-2024-00628,CUST-05859,Fire,23581.69,Approved,49,Medium,Standard Adjuster Review — Verify Supporting Documentation,75,16,39,14,1,DIVERGENT,0
+CLM-2024-00751,CUST-05867,Caravan,5204.91,Open,42,Medium,Standard Adjuster Review — Verify Supporting Documentation,61,5,46,31,2,DIVERGENT,1
+CLM-2024-01401,CUST-05874,Fire,196581.58,Under Investigation,51,Medium,Standard Adjuster Review — Verify Supporting Documentation,62,32,48,51,3,DIVERGENT,0
+CLM-2024-01247,CUST-05876,Auto,19044.57,Settled,40,Medium,Standard Adjuster Review — Verify Supporting Documentation,52,30,42,0,0,DIVERGENT,0
+CLM-2024-00392,CUST-05877,Auto,4923.97,Under Investigation,11,Low,Fast-Track Approval — Routine Processing,5,0,42,20,1,STRONG,0
+CLM-2024-00253,CUST-05879,Auto,1884.61,Settled,7,Low,Fast-Track Approval — Routine Processing,2,0,39,0,0,STRONG,0
+CLM-2024-00467,CUST-05879,Fire,113288.1,Settled,19,Low,Fast-Track Approval — Routine Processing,16,9,48,14,1,STRONG,0
+CLM-2024-00641,CUST-05884,Auto,46827.97,Under Investigation,60,Medium,Standard Adjuster Review — Verify Supporting Documentation,82,32,46,46,3,DIVERGENT,1
+CLM-2024-01445,CUST-05904,Auto,23458.56,Settled,38,Low,Fast-Track Approval — Routine Processing,54,13,50,0,0,DIVERGENT,0
+CLM-2024-01207,CUST-05907,Fire,180877.84,Settled,44,Medium,Standard Adjuster Review — Verify Supporting Documentation,56,24,45,31,2,DIVERGENT,0
+CLM-2024-00386,CUST-05916,Fire,39408.79,Settled,9,Low,Fast-Track Approval — Routine Processing,3,0,42,14,1,STRONG,0
+CLM-2024-00476,CUST-05926,Auto,33562.04,Settled,37,Low,Fast-Track Approval — Routine Processing,49,13,42,31,2,DIVERGENT,0
+CLM-2024-01379,CUST-05928,Fire,30314.16,Settled,20,Low,Fast-Track Approval — Routine Processing,20,5,51,14,1,STRONG,0
+CLM-2024-00155,CUST-05930,Auto,6390.86,Settled,10,Low,Fast-Track Approval — Routine Processing,7,0,39,0,0,STRONG,0
+CLM-2024-00849,CUST-05938,Fire,120223.22,Settled,27,Low,Fast-Track Approval — Routine Processing,27,15,49,31,2,STRONG,0
+CLM-2024-00247,CUST-05953,Auto,4257.73,Open,13,Low,Fast-Track Approval — Routine Processing,13,1,42,0,0,STRONG,0
+CLM-2024-01186,CUST-05963,Fire,37738.12,Settled,9,Low,Fast-Track Approval — Routine Processing,3,0,39,14,1,STRONG,0
+CLM-2024-00353,CUST-05967,Fire,27708.93,Settled,31,Low,Fast-Track Approval — Routine Processing,39,15,43,14,1,DIVERGENT,0
+CLM-2024-01234,CUST-05985,Auto,2969.52,Settled,12,Low,Fast-Track Approval — Routine Processing,10,0,45,0,0,STRONG,0
+CLM-2024-00597,CUST-05990,Fire,3173.13,Settled,14,Low,Fast-Track Approval — Routine Processing,10,0,49,14,1,STRONG,0
+CLM-2024-00106,CUST-05994,Auto,7294.06,Settled,9,Low,Fast-Track Approval — Routine Processing,5,0,40,0,0,STRONG,0
+CLM-2024-01422,CUST-05994,Fire,26917.41,Settled,16,Low,Fast-Track Approval — Routine Processing,16,1,40,14,1,STRONG,0
+CLM-2024-00923,CUST-05995,Auto,2786.13,Under Investigation,10,Low,Fast-Track Approval — Routine Processing,4,0,41,20,1,STRONG,0
+CLM-2024-00517,CUST-06002,Fire,179028.51,Settled,46,Medium,Standard Adjuster Review — Verify Supporting Documentation,59,24,49,31,2,DIVERGENT,0
+CLM-2024-01345,CUST-06018,Auto,3002.26,Open,9,Low,Fast-Track Approval — Routine Processing,6,0,41,0,0,STRONG,0
+CLM-2024-00940,CUST-06020,Auto,2297.04,Settled,9,Low,Fast-Track Approval — Routine Processing,5,0,44,0,0,STRONG,0
+CLM-2024-00174,CUST-06027,Fire,195325.03,Under Investigation,66,Medium,Standard Adjuster Review — Verify Supporting Documentation,88,42,54,34,2,DIVERGENT,1
+CLM-2024-00842,CUST-06029,Auto,2160.42,Approved,7,Low,Fast-Track Approval — Routine Processing,2,0,39,0,0,STRONG,0
+CLM-2024-01163,CUST-06033,Auto,3553.66,Settled,7,Low,Fast-Track Approval — Routine Processing,2,0,40,0,0,STRONG,0
+CLM-2024-00424,CUST-06049,Auto,23337.3,Approved,44,Medium,Standard Adjuster Review — Verify Supporting Documentation,62,30,39,0,0,DIVERGENT,0
+CLM-2024-00595,CUST-06050,Fire,5256.42,Settled,17,Low,Fast-Track Approval — Routine Processing,16,1,50,14,1,STRONG,0
+CLM-2024-00546,CUST-06054,Caravan,11850.08,Settled,47,Medium,Standard Adjuster Review — Verify Supporting Documentation,62,20,49,31,2,DIVERGENT,0
+CLM-2024-00880,CUST-06059,Fire,88619.38,Under Investigation,25,Low,Fast-Track Approval — Routine Processing,24,12,48,34,2,STRONG,0
+CLM-2024-01295,CUST-06059,Fire,148879.42,Under Investigation,60,Medium,Standard Adjuster Review — Verify Supporting Documentation,79,32,47,51,3,DIVERGENT,1
+CLM-2024-00688,CUST-06067,Fire,47696.6,Approved,15,Low,Fast-Track Approval — Routine Processing,4,2,50,51,4,STRONG,0
+CLM-2024-01339,CUST-06067,Fire,81115.75,Approved,34,Low,Fast-Track Approval — Routine Processing,34,17,51,51,4,DIVERGENT,0
+CLM-2024-00494,CUST-06079,Fire,95583.15,Settled,51,Medium,Standard Adjuster Review — Verify Supporting Documentation,63,31,51,43,3,DIVERGENT,0
+CLM-2024-01263,CUST-06101,Caravan,12233.28,Open,45,Medium,Standard Adjuster Review — Verify Supporting Documentation,59,20,50,31,2,DIVERGENT,0
+CLM-2024-00084,CUST-06109,Fire,120092.69,Under Investigation,31,Low,Fast-Track Approval — Routine Processing,33,15,49,34,2,DIVERGENT,0
+CLM-2024-00072,CUST-06116,Fire,9457.84,Open,9,Low,Fast-Track Approval — Routine Processing,3,0,38,14,1,STRONG,0
+CLM-2024-00787,CUST-06128,Auto,6527.02,Under Investigation,9,Low,Fast-Track Approval — Routine Processing,3,0,38,20,1,STRONG,0
+CLM-2024-00894,CUST-06128,Fire,7580.12,Open,9,Low,Fast-Track Approval — Routine Processing,3,0,39,14,1,STRONG,0
+CLM-2024-00922,CUST-06135,Auto,72792.87,Settled,71,High,Priority Manual Investigation — Consider SIU Referral,87,73,45,31,2,STRONG,0
+CLM-2024-00150,CUST-06135,Fire,15251.72,Open,26,Low,Fast-Track Approval — Routine Processing,31,15,37,14,1,DIVERGENT,0
+CLM-2024-00307,CUST-06136,Auto,40484.58,Settled,25,Low,Fast-Track Approval — Routine Processing,26,10,49,17,1,DIVERGENT,0
+CLM-2024-01095,CUST-06142,Auto,3422.85,Settled,8,Low,Fast-Track Approval — Routine Processing,3,0,40,0,0,STRONG,0
+CLM-2024-00479,CUST-06148,Auto,7396.25,Settled,7,Low,Fast-Track Approval — Routine Processing,3,0,40,0,0,STRONG,0
+CLM-2024-00130,CUST-06153,Auto,2862.48,Settled,7,Low,Fast-Track Approval — Routine Processing,2,0,41,0,0,STRONG,0
+CLM-2024-00858,CUST-06174,Fire,6159.62,Settled,10,Low,Fast-Track Approval — Routine Processing,7,0,40,0,0,STRONG,0
+CLM-2024-00132,CUST-06175,Auto,2183.0,Approved,8,Low,Fast-Track Approval — Routine Processing,4,0,39,0,0,STRONG,0
+CLM-2024-00606,CUST-06175,Auto,5698.43,Settled,7,Low,Fast-Track Approval — Routine Processing,2,0,38,0,0,STRONG,0
+CLM-2024-00729,CUST-06175,Auto,17273.42,Under Investigation,47,Medium,Standard Adjuster Review — Verify Supporting Documentation,64,30,38,20,1,DIVERGENT,1
+CLM-2024-00792,CUST-06176,Fire,10529.87,Settled,11,Low,Fast-Track Approval — Routine Processing,9,0,42,0,0,STRONG,0
+CLM-2024-01023,CUST-06176,Fire,10217.72,Settled,8,Low,Fast-Track Approval — Routine Processing,4,0,42,0,0,STRONG,0
+CLM-2024-01039,CUST-06179,Auto,1564.72,Approved,9,Low,Fast-Track Approval — Routine Processing,3,0,53,0,0,STRONG,0
+CLM-2024-00291,CUST-06179,Fire,9404.61,Open,10,Low,Fast-Track Approval — Routine Processing,4,0,51,0,0,STRONG,0
+CLM-2024-00014,CUST-06183,Fire,55855.73,Settled,12,Low,Fast-Track Approval — Routine Processing,9,2,41,14,1,STRONG,0
+CLM-2024-00788,CUST-06183,Fire,134318.83,Approved,18,Low,Fast-Track Approval — Routine Processing,15,2,46,31,2,STRONG,0
+CLM-2024-00893,CUST-06183,Fire,213024.72,Open,51,Medium,Standard Adjuster Review — Verify Supporting Documentation,66,32,48,31,2,DIVERGENT,0
+CLM-2024-01383,CUST-06192,Fire,23202.76,Settled,33,Low,Fast-Track Approval — Routine Processing,45,15,38,14,1,DIVERGENT,0
+CLM-2024-00421,CUST-06197,Auto,1043.43,Settled,8,Low,Fast-Track Approval — Routine Processing,2,0,47,0,0,STRONG,0
+CLM-2024-00728,CUST-06202,Fire,169539.75,Under Investigation,48,Medium,Standard Adjuster Review — Verify Supporting Documentation,67,10,48,51,3,DIVERGENT,1
+CLM-2024-00380,CUST-06202,Caravan,7698.53,Settled,48,Medium,Standard Adjuster Review — Verify Supporting Documentation,67,20,48,31,2,DIVERGENT,0
+CLM-2024-00850,CUST-06210,Auto,2608.21,Settled,9,Low,Fast-Track Approval — Routine Processing,5,0,41,0,0,STRONG,0
+CLM-2024-01301,CUST-06210,Auto,3333.53,Approved,7,Low,Fast-Track Approval — Routine Processing,2,0,41,0,0,STRONG,0
+CLM-2024-00942,CUST-06214,Fire,9247.42,Settled,9,Low,Fast-Track Approval — Routine Processing,3,0,42,14,1,STRONG,0
+CLM-2024-00980,CUST-06215,Fire,146796.77,Approved,18,Low,Fast-Track Approval — Routine Processing,15,2,45,31,2,STRONG,0
+CLM-2024-00782,CUST-06223,Fire,128760.26,Approved,15,Low,Fast-Track Approval — Routine Processing,8,2,48,40,3,STRONG,0
+CLM-2024-00794,CUST-06231,Fire,25371.06,Approved,25,Low,Fast-Track Approval — Routine Processing,30,9,42,14,1,DIVERGENT,0
+CLM-2024-00454,CUST-06233,Fire,51109.11,Approved,11,Low,Fast-Track Approval — Routine Processing,4,2,43,23,2,STRONG,0
+CLM-2024-01378,CUST-06237,Fire,40355.52,Open,10,Low,Fast-Track Approval — Routine Processing,3,1,47,14,1,STRONG,0
+CLM-2024-00316,CUST-06254,Fire,5301.54,Approved,7,Low,Fast-Track Approval — Routine Processing,3,0,39,0,0,STRONG,0
+CLM-2024-00710,CUST-06259,Auto,4112.71,Approved,8,Low,Fast-Track Approval — Routine Processing,4,0,40,0,0,STRONG,0
+CLM-2024-00419,CUST-06261,Fire,30692.64,Settled,14,Low,Fast-Track Approval — Routine Processing,12,2,40,14,1,STRONG,0
+CLM-2024-00138,CUST-06268,Auto,1169.17,Settled,7,Low,Fast-Track Approval — Routine Processing,2,0,41,0,0,STRONG,0
+CLM-2024-00052,CUST-06273,Fire,326310.07,Settled,55,Medium,Standard Adjuster Review — Verify Supporting Documentation,72,32,51,31,2,DIVERGENT,0
+CLM-2024-00990,CUST-06273,Fire,17955.77,Settled,54,Medium,Standard Adjuster Review — Verify Supporting Documentation,78,29,39,14,1,DIVERGENT,1
+CLM-2024-00809,CUST-06275,Fire,20784.6,Settled,24,Low,Fast-Track Approval — Routine Processing,30,3,48,14,1,DIVERGENT,0
+CLM-2024-00601,CUST-06287,Fire,57047.25,Settled,12,Low,Fast-Track Approval — Routine Processing,7,2,44,14,1,STRONG,0
+CLM-2024-01470,CUST-06301,Fire,57287.44,Settled,11,Low,Fast-Track Approval — Routine Processing,5,1,46,14,1,STRONG,0
+CLM-2024-00422,CUST-06314,Fire,199897.91,Settled,54,Medium,Standard Adjuster Review — Verify Supporting Documentation,70,32,51,31,2,DIVERGENT,0
+CLM-2024-01273,CUST-06318,Fire,2284.52,Settled,11,Low,Fast-Track Approval — Routine Processing,5,0,43,14,1,STRONG,0
+CLM-2024-00235,CUST-06334,Auto,40336.32,Open,55,Medium,Standard Adjuster Review — Verify Supporting Documentation,76,31,42,31,2,DIVERGENT,0
+CLM-2024-00056,CUST-06335,Auto,60924.47,Under Investigation,71,High,Priority Manual Investigation — Consider SIU Referral,91,61,46,34,2,DIVERGENT,1
+CLM-2024-01355,CUST-06336,Auto,1443.66,Settled,8,Low,Fast-Track Approval — Routine Processing,2,0,43,0,0,STRONG,0
+CLM-2024-00698,CUST-06336,Fire,87191.02,Settled,12,Low,Fast-Track Approval — Routine Processing,4,1,45,31,2,STRONG,0
+CLM-2024-01145,CUST-06343,Fire,63393.86,Settled,12,Low,Fast-Track Approval — Routine Processing,4,1,43,31,2,STRONG,0
+CLM-2024-00678,CUST-06345,Fire,40299.27,Settled,19,Low,Fast-Track Approval — Routine Processing,13,9,50,34,3,STRONG,0
+CLM-2024-01398,CUST-06351,Auto,14135.28,Approved,13,Low,Fast-Track Approval — Routine Processing,11,0,49,0,0,STRONG,0
+CLM-2024-01411,CUST-06356,Fire,136774.73,Approved,49,Medium,Standard Adjuster Review — Verify Supporting Documentation,66,24,49,31,2,DIVERGENT,0
+CLM-2024-00225,CUST-06357,Fire,22565.04,Under Investigation,56,Medium,Standard Adjuster Review — Verify Supporting Documentation,81,23,44,34,2,DIVERGENT,1
+CLM-2024-01442,CUST-06358,Fire,12046.24,Settled,12,Low,Fast-Track Approval — Routine Processing,8,0,42,14,1,STRONG,0
+CLM-2024-01436,CUST-06371,Fire,14743.26,Settled,44,Medium,Standard Adjuster Review — Verify Supporting Documentation,65,14,51,0,0,DIVERGENT,0
+CLM-2024-00745,CUST-06373,Fire,32202.02,Settled,11,Low,Fast-Track Approval — Routine Processing,6,1,43,14,1,STRONG,0
+CLM-2024-01309,CUST-06374,Fire,30872.31,Settled,11,Low,Fast-Track Approval — Routine Processing,4,4,47,14,1,STRONG,0
+CLM-2024-01117,CUST-06382,Fire,27745.92,Settled,22,Low,Fast-Track Approval — Routine Processing,23,5,44,26,2,DIVERGENT,0
+CLM-2024-00264,CUST-06394,Fire,41909.89,Settled,13,Low,Fast-Track Approval — Routine Processing,8,1,47,14,1,STRONG,0
+CLM-2024-00532,CUST-06397,Fire,2854.77,Settled,8,Low,Fast-Track Approval — Routine Processing,2,0,44,0,0,STRONG,0
+CLM-2024-01307,CUST-06410,Fire,19875.43,Approved,29,Low,Fast-Track Approval — Routine Processing,36,15,37,14,1,DIVERGENT,0
+CLM-2024-00560,CUST-06414,Auto,1564.83,Open,7,Low,Fast-Track Approval — Routine Processing,2,0,40,0,0,STRONG,0
+CLM-2024-01203,CUST-06414,Auto,82473.0,Under Investigation,79,High,Priority Manual Investigation — Consider SIU Referral,92,83,47,51,3,STRONG,1
+CLM-2024-00744,CUST-06418,Fire,28482.62,Settled,23,Low,Fast-Track Approval — Routine Processing,25,8,42,14,1,DIVERGENT,0
+CLM-2024-00576,CUST-06419,Auto,965.05,Settled,10,Low,Fast-Track Approval — Routine Processing,5,0,47,0,0,STRONG,0
+CLM-2024-01127,CUST-06423,Fire,157929.02,Settled,44,Medium,Standard Adjuster Review — Verify Supporting Documentation,49,32,49,40,3,DIVERGENT,0
+CLM-2024-00371,CUST-06433,Fire,67233.67,Settled,13,Low,Fast-Track Approval — Routine Processing,5,1,46,31,2,STRONG,0
+CLM-2024-01460,CUST-06433,Fire,125712.2,Settled,28,Low,Fast-Track Approval — Routine Processing,28,15,48,31,2,STRONG,0
+CLM-2024-00094,CUST-06436,Auto,13203.31,Approved,30,Low,Fast-Track Approval — Routine Processing,42,5,52,0,0,DIVERGENT,0
+CLM-2024-00116,CUST-06441,Fire,26771.89,Settled,22,Low,Fast-Track Approval — Routine Processing,29,1,40,14,1,DIVERGENT,0
+CLM-2024-01235,CUST-06444,Fire,45949.82,Settled,11,Low,Fast-Track Approval — Routine Processing,5,1,45,14,1,STRONG,0
+CLM-2024-01231,CUST-06447,Auto,2529.42,Settled,12,Low,Fast-Track Approval — Routine Processing,9,0,49,0,0,STRONG,0
+CLM-2024-00763,CUST-06463,Auto,1935.01,Settled,7,Low,Fast-Track Approval — Routine Processing,2,0,39,0,0,STRONG,0
+CLM-2024-00857,CUST-06463,Fire,19239.76,Settled,46,Medium,Standard Adjuster Review — Verify Supporting Documentation,65,25,37,14,1,DIVERGENT,0
+CLM-2024-00598,CUST-06464,Fire,4715.63,Settled,11,Low,Fast-Track Approval — Routine Processing,5,0,46,14,1,STRONG,0
+CLM-2024-00750,CUST-06470,Fire,97867.51,Open,19,Low,Fast-Track Approval — Routine Processing,16,2,54,31,2,STRONG,0
+CLM-2024-00461,CUST-06477,Fire,10455.63,Settled,9,Low,Fast-Track Approval — Routine Processing,2,0,40,14,1,STRONG,0
+CLM-2024-00574,CUST-06489,Fire,126112.74,Settled,16,Low,Fast-Track Approval — Routine Processing,12,10,50,0,0,STRONG,0
+CLM-2024-00734,CUST-06489,Fire,59202.85,Settled,11,Low,Fast-Track Approval — Routine Processing,4,5,48,0,0,STRONG,0
+CLM-2024-00001,CUST-06492,Fire,16302.84,Approved,21,Low,Fast-Track Approval — Routine Processing,21,15,38,14,1,STRONG,0
+CLM-2024-00196,CUST-06505,Auto,2311.97,Settled,8,Low,Fast-Track Approval — Routine Processing,2,0,44,0,0,STRONG,0
+CLM-2024-01202,CUST-06537,Auto,1193.36,Settled,8,Low,Fast-Track Approval — Routine Processing,2,0,48,0,0,STRONG,0
+CLM-2024-00699,CUST-06537,Fire,28643.43,Approved,15,Low,Fast-Track Approval — Routine Processing,13,0,44,14,1,STRONG,0
+CLM-2024-01083,CUST-06547,Caravan,6584.03,Settled,48,Medium,Standard Adjuster Review — Verify Supporting Documentation,70,19,48,14,1,DIVERGENT,0
+CLM-2024-00590,CUST-06550,Caravan,6836.32,Open,58,Medium,Standard Adjuster Review — Verify Supporting Documentation,85,19,55,31,2,DIVERGENT,1
+CLM-2024-00325,CUST-06557,Auto,3505.37,Settled,7,Low,Fast-Track Approval — Routine Processing,2,0,38,0,0,STRONG,0
+CLM-2024-00370,CUST-06559,Fire,130069.84,Settled,25,Low,Fast-Track Approval — Routine Processing,28,5,45,31,2,DIVERGENT,0
+CLM-2024-00828,CUST-06571,Auto,3982.65,Open,9,Low,Fast-Track Approval — Routine Processing,3,0,47,0,0,STRONG,0
+CLM-2024-00547,CUST-06576,Auto,6552.84,Approved,8,Low,Fast-Track Approval — Routine Processing,4,0,37,0,0,STRONG,0
+CLM-2024-01290,CUST-06584,Fire,11716.7,Settled,7,Low,Fast-Track Approval — Routine Processing,2,0,40,0,0,STRONG,0
+CLM-2024-00128,CUST-06604,Fire,12875.28,Settled,11,Low,Fast-Track Approval — Routine Processing,5,0,46,14,1,STRONG,0
+CLM-2024-00478,CUST-06609,Auto,2409.2,Settled,7,Low,Fast-Track Approval — Routine Processing,1,0,44,0,0,STRONG,0
+CLM-2024-00172,CUST-06609,Caravan,3338.36,Settled,11,Low,Fast-Track Approval — Routine Processing,5,0,47,14,1,STRONG,0
+CLM-2024-00205,CUST-06609,Caravan,2831.64,Approved,19,Low,Fast-Track Approval — Routine Processing,17,5,53,14,1,STRONG,0
+CLM-2024-00266,CUST-06618,Auto,1199.75,Settled,8,Low,Fast-Track Approval — Routine Processing,2,0,43,0,0,STRONG,0
+CLM-2024-00562,CUST-06618,Auto,1734.2,Settled,7,Low,Fast-Track Approval — Routine Processing,2,0,42,0,0,STRONG,0
+CLM-2024-00449,CUST-06620,Auto,25955.46,Settled,69,Medium,Standard Adjuster Review — Verify Supporting Documentation,95,56,49,0,0,DIVERGENT,1
+CLM-2024-00143,CUST-06624,Fire,8688.56,Settled,11,Low,Fast-Track Approval — Routine Processing,6,0,46,14,1,STRONG,0
+CLM-2024-00718,CUST-06625,Fire,4522.54,Settled,11,Low,Fast-Track Approval — Routine Processing,5,0,49,14,1,STRONG,0
+CLM-2024-00719,CUST-06635,Auto,2193.08,Approved,8,Low,Fast-Track Approval — Routine Processing,4,0,40,0,0,STRONG,0
+CLM-2024-00625,CUST-06635,Fire,9261.65,Settled,13,Low,Fast-Track Approval — Routine Processing,11,0,39,14,1,STRONG,0
+CLM-2024-00471,CUST-06637,Fire,13972.02,Approved,9,Low,Fast-Track Approval — Routine Processing,2,0,40,14,1,STRONG,0
+CLM-2024-00725,CUST-06661,Auto,15799.41,Settled,64,Medium,Standard Adjuster Review — Verify Supporting Documentation,93,42,45,0,0,DIVERGENT,1
+CLM-2024-00359,CUST-06664,Auto,3689.39,Settled,9,Low,Fast-Track Approval — Routine Processing,5,0,40,0,0,STRONG,0
+CLM-2024-01349,CUST-06685,Fire,39039.36,Settled,15,Low,Fast-Track Approval — Routine Processing,11,9,39,14,1,STRONG,0
+CLM-2024-00691,CUST-06689,Fire,4707.01,Open,10,Low,Fast-Track Approval — Routine Processing,3,0,44,14,1,STRONG,0
+CLM-2024-00955,CUST-06699,Auto,2294.91,Settled,8,Low,Fast-Track Approval — Routine Processing,3,0,46,0,0,STRONG,0
+CLM-2024-00619,CUST-06705,Auto,8898.25,Settled,8,Low,Fast-Track Approval — Routine Processing,4,0,40,0,0,STRONG,0
+CLM-2024-00404,CUST-06720,Auto,8398.3,Settled,14,Low,Fast-Track Approval — Routine Processing,15,5,39,0,0,STRONG,0
+CLM-2024-01491,CUST-06722,Fire,108046.47,Under Investigation,36,Low,Fast-Track Approval — Routine Processing,40,15,46,51,3,DIVERGENT,1
+CLM-2024-00050,CUST-06723,Fire,4583.12,Under Investigation,9,Low,Fast-Track Approval — Routine Processing,3,0,39,20,1,STRONG,0
+CLM-2024-00178,CUST-06734,Fire,19670.69,Approved,45,Medium,Standard Adjuster Review — Verify Supporting Documentation,61,27,41,14,1,DIVERGENT,0
+CLM-2024-00529,CUST-06751,Fire,6261.85,Settled,9,Low,Fast-Track Approval — Routine Processing,5,0,41,0,0,STRONG,0
+CLM-2024-01027,CUST-06754,Auto,22398.19,Settled,66,Medium,Standard Adjuster Review — Verify Supporting Documentation,95,47,47,0,0,DIVERGENT,1
+CLM-2024-00195,CUST-06760,Fire,40610.77,Settled,14,Low,Fast-Track Approval — Routine Processing,11,2,42,14,1,STRONG,0
+CLM-2024-00065,CUST-06761,Fire,13736.1,Settled,15,Low,Fast-Track Approval — Routine Processing,15,1,39,14,1,STRONG,0
+CLM-2024-00369,CUST-06766,Caravan,5575.59,Settled,44,Medium,Standard Adjuster Review — Verify Supporting Documentation,62,10,57,14,1,DIVERGENT,0
+CLM-2024-00439,CUST-06766,Caravan,13125.0,Approved,32,Low,Fast-Track Approval — Routine Processing,32,19,58,31,2,STRONG,0
+CLM-2024-00912,CUST-06767,Auto,65889.44,Under Investigation,68,Medium,Standard Adjuster Review — Verify Supporting Documentation,89,48,46,51,3,DIVERGENT,1
+CLM-2024-01448,CUST-06768,Fire,69285.66,Settled,13,Low,Fast-Track Approval — Routine Processing,10,2,40,14,1,STRONG,0
+CLM-2024-00843,CUST-06773,Fire,8288.21,Settled,14,Low,Fast-Track Approval — Routine Processing,12,0,40,14,1,STRONG,0
+CLM-2024-00148,CUST-06779,Auto,4645.86,Settled,7,Low,Fast-Track Approval — Routine Processing,2,0,42,0,0,STRONG,0
+CLM-2024-00684,CUST-06781,Auto,2671.98,Under Investigation,10,Low,Fast-Track Approval — Routine Processing,4,0,41,20,1,STRONG,0
+CLM-2024-00652,CUST-06781,Fire,45151.59,Approved,12,Low,Fast-Track Approval — Routine Processing,7,1,43,14,1,STRONG,0
+CLM-2024-01029,CUST-06782,Auto,2074.47,Approved,8,Low,Fast-Track Approval — Routine Processing,4,0,40,0,0,STRONG,0
+CLM-2024-00530,CUST-06791,Auto,3379.84,Settled,10,Low,Fast-Track Approval — Routine Processing,7,0,40,0,0,STRONG,0
+CLM-2024-01360,CUST-06820,Fire,15664.95,Settled,21,Low,Fast-Track Approval — Routine Processing,25,5,37,14,1,DIVERGENT,0
+CLM-2024-00078,CUST-06832,Auto,7399.72,Settled,16,Low,Fast-Track Approval — Routine Processing,17,5,43,0,0,STRONG,0
+CLM-2024-00905,CUST-06844,Auto,2319.08,Approved,7,Low,Fast-Track Approval — Routine Processing,3,0,39,0,0,STRONG,0
+CLM-2024-01223,CUST-06846,Auto,10739.49,Approved,9,Low,Fast-Track Approval — Routine Processing,5,0,40,0,0,STRONG,0
+CLM-2024-01323,CUST-06846,Auto,23996.65,Approved,47,Medium,Standard Adjuster Review — Verify Supporting Documentation,67,32,40,0,0,DIVERGENT,0
+CLM-2024-00799,CUST-06853,Auto,6835.92,Open,8,Low,Fast-Track Approval — Routine Processing,4,0,42,0,0,STRONG,0
+CLM-2024-00578,CUST-06854,Fire,38446.15,Approved,19,Low,Fast-Track Approval — Routine Processing,15,13,44,14,1,STRONG,0
+CLM-2024-01062,CUST-06870,Auto,4584.04,Settled,10,Low,Fast-Track Approval — Routine Processing,6,0,45,0,0,STRONG,0
+CLM-2024-00525,CUST-06870,Fire,6746.45,Approved,8,Low,Fast-Track Approval — Routine Processing,2,0,44,0,0,STRONG,0
+CLM-2024-00892,CUST-06874,Fire,18929.0,Approved,45,Medium,Standard Adjuster Review — Verify Supporting Documentation,64,25,39,14,1,DIVERGENT,0
+CLM-2024-01356,CUST-06876,Auto,41997.02,Settled,44,Medium,Standard Adjuster Review — Verify Supporting Documentation,63,19,45,17,1,DIVERGENT,0
+CLM-2024-00323,CUST-06879,Auto,2129.53,Settled,8,Low,Fast-Track Approval — Routine Processing,4,0,41,0,0,STRONG,0
+CLM-2024-01338,CUST-06879,Auto,6430.83,Approved,8,Low,Fast-Track Approval — Routine Processing,4,0,40,0,0,STRONG,0
+CLM-2024-00321,CUST-06882,Auto,4682.14,Approved,8,Low,Fast-Track Approval — Routine Processing,3,0,43,0,0,STRONG,0
+CLM-2024-01416,CUST-06885,Auto,2656.27,Approved,7,Low,Fast-Track Approval — Routine Processing,3,0,40,0,0,STRONG,0
+CLM-2024-00832,CUST-06885,Caravan,5095.59,Settled,16,Low,Fast-Track Approval — Routine Processing,12,0,44,31,2,STRONG,0
+CLM-2024-01433,CUST-06893,Auto,21039.06,Under Investigation,50,Medium,Standard Adjuster Review — Verify Supporting Documentation,68,32,38,20,1,DIVERGENT,1
+CLM-2024-01444,CUST-06894,Auto,23165.1,Settled,56,Medium,Standard Adjuster Review — Verify Supporting Documentation,83,34,39,0,0,DIVERGENT,1
+CLM-2024-00707,CUST-06911,Fire,9908.41,Settled,14,Low,Fast-Track Approval — Routine Processing,12,0,45,14,1,STRONG,0
+CLM-2024-01352,CUST-06912,Auto,2303.53,Settled,7,Low,Fast-Track Approval — Routine Processing,2,0,40,0,0,STRONG,0
+CLM-2024-00137,CUST-06919,Auto,1941.89,Approved,7,Low,Fast-Track Approval — Routine Processing,2,0,41,0,0,STRONG,0
+CLM-2024-00506,CUST-06920,Auto,7547.07,Settled,8,Low,Fast-Track Approval — Routine Processing,4,0,38,0,0,STRONG,0
+CLM-2024-00805,CUST-06928,Auto,1500.76,Settled,11,Low,Fast-Track Approval — Routine Processing,7,0,49,0,0,STRONG,0
+CLM-2024-00036,CUST-06930,Fire,20488.76,Settled,30,Low,Fast-Track Approval — Routine Processing,42,6,46,14,1,DIVERGENT,0
+CLM-2024-01236,CUST-06966,Caravan,11020.78,Settled,44,Medium,Standard Adjuster Review — Verify Supporting Documentation,55,19,57,31,2,DIVERGENT,0
+CLM-2024-00223,CUST-06967,Auto,3838.23,Settled,7,Low,Fast-Track Approval — Routine Processing,2,0,43,0,0,STRONG,0
+CLM-2024-01110,CUST-06973,Auto,25285.98,Approved,59,Medium,Standard Adjuster Review — Verify Supporting Documentation,83,32,42,31,2,DIVERGENT,0
+CLM-2024-01112,CUST-06978,Auto,83594.51,Under Investigation,85,High,Priority Manual Investigation — Consider SIU Referral,97,100,51,34,2,STRONG,1
+CLM-2024-01040,CUST-06989,Auto,3561.0,Under Investigation,9,Low,Fast-Track Approval — Routine Processing,2,0,39,20,1,STRONG,0
+CLM-2024-00445,CUST-06991,Fire,54667.73,Settled,12,Low,Fast-Track Approval — Routine Processing,8,1,40,14,1,STRONG,0
+CLM-2024-00363,CUST-06991,Caravan,6105.27,Under Investigation,51,Medium,Standard Adjuster Review — Verify Supporting Documentation,69,18,45,51,3,DIVERGENT,1
+CLM-2024-00827,CUST-07009,Auto,5790.27,Under Investigation,10,Low,Fast-Track Approval — Routine Processing,4,0,39,20,1,STRONG,0
+CLM-2024-01484,CUST-07010,Fire,7862.71,Settled,13,Low,Fast-Track Approval — Routine Processing,11,0,39,14,1,STRONG,0
+CLM-2024-00026,CUST-07028,Fire,16244.87,Settled,49,Medium,Standard Adjuster Review — Verify Supporting Documentation,68,31,41,14,1,DIVERGENT,0
+CLM-2024-00140,CUST-07037,Fire,3354.56,Settled,11,Low,Fast-Track Approval — Routine Processing,6,0,41,14,1,STRONG,0
+CLM-2024-00584,CUST-07038,Auto,8054.73,Settled,9,Low,Fast-Track Approval — Routine Processing,5,0,39,0,0,STRONG,0
+CLM-2024-01086,CUST-07042,Fire,73096.57,Open,41,Medium,Standard Adjuster Review — Verify Supporting Documentation,52,15,50,43,3,DIVERGENT,0
+CLM-2024-00081,CUST-07046,Fire,54393.23,Settled,12,Low,Fast-Track Approval — Routine Processing,9,2,39,14,1,STRONG,0
+CLM-2024-00702,CUST-07066,Auto,10226.84,Settled,10,Low,Fast-Track Approval — Routine Processing,8,0,41,0,0,STRONG,0
+CLM-2024-00083,CUST-07068,Fire,17569.27,Settled,20,Low,Fast-Track Approval — Routine Processing,20,5,48,14,1,STRONG,0
+CLM-2024-00774,CUST-07076,Auto,29110.17,Open,29,Low,Fast-Track Approval — Routine Processing,34,13,45,17,1,DIVERGENT,0
+CLM-2024-00085,CUST-07087,Fire,7041.14,Approved,11,Low,Fast-Track Approval — Routine Processing,6,0,40,14,1,STRONG,0
+CLM-2024-00756,CUST-07115,Fire,7511.33,Settled,10,Low,Fast-Track Approval — Routine Processing,4,0,44,14,1,STRONG,0
+CLM-2024-00819,CUST-07119,Auto,4214.5,Under Investigation,9,Low,Fast-Track Approval — Routine Processing,2,0,39,20,1,STRONG,0
+CLM-2024-00921,CUST-07120,Fire,18581.43,Settled,23,Low,Fast-Track Approval — Routine Processing,23,15,40,14,1,STRONG,0
+CLM-2024-00844,CUST-07130,Fire,4611.85,Settled,10,Low,Fast-Track Approval — Routine Processing,6,0,43,0,0,STRONG,0
+CLM-2024-01151,CUST-07146,Auto,3743.99,Open,7,Low,Fast-Track Approval — Routine Processing,2,0,38,0,0,STRONG,0
+CLM-2024-01239,CUST-07146,Auto,1291.14,Settled,7,Low,Fast-Track Approval — Routine Processing,3,0,41,0,0,STRONG,0
+CLM-2024-01371,CUST-07146,Auto,2281.97,Approved,7,Low,Fast-Track Approval — Routine Processing,2,0,39,0,0,STRONG,0
+CLM-2024-01156,CUST-07148,Fire,41384.68,Settled,16,Low,Fast-Track Approval — Routine Processing,15,5,42,14,1,STRONG,0
+CLM-2024-01438,CUST-07153,Auto,77484.72,Settled,46,Medium,Standard Adjuster Review — Verify Supporting Documentation,52,35,50,40,3,DIVERGENT,0
+CLM-2024-01388,CUST-07154,Fire,34980.76,Open,13,Low,Fast-Track Approval — Routine Processing,6,1,46,26,2,STRONG,0
+CLM-2024-01003,CUST-07156,Auto,1522.02,Settled,8,Low,Fast-Track Approval — Routine Processing,2,0,45,0,0,STRONG,0
+CLM-2024-00423,CUST-07157,Auto,7488.37,Approved,8,Low,Fast-Track Approval — Routine Processing,3,0,40,0,0,STRONG,0
+CLM-2024-00070,CUST-07157,Caravan,4537.59,Settled,14,Low,Fast-Track Approval — Routine Processing,7,0,46,31,2,STRONG,0
+CLM-2024-00383,CUST-07161,Fire,264539.29,Settled,55,Medium,Standard Adjuster Review — Verify Supporting Documentation,71,32,52,31,2,DIVERGENT,0
+CLM-2024-01314,CUST-07161,Fire,15300.37,Open,44,Medium,Standard Adjuster Review — Verify Supporting Documentation,64,18,42,14,1,DIVERGENT,0
+CLM-2024-00186,CUST-07163,Fire,51375.77,Under Investigation,13,Low,Fast-Track Approval — Routine Processing,5,1,42,34,2,STRONG,0
+CLM-2024-00319,CUST-07167,Fire,21600.63,Approved,37,Low,Fast-Track Approval — Routine Processing,54,9,44,14,1,DIVERGENT,0
+CLM-2024-00502,CUST-07173,Auto,1627.83,Under Investigation,9,Low,Fast-Track Approval — Routine Processing,2,0,39,20,1,STRONG,0
+CLM-2024-00221,CUST-07174,Auto,23912.44,Settled,29,Low,Fast-Track Approval — Routine Processing,36,15,46,0,0,DIVERGENT,0
+CLM-2024-00098,CUST-07175,Auto,1692.53,Settled,7,Low,Fast-Track Approval — Routine Processing,2,0,43,0,0,STRONG,0
+CLM-2024-01019,CUST-07176,Auto,1998.63,Settled,7,Low,Fast-Track Approval — Routine Processing,2,0,41,0,0,STRONG,0
+CLM-2024-01418,CUST-07176,Auto,1961.12,Approved,7,Low,Fast-Track Approval — Routine Processing,2,0,41,0,0,STRONG,0
+CLM-2024-00594,CUST-07179,Auto,17222.19,Settled,49,Medium,Standard Adjuster Review — Verify Supporting Documentation,69,29,39,14,1,DIVERGENT,0
+CLM-2024-00791,CUST-07187,Auto,2722.59,Open,8,Low,Fast-Track Approval — Routine Processing,2,0,46,0,0,STRONG,0
+CLM-2024-01216,CUST-07207,Auto,40847.97,Settled,28,Low,Fast-Track Approval — Routine Processing,32,13,46,17,1,DIVERGENT,0
+CLM-2024-01311,CUST-07211,Fire,32673.67,Approved,11,Low,Fast-Track Approval — Routine Processing,6,1,42,14,1,STRONG,0
+CLM-2024-01405,CUST-07214,Auto,33566.47,Approved,19,Low,Fast-Track Approval — Routine Processing,16,13,41,17,1,STRONG,0
+CLM-2024-00304,CUST-07222,Fire,5099.28,Open,13,Low,Fast-Track Approval — Routine Processing,11,0,42,14,1,STRONG,0
+CLM-2024-00673,CUST-07224,Auto,4611.12,Approved,7,Low,Fast-Track Approval — Routine Processing,3,0,37,0,0,STRONG,0
+CLM-2024-01490,CUST-07227,Fire,11691.22,Under Investigation,19,Low,Fast-Track Approval — Routine Processing,18,1,42,34,2,DIVERGENT,0
+CLM-2024-01193,CUST-07228,Fire,34897.1,Approved,10,Low,Fast-Track Approval — Routine Processing,4,1,39,14,1,STRONG,0
+CLM-2024-01158,CUST-07239,Fire,17501.83,Open,24,Low,Fast-Track Approval — Routine Processing,29,13,45,0,0,DIVERGENT,0
+CLM-2024-00563,CUST-07252,Auto,2446.45,Settled,8,Low,Fast-Track Approval — Routine Processing,2,0,48,0,0,STRONG,0
+CLM-2024-00368,CUST-07267,Auto,3560.76,Approved,7,Low,Fast-Track Approval — Routine Processing,2,0,42,0,0,STRONG,0
+CLM-2024-00124,CUST-07279,Auto,4147.79,Approved,7,Low,Fast-Track Approval — Routine Processing,2,0,40,0,0,STRONG,0
+CLM-2024-00252,CUST-07288,Fire,46548.67,Open,11,Low,Fast-Track Approval — Routine Processing,5,1,43,14,1,STRONG,0
+CLM-2024-00677,CUST-07288,Fire,14682.08,Settled,23,Low,Fast-Track Approval — Routine Processing,28,5,40,14,1,DIVERGENT,0
+CLM-2024-00456,CUST-07295,Auto,1772.51,Settled,9,Low,Fast-Track Approval — Routine Processing,5,0,44,0,0,STRONG,0
+CLM-2024-01060,CUST-07301,Auto,28119.12,Settled,41,Medium,Standard Adjuster Review — Verify Supporting Documentation,57,15,39,31,2,DIVERGENT,0
+CLM-2024-00877,CUST-07319,Fire,367151.75,Under Investigation,66,Medium,Standard Adjuster Review — Verify Supporting Documentation,85,45,48,51,3,DIVERGENT,1
+CLM-2024-00897,CUST-07321,Auto,7514.53,Settled,12,Low,Fast-Track Approval — Routine Processing,10,0,44,0,0,STRONG,0
+CLM-2024-00121,CUST-07321,Caravan,5462.65,Settled,26,Low,Fast-Track Approval — Routine Processing,30,5,47,31,2,DIVERGENT,0
+CLM-2024-00251,CUST-07322,Fire,72578.78,Under Investigation,16,Low,Fast-Track Approval — Routine Processing,11,1,41,34,2,STRONG,0
+CLM-2024-01012,CUST-07329,Auto,7557.85,Under Investigation,13,Low,Fast-Track Approval — Routine Processing,10,0,38,20,1,STRONG,0
+CLM-2024-00203,CUST-07331,Auto,2845.67,Settled,7,Low,Fast-Track Approval — Routine Processing,3,0,39,0,0,STRONG,0
+CLM-2024-00890,CUST-07335,Auto,11078.84,Approved,13,Low,Fast-Track Approval — Routine Processing,14,1,40,0,0,STRONG,0
+CLM-2024-00387,CUST-07335,Fire,25020.7,Settled,23,Low,Fast-Track Approval — Routine Processing,26,9,39,14,1,DIVERGENT,0
+CLM-2024-01280,CUST-07335,Fire,61849.24,Settled,10,Low,Fast-Track Approval — Routine Processing,5,1,41,14,1,STRONG,0
+CLM-2024-01487,CUST-07335,Fire,67049.97,Approved,12,Low,Fast-Track Approval — Routine Processing,8,2,43,14,1,STRONG,0
+CLM-2024-00738,CUST-07336,Fire,42648.78,Settled,11,Low,Fast-Track Approval — Routine Processing,6,1,39,14,1,STRONG,0
+CLM-2024-01472,CUST-07348,Auto,1071.75,Settled,10,Low,Fast-Track Approval — Routine Processing,6,0,43,0,0,STRONG,0
+CLM-2024-00957,CUST-07351,Auto,1837.46,Settled,8,Low,Fast-Track Approval — Routine Processing,3,0,40,0,0,STRONG,0
+CLM-2024-00324,CUST-07363,Fire,3884.05,Approved,9,Low,Fast-Track Approval — Routine Processing,2,0,42,14,1,STRONG,0
+CLM-2024-00060,CUST-07384,Caravan,13125.0,Settled,32,Low,Fast-Track Approval — Routine Processing,32,20,53,31,2,STRONG,0
+CLM-2024-01443,CUST-07386,Fire,22875.5,Settled,32,Low,Fast-Track Approval — Routine Processing,42,15,38,14,1,DIVERGENT,0
+CLM-2024-01305,CUST-07388,Auto,4587.7,Settled,9,Low,Fast-Track Approval — Routine Processing,5,0,43,0,0,STRONG,0
+CLM-2024-01406,CUST-07395,Caravan,4134.41,Settled,15,Low,Fast-Track Approval — Routine Processing,10,1,46,31,2,STRONG,0
+CLM-2024-00913,CUST-07415,Auto,1194.36,Settled,8,Low,Fast-Track Approval — Routine Processing,3,0,43,0,0,STRONG,0
+CLM-2024-00520,CUST-07458,Fire,37804.93,Approved,15,Low,Fast-Track Approval — Routine Processing,8,2,51,26,2,STRONG,0
+CLM-2024-00435,CUST-07459,Fire,15502.33,Under Investigation,22,Low,Fast-Track Approval — Routine Processing,21,11,38,34,2,STRONG,0
+CLM-2024-00430,CUST-07461,Fire,16289.66,Approved,25,Low,Fast-Track Approval — Routine Processing,31,7,43,14,1,DIVERGENT,0
+CLM-2024-00349,CUST-07468,Auto,11372.99,Settled,9,Low,Fast-Track Approval — Routine Processing,5,0,41,0,0,STRONG,0
+CLM-2024-00010,CUST-07471,Fire,21418.81,Open,53,Medium,Standard Adjuster Review — Verify Supporting Documentation,76,31,38,14,1,DIVERGENT,1
+CLM-2024-00572,CUST-07482,Fire,7959.83,Settled,9,Low,Fast-Track Approval — Routine Processing,3,0,39,14,1,STRONG,0
+CLM-2024-00239,CUST-07484,Auto,2715.71,Open,7,Low,Fast-Track Approval — Routine Processing,2,0,41,0,0,STRONG,0
+CLM-2024-01334,CUST-07486,Fire,31360.2,Approved,11,Low,Fast-Track Approval — Routine Processing,6,1,39,14,1,STRONG,0
+CLM-2024-00289,CUST-07495,Auto,3624.28,Settled,7,Low,Fast-Track Approval — Routine Processing,2,0,41,0,0,STRONG,0
+CLM-2024-01246,CUST-07501,Auto,1905.86,Approved,10,Low,Fast-Track Approval — Routine Processing,6,0,44,0,0,STRONG,0
+CLM-2024-01374,CUST-07508,Fire,251663.11,Under Investigation,55,Medium,Standard Adjuster Review — Verify Supporting Documentation,66,32,57,51,3,DIVERGENT,1
+CLM-2024-01341,CUST-07521,Auto,49217.29,Under Investigation,66,Medium,Standard Adjuster Review — Verify Supporting Documentation,88,51,49,20,1,DIVERGENT,1
+CLM-2024-01056,CUST-07528,Caravan,4921.52,Settled,15,Low,Fast-Track Approval — Routine Processing,10,0,43,31,2,STRONG,0
+CLM-2024-00114,CUST-07532,Auto,1369.59,Open,7,Low,Fast-Track Approval — Routine Processing,2,0,41,0,0,STRONG,0
+CLM-2024-01147,CUST-07532,Fire,50852.63,Settled,32,Low,Fast-Track Approval — Routine Processing,35,15,44,43,3,DIVERGENT,0
+CLM-2024-01391,CUST-07539,Fire,15435.79,Open,47,Medium,Standard Adjuster Review — Verify Supporting Documentation,66,27,37,14,1,DIVERGENT,1
+CLM-2024-00724,CUST-07546,Fire,16714.55,Open,41,Medium,Standard Adjuster Review — Verify Supporting Documentation,53,27,38,14,1,DIVERGENT,0
+CLM-2024-00772,CUST-07557,Auto,1568.62,Settled,12,Low,Fast-Track Approval — Routine Processing,7,0,56,0,0,STRONG,0
+CLM-2024-01288,CUST-07557,Fire,230543.46,Under Investigation,68,Medium,Standard Adjuster Review — Verify Supporting Documentation,87,48,59,43,3,DIVERGENT,1
+CLM-2024-00047,CUST-07561,Fire,6170.27,Settled,7,Low,Fast-Track Approval — Routine Processing,3,0,41,0,0,STRONG,0
+CLM-2024-00947,CUST-07562,Auto,14593.97,Settled,36,Low,Fast-Track Approval — Routine Processing,59,2,39,0,0,DIVERGENT,0
+CLM-2024-01463,CUST-07563,Fire,96425.09,Under Investigation,65,Medium,Standard Adjuster Review — Verify Supporting Documentation,82,37,51,71,5,DIVERGENT,1
+CLM-2024-00279,CUST-07576,Auto,9460.28,Approved,15,Low,Fast-Track Approval — Routine Processing,15,1,45,0,0,STRONG,0
+CLM-2024-00835,CUST-07597,Auto,3175.72,Approved,10,Low,Fast-Track Approval — Routine Processing,6,0,42,0,0,STRONG,0
+CLM-2024-01201,CUST-07601,Fire,66312.06,Settled,10,Low,Fast-Track Approval — Routine Processing,4,1,44,14,1,STRONG,0
+CLM-2024-01452,CUST-07620,Fire,212458.51,Settled,44,Medium,Standard Adjuster Review — Verify Supporting Documentation,54,24,49,31,2,DIVERGENT,0
+CLM-2024-00994,CUST-07631,Auto,40528.48,Open,39,Low,Fast-Track Approval — Routine Processing,57,10,44,17,1,DIVERGENT,0
+CLM-2024-01230,CUST-07639,Fire,13130.9,Settled,13,Low,Fast-Track Approval — Routine Processing,9,1,41,14,1,STRONG,0
+CLM-2024-00487,CUST-07644,Caravan,3023.42,Settled,11,Low,Fast-Track Approval — Routine Processing,6,0,41,14,1,STRONG,0
+CLM-2024-00086,CUST-07646,Fire,6973.77,Approved,7,Low,Fast-Track Approval — Routine Processing,3,0,39,0,0,STRONG,0
+CLM-2024-01183,CUST-07649,Fire,9531.97,Settled,10,Low,Fast-Track Approval — Routine Processing,5,0,41,14,1,STRONG,0
+CLM-2024-00683,CUST-07662,Fire,3610.35,Settled,12,Low,Fast-Track Approval — Routine Processing,9,0,41,14,1,STRONG,0
+CLM-2024-01106,CUST-07669,Caravan,8850.25,Settled,42,Medium,Standard Adjuster Review — Verify Supporting Documentation,57,14,49,31,2,DIVERGENT,0
+CLM-2024-01008,CUST-07679,Auto,43186.58,Settled,43,Medium,Standard Adjuster Review — Verify Supporting Documentation,60,20,43,17,1,DIVERGENT,0
+CLM-2024-01479,CUST-07679,Auto,7394.05,Settled,9,Low,Fast-Track Approval — Routine Processing,5,0,39,0,0,STRONG,0
+CLM-2024-00092,CUST-07681,Fire,79792.26,Approved,16,Low,Fast-Track Approval — Routine Processing,11,9,46,14,1,STRONG,0
+CLM-2024-01157,CUST-07684,Auto,3220.4,Settled,8,Low,Fast-Track Approval — Routine Processing,2,0,43,0,0,STRONG,0
+CLM-2024-00773,CUST-07687,Fire,3664.69,Settled,8,Low,Fast-Track Approval — Routine Processing,2,0,40,14,1,STRONG,0
+CLM-2024-01409,CUST-07697,Fire,172892.71,Open,49,Medium,Standard Adjuster Review — Verify Supporting Documentation,61,32,47,31,2,DIVERGENT,0
+CLM-2024-01160,CUST-07710,Fire,20573.28,Approved,31,Low,Fast-Track Approval — Routine Processing,43,5,44,14,1,DIVERGENT,0
+CLM-2024-01485,CUST-07722,Auto,7072.44,Settled,8,Low,Fast-Track Approval — Routine Processing,5,0,39,0,0,STRONG,0
+CLM-2024-01296,CUST-07729,Fire,31663.5,Settled,10,Low,Fast-Track Approval — Routine Processing,4,0,45,14,1,STRONG,0
+CLM-2024-01319,CUST-07740,Auto,8069.4,Settled,10,Low,Fast-Track Approval — Routine Processing,6,0,42,0,0,STRONG,0
+CLM-2024-00642,CUST-07740,Fire,5929.47,Approved,9,Low,Fast-Track Approval — Routine Processing,6,0,42,0,0,STRONG,0
+CLM-2024-00956,CUST-07754,Auto,3279.05,Settled,9,Low,Fast-Track Approval — Routine Processing,4,0,43,0,0,STRONG,0
+CLM-2024-00676,CUST-07755,Fire,232325.77,Under Investigation,86,High,Priority Manual Investigation — Consider SIU Referral,97,96,60,43,3,STRONG,1
+CLM-2024-00023,CUST-07758,Fire,10700.28,Settled,10,Low,Fast-Track Approval — Routine Processing,5,0,39,14,1,STRONG,0
+CLM-2024-01159,CUST-07758,Fire,23526.97,Settled,40,Medium,Standard Adjuster Review — Verify Supporting Documentation,59,15,39,14,1,DIVERGENT,1
+CLM-2024-01067,CUST-07761,Fire,27860.17,Open,25,Low,Fast-Track Approval — Routine Processing,32,8,40,14,1,DIVERGENT,0
+CLM-2024-00243,CUST-07775,Auto,17046.01,Settled,60,Medium,Standard Adjuster Review — Verify Supporting Documentation,84,37,46,14,1,DIVERGENT,0
+CLM-2024-01404,CUST-07775,Auto,3868.12,Settled,8,Low,Fast-Track Approval — Routine Processing,3,0,43,0,0,STRONG,0
+CLM-2024-00093,CUST-07780,Auto,5363.46,Settled,14,Low,Fast-Track Approval — Routine Processing,14,1,42,0,0,STRONG,0
+CLM-2024-01450,CUST-07780,Auto,3310.49,Settled,8,Low,Fast-Track Approval — Routine Processing,3,0,40,0,0,STRONG,0
+CLM-2024-00616,CUST-07787,Auto,2222.27,Settled,7,Low,Fast-Track Approval — Routine Processing,2,0,41,0,0,STRONG,0
+CLM-2024-00618,CUST-07792,Auto,37811.34,Under Investigation,50,Medium,Standard Adjuster Review — Verify Supporting Documentation,69,21,41,37,2,DIVERGENT,1
+CLM-2024-00735,CUST-07792,Auto,4088.97,Settled,9,Low,Fast-Track Approval — Routine Processing,7,0,39,0,0,STRONG,0
+CLM-2024-01261,CUST-07793,Fire,6648.81,Settled,8,Low,Fast-Track Approval — Routine Processing,5,0,37,0,0,STRONG,0
+CLM-2024-00379,CUST-07804,Fire,5986.02,Open,10,Low,Fast-Track Approval — Routine Processing,4,0,41,14,1,STRONG,0
+CLM-2024-00876,CUST-07805,Fire,9823.44,Settled,10,Low,Fast-Track Approval — Routine Processing,5,0,43,14,1,STRONG,0
+CLM-2024-00310,CUST-07839,Fire,85636.52,Settled,13,Low,Fast-Track Approval — Routine Processing,5,1,47,31,2,STRONG,0
+CLM-2024-00144,CUST-07840,Auto,5540.73,Settled,7,Low,Fast-Track Approval — Routine Processing,3,0,37,0,0,STRONG,0
+CLM-2024-01152,CUST-07847,Auto,6448.15,Open,8,Low,Fast-Track Approval — Routine Processing,4,0,38,0,0,STRONG,0
+CLM-2024-00555,CUST-07865,Fire,92370.88,Settled,13,Low,Fast-Track Approval — Routine Processing,7,2,41,31,2,STRONG,0
+CLM-2024-00044,CUST-07869,Caravan,3897.5,Open,15,Low,Fast-Track Approval — Routine Processing,10,0,45,31,2,STRONG,0
+CLM-2024-01123,CUST-07876,Fire,17586.55,Settled,17,Low,Fast-Track Approval — Routine Processing,18,2,43,14,1,DIVERGENT,0
+CLM-2024-00228,CUST-07883,Auto,28148.42,Settled,37,Low,Fast-Track Approval — Routine Processing,49,19,42,17,1,DIVERGENT,0
+CLM-2024-01317,CUST-07885,Auto,2734.4,Settled,8,Low,Fast-Track Approval — Routine Processing,3,0,42,0,0,STRONG,0
+CLM-2024-00521,CUST-07894,Fire,7642.28,Settled,10,Low,Fast-Track Approval — Routine Processing,3,0,46,14,1,STRONG,0
+CLM-2024-00258,CUST-07900,Auto,1669.39,Settled,8,Low,Fast-Track Approval — Routine Processing,3,0,41,0,0,STRONG,0
+CLM-2024-01415,CUST-07904,Fire,9882.8,Under Investigation,11,Low,Fast-Track Approval — Routine Processing,4,0,36,34,2,STRONG,0
+CLM-2024-00959,CUST-07921,Auto,5614.51,Settled,7,Low,Fast-Track Approval — Routine Processing,2,0,38,0,0,STRONG,0
+CLM-2024-00041,CUST-07921,Fire,13742.22,Settled,8,Low,Fast-Track Approval — Routine Processing,3,0,38,14,1,STRONG,0
+CLM-2024-00766,CUST-07945,Auto,18300.35,Under Investigation,46,Medium,Standard Adjuster Review — Verify Supporting Documentation,62,30,38,20,1,DIVERGENT,0
+CLM-2024-00534,CUST-07946,Fire,101100.76,Settled,18,Low,Fast-Track Approval — Routine Processing,14,2,46,31,2,STRONG,0
+CLM-2024-01486,CUST-07969,Fire,21210.92,Settled,30,Low,Fast-Track Approval — Routine Processing,38,15,39,14,1,DIVERGENT,0
+CLM-2024-00179,CUST-07971,Fire,6205.3,Settled,7,Low,Fast-Track Approval — Routine Processing,3,0,39,0,0,STRONG,0
+CLM-2024-01399,CUST-07971,Fire,12320.39,Settled,7,Low,Fast-Track Approval — Routine Processing,2,0,38,0,0,STRONG,0
+CLM-2024-00633,CUST-07973,Fire,39886.97,Settled,11,Low,Fast-Track Approval — Routine Processing,3,0,45,23,2,STRONG,0
+CLM-2024-00900,CUST-07973,Fire,43530.13,Approved,11,Low,Fast-Track Approval — Routine Processing,4,1,46,23,2,STRONG,0
+CLM-2024-01195,CUST-07981,Fire,56423.84,Settled,17,Low,Fast-Track Approval — Routine Processing,10,2,49,43,3,STRONG,0
+CLM-2024-00970,CUST-07982,Auto,8951.65,Under Investigation,11,Low,Fast-Track Approval — Routine Processing,5,0,43,20,1,STRONG,0
+CLM-2024-00592,CUST-07988,Auto,1436.5,Settled,8,Low,Fast-Track Approval — Routine Processing,4,0,40,0,0,STRONG,0
+CLM-2024-01453,CUST-07993,Fire,29704.92,Settled,10,Low,Fast-Track Approval — Routine Processing,4,0,41,14,1,STRONG,0
+CLM-2024-00434,CUST-07994,Fire,13396.03,Settled,8,Low,Fast-Track Approval — Routine Processing,3,0,37,14,1,STRONG,0
+CLM-2024-01353,CUST-08006,Fire,4320.74,Settled,10,Low,Fast-Track Approval — Routine Processing,3,0,45,14,1,STRONG,0
+CLM-2024-00513,CUST-08008,Auto,4584.1,Open,8,Low,Fast-Track Approval — Routine Processing,3,0,41,0,0,STRONG,0
+CLM-2024-00218,CUST-08022,Caravan,4232.52,Settled,14,Low,Fast-Track Approval — Routine Processing,6,0,50,31,2,STRONG,0
+CLM-2024-01253,CUST-08029,Fire,55962.98,Settled,12,Low,Fast-Track Approval — Routine Processing,7,1,41,14,1,STRONG,0
+CLM-2024-00516,CUST-08029,Caravan,5024.27,Settled,16,Low,Fast-Track Approval — Routine Processing,12,0,45,31,2,STRONG,0
+CLM-2024-00717,CUST-08047,Fire,23991.22,Settled,51,Medium,Standard Adjuster Review — Verify Supporting Documentation,73,29,39,14,1,DIVERGENT,1
+CLM-2024-00118,CUST-08058,Auto,12567.21,Approved,8,Low,Fast-Track Approval — Routine Processing,3,0,43,0,0,STRONG,0
+CLM-2024-01299,CUST-08058,Auto,5355.99,Settled,7,Low,Fast-Track Approval — Routine Processing,2,0,43,0,0,STRONG,0
+CLM-2024-01461,CUST-08063,Fire,111986.81,Settled,11,Low,Fast-Track Approval — Routine Processing,3,1,44,31,2,STRONG,0
+CLM-2024-00320,CUST-08065,Auto,4987.77,Settled,8,Low,Fast-Track Approval — Routine Processing,2,0,46,0,0,STRONG,0
+CLM-2024-01420,CUST-08075,Auto,91496.45,Approved,50,Medium,Standard Adjuster Review — Verify Supporting Documentation,63,32,48,31,2,DIVERGENT,0
+CLM-2024-00131,CUST-08117,Fire,5521.82,Settled,12,Low,Fast-Track Approval — Routine Processing,12,0,42,0,0,STRONG,0
+CLM-2024-01020,CUST-08118,Fire,9411.02,Settled,14,Low,Fast-Track Approval — Routine Processing,13,0,39,14,1,STRONG,0
+CLM-2024-00643,CUST-08138,Fire,71986.26,Settled,12,Low,Fast-Track Approval — Routine Processing,6,2,48,14,1,STRONG,0
+CLM-2024-00489,CUST-08139,Auto,6523.73,Approved,7,Low,Fast-Track Approval — Routine Processing,3,0,39,0,0,STRONG,0
+CLM-2024-00833,CUST-08143,Fire,14193.19,Settled,9,Low,Fast-Track Approval — Routine Processing,5,0,41,0,0,STRONG,0
+CLM-2024-00983,CUST-08146,Fire,54656.65,Settled,11,Low,Fast-Track Approval — Routine Processing,6,1,40,14,1,STRONG,0
+CLM-2024-01258,CUST-08157,Auto,4860.0,Approved,9,Low,Fast-Track Approval — Routine Processing,5,0,39,0,0,STRONG,0
+CLM-2024-00952,CUST-08162,Fire,21868.68,Under Investigation,60,Medium,Standard Adjuster Review — Verify Supporting Documentation,86,29,45,34,2,DIVERGENT,1
+CLM-2024-01426,CUST-08176,Auto,1103.18,Approved,8,Low,Fast-Track Approval — Routine Processing,3,0,42,0,0,STRONG,0
+CLM-2024-01368,CUST-08179,Auto,6190.43,Approved,7,Low,Fast-Track Approval — Routine Processing,3,0,39,0,0,STRONG,0
+CLM-2024-01497,CUST-08179,Auto,887.84,Settled,9,Low,Fast-Track Approval — Routine Processing,5,0,44,0,0,STRONG,0
+CLM-2024-01212,CUST-08185,Fire,193863.37,Under Investigation,85,High,Priority Manual Investigation — Consider SIU Referral,96,97,59,43,3,STRONG,1
+CLM-2024-00303,CUST-08193,Auto,2649.22,Settled,7,Low,Fast-Track Approval — Routine Processing,2,0,42,0,0,STRONG,0
+CLM-2024-01164,CUST-08193,Auto,39328.0,Settled,19,Low,Fast-Track Approval — Routine Processing,15,10,44,17,1,STRONG,0
+CLM-2024-00317,CUST-08195,Fire,22246.31,Settled,34,Low,Fast-Track Approval — Routine Processing,48,8,41,14,1,DIVERGENT,1
+CLM-2024-01492,CUST-08198,Fire,179579.97,Settled,58,Medium,Standard Adjuster Review — Verify Supporting Documentation,78,41,51,14,1,DIVERGENT,0
+CLM-2024-00390,CUST-08203,Auto,89258.69,Under Investigation,85,High,Priority Manual Investigation — Consider SIU Referral,96,100,53,43,3,STRONG,1
+CLM-2024-00029,CUST-08206,Fire,134157.96,Settled,16,Low,Fast-Track Approval — Routine Processing,10,1,49,31,2,STRONG,0
+CLM-2024-01190,CUST-08214,Fire,25192.73,Approved,42,Medium,Standard Adjuster Review — Verify Supporting Documentation,60,20,37,14,1,DIVERGENT,0
+CLM-2024-00418,CUST-08217,Auto,5610.91,Settled,7,Low,Fast-Track Approval — Routine Processing,1,0,42,0,0,STRONG,0
+CLM-2024-01046,CUST-08217,Fire,26396.7,Under Investigation,30,Low,Fast-Track Approval — Routine Processing,35,9,44,34,2,DIVERGENT,0
+CLM-2024-00441,CUST-08237,Auto,1821.82,Approved,8,Low,Fast-Track Approval — Routine Processing,2,0,43,0,0,STRONG,0
+CLM-2024-00483,CUST-08239,Auto,4213.42,Under Investigation,9,Low,Fast-Track Approval — Routine Processing,2,0,43,20,1,STRONG,0
+CLM-2024-00259,CUST-08239,Fire,10448.87,Approved,9,Low,Fast-Track Approval — Routine Processing,2,0,42,14,1,STRONG,0
+CLM-2024-00088,CUST-08292,Private Accident,14170.4,Approved,21,Low,Fast-Track Approval — Routine Processing,22,5,49,14,1,DIVERGENT,0
+CLM-2024-00640,CUST-08297,Fire,225097.85,Settled,53,Medium,Standard Adjuster Review — Verify Supporting Documentation,69,32,49,31,2,DIVERGENT,0
+CLM-2024-00024,CUST-08298,Auto,14994.47,Approved,31,Low,Fast-Track Approval — Routine Processing,45,9,39,0,0,DIVERGENT,0
+CLM-2024-01002,CUST-08331,Fire,4878.87,Settled,12,Low,Fast-Track Approval — Routine Processing,11,0,44,0,0,STRONG,0
+CLM-2024-01451,CUST-08339,Fire,63629.54,Settled,12,Low,Fast-Track Approval — Routine Processing,6,1,50,14,1,STRONG,0
+CLM-2024-01340,CUST-08344,Auto,1779.56,Settled,7,Low,Fast-Track Approval — Routine Processing,2,0,38,0,0,STRONG,0
+CLM-2024-00340,CUST-08346,Fire,96452.19,Under Investigation,16,Low,Fast-Track Approval — Routine Processing,8,2,45,51,3,STRONG,0
+CLM-2024-00968,CUST-08349,Fire,179994.0,Approved,43,Medium,Standard Adjuster Review — Verify Supporting Documentation,59,21,47,14,1,DIVERGENT,0
+CLM-2024-00687,CUST-08353,Auto,82497.95,Under Investigation,86,High,Priority Manual Investigation — Consider SIU Referral,98,100,56,34,2,STRONG,1
+CLM-2024-00229,CUST-08354,Auto,11500.89,Settled,9,Low,Fast-Track Approval — Routine Processing,6,0,39,0,0,STRONG,0
+CLM-2024-00622,CUST-08363,Auto,70492.17,Under Investigation,82,High,Priority Manual Investigation — Consider SIU Referral,96,82,61,43,3,STRONG,1
+CLM-2024-00589,CUST-08363,Fire,37818.71,Settled,10,Low,Fast-Track Approval — Routine Processing,3,0,45,14,1,STRONG,0
+CLM-2024-00946,CUST-08366,Fire,87818.84,Settled,16,Low,Fast-Track Approval — Routine Processing,9,6,49,23,2,STRONG,0
+CLM-2024-00393,CUST-08371,Auto,2135.29,Settled,7,Low,Fast-Track Approval — Routine Processing,3,0,40,0,0,STRONG,0
+CLM-2024-00916,CUST-08374,Auto,32194.14,Under Investigation,39,Low,Fast-Track Approval — Routine Processing,49,13,42,51,3,DIVERGENT,0
+CLM-2024-01434,CUST-08385,Auto,25834.5,Settled,58,Medium,Standard Adjuster Review — Verify Supporting Documentation,82,31,41,31,2,DIVERGENT,1
+CLM-2024-01135,CUST-08410,Auto,44257.68,Approved,29,Low,Fast-Track Approval — Routine Processing,32,19,46,17,1,STRONG,0
+CLM-2024-00608,CUST-08420,Fire,11169.4,Settled,9,Low,Fast-Track Approval — Routine Processing,3,0,39,14,1,STRONG,0
+CLM-2024-00326,CUST-08444,Auto,2170.36,Settled,8,Low,Fast-Track Approval — Routine Processing,3,0,41,0,0,STRONG,0
+CLM-2024-00463,CUST-08444,Auto,2209.59,Settled,7,Low,Fast-Track Approval — Routine Processing,1,0,41,0,0,STRONG,0
+CLM-2024-00638,CUST-08444,Auto,17362.68,Open,63,Medium,Standard Adjuster Review — Verify Supporting Documentation,90,45,44,0,0,DIVERGENT,1
+CLM-2024-00665,CUST-08446,Fire,118257.74,Settled,48,Medium,Standard Adjuster Review — Verify Supporting Documentation,58,32,46,43,3,DIVERGENT,0
+CLM-2024-01342,CUST-08446,Fire,150000.0,Under Investigation,45,Medium,Standard Adjuster Review — Verify Supporting Documentation,46,32,49,63,4,STRONG,0
+CLM-2024-01021,CUST-08448,Auto,2214.16,Settled,7,Low,Fast-Track Approval — Routine Processing,3,0,38,0,0,STRONG,0
+CLM-2024-01068,CUST-08449,Fire,74168.43,Under Investigation,38,Low,Fast-Track Approval — Routine Processing,43,15,47,63,4,DIVERGENT,0
+CLM-2024-01467,CUST-08455,Caravan,6380.11,Approved,43,Medium,Standard Adjuster Review — Verify Supporting Documentation,62,8,45,31,2,DIVERGENT,0
+CLM-2024-00079,CUST-08464,Auto,2422.61,Approved,9,Low,Fast-Track Approval — Routine Processing,7,0,39,0,0,STRONG,0
+CLM-2024-00177,CUST-08474,Fire,243241.25,Open,50,Medium,Standard Adjuster Review — Verify Supporting Documentation,63,32,50,31,2,DIVERGENT,0
+CLM-2024-00293,CUST-08486,Fire,12944.95,Settled,9,Low,Fast-Track Approval — Routine Processing,2,0,41,14,1,STRONG,0
+CLM-2024-01242,CUST-08496,Auto,49504.53,Approved,46,Medium,Standard Adjuster Review — Verify Supporting Documentation,58,32,47,17,1,DIVERGENT,0
+CLM-2024-00933,CUST-08496,Fire,38703.73,Approved,11,Low,Fast-Track Approval — Routine Processing,4,1,47,14,1,STRONG,0
+CLM-2024-01024,CUST-08499,Auto,1841.22,Settled,9,Low,Fast-Track Approval — Routine Processing,5,0,43,0,0,STRONG,0
+CLM-2024-01038,CUST-08501,Fire,8859.5,Approved,9,Low,Fast-Track Approval — Routine Processing,3,0,40,14,1,STRONG,0
+CLM-2024-00789,CUST-08509,Fire,62621.82,Settled,22,Low,Fast-Track Approval — Routine Processing,21,2,48,43,3,DIVERGENT,0
+CLM-2024-01146,CUST-08511,Fire,38986.29,Under Investigation,16,Low,Fast-Track Approval — Routine Processing,6,2,47,54,4,STRONG,0
+CLM-2024-00484,CUST-08526,Auto,24571.12,Settled,57,Medium,Standard Adjuster Review — Verify Supporting Documentation,83,37,40,0,0,DIVERGENT,0
+CLM-2024-00793,CUST-08535,Auto,3725.28,Settled,7,Low,Fast-Track Approval — Routine Processing,2,0,40,0,0,STRONG,0
+CLM-2024-00800,CUST-08535,Auto,1527.29,Settled,8,Low,Fast-Track Approval — Routine Processing,3,0,42,0,0,STRONG,0
+CLM-2024-00053,CUST-08538,Auto,9508.31,Settled,11,Low,Fast-Track Approval — Routine Processing,8,0,43,0,0,STRONG,0
+CLM-2024-00164,CUST-08538,Auto,1806.42,Settled,8,Low,Fast-Track Approval — Routine Processing,2,0,45,0,0,STRONG,0
+CLM-2024-00237,CUST-08541,Auto,3449.54,Approved,7,Low,Fast-Track Approval — Routine Processing,2,0,39,0,0,STRONG,0
+CLM-2024-00433,CUST-08541,Auto,960.33,Settled,7,Low,Fast-Track Approval — Routine Processing,2,0,43,0,0,STRONG,0
+CLM-2024-00644,CUST-08556,Auto,55481.92,Settled,60,Medium,Standard Adjuster Review — Verify Supporting Documentation,80,49,43,17,1,DIVERGENT,0
+CLM-2024-00613,CUST-08559,Fire,82801.44,Settled,14,Low,Fast-Track Approval — Routine Processing,6,2,48,40,3,STRONG,0
+CLM-2024-00672,CUST-08567,Fire,27788.89,Settled,24,Low,Fast-Track Approval — Routine Processing,33,1,40,14,1,DIVERGENT,0
+CLM-2024-00277,CUST-08609,Fire,72756.45,Settled,11,Low,Fast-Track Approval — Routine Processing,6,1,41,14,1,STRONG,0
+CLM-2024-01375,CUST-08620,Caravan,7046.63,Under Investigation,54,Medium,Standard Adjuster Review — Verify Supporting Documentation,74,19,47,51,3,DIVERGENT,1
+CLM-2024-01500,CUST-08625,Auto,30319.38,Approved,21,Low,Fast-Track Approval — Routine Processing,20,13,42,17,1,STRONG,0
+CLM-2024-00452,CUST-08631,Auto,1769.64,Approved,7,Low,Fast-Track Approval — Routine Processing,2,0,41,0,0,STRONG,0
+CLM-2024-00057,CUST-08637,Fire,6861.57,Approved,16,Low,Fast-Track Approval — Routine Processing,17,0,48,0,0,DIVERGENT,0
+CLM-2024-00920,CUST-08650,Auto,7752.48,Settled,8,Low,Fast-Track Approval — Routine Processing,4,0,39,0,0,STRONG,0
+CLM-2024-00103,CUST-08651,Fire,90432.94,Under Investigation,73,High,Priority Manual Investigation — Consider SIU Referral,93,55,53,46,3,DIVERGENT,1
+CLM-2024-00071,CUST-08654,Fire,205781.66,Settled,50,Medium,Standard Adjuster Review — Verify Supporting Documentation,61,32,53,31,2,DIVERGENT,0
+CLM-2024-01200,CUST-08654,Fire,7950.99,Settled,10,Low,Fast-Track Approval — Routine Processing,4,0,43,14,1,STRONG,0
+CLM-2024-00527,CUST-08669,Auto,3803.99,Settled,7,Low,Fast-Track Approval — Routine Processing,2,0,44,0,0,STRONG,0
+CLM-2024-00296,CUST-08680,Auto,3102.84,Settled,8,Low,Fast-Track Approval — Routine Processing,2,0,45,0,0,STRONG,0
+CLM-2024-00168,CUST-08681,Fire,4730.73,Settled,16,Low,Fast-Track Approval — Routine Processing,15,1,47,14,1,STRONG,0
+CLM-2024-00496,CUST-08712,Auto,5131.69,Settled,8,Low,Fast-Track Approval — Routine Processing,4,0,38,0,0,STRONG,0
+CLM-2024-00122,CUST-08713,Auto,3119.79,Under Investigation,10,Low,Fast-Track Approval — Routine Processing,2,0,44,20,1,STRONG,0
+CLM-2024-01013,CUST-08713,Auto,2761.6,Under Investigation,10,Low,Fast-Track Approval — Routine Processing,2,0,44,20,1,STRONG,0
+CLM-2024-00976,CUST-08714,Fire,123122.0,Settled,16,Low,Fast-Track Approval — Routine Processing,9,6,43,31,2,STRONG,0
+CLM-2024-00764,CUST-08715,Auto,7635.3,Settled,8,Low,Fast-Track Approval — Routine Processing,3,0,40,0,0,STRONG,0
+CLM-2024-00161,CUST-08734,Auto,1419.47,Settled,8,Low,Fast-Track Approval — Routine Processing,2,0,43,0,0,STRONG,0
+CLM-2024-00911,CUST-08739,Auto,37071.52,Settled,30,Low,Fast-Track Approval — Routine Processing,35,13,41,26,2,DIVERGENT,0
+CLM-2024-00518,CUST-08763,Auto,60768.01,Under Investigation,61,Medium,Standard Adjuster Review — Verify Supporting Documentation,79,36,49,51,3,DIVERGENT,1
+CLM-2024-00481,CUST-08767,Fire,227302.46,Settled,47,Medium,Standard Adjuster Review — Verify Supporting Documentation,55,32,51,31,2,DIVERGENT,0
+CLM-2024-00470,CUST-08771,Fire,4231.97,Settled,14,Low,Fast-Track Approval — Routine Processing,11,0,50,14,1,STRONG,0
+CLM-2024-01381,CUST-08772,Auto,14354.22,Open,31,Low,Fast-Track Approval — Routine Processing,48,5,41,0,0,DIVERGENT,0
+CLM-2024-01113,CUST-08775,Fire,127713.76,Approved,55,Medium,Standard Adjuster Review — Verify Supporting Documentation,72,32,47,43,3,DIVERGENT,0
+CLM-2024-00741,CUST-08808,Fire,98959.53,Settled,13,Low,Fast-Track Approval — Routine Processing,6,2,44,31,2,STRONG,0
+CLM-2024-00988,CUST-08813,Auto,2804.35,Open,9,Low,Fast-Track Approval — Routine Processing,4,0,46,0,0,STRONG,0
+CLM-2024-00617,CUST-08817,Auto,18526.42,Approved,48,Medium,Standard Adjuster Review — Verify Supporting Documentation,70,30,38,0,0,DIVERGENT,0
+CLM-2024-00268,CUST-08820,Fire,17121.42,Settled,46,Medium,Standard Adjuster Review — Verify Supporting Documentation,63,27,40,14,1,DIVERGENT,0
+CLM-2024-00428,CUST-08820,Fire,178936.31,Under Investigation,61,Medium,Standard Adjuster Review — Verify Supporting Documentation,83,29,47,51,3,DIVERGENT,1
+CLM-2024-00545,CUST-08823,Caravan,6524.91,Settled,40,Medium,Standard Adjuster Review — Verify Supporting Documentation,54,8,54,31,2,DIVERGENT,0
+CLM-2024-00274,CUST-08830,Fire,5431.07,Settled,8,Low,Fast-Track Approval — Routine Processing,3,0,45,0,0,STRONG,0
+CLM-2024-01320,CUST-08839,Auto,18106.97,Under Investigation,52,Medium,Standard Adjuster Review — Verify Supporting Documentation,74,30,39,20,1,DIVERGENT,1
+CLM-2024-00405,CUST-08842,Auto,2297.05,Settled,8,Low,Fast-Track Approval — Routine Processing,2,0,42,0,0,STRONG,0
+CLM-2024-00834,CUST-08848,Auto,1858.46,Approved,7,Low,Fast-Track Approval — Routine Processing,2,0,41,0,0,STRONG,0
+CLM-2024-00156,CUST-08851,Auto,3221.43,Approved,9,Low,Fast-Track Approval — Routine Processing,6,0,39,0,0,STRONG,0
+CLM-2024-01185,CUST-08852,Auto,1544.6,Settled,8,Low,Fast-Track Approval — Routine Processing,2,0,44,0,0,STRONG,0
+CLM-2024-00212,CUST-08862,Auto,1658.32,Settled,7,Low,Fast-Track Approval — Routine Processing,2,0,41,0,0,STRONG,0
+CLM-2024-00856,CUST-08884,Fire,173580.89,Open,56,Medium,Standard Adjuster Review — Verify Supporting Documentation,72,41,48,23,2,DIVERGENT,0
+CLM-2024-00472,CUST-08891,Caravan,13125.0,Settled,23,Low,Fast-Track Approval — Routine Processing,18,13,53,31,2,STRONG,0
+CLM-2024-01351,CUST-08915,Auto,18340.53,Open,38,Low,Fast-Track Approval — Routine Processing,54,20,40,0,0,DIVERGENT,0
+CLM-2024-01188,CUST-08918,Auto,29613.24,Settled,40,Medium,Standard Adjuster Review — Verify Supporting Documentation,57,9,41,31,2,DIVERGENT,0
+CLM-2024-00232,CUST-08919,Auto,1966.43,Approved,7,Low,Fast-Track Approval — Routine Processing,2,0,40,0,0,STRONG,0
+CLM-2024-01458,CUST-08927,Fire,277918.94,Under Investigation,83,High,Priority Manual Investigation — Consider SIU Referral,95,95,57,34,2,STRONG,1
+CLM-2024-00030,CUST-08929,Fire,36280.78,Approved,10,Low,Fast-Track Approval — Routine Processing,5,1,39,14,1,STRONG,0
+CLM-2024-00969,CUST-08933,Auto,2535.55,Settled,9,Low,Fast-Track Approval — Routine Processing,7,0,39,0,0,STRONG,0
+CLM-2024-00567,CUST-08941,Auto,33792.97,Approved,21,Low,Fast-Track Approval — Routine Processing,17,13,40,26,2,STRONG,0
+CLM-2024-00760,CUST-08943,Auto,1568.04,Settled,7,Low,Fast-Track Approval — Routine Processing,1,0,44,0,0,STRONG,0
+CLM-2024-01224,CUST-08943,Auto,3884.45,Settled,7,Low,Fast-Track Approval — Routine Processing,2,0,41,0,0,STRONG,0
+CLM-2024-00722,CUST-08943,Fire,50001.56,Settled,9,Low,Fast-Track Approval — Routine Processing,3,0,43,14,1,STRONG,0
+CLM-2024-00623,CUST-08945,Fire,6627.33,Settled,14,Low,Fast-Track Approval — Routine Processing,13,0,41,14,1,STRONG,0
+CLM-2024-01098,CUST-08954,Auto,6786.29,Settled,8,Low,Fast-Track Approval — Routine Processing,3,0,41,0,0,STRONG,0
+CLM-2024-00776,CUST-08963,Fire,6189.28,Settled,9,Low,Fast-Track Approval — Routine Processing,7,0,39,0,0,STRONG,0
+CLM-2024-00614,CUST-08971,Auto,49957.46,Settled,60,Medium,Standard Adjuster Review — Verify Supporting Documentation,85,32,43,31,2,DIVERGENT,0
+CLM-2024-01079,CUST-08971,Fire,21537.77,Approved,22,Low,Fast-Track Approval — Routine Processing,24,19,37,0,0,STRONG,0
+CLM-2024-01037,CUST-08976,Auto,8314.55,Settled,9,Low,Fast-Track Approval — Routine Processing,5,0,39,0,0,STRONG,0
+CLM-2024-01219,CUST-09015,Auto,1629.54,Settled,8,Low,Fast-Track Approval — Routine Processing,3,0,41,0,0,STRONG,0
+CLM-2024-01262,CUST-09029,Fire,16804.31,Approved,20,Low,Fast-Track Approval — Routine Processing,22,8,37,14,1,STRONG,0
+CLM-2024-00493,CUST-09039,Auto,14143.11,Settled,9,Low,Fast-Track Approval — Routine Processing,6,0,38,0,0,STRONG,0
+CLM-2024-00714,CUST-09049,Auto,7369.43,Settled,9,Low,Fast-Track Approval — Routine Processing,5,0,41,0,0,STRONG,0
+CLM-2024-00062,CUST-09056,Auto,5875.38,Open,8,Low,Fast-Track Approval — Routine Processing,3,0,44,0,0,STRONG,0
+CLM-2024-01096,CUST-09056,Auto,2272.94,Approved,8,Low,Fast-Track Approval — Routine Processing,2,0,45,0,0,STRONG,0
+CLM-2024-00645,CUST-09061,Fire,54494.63,Settled,12,Low,Fast-Track Approval — Routine Processing,9,1,41,14,1,STRONG,0
+CLM-2024-00855,CUST-09070,Auto,78459.11,Under Investigation,70,High,Priority Manual Investigation — Consider SIU Referral,87,57,45,51,3,DIVERGENT,1
+CLM-2024-00841,CUST-09070,Fire,10722.6,Settled,10,Low,Fast-Track Approval — Routine Processing,4,0,40,14,1,STRONG,0
+CLM-2024-01006,CUST-09070,Fire,21587.73,Settled,25,Low,Fast-Track Approval — Routine Processing,33,5,41,14,1,DIVERGENT,0
+CLM-2024-00929,CUST-09076,Caravan,11116.7,Open,46,Medium,Standard Adjuster Review — Verify Supporting Documentation,57,30,48,31,2,DIVERGENT,0
+CLM-2024-00076,CUST-09082,Caravan,7251.86,Settled,36,Low,Fast-Track Approval — Routine Processing,45,13,51,31,2,DIVERGENT,0
+CLM-2024-00165,CUST-09082,Caravan,11371.79,Settled,36,Low,Fast-Track Approval — Routine Processing,42,16,54,31,2,DIVERGENT,0
+CLM-2024-00396,CUST-09084,Auto,1223.76,Settled,8,Low,Fast-Track Approval — Routine Processing,2,0,43,0,0,STRONG,0
+CLM-2024-00770,CUST-09085,Fire,2927.54,Settled,13,Low,Fast-Track Approval — Routine Processing,9,0,47,14,1,STRONG,0
+CLM-2024-00648,CUST-09091,Fire,12243.03,Under Investigation,17,Low,Fast-Track Approval — Routine Processing,10,1,51,34,2,STRONG,0
+CLM-2024-00796,CUST-09109,Fire,85980.09,Settled,13,Low,Fast-Track Approval — Routine Processing,6,2,43,31,2,STRONG,0
+CLM-2024-01066,CUST-09124,Fire,10734.13,Open,10,Low,Fast-Track Approval — Routine Processing,7,0,38,14,1,STRONG,0
+CLM-2024-00169,CUST-09127,Auto,3696.93,Settled,7,Low,Fast-Track Approval — Routine Processing,2,0,37,0,0,STRONG,0
+CLM-2024-01000,CUST-09127,Auto,1524.73,Settled,7,Low,Fast-Track Approval — Routine Processing,2,0,39,0,0,STRONG,0
+CLM-2024-00984,CUST-09127,Fire,36981.17,Settled,10,Low,Fast-Track Approval — Routine Processing,5,1,37,14,1,STRONG,0
+CLM-2024-00048,CUST-09130,Auto,66881.55,Under Investigation,86,High,Priority Manual Investigation — Consider SIU Referral,98,100,54,43,3,STRONG,1
+CLM-2024-01494,CUST-09130,Auto,1483.43,Settled,9,Low,Fast-Track Approval — Routine Processing,6,0,41,0,0,STRONG,0
+CLM-2024-00869,CUST-09146,Fire,31939.33,Settled,11,Low,Fast-Track Approval — Routine Processing,6,1,43,14,1,STRONG,0
+CLM-2024-00265,CUST-09147,Auto,11215.63,Open,10,Low,Fast-Track Approval — Routine Processing,8,0,38,0,0,STRONG,0
+CLM-2024-01337,CUST-09147,Caravan,6707.06,Open,52,Medium,Standard Adjuster Review — Verify Supporting Documentation,77,19,49,14,1,DIVERGENT,0
+CLM-2024-00046,CUST-09151,Auto,6622.78,Approved,8,Low,Fast-Track Approval — Routine Processing,3,0,40,0,0,STRONG,0
+CLM-2024-00350,CUST-09153,Auto,8315.61,Settled,9,Low,Fast-Track Approval — Routine Processing,5,0,39,0,0,STRONG,0
+CLM-2024-00474,CUST-09157,Auto,1276.38,Settled,8,Low,Fast-Track Approval — Routine Processing,2,0,44,0,0,STRONG,0
+CLM-2024-00899,CUST-09160,Fire,21455.71,Settled,42,Medium,Standard Adjuster Review — Verify Supporting Documentation,62,9,46,14,1,DIVERGENT,1
+CLM-2024-01297,CUST-09161,Fire,13302.77,Settled,11,Low,Fast-Track Approval — Routine Processing,6,0,41,14,1,STRONG,0
+CLM-2024-00761,CUST-09166,Auto,7429.49,Settled,11,Low,Fast-Track Approval — Routine Processing,9,0,39,0,0,STRONG,0
+CLM-2024-01306,CUST-09166,Auto,22446.53,Settled,63,Medium,Standard Adjuster Review — Verify Supporting Documentation,91,37,43,14,1,DIVERGENT,0
+CLM-2024-01303,CUST-09173,Auto,1406.57,Settled,8,Low,Fast-Track Approval — Routine Processing,3,0,44,0,0,STRONG,0
+CLM-2024-01496,CUST-09187,Fire,123717.38,Settled,29,Low,Fast-Track Approval — Routine Processing,28,15,46,40,3,STRONG,0
+CLM-2024-00784,CUST-09198,Auto,3301.01,Settled,10,Low,Fast-Track Approval — Routine Processing,6,0,41,0,0,STRONG,0
+CLM-2024-01155,CUST-09198,Auto,2729.15,Open,7,Low,Fast-Track Approval — Routine Processing,2,0,41,0,0,STRONG,0
+CLM-2024-00806,CUST-09201,Auto,3865.54,Open,9,Low,Fast-Track Approval — Routine Processing,6,0,41,0,0,STRONG,0
+CLM-2024-00786,CUST-09223,Fire,24873.36,Open,25,Low,Fast-Track Approval — Routine Processing,29,9,42,14,1,DIVERGENT,0
+CLM-2024-01053,CUST-09225,Auto,21443.27,Settled,33,Low,Fast-Track Approval — Routine Processing,45,19,41,0,0,DIVERGENT,0
+CLM-2024-00733,CUST-09225,Fire,21229.67,Under Investigation,24,Low,Fast-Track Approval — Routine Processing,22,14,40,34,2,STRONG,0
+CLM-2024-00915,CUST-09227,Fire,155243.05,Approved,45,Medium,Standard Adjuster Review — Verify Supporting Documentation,62,15,48,31,2,DIVERGENT,0
+CLM-2024-00917,CUST-09230,Auto,2214.23,Settled,9,Low,Fast-Track Approval — Routine Processing,5,0,41,0,0,STRONG,0
+CLM-2024-00200,CUST-09232,Fire,12043.33,Approved,13,Low,Fast-Track Approval — Routine Processing,9,1,45,14,1,STRONG,0
+CLM-2024-01210,CUST-09233,Auto,3715.52,Approved,9,Low,Fast-Track Approval — Routine Processing,6,0,41,0,0,STRONG,0
+CLM-2024-00767,CUST-09236,Auto,2159.28,Settled,8,Low,Fast-Track Approval — Routine Processing,3,0,40,0,0,STRONG,0
+CLM-2024-01302,CUST-09242,Auto,6563.67,Approved,13,Low,Fast-Track Approval — Routine Processing,12,1,48,0,0,STRONG,0
+CLM-2024-01109,CUST-09251,Auto,91227.7,Under Investigation,85,High,Priority Manual Investigation — Consider SIU Referral,98,100,51,34,2,STRONG,1
+CLM-2024-01175,CUST-09267,Auto,4004.73,Settled,9,Low,Fast-Track Approval — Routine Processing,4,0,43,0,0,STRONG,0
+CLM-2024-00631,CUST-09276,Fire,8100.95,Settled,9,Low,Fast-Track Approval — Routine Processing,3,0,42,14,1,STRONG,0
+CLM-2024-01493,CUST-09290,Auto,6087.34,Settled,7,Low,Fast-Track Approval — Routine Processing,3,0,38,0,0,STRONG,0
+CLM-2024-00171,CUST-09291,Auto,67548.64,Settled,57,Medium,Standard Adjuster Review — Verify Supporting Documentation,68,47,48,40,3,DIVERGENT,0
+CLM-2024-00862,CUST-09307,Fire,155332.22,Settled,49,Medium,Standard Adjuster Review — Verify Supporting Documentation,61,32,46,31,2,DIVERGENT,0
+CLM-2024-01191,CUST-09308,Auto,5521.23,Open,7,Low,Fast-Track Approval — Routine Processing,2,0,40,0,0,STRONG,0
+CLM-2024-00466,CUST-09309,Fire,142995.6,Under Investigation,30,Low,Fast-Track Approval — Routine Processing,31,9,49,51,3,DIVERGENT,0
+CLM-2024-01108,CUST-09309,Fire,54903.85,Approved,12,Low,Fast-Track Approval — Routine Processing,7,1,43,14,1,STRONG,0
+CLM-2024-00110,CUST-09319,Fire,148582.33,Settled,49,Medium,Standard Adjuster Review — Verify Supporting Documentation,51,41,51,51,4,STRONG,0
+CLM-2024-00863,CUST-09326,Auto,2719.06,Open,7,Low,Fast-Track Approval — Routine Processing,2,0,40,0,0,STRONG,0
+CLM-2024-00455,CUST-09330,Fire,2759.25,Settled,7,Low,Fast-Track Approval — Routine Processing,2,0,42,0,0,STRONG,0
+CLM-2024-00859,CUST-09331,Fire,26946.9,Under Investigation,39,Low,Fast-Track Approval — Routine Processing,51,15,43,34,2,DIVERGENT,0
+CLM-2024-00342,CUST-09334,Auto,6945.74,Settled,16,Low,Fast-Track Approval — Routine Processing,18,0,45,0,0,DIVERGENT,0
+CLM-2024-00936,CUST-09362,Auto,48415.98,Approved,44,Medium,Standard Adjuster Review — Verify Supporting Documentation,55,32,42,17,1,DIVERGENT,0
+CLM-2024-00551,CUST-09364,Fire,36555.28,Settled,10,Low,Fast-Track Approval — Routine Processing,6,1,37,14,1,STRONG,0
+CLM-2024-01198,CUST-09370,Fire,5293.11,Under Investigation,12,Low,Fast-Track Approval — Routine Processing,4,0,44,34,2,STRONG,0
+CLM-2024-01036,CUST-09380,Fire,106730.52,Settled,25,Low,Fast-Track Approval — Routine Processing,27,8,43,31,2,DIVERGENT,0
+CLM-2024-01105,CUST-09389,Auto,23337.5,Settled,65,Medium,Standard Adjuster Review — Verify Supporting Documentation,91,47,49,0,0,DIVERGENT,1
+CLM-2024-00930,CUST-09399,Caravan,5858.5,Settled,38,Low,Fast-Track Approval — Routine Processing,52,6,56,14,1,DIVERGENT,0
+CLM-2024-00045,CUST-09400,Auto,2430.89,Settled,10,Low,Fast-Track Approval — Routine Processing,6,0,44,0,0,STRONG,0
+CLM-2024-00996,CUST-09412,Fire,31550.63,Open,10,Low,Fast-Track Approval — Routine Processing,6,0,39,14,1,STRONG,0
+CLM-2024-00612,CUST-09422,Fire,32415.59,Approved,20,Low,Fast-Track Approval — Routine Processing,19,9,43,14,1,STRONG,0
+CLM-2024-00013,CUST-09425,Fire,9466.28,Settled,10,Low,Fast-Track Approval — Routine Processing,3,0,43,14,1,STRONG,0
+CLM-2024-00944,CUST-09429,Auto,5794.31,Settled,9,Low,Fast-Track Approval — Routine Processing,4,0,42,0,0,STRONG,0
+CLM-2024-01468,CUST-09453,Auto,6233.72,Approved,9,Low,Fast-Track Approval — Routine Processing,6,0,40,0,0,STRONG,0
+CLM-2024-00043,CUST-09463,Fire,18571.19,Approved,34,Low,Fast-Track Approval — Routine Processing,43,16,45,14,1,DIVERGENT,0
+CLM-2024-00508,CUST-09472,Auto,4344.05,Under Investigation,10,Low,Fast-Track Approval — Routine Processing,4,0,39,20,1,STRONG,0
+CLM-2024-01035,CUST-09478,Fire,156284.9,Approved,21,Low,Fast-Track Approval — Routine Processing,19,5,44,31,2,STRONG,0
+CLM-2024-00378,CUST-09484,Auto,3892.34,Under Investigation,11,Low,Fast-Track Approval — Routine Processing,6,0,39,20,1,STRONG,0
+CLM-2024-01456,CUST-09487,Fire,42366.85,Settled,12,Low,Fast-Track Approval — Routine Processing,4,1,51,23,2,STRONG,0
+CLM-2024-00795,CUST-09511,Fire,23588.85,Settled,48,Medium,Standard Adjuster Review — Verify Supporting Documentation,72,13,46,14,1,DIVERGENT,1
+CLM-2024-00311,CUST-09515,Auto,2981.73,Approved,8,Low,Fast-Track Approval — Routine Processing,3,0,44,0,0,STRONG,0
+CLM-2024-01229,CUST-09520,Auto,97653.05,Open,54,Medium,Standard Adjuster Review — Verify Supporting Documentation,68,32,50,40,3,DIVERGENT,0
+CLM-2024-00703,CUST-09535,Auto,1972.66,Settled,9,Low,Fast-Track Approval — Routine Processing,6,0,43,0,0,STRONG,0
+CLM-2024-00328,CUST-09549,Caravan,5866.24,Settled,32,Low,Fast-Track Approval — Routine Processing,41,5,47,31,2,DIVERGENT,0
+CLM-2024-00365,CUST-09565,Auto,57684.59,Under Investigation,71,High,Priority Manual Investigation — Consider SIU Referral,87,68,43,37,2,DIVERGENT,1
+CLM-2024-00512,CUST-09575,Fire,48821.96,Settled,13,Low,Fast-Track Approval — Routine Processing,10,6,43,0,0,STRONG,0
+CLM-2024-00058,CUST-09583,Fire,25858.94,Settled,34,Low,Fast-Track Approval — Routine Processing,49,8,42,14,1,DIVERGENT,0
+CLM-2024-00941,CUST-09592,Auto,2711.31,Settled,10,Low,Fast-Track Approval — Routine Processing,8,0,42,0,0,STRONG,0
+CLM-2024-00331,CUST-09593,Fire,20115.0,Settled,36,Low,Fast-Track Approval — Routine Processing,54,9,38,14,1,DIVERGENT,0
+CLM-2024-00818,CUST-09617,Fire,132264.39,Under Investigation,59,Medium,Standard Adjuster Review — Verify Supporting Documentation,82,24,50,51,3,DIVERGENT,1
+CLM-2024-00951,CUST-09619,Fire,106850.81,Settled,31,Low,Fast-Track Approval — Routine Processing,33,14,49,40,3,DIVERGENT,0
+CLM-2024-01072,CUST-09621,Fire,28708.47,Settled,19,Low,Fast-Track Approval — Routine Processing,21,1,43,14,1,DIVERGENT,0
+CLM-2024-01101,CUST-09621,Fire,50641.42,Under Investigation,13,Low,Fast-Track Approval — Routine Processing,5,0,45,34,2,STRONG,0
+CLM-2024-00068,CUST-09633,Auto,28855.68,Settled,30,Low,Fast-Track Approval — Routine Processing,34,19,45,17,1,DIVERGENT,0
+CLM-2024-00581,CUST-09635,Fire,8859.46,Settled,7,Low,Fast-Track Approval — Routine Processing,2,0,40,0,0,STRONG,0
+CLM-2024-01030,CUST-09642,Auto,7209.97,Settled,11,Low,Fast-Track Approval — Routine Processing,9,0,40,0,0,STRONG,0
+CLM-2024-01475,CUST-09645,Auto,5487.77,Settled,8,Low,Fast-Track Approval — Routine Processing,2,0,44,0,0,STRONG,0
+CLM-2024-00159,CUST-09646,Auto,41577.89,Under Investigation,54,Medium,Standard Adjuster Review — Verify Supporting Documentation,71,24,45,60,4,DIVERGENT,1
+CLM-2024-01058,CUST-09646,Fire,102801.97,Approved,31,Low,Fast-Track Approval — Routine Processing,35,9,49,40,3,DIVERGENT,0
+CLM-2024-01298,CUST-09674,Auto,11939.69,Settled,8,Low,Fast-Track Approval — Routine Processing,5,0,39,0,0,STRONG,0
+CLM-2024-00409,CUST-09676,Fire,28726.12,Approved,24,Low,Fast-Track Approval — Routine Processing,31,5,41,14,1,DIVERGENT,0
+CLM-2024-00925,CUST-09676,Fire,81422.9,Approved,16,Low,Fast-Track Approval — Routine Processing,12,5,46,14,1,STRONG,0
+CLM-2024-00175,CUST-09690,Auto,13948.71,Settled,13,Low,Fast-Track Approval — Routine Processing,13,1,40,0,0,STRONG,0
+CLM-2024-00125,CUST-09703,Fire,12122.25,Approved,10,Low,Fast-Track Approval — Routine Processing,5,0,41,14,1,STRONG,0
+CLM-2024-00389,CUST-09712,Auto,8281.98,Under Investigation,10,Low,Fast-Track Approval — Routine Processing,5,0,38,20,1,STRONG,0
+CLM-2024-00935,CUST-09716,Auto,4562.47,Approved,9,Low,Fast-Track Approval — Routine Processing,4,0,46,0,0,STRONG,0
+CLM-2024-00747,CUST-09727,Auto,1461.87,Settled,7,Low,Fast-Track Approval — Routine Processing,2,0,42,0,0,STRONG,0
+CLM-2024-00160,CUST-09733,Auto,20155.19,Settled,53,Medium,Standard Adjuster Review — Verify Supporting Documentation,78,32,40,0,0,DIVERGENT,1
+CLM-2024-01115,CUST-09733,Fire,47938.11,Settled,11,Low,Fast-Track Approval — Routine Processing,5,1,43,14,1,STRONG,0
+CLM-2024-00301,CUST-09736,Fire,120766.92,Approved,12,Low,Fast-Track Approval — Routine Processing,3,1,49,31,2,STRONG,0
+CLM-2024-00740,CUST-09756,Auto,1964.41,Settled,7,Low,Fast-Track Approval — Routine Processing,2,0,39,0,0,STRONG,0
+CLM-2024-01277,CUST-09759,Fire,7767.46,Approved,9,Low,Fast-Track Approval — Routine Processing,4,0,37,14,1,STRONG,0
+CLM-2024-00965,CUST-09760,Auto,3121.93,Open,7,Low,Fast-Track Approval — Routine Processing,2,0,39,0,0,STRONG,0
+CLM-2024-00872,CUST-09763,Fire,36131.29,Approved,15,Low,Fast-Track Approval — Routine Processing,10,2,47,26,2,STRONG,0
+CLM-2024-01449,CUST-09765,Caravan,7375.49,Approved,43,Medium,Standard Adjuster Review — Verify Supporting Documentation,57,19,44,31,2,DIVERGENT,0
+CLM-2024-00120,CUST-09768,Fire,13778.5,Settled,16,Low,Fast-Track Approval — Routine Processing,17,1,41,14,1,DIVERGENT,0
+CLM-2024-00395,CUST-09769,Fire,53316.81,Approved,11,Low,Fast-Track Approval — Routine Processing,6,0,41,14,1,STRONG,0
+CLM-2024-00515,CUST-09769,Fire,114579.07,Settled,13,Low,Fast-Track Approval — Routine Processing,5,2,46,31,2,STRONG,0
+CLM-2024-00210,CUST-09772,Auto,4248.2,Settled,8,Low,Fast-Track Approval — Routine Processing,3,0,39,0,0,STRONG,0
+CLM-2024-00693,CUST-09774,Fire,7192.48,Approved,10,Low,Fast-Track Approval — Routine Processing,4,0,44,14,1,STRONG,0
+CLM-2024-00680,CUST-09777,Auto,6095.94,Settled,11,Low,Fast-Track Approval — Routine Processing,8,0,43,0,0,STRONG,0
+CLM-2024-01227,CUST-09797,Auto,16928.22,Settled,40,Medium,Standard Adjuster Review — Verify Supporting Documentation,57,19,45,0,0,DIVERGENT,0
+CLM-2024-00533,CUST-09798,Auto,24762.82,Approved,54,Medium,Standard Adjuster Review — Verify Supporting Documentation,79,32,39,0,0,DIVERGENT,0
+CLM-2024-00663,CUST-09800,Fire,93750.0,Settled,48,Medium,Standard Adjuster Review — Verify Supporting Documentation,56,31,48,43,3,DIVERGENT,0
+CLM-2024-00482,CUST-09806,Auto,1097.47,Settled,8,Low,Fast-Track Approval — Routine Processing,4,0,43,0,0,STRONG,0
+CLM-2024-00049,CUST-09814,Auto,10289.94,Settled,10,Low,Fast-Track Approval — Routine Processing,8,0,41,0,0,STRONG,0
+CLM-2024-00681,CUST-09818,Fire,50632.67,Open,11,Low,Fast-Track Approval — Routine Processing,6,1,41,14,1,STRONG,0

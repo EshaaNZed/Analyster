@@ -1,0 +1,73 @@
+{
+  "step": "Step 3 \u2014 Hybrid Graph-RAG Knowledge Base",
+  "status": "PASSED",
+  "elapsed_total_sec": 27.53,
+  "vector_store": {
+    "collection_name": "insurance_claims",
+    "embedding_model": "all-MiniLM-L6-v2",
+    "total_documents": 1500
+  },
+  "knowledge_graph": {
+    "total_nodes": 25543,
+    "total_edges": 22184,
+    "is_directed": true,
+    "node_types": {
+      "Customer": 2000,
+      "Policy": 15546,
+      "Unknown": 6358,
+      "Claim": 1500,
+      "IncidentType": 25,
+      "RiskCluster": 4,
+      "HouseholdCluster": 110
+    },
+    "edge_types": {
+      "OWNS_POLICY": 15546,
+      "BELONGS_TO_HOUSEHOLD": 1955,
+      "HAS_CLAIM": 3000,
+      "INCIDENT_OF_TYPE": 1500,
+      "FLAGGED_BY_RISK_CLUSTER": 183
+    }
+  },
+  "suspicious_clusters_detected": 1,
+  "smoke_tests": {
+    "tests": [
+      {
+        "test": "Free-text semantic query (fraud fire pattern)",
+        "query": "suspicious fire claim shortly after policy start inflated damage",
+        "latency_sec": 0.092,
+        "total_results": 5,
+        "top_result_claim_id": "CLM-2024-00131",
+        "top_result_policy_line": "Fire",
+        "vector_hits": 10,
+        "graph_hits": 10,
+        "status": "PASSED"
+      },
+      {
+        "test": "Policy-line filtered semantic search (Auto claims only)",
+        "query": "rear end collision intersection damage repair cost",
+        "latency_sec": 0.066,
+        "total_results": 5,
+        "top_result_claim_id": "CLM-2024-00270",
+        "policy_filter_applied": "Auto",
+        "all_results_correct_line": true,
+        "vector_hits": 10,
+        "status": "PASSED"
+      },
+      {
+        "test": "Claim-ID context retrieval with graph context",
+        "source_claim_id": "CLM-2024-00001",
+        "latency_sec": 1.294,
+        "similar_claims_found": 5,
+        "graph_nodes_in_context": 215,
+        "graph_edges_in_context": 215,
+        "household_risk_flags": [],
+        "vector_hits": 10,
+        "graph_hits": 210,
+        "status": "PASSED"
+      }
+    ],
+    "overall_status": "PASSED",
+    "passed_count": 3,
+    "total_tests": 3
+  }
+}

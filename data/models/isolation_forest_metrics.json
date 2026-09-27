@@ -1,0 +1,10 @@
+{
+  "model": "Isolation Forest",
+  "roc_auc": 0.7386,
+  "avg_precision": 0.3398,
+  "contamination": 0.12,
+  "n_estimators": 200,
+  "flagged_as_anomaly": 180,
+  "true_anomaly_count": 158,
+  "note": "Unsupervised \u2014 no labels used during training. AUC uses ground truth for evaluation only."
+}
