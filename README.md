@@ -72,9 +72,9 @@ flowchart TB
 
 ### Prerequisites
 - Python 3.10+
-- Node.js 18+ & npm
+- (Optional for React UI) Node.js 18+ & npm
 
-### 1. Clone & Setup Backend
+### 1. Launch Backend & Pure HTML/CSS/JS Reviewer Studio (Zero Build Required)
 ```bash
 # Clone the repository
 git clone https://github.com/EshaaNZed/Analyster.git
@@ -83,14 +83,14 @@ cd Analyster
 # Install Python requirements
 pip install fastapi uvicorn pydantic scikit-learn xgboost shap chromadb networkx sentence-transformers pandas numpy
 
-# Start FastAPI Microservice (port 8000)
+# Start the unified microservice & studio
 python -m uvicorn backend.api.main:app --host 0.0.0.0 --port 8000 --reload
 ```
-Swagger API Documentation will be available at `http://localhost:8000/docs`.
+- **Unified Reviewer Studio**: Open **`http://localhost:8000`** in any browser. It runs directly as a pure Vanilla HTML5, CSS3, and JavaScript ES6+ application with Vis-Network, Chart.js, and interactive glassmorphic cards — no npm or build process required.
+- **Swagger API Documentation**: Available at `http://localhost:8000/docs`.
 
-### 2. Setup & Start Frontend
+### 2. (Optional) Run React + Vite Reviewer Studio
 ```bash
-# In a separate terminal:
 cd frontend
 npm install
 npm run dev

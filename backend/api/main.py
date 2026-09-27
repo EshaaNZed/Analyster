@@ -88,17 +88,12 @@ app.add_middleware(
 app.include_router(router, prefix="/api")
 
 
-# ─── Root Redirect ───────────────────────────────────────────────────────────
+from fastapi.staticfiles import StaticFiles
 
-@app.get("/", tags=["System"])
-def root():
-    """Root endpoint — redirect info to docs."""
-    return {
-        "service": "Claims Intelligence API",
-        "version": "1.0.0",
-        "docs": "/docs",
-        "health": "/api/health",
-    }
+# ─── Static Frontend (Vanilla HTML, CSS, JS) ─────────────────────────────────
+FRONTEND_DIR = os.path.join(PROJECT_ROOT, "frontend")
+if os.path.isdir(FRONTEND_DIR):
+    app.mount("/", StaticFiles(directory=FRONTEND_DIR, html=True), name="frontend")
 
 
 # ─── Direct Execution ───────────────────────────────────────────────────────

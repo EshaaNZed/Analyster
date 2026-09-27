@@ -385,7 +385,8 @@ def get_graph_subgraph(
             detail=f"Entity '{entity_id}' not found in knowledge graph."
         )
 
-    # BFS traversal to extract subgraph at specified depth
+    # BFS traversal to extract subgraph at specified depth (undirected view for complete relational context)
+    undirected = graph.to_undirected(as_view=True)
     visited = set()
     frontier = {entity_id}
 
@@ -394,9 +395,14 @@ def get_graph_subgraph(
         for node in frontier:
             if node not in visited:
                 visited.add(node)
-                next_frontier.update(graph.neighbors(node))
+                neighbors = list(undirected.neighbors(node))
+                if len(visited) + len(neighbors) > 120:
+                    neighbors = neighbors[:max(10, 120 - len(visited))]
+                next_frontier.update(neighbors)
         frontier = next_frontier - visited
-    visited.update(frontier)
+        if len(visited) >= 120:
+            break
+    visited.update(list(frontier)[:max(0, 120 - len(visited))])
 
     # Build nodes
     nodes = []
