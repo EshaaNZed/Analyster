@@ -4,28 +4,28 @@
 
 | Layer | Model | Weight | CV AUC | F1 Score |
 | :--- | :--- | :--- | :--- | :--- |
-| Primary | XGBoost + SHAP | 50% | 0.9184 ± 0.0246 | 0.6354 |
-| Validator | Random Forest (Calibrated) | 25% | 0.9123 | 0.583 |
-| Novel Patterns | Isolation Forest | 15% | 0.7386 (ROC) | N/A |
+| Primary | XGBoost + SHAP | 50% | 0.9196 ± 0.0232 | 0.626 |
+| Validator | Random Forest (Calibrated) | 25% | 0.9114 | 0.5968 |
+| Novel Patterns | Isolation Forest | 15% | 0.7425 (ROC) | N/A |
 | Regulatory | Deterministic Rule Engine | 10% | N/A | N/A |
 
 ## Model Stability
 
-- **XGBoost CV AUC**: `0.9184` | **RF CV AUC**: `0.9123`
-- **AUC Gap**: `0.0061` | **Status**: `STABLE`
+- **XGBoost CV AUC**: `0.9196` | **RF CV AUC**: `0.9114`
+- **AUC Gap**: `0.0082` | **Status**: `STABLE`
 - Models are in agreement. XGBoost selected as primary.
 
 ## Claim Triage Distribution
 
 | Triage Level | Count | Action |
 | :--- | :--- | :--- |
-| High Risk | 52 | Priority Manual Investigation / SIU Referral |
-| Medium Risk | 283 | Standard Adjuster Review |
-| Low Risk | 1165 | Fast-Track Approval |
+| High Risk | 39 | Priority Manual Investigation / SIU Referral |
+| Medium Risk | 57 | Standard Adjuster Review |
+| Low Risk | 1404 | Fast-Track Approval |
 
 ## Ground Truth Anomaly Recovery
 
-Of the 183 injected anomalous claims, triage breakdown: {'Medium': 102, 'High': 49, 'Low': 7}
+Of the 183 injected anomalous claims, triage breakdown: {'Low': 79, 'Medium': 40, 'High': 39}
 
 ## SHAP Explainability
 

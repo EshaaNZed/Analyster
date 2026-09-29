@@ -26,6 +26,48 @@ export interface ClaimListResponse {
   total_pages: number;
 }
 
+export interface CustomerPolicySummary {
+  policy_id: string;
+  policy_line: string;
+  annual_premium_usd: number;
+  coverage_limit_usd: number;
+  policy_status: string;
+}
+
+export interface CustomerPriorClaim {
+  claim_id: string;
+  policy_line: string;
+  incident_type: string;
+  claim_amount_usd: number;
+  incident_date: string;
+  filing_date: string;
+  claim_status: string;
+  risk_label: string;
+}
+
+export interface PolicyholderProfile360 {
+  customer_id: string;
+  customer_subtype: string;
+  customer_main_type: string;
+  age_group: string;
+  household_size: number;
+  purchasing_power_tier: number;
+  purchasing_power_desc: string;
+  number_of_houses: number;
+  est_annual_insurance_spend_usd: number;
+  total_active_policies: number;
+  customer_lifetime_value_usd: number;
+  all_policies: CustomerPolicySummary[];
+  prior_claims: CustomerPriorClaim[];
+  claims_last_12m: number;
+  claims_last_24m: number;
+  claims_last_36m: number;
+  total_prior_claims: number;
+  cumulative_payout_usd: number;
+  lifetime_premium_paid_usd: number;
+  net_loss_ratio: number;
+}
+
 export interface ClaimDetail extends ClaimSummary {
   estimated_annual_premium_usd: number;
   anomaly_reasons: string;
@@ -36,6 +78,7 @@ export interface ClaimDetail extends ClaimSummary {
   household_size: number;
   annual_premium_usd: number;
   total_active_policies: number;
+  customer_profile?: PolicyholderProfile360;
 }
 
 export interface DashboardStats {
@@ -84,7 +127,7 @@ export interface ShapFactor {
   raw_value: number;
   shap_value: number;
   direction: 'INCREASES_RISK' | 'DECREASES_RISK';
-  impact_level: 'High' | 'Medium' | 'Low';
+  impact_level: 'Critical' | 'High' | 'Medium' | 'Low';
 }
 
 export interface RiskAnalysis {
@@ -209,4 +252,27 @@ export interface FilterOptions {
   incident_types: string[];
   severities: string[];
   claim_statuses: string[];
+}
+
+export interface NewClaimInput {
+  claim_id?: string;
+  customer_id?: string;
+  policy_line: string;
+  incident_type: string;
+  incident_severity: string;
+  claim_amount_usd: number;
+  coverage_limit_usd?: number;
+  annual_premium_usd?: number;
+  filing_delay_days: number;
+  incident_date?: string;
+  filing_date?: string;
+  incident_narrative: string;
+  adjuster_notes?: string;
+  customer_subtype?: string;
+  customer_main_type?: string;
+  age_group?: string;
+  household_size?: number;
+  total_active_policies?: number;
+  purchasing_power_tier?: number;
+  save_to_database?: boolean;
 }

@@ -1,7 +1,7 @@
 # Insurance Claims Intelligence — Data Engineering & Normalization Report
 
 **Audit Status**: `PASSED` | **Passed Checks**: `11/11`
-**Timestamp**: `2026-09-26T20:33:52.419753`
+**Timestamp**: `2026-09-29T16:40:21.229756`
 
 ---
 
@@ -40,7 +40,7 @@
 | `policies_to_customer_fk_integrity` | **PASS** | 100% of policies map to existing customer |
 | `claims_positive_amounts` | **PASS** | All claim amounts are strictly positive |
 | `claims_non_negative_delay` | **PASS** | All filing delays are non-negative integers |
-| `claims_status_domain_check` | **PASS** | Statuses found: {'Open', 'Approved', 'Under Investigation', 'Settled'} |
+| `claims_status_domain_check` | **PASS** | Statuses found: {'Under Investigation', 'Settled', 'Approved', 'Open'} |
 
 ---
 

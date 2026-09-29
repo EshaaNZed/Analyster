@@ -101,7 +101,7 @@ class ClaimsIntelligenceOrchestrator:
             "agent": "ClaimsRiskAnalysisAgent",
             "action": "Ensemble Scoring & SHAP Attribution",
             "latency_ms": round((time.time() - t_step) * 1000, 2),
-            "summary": f"Risk Score: {risk_out.risk_score}/100 ({risk_out.risk_tier}), Rule Warnings: {len(risk_out.rule_violations)}"
+            "summary": f"Risk Score: {risk_out.risk_score}/100 ({risk_out.risk_tier}), XGBoost Prob: {risk_out.xgb_probability:.1%}"
         })
 
         # ─────────────────────────────────────────────────────────────────

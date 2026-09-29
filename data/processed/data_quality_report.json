@@ -1,5 +1,5 @@
 {
-  "audit_timestamp": "2026-09-26T20:33:52.419753",
+  "audit_timestamp": "2026-09-29T16:40:21.229756",
   "overall_status": "PASSED",
   "total_assertions": 11,
   "passed_count": 11,
@@ -58,7 +58,7 @@
     {
       "assertion": "claims_status_domain_check",
       "status": "PASSED",
-      "details": "Statuses found: {'Open', 'Approved', 'Under Investigation', 'Settled'}"
+      "details": "Statuses found: {'Under Investigation', 'Settled', 'Approved', 'Open'}"
     }
   ],
   "table_metrics": {

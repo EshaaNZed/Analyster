@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { useSearchParams, useNavigate } from 'react-router-dom';
 import { KnowledgeGraphView } from '../components/KnowledgeGraphView';
 import { SpotlightCard, SplitText, ShinyText } from '../components/reactbits';
 import { Network, Search, Filter, Layers, Share2, Info } from 'lucide-react';
@@ -12,13 +13,25 @@ export const GraphView: React.FC<GraphViewProps> = ({
   initialEntityId = 'CLM-2024-00003',
   onSelectClaim,
 }) => {
-  const [currentEntity, setCurrentEntity] = useState(initialEntityId);
+  const [searchParams, setSearchParams] = useSearchParams();
+  const navigate = useNavigate();
+  const paramEntity = searchParams.get('entity');
+
+  const [currentEntity, setCurrentEntity] = useState(paramEntity || initialEntityId);
   const [searchInput, setSearchInput] = useState('');
+
+  useEffect(() => {
+    if (paramEntity && paramEntity !== currentEntity) {
+      setCurrentEntity(paramEntity);
+    }
+  }, [paramEntity]);
 
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault();
     if (searchInput.trim()) {
-      setCurrentEntity(searchInput.trim());
+      const clean = searchInput.trim().toUpperCase();
+      setCurrentEntity(clean);
+      setSearchParams({ entity: clean });
     }
   };
 
@@ -98,10 +111,12 @@ export const GraphView: React.FC<GraphViewProps> = ({
         entityId={currentEntity}
         height="640px"
         onSelectEntity={(eId) => {
-          if (eId.startsWith('CLM-') && onSelectClaim) {
-            onSelectClaim(eId);
+          if (eId.startsWith('CLM-')) {
+            if (onSelectClaim) onSelectClaim(eId);
+            navigate(`/studio/${eId}`);
           } else {
             setCurrentEntity(eId);
+            setSearchParams({ entity: eId });
           }
         }}
       />

@@ -88,3 +88,37 @@ export async function fetchFilterOptions(): Promise<FilterOptions> {
   if (!res.ok) throw new Error(`Failed to fetch filters: ${res.statusText}`);
   return res.json();
 }
+
+export async function evaluateNewClaim(input: import('../types/claims').NewClaimInput): Promise<AnalyzeDossier> {
+  const res = await fetch(`${API_BASE}/claims/evaluate-new`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(input),
+  });
+  if (!res.ok) {
+    const errData = await res.json().catch(() => ({ detail: res.statusText }));
+    throw new Error(errData.detail || `New claim evaluation failed: ${res.statusText}`);
+  }
+  return res.json();
+}
+
+export interface ChatResponse {
+  response: string;
+  sources: string[];
+  suggested_followups: string[];
+  model: string;
+}
+
+export async function sendChatMessage(query: string, claimId?: string): Promise<ChatResponse> {
+  const res = await fetch(`${API_BASE}/chat`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ query, claim_id: claimId }),
+  });
+  if (!res.ok) {
+    const errData = await res.json().catch(() => ({ detail: res.statusText }));
+    throw new Error(errData.detail || `Chat request failed: ${res.statusText}`);
+  }
+  return res.json();
+}
+

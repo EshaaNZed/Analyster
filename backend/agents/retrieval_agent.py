@@ -39,7 +39,7 @@ class ClaimsRetrievalAgent:
         policy_line = claim_data.get("policy_line", "Auto")
 
         # 1. Execute Hybrid Search
-        retrieval_res = self.retriever.retrieve_claim_context(claim_id=claim_id, top_k=top_k)
+        retrieval_res = self.retriever.retrieve_claim_dossier_context(claim_data=claim_data, top_k=top_k)
 
         # 2. Extract similar precedent models
         precedents = []
@@ -65,7 +65,7 @@ class ClaimsRetrievalAgent:
                 snippet=f"Similar precedent with similarity {sc.similarity_score:.2f}: {sc.incident_type}"
             ))
 
-        # 3. Retrieve Customer's Active Policy Portfolio from SQLite
+        # 3. Retrieve Customer's Active Policy Portfolio from SQLite (or claim data if new)
         policies = []
         try:
             with sqlite3.connect(DB_PATH) as conn:
@@ -86,6 +86,27 @@ class ClaimsRetrievalAgent:
                     ))
         except Exception as e:
             print(f"[RETRIEVAL AGENT] DB query error: {e}")
+
+        # Fallback for ad-hoc / new claim submissions
+        if not policies and claim_data.get("coverage_limit_usd"):
+            pol_id = claim_data.get("policy_id", f"POL-NEW-{claim_id[-6:] if len(claim_id)>=6 else '001'}")
+            pol_line = claim_data.get("policy_line", "Auto")
+            cov_limit = float(claim_data.get("coverage_limit_usd", 0.0))
+            ann_prem = float(claim_data.get("estimated_annual_premium_usd") or claim_data.get("annual_premium_usd", 0.0))
+            policies.append({
+                "policy_id": pol_id,
+                "policy_line": pol_line,
+                "coverage_limit_usd": cov_limit,
+                "annual_premium_usd": ann_prem,
+                "policy_status": "Active"
+            })
+            citations.append(EvidenceCitation(
+                source_type="INTAKE_RECORD",
+                reference_id=pol_id,
+                field_name="coverage_limit_usd",
+                field_value=f"${cov_limit:,.2f}",
+                snippet=f"Active {pol_line} policy specification from intake with annual premium ${ann_prem:,.2f}"
+            ))
 
         # 4. Generate Retrieval Summary
         precedent_lines = [p.policy_line for p in precedents]

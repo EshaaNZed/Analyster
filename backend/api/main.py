@@ -42,7 +42,14 @@ async def lifespan(app: FastAPI):
         print("[API] Orchestrator ready.")
     except Exception as e:
         print(f"[API] WARNING: Orchestrator pre-warm failed: {e}")
-        print("[API] Orchestrator will initialize on first /analyze request.")
+
+    try:
+        from backend.agents.llm_service import get_llm_service
+        print("[API] Pre-warming LLM service...")
+        get_llm_service()
+        print("[API] LLM service ready.")
+    except Exception as e:
+        print(f"[API] WARNING: LLM service pre-warm failed: {e}")
 
     print("[API] Claims Intelligence API is LIVE.")
     print("[API] Swagger docs: http://localhost:8000/docs")

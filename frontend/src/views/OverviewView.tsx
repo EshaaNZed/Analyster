@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { DashboardStats, ClaimSummary, FilterOptions } from '../types/claims';
 import { fetchDashboardStats, fetchClaims, fetchFilterOptions } from '../api/client';
 import { SpotlightCard, CountUp, SplitText, ShinyText, DecryptedText } from '../components/reactbits';
@@ -6,14 +7,15 @@ import {
   PieChart, Pie, Cell, ResponsiveContainer, BarChart, Bar, XAxis, YAxis, Tooltip, CartesianGrid,
 } from 'recharts';
 import {
-  DollarSign, AlertOctagon, ShieldAlert, CheckCircle2, TrendingUp, Search, Filter, ArrowUpDown, ChevronRight, Activity, Cpu,
+  DollarSign, AlertOctagon, ShieldAlert, CheckCircle2, TrendingUp, Search, Filter, ArrowUpDown, ChevronRight, Activity, Cpu, Layers,
 } from 'lucide-react';
 
 interface OverviewViewProps {
-  onSelectClaim: (claimId: string) => void;
+  onSelectClaim?: (claimId: string) => void;
 }
 
 export const OverviewView: React.FC<OverviewViewProps> = ({ onSelectClaim }) => {
+  const navigate = useNavigate();
   const [stats, setStats] = useState<DashboardStats | null>(null);
   const [claims, setClaims] = useState<ClaimSummary[]>([]);
   const [filterOpts, setFilterOpts] = useState<FilterOptions | null>(null);
@@ -326,32 +328,23 @@ export const OverviewView: React.FC<OverviewViewProps> = ({ onSelectClaim }) => 
           </div>
 
           <div style={{ display: 'flex', alignItems: 'center', gap: '10px', flexWrap: 'wrap' }}>
-            {/* Filter by Risk */}
-            <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
-              <span style={{ fontSize: '0.75rem', color: 'var(--text-secondary)' }}>Risk:</span>
-              <select
-                value={riskFilter}
-                onChange={(e) => {
-                  setRiskFilter(e.target.value);
-                  setPage(1);
-                }}
-                className="select-custom"
-                style={{
-                  background: 'rgba(255,255,255,0.04)',
-                  border: '1px solid rgba(255,255,255,0.1)',
-                  color: '#f0f0f5',
-                  padding: '6px 10px',
-                  borderRadius: '8px',
-                  fontSize: '0.78rem',
-                  outline: 'none',
-                }}
-              >
-                <option value="ALL">All Risk Tiers</option>
-                <option value="High">High Risk</option>
-                <option value="Medium">Medium Risk</option>
-                <option value="Low">Low Risk</option>
-              </select>
-            </div>
+            <button
+              onClick={() => navigate('/intake')}
+              className="btn btn-primary"
+              style={{
+                display: 'flex',
+                alignItems: 'center',
+                gap: '6px',
+                padding: '6px 12px',
+                fontSize: '0.78rem',
+                borderRadius: '8px',
+                background: 'linear-gradient(135deg, #6366f1, #8b5cf6)',
+                fontWeight: 700,
+                border: 'none',
+              }}
+            >
+              <Cpu size={14} /> + New Claim Intake
+            </button>
 
             {/* Filter by Policy Line */}
             {filterOpts && (
@@ -420,15 +413,11 @@ export const OverviewView: React.FC<OverviewViewProps> = ({ onSelectClaim }) => 
                 <th style={{ padding: '10px 14px' }}>Incident Type</th>
                 <th style={{ padding: '10px 14px', textAlign: 'right' }}>Claim Amount</th>
                 <th style={{ padding: '10px 14px', textAlign: 'center' }}>Filing Delay</th>
-                <th style={{ padding: '10px 14px', textAlign: 'center' }}>Risk Tier</th>
-                <th style={{ padding: '10px 14px', textAlign: 'center' }}>Anomaly</th>
                 <th style={{ padding: '10px 14px', textAlign: 'right' }}>Actions</th>
               </tr>
             </thead>
             <tbody>
               {claims.map((c) => {
-                const isHigh = c.risk_label === 'High';
-                const isMed = c.risk_label === 'Medium';
                 return (
                   <tr
                     key={c.claim_id}
@@ -467,35 +456,13 @@ export const OverviewView: React.FC<OverviewViewProps> = ({ onSelectClaim }) => 
                         {c.filing_delay_days}d
                       </span>
                     </td>
-                    <td style={{ padding: '12px 14px', textAlign: 'center' }}>
-                      <span
-                        style={{
-                          padding: '3px 10px',
-                          borderRadius: '999px',
-                          fontSize: '0.72rem',
-                          fontWeight: 700,
-                          textTransform: 'uppercase',
-                          background: isHigh ? 'rgba(239, 68, 68, 0.15)' : isMed ? 'rgba(245, 158, 11, 0.15)' : 'rgba(16, 185, 129, 0.15)',
-                          color: isHigh ? '#ef4444' : isMed ? '#f59e0b' : '#10b981',
-                          border: `1px solid ${isHigh ? '#ef444440' : isMed ? '#f59e0b40' : '#10b98140'}`,
-                        }}
-                      >
-                        {c.risk_label}
-                      </span>
-                    </td>
-                    <td style={{ padding: '12px 14px', textAlign: 'center' }}>
-                      {c.is_anomaly_ground_truth ? (
-                        <span style={{ color: '#fbbf24', fontSize: '0.75rem', fontWeight: 600 }}>⚠️ Outlier</span>
-                      ) : (
-                        <span style={{ color: 'var(--text-tertiary)', fontSize: '0.72rem' }}>Normal</span>
-                      )}
-                    </td>
                     <td style={{ padding: '12px 14px', textAlign: 'right' }}>
                       <button
                         className="btn btn-secondary"
                         onClick={(e) => {
                           e.stopPropagation();
-                          onSelectClaim(c.claim_id);
+                          if (onSelectClaim) onSelectClaim(c.claim_id);
+                          navigate(`/studio/${c.claim_id}`);
                         }}
                         style={{ padding: '5px 12px', fontSize: '0.75rem', borderRadius: '6px', display: 'inline-flex', alignItems: 'center', gap: '4px' }}
                       >

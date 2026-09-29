@@ -1,42 +1,42 @@
 [
   {
     "claim_id": "CLM-2024-00376",
-    "xgb_risk_prob": 0.9841,
-    "xgb_risk_score": 98,
+    "xgb_risk_prob": 0.9474,
+    "xgb_risk_score": 95,
     "top_factors": [
       {
         "feature": "claim_to_limit_ratio",
         "display_name": "Claim-to-Limit Ratio",
         "raw_value": 2.186585508603535,
-        "shap_value": 1.9071,
+        "shap_value": 2.1929,
         "direction": "INCREASES_RISK"
       },
       {
         "feature": "filing_delay_days",
         "display_name": "Filing Delay (days)",
         "raw_value": 5.333333333333333,
-        "shap_value": 1.5476,
+        "shap_value": 1.7795,
         "direction": "INCREASES_RISK"
       },
       {
         "feature": "log_claim_amount",
         "display_name": "Claim Amount (log-scaled)",
         "raw_value": 1.4327032850447885,
-        "shap_value": 0.2477,
+        "shap_value": 0.4036,
         "direction": "INCREASES_RISK"
       },
       {
         "feature": "customer_total_policies",
         "display_name": "Total Active Policies",
         "raw_value": -1.0,
-        "shap_value": 0.1509,
+        "shap_value": 0.2422,
         "direction": "INCREASES_RISK"
       },
       {
         "feature": "subtype_claim_ratio_delta",
         "display_name": "Deviation from Peer Group Average",
-        "raw_value": 7.172302981085224,
-        "shap_value": 0.1241,
+        "raw_value": 7.351481529801391,
+        "shap_value": 0.2232,
         "direction": "INCREASES_RISK"
       }
     ],
@@ -45,538 +45,106 @@
         "feature": "claim_to_limit_ratio",
         "display_name": "Claim-to-Limit Ratio",
         "raw_value": 2.186585508603535,
-        "shap_value": 1.9071,
+        "shap_value": 2.1929,
         "direction": "INCREASES_RISK"
       },
       {
         "feature": "filing_delay_days",
         "display_name": "Filing Delay (days)",
         "raw_value": 5.333333333333333,
-        "shap_value": 1.5476,
+        "shap_value": 1.7795,
         "direction": "INCREASES_RISK"
       },
       {
         "feature": "log_claim_amount",
         "display_name": "Claim Amount (log-scaled)",
         "raw_value": 1.4327032850447885,
-        "shap_value": 0.2477,
+        "shap_value": 0.4036,
         "direction": "INCREASES_RISK"
       },
       {
         "feature": "customer_total_policies",
         "display_name": "Total Active Policies",
         "raw_value": -1.0,
-        "shap_value": 0.1509,
+        "shap_value": 0.2422,
         "direction": "INCREASES_RISK"
       },
       {
         "feature": "subtype_claim_ratio_delta",
         "display_name": "Deviation from Peer Group Average",
-        "raw_value": 7.172302981085224,
-        "shap_value": 0.1241,
+        "raw_value": 7.351481529801391,
+        "shap_value": 0.2232,
+        "direction": "INCREASES_RISK"
+      },
+      {
+        "feature": "log_annual_spend",
+        "display_name": "Annual Insurance Spend (log)",
+        "raw_value": 0.0,
+        "shap_value": 0.1047,
+        "direction": "INCREASES_RISK"
+      },
+      {
+        "feature": "purchasing_power_tier",
+        "display_name": "Purchasing Power Tier",
+        "raw_value": -0.3333333333333333,
+        "shap_value": 0.0915,
+        "direction": "INCREASES_RISK"
+      },
+      {
+        "feature": "household_size",
+        "display_name": "Household Size",
+        "raw_value": -1.0,
+        "shap_value": 0.031,
         "direction": "INCREASES_RISK"
       },
       {
         "feature": "claim_to_premium_ratio",
         "display_name": "Claim-to-Premium Ratio",
         "raw_value": 0.46324511058810586,
-        "shap_value": -0.0805,
-        "direction": "DECREASES_RISK"
-      },
-      {
-        "feature": "purchasing_power_tier",
-        "display_name": "Purchasing Power Tier",
-        "raw_value": -0.3333333333333333,
-        "shap_value": 0.047,
-        "direction": "INCREASES_RISK"
-      },
-      {
-        "feature": "log_annual_spend",
-        "display_name": "Annual Insurance Spend (log)",
-        "raw_value": 0.0,
-        "shap_value": 0.0395,
-        "direction": "INCREASES_RISK"
-      },
-      {
-        "feature": "household_size",
-        "display_name": "Household Size",
-        "raw_value": -1.0,
-        "shap_value": 0.0169,
-        "direction": "INCREASES_RISK"
-      }
-    ],
-    "base_value": 0.126
-  },
-  {
-    "claim_id": "CLM-2024-00025",
-    "xgb_risk_prob": 0.9829,
-    "xgb_risk_score": 98,
-    "top_factors": [
-      {
-        "feature": "claim_to_limit_ratio",
-        "display_name": "Claim-to-Limit Ratio",
-        "raw_value": 1.9763549104530025,
-        "shap_value": 1.8391,
-        "direction": "INCREASES_RISK"
-      },
-      {
-        "feature": "filing_delay_days",
-        "display_name": "Filing Delay (days)",
-        "raw_value": 4.833333333333333,
-        "shap_value": 1.4644,
-        "direction": "INCREASES_RISK"
-      },
-      {
-        "feature": "claim_to_premium_ratio",
-        "display_name": "Claim-to-Premium Ratio",
-        "raw_value": -0.023425134536245663,
-        "shap_value": 0.2359,
-        "direction": "INCREASES_RISK"
-      },
-      {
-        "feature": "customer_total_policies",
-        "display_name": "Total Active Policies",
-        "raw_value": -1.0,
-        "shap_value": 0.2031,
-        "direction": "INCREASES_RISK"
-      },
-      {
-        "feature": "subtype_claim_ratio_delta",
-        "display_name": "Deviation from Peer Group Average",
-        "raw_value": 1.0567174700454955,
-        "shap_value": 0.1219,
-        "direction": "INCREASES_RISK"
-      }
-    ],
-    "all_factors": [
-      {
-        "feature": "claim_to_limit_ratio",
-        "display_name": "Claim-to-Limit Ratio",
-        "raw_value": 1.9763549104530025,
-        "shap_value": 1.8391,
-        "direction": "INCREASES_RISK"
-      },
-      {
-        "feature": "filing_delay_days",
-        "display_name": "Filing Delay (days)",
-        "raw_value": 4.833333333333333,
-        "shap_value": 1.4644,
-        "direction": "INCREASES_RISK"
-      },
-      {
-        "feature": "claim_to_premium_ratio",
-        "display_name": "Claim-to-Premium Ratio",
-        "raw_value": -0.023425134536245663,
-        "shap_value": 0.2359,
-        "direction": "INCREASES_RISK"
-      },
-      {
-        "feature": "customer_total_policies",
-        "display_name": "Total Active Policies",
-        "raw_value": -1.0,
-        "shap_value": 0.2031,
-        "direction": "INCREASES_RISK"
-      },
-      {
-        "feature": "subtype_claim_ratio_delta",
-        "display_name": "Deviation from Peer Group Average",
-        "raw_value": 1.0567174700454955,
-        "shap_value": 0.1219,
-        "direction": "INCREASES_RISK"
-      },
-      {
-        "feature": "log_claim_amount",
-        "display_name": "Claim Amount (log-scaled)",
-        "raw_value": 0.6901224376917665,
-        "shap_value": -0.075,
-        "direction": "DECREASES_RISK"
-      },
-      {
-        "feature": "purchasing_power_tier",
-        "display_name": "Purchasing Power Tier",
-        "raw_value": -0.3333333333333333,
-        "shap_value": 0.0713,
-        "direction": "INCREASES_RISK"
-      },
-      {
-        "feature": "household_size",
-        "display_name": "Household Size",
-        "raw_value": 0.0,
-        "shap_value": 0.0386,
-        "direction": "INCREASES_RISK"
-      },
-      {
-        "feature": "log_annual_spend",
-        "display_name": "Annual Insurance Spend (log)",
-        "raw_value": 0.0,
-        "shap_value": 0.0266,
-        "direction": "INCREASES_RISK"
-      }
-    ],
-    "base_value": 0.126
-  },
-  {
-    "claim_id": "CLM-2024-00139",
-    "xgb_risk_prob": 0.9826,
-    "xgb_risk_score": 98,
-    "top_factors": [
-      {
-        "feature": "filing_delay_days",
-        "display_name": "Filing Delay (days)",
-        "raw_value": 10.5,
-        "shap_value": 1.9041,
-        "direction": "INCREASES_RISK"
-      },
-      {
-        "feature": "claim_to_limit_ratio",
-        "display_name": "Claim-to-Limit Ratio",
-        "raw_value": 3.238206718951188,
-        "shap_value": 1.4907,
-        "direction": "INCREASES_RISK"
-      },
-      {
-        "feature": "claim_to_premium_ratio",
-        "display_name": "Claim-to-Premium Ratio",
-        "raw_value": 0.03586715664010349,
-        "shap_value": 0.2894,
-        "direction": "INCREASES_RISK"
-      },
-      {
-        "feature": "customer_total_policies",
-        "display_name": "Total Active Policies",
-        "raw_value": -1.0,
-        "shap_value": 0.2515,
-        "direction": "INCREASES_RISK"
-      },
-      {
-        "feature": "purchasing_power_tier",
-        "display_name": "Purchasing Power Tier",
-        "raw_value": -1.0,
-        "shap_value": -0.1265,
+        "shap_value": -0.0213,
         "direction": "DECREASES_RISK"
       }
     ],
-    "all_factors": [
-      {
-        "feature": "filing_delay_days",
-        "display_name": "Filing Delay (days)",
-        "raw_value": 10.5,
-        "shap_value": 1.9041,
-        "direction": "INCREASES_RISK"
-      },
-      {
-        "feature": "claim_to_limit_ratio",
-        "display_name": "Claim-to-Limit Ratio",
-        "raw_value": 3.238206718951188,
-        "shap_value": 1.4907,
-        "direction": "INCREASES_RISK"
-      },
-      {
-        "feature": "claim_to_premium_ratio",
-        "display_name": "Claim-to-Premium Ratio",
-        "raw_value": 0.03586715664010349,
-        "shap_value": 0.2894,
-        "direction": "INCREASES_RISK"
-      },
-      {
-        "feature": "customer_total_policies",
-        "display_name": "Total Active Policies",
-        "raw_value": -1.0,
-        "shap_value": 0.2515,
-        "direction": "INCREASES_RISK"
-      },
-      {
-        "feature": "purchasing_power_tier",
-        "display_name": "Purchasing Power Tier",
-        "raw_value": -1.0,
-        "shap_value": -0.1265,
-        "direction": "DECREASES_RISK"
-      },
-      {
-        "feature": "subtype_claim_ratio_delta",
-        "display_name": "Deviation from Peer Group Average",
-        "raw_value": 2.444779048163417,
-        "shap_value": 0.073,
-        "direction": "INCREASES_RISK"
-      },
-      {
-        "feature": "log_claim_amount",
-        "display_name": "Claim Amount (log-scaled)",
-        "raw_value": 0.8799746586031996,
-        "shap_value": -0.0421,
-        "direction": "DECREASES_RISK"
-      },
-      {
-        "feature": "log_annual_spend",
-        "display_name": "Annual Insurance Spend (log)",
-        "raw_value": 0.0,
-        "shap_value": 0.0407,
-        "direction": "INCREASES_RISK"
-      },
-      {
-        "feature": "household_size",
-        "display_name": "Household Size",
-        "raw_value": -1.0,
-        "shap_value": 0.0266,
-        "direction": "INCREASES_RISK"
-      }
-    ],
-    "base_value": 0.126
-  },
-  {
-    "claim_id": "CLM-2024-00687",
-    "xgb_risk_prob": 0.9821,
-    "xgb_risk_score": 98,
-    "top_factors": [
-      {
-        "feature": "claim_to_limit_ratio",
-        "display_name": "Claim-to-Limit Ratio",
-        "raw_value": 2.8711225564789884,
-        "shap_value": 1.8062,
-        "direction": "INCREASES_RISK"
-      },
-      {
-        "feature": "filing_delay_days",
-        "display_name": "Filing Delay (days)",
-        "raw_value": 4.5,
-        "shap_value": 1.5128,
-        "direction": "INCREASES_RISK"
-      },
-      {
-        "feature": "claim_to_premium_ratio",
-        "display_name": "Claim-to-Premium Ratio",
-        "raw_value": 0.018635506558211862,
-        "shap_value": 0.2636,
-        "direction": "INCREASES_RISK"
-      },
-      {
-        "feature": "subtype_claim_ratio_delta",
-        "display_name": "Deviation from Peer Group Average",
-        "raw_value": 1.5854299839351302,
-        "shap_value": 0.1386,
-        "direction": "INCREASES_RISK"
-      },
-      {
-        "feature": "log_annual_spend",
-        "display_name": "Annual Insurance Spend (log)",
-        "raw_value": 0.6166332343937238,
-        "shap_value": 0.0735,
-        "direction": "INCREASES_RISK"
-      }
-    ],
-    "all_factors": [
-      {
-        "feature": "claim_to_limit_ratio",
-        "display_name": "Claim-to-Limit Ratio",
-        "raw_value": 2.8711225564789884,
-        "shap_value": 1.8062,
-        "direction": "INCREASES_RISK"
-      },
-      {
-        "feature": "filing_delay_days",
-        "display_name": "Filing Delay (days)",
-        "raw_value": 4.5,
-        "shap_value": 1.5128,
-        "direction": "INCREASES_RISK"
-      },
-      {
-        "feature": "claim_to_premium_ratio",
-        "display_name": "Claim-to-Premium Ratio",
-        "raw_value": 0.018635506558211862,
-        "shap_value": 0.2636,
-        "direction": "INCREASES_RISK"
-      },
-      {
-        "feature": "subtype_claim_ratio_delta",
-        "display_name": "Deviation from Peer Group Average",
-        "raw_value": 1.5854299839351302,
-        "shap_value": 0.1386,
-        "direction": "INCREASES_RISK"
-      },
-      {
-        "feature": "log_annual_spend",
-        "display_name": "Annual Insurance Spend (log)",
-        "raw_value": 0.6166332343937238,
-        "shap_value": 0.0735,
-        "direction": "INCREASES_RISK"
-      },
-      {
-        "feature": "purchasing_power_tier",
-        "display_name": "Purchasing Power Tier",
-        "raw_value": -0.3333333333333333,
-        "shap_value": 0.0679,
-        "direction": "INCREASES_RISK"
-      },
-      {
-        "feature": "log_claim_amount",
-        "display_name": "Claim Amount (log-scaled)",
-        "raw_value": 0.8326976087590957,
-        "shap_value": -0.0606,
-        "direction": "DECREASES_RISK"
-      },
-      {
-        "feature": "customer_total_policies",
-        "display_name": "Total Active Policies",
-        "raw_value": 2.0,
-        "shap_value": 0.0388,
-        "direction": "INCREASES_RISK"
-      },
-      {
-        "feature": "household_size",
-        "display_name": "Household Size",
-        "raw_value": 0.0,
-        "shap_value": 0.0361,
-        "direction": "INCREASES_RISK"
-      }
-    ],
-    "base_value": 0.126
-  },
-  {
-    "claim_id": "CLM-2024-00048",
-    "xgb_risk_prob": 0.9815,
-    "xgb_risk_score": 98,
-    "top_factors": [
-      {
-        "feature": "claim_to_limit_ratio",
-        "display_name": "Claim-to-Limit Ratio",
-        "raw_value": 2.2615006438019427,
-        "shap_value": 1.8612,
-        "direction": "INCREASES_RISK"
-      },
-      {
-        "feature": "filing_delay_days",
-        "display_name": "Filing Delay (days)",
-        "raw_value": 8.5,
-        "shap_value": 1.4618,
-        "direction": "INCREASES_RISK"
-      },
-      {
-        "feature": "claim_to_premium_ratio",
-        "display_name": "Claim-to-Premium Ratio",
-        "raw_value": -0.010047208114840982,
-        "shap_value": 0.2359,
-        "direction": "INCREASES_RISK"
-      },
-      {
-        "feature": "customer_total_policies",
-        "display_name": "Total Active Policies",
-        "raw_value": -1.0,
-        "shap_value": 0.2031,
-        "direction": "INCREASES_RISK"
-      },
-      {
-        "feature": "log_claim_amount",
-        "display_name": "Claim Amount (log-scaled)",
-        "raw_value": 0.7408191092000146,
-        "shap_value": -0.1178,
-        "direction": "DECREASES_RISK"
-      }
-    ],
-    "all_factors": [
-      {
-        "feature": "claim_to_limit_ratio",
-        "display_name": "Claim-to-Limit Ratio",
-        "raw_value": 2.2615006438019427,
-        "shap_value": 1.8612,
-        "direction": "INCREASES_RISK"
-      },
-      {
-        "feature": "filing_delay_days",
-        "display_name": "Filing Delay (days)",
-        "raw_value": 8.5,
-        "shap_value": 1.4618,
-        "direction": "INCREASES_RISK"
-      },
-      {
-        "feature": "claim_to_premium_ratio",
-        "display_name": "Claim-to-Premium Ratio",
-        "raw_value": -0.010047208114840982,
-        "shap_value": 0.2359,
-        "direction": "INCREASES_RISK"
-      },
-      {
-        "feature": "customer_total_policies",
-        "display_name": "Total Active Policies",
-        "raw_value": -1.0,
-        "shap_value": 0.2031,
-        "direction": "INCREASES_RISK"
-      },
-      {
-        "feature": "log_claim_amount",
-        "display_name": "Claim Amount (log-scaled)",
-        "raw_value": 0.7408191092000146,
-        "shap_value": -0.1178,
-        "direction": "DECREASES_RISK"
-      },
-      {
-        "feature": "subtype_claim_ratio_delta",
-        "display_name": "Deviation from Peer Group Average",
-        "raw_value": 1.2799509006340273,
-        "shap_value": 0.0833,
-        "direction": "INCREASES_RISK"
-      },
-      {
-        "feature": "purchasing_power_tier",
-        "display_name": "Purchasing Power Tier",
-        "raw_value": 0.0,
-        "shap_value": 0.0484,
-        "direction": "INCREASES_RISK"
-      },
-      {
-        "feature": "household_size",
-        "display_name": "Household Size",
-        "raw_value": 0.0,
-        "shap_value": 0.0386,
-        "direction": "INCREASES_RISK"
-      },
-      {
-        "feature": "log_annual_spend",
-        "display_name": "Annual Insurance Spend (log)",
-        "raw_value": 0.0,
-        "shap_value": 0.0282,
-        "direction": "INCREASES_RISK"
-      }
-    ],
-    "base_value": 0.126
+    "base_value": -2.1561
   },
   {
     "claim_id": "CLM-2024-01428",
-    "xgb_risk_prob": 0.9807,
-    "xgb_risk_score": 98,
+    "xgb_risk_prob": 0.9342,
+    "xgb_risk_score": 93,
     "top_factors": [
       {
         "feature": "claim_to_limit_ratio",
         "display_name": "Claim-to-Limit Ratio",
         "raw_value": 2.7751375395060283,
-        "shap_value": 1.8469,
+        "shap_value": 2.1095,
         "direction": "INCREASES_RISK"
       },
       {
         "feature": "filing_delay_days",
         "display_name": "Filing Delay (days)",
         "raw_value": 3.1666666666666665,
-        "shap_value": 1.3373,
+        "shap_value": 1.7632,
         "direction": "INCREASES_RISK"
       },
       {
         "feature": "claim_to_premium_ratio",
         "display_name": "Claim-to-Premium Ratio",
         "raw_value": 0.014121144555927154,
-        "shap_value": 0.2764,
+        "shap_value": 0.2953,
         "direction": "INCREASES_RISK"
       },
       {
         "feature": "customer_total_policies",
         "display_name": "Total Active Policies",
         "raw_value": -1.0,
-        "shap_value": 0.2033,
+        "shap_value": 0.2391,
         "direction": "INCREASES_RISK"
       },
       {
-        "feature": "subtype_claim_ratio_delta",
-        "display_name": "Deviation from Peer Group Average",
-        "raw_value": 1.5288480631372057,
-        "shap_value": 0.1269,
+        "feature": "log_annual_spend",
+        "display_name": "Annual Insurance Spend (log)",
+        "raw_value": 0.0,
+        "shap_value": 0.113,
         "direction": "INCREASES_RISK"
       }
     ],
@@ -585,107 +153,107 @@
         "feature": "claim_to_limit_ratio",
         "display_name": "Claim-to-Limit Ratio",
         "raw_value": 2.7751375395060283,
-        "shap_value": 1.8469,
+        "shap_value": 2.1095,
         "direction": "INCREASES_RISK"
       },
       {
         "feature": "filing_delay_days",
         "display_name": "Filing Delay (days)",
         "raw_value": 3.1666666666666665,
-        "shap_value": 1.3373,
+        "shap_value": 1.7632,
         "direction": "INCREASES_RISK"
       },
       {
         "feature": "claim_to_premium_ratio",
         "display_name": "Claim-to-Premium Ratio",
         "raw_value": 0.014121144555927154,
-        "shap_value": 0.2764,
+        "shap_value": 0.2953,
         "direction": "INCREASES_RISK"
       },
       {
         "feature": "customer_total_policies",
         "display_name": "Total Active Policies",
         "raw_value": -1.0,
-        "shap_value": 0.2033,
+        "shap_value": 0.2391,
         "direction": "INCREASES_RISK"
       },
       {
-        "feature": "subtype_claim_ratio_delta",
-        "display_name": "Deviation from Peer Group Average",
-        "raw_value": 1.5288480631372057,
-        "shap_value": 0.1269,
+        "feature": "log_annual_spend",
+        "display_name": "Annual Insurance Spend (log)",
+        "raw_value": 0.0,
+        "shap_value": 0.113,
         "direction": "INCREASES_RISK"
       },
       {
         "feature": "log_claim_amount",
         "display_name": "Claim Amount (log-scaled)",
         "raw_value": 0.8194770964032786,
-        "shap_value": -0.1003,
-        "direction": "DECREASES_RISK"
+        "shap_value": 0.1078,
+        "direction": "INCREASES_RISK"
       },
       {
         "feature": "purchasing_power_tier",
         "display_name": "Purchasing Power Tier",
         "raw_value": -0.3333333333333333,
-        "shap_value": 0.0488,
+        "shap_value": 0.1048,
         "direction": "INCREASES_RISK"
       },
       {
         "feature": "household_size",
         "display_name": "Household Size",
         "raw_value": 0.0,
-        "shap_value": 0.0386,
+        "shap_value": 0.0424,
         "direction": "INCREASES_RISK"
       },
       {
-        "feature": "log_annual_spend",
-        "display_name": "Annual Insurance Spend (log)",
-        "raw_value": 0.0,
-        "shap_value": 0.0255,
+        "feature": "subtype_claim_ratio_delta",
+        "display_name": "Deviation from Peer Group Average",
+        "raw_value": 1.6097793968205119,
+        "shap_value": 0.034,
         "direction": "INCREASES_RISK"
       }
     ],
-    "base_value": 0.126
+    "base_value": -2.1561
   },
   {
     "claim_id": "CLM-2024-00290",
-    "xgb_risk_prob": 0.9806,
-    "xgb_risk_score": 98,
+    "xgb_risk_prob": 0.9331,
+    "xgb_risk_score": 93,
     "top_factors": [
       {
         "feature": "claim_to_limit_ratio",
         "display_name": "Claim-to-Limit Ratio",
         "raw_value": 2.8837644855437197,
-        "shap_value": 1.7655,
+        "shap_value": 2.0865,
         "direction": "INCREASES_RISK"
       },
       {
         "feature": "filing_delay_days",
         "display_name": "Filing Delay (days)",
         "raw_value": 4.0,
-        "shap_value": 1.4706,
+        "shap_value": 1.8163,
         "direction": "INCREASES_RISK"
       },
       {
         "feature": "claim_to_premium_ratio",
         "display_name": "Claim-to-Premium Ratio",
         "raw_value": 0.019241091704859808,
-        "shap_value": 0.2764,
+        "shap_value": 0.2953,
         "direction": "INCREASES_RISK"
       },
       {
         "feature": "customer_total_policies",
         "display_name": "Total Active Policies",
         "raw_value": -1.0,
-        "shap_value": 0.2149,
+        "shap_value": 0.2201,
         "direction": "INCREASES_RISK"
       },
       {
-        "feature": "log_claim_amount",
-        "display_name": "Claim Amount (log-scaled)",
-        "raw_value": 0.8344298294399303,
-        "shap_value": -0.0963,
-        "direction": "DECREASES_RISK"
+        "feature": "log_annual_spend",
+        "display_name": "Annual Insurance Spend (log)",
+        "raw_value": 0.0,
+        "shap_value": 0.1187,
+        "direction": "INCREASES_RISK"
       }
     ],
     "all_factors": [
@@ -693,214 +261,430 @@
         "feature": "claim_to_limit_ratio",
         "display_name": "Claim-to-Limit Ratio",
         "raw_value": 2.8837644855437197,
-        "shap_value": 1.7655,
+        "shap_value": 2.0865,
         "direction": "INCREASES_RISK"
       },
       {
         "feature": "filing_delay_days",
         "display_name": "Filing Delay (days)",
         "raw_value": 4.0,
-        "shap_value": 1.4706,
+        "shap_value": 1.8163,
         "direction": "INCREASES_RISK"
       },
       {
         "feature": "claim_to_premium_ratio",
         "display_name": "Claim-to-Premium Ratio",
         "raw_value": 0.019241091704859808,
-        "shap_value": 0.2764,
+        "shap_value": 0.2953,
         "direction": "INCREASES_RISK"
       },
       {
         "feature": "customer_total_policies",
         "display_name": "Total Active Policies",
         "raw_value": -1.0,
-        "shap_value": 0.2149,
+        "shap_value": 0.2201,
+        "direction": "INCREASES_RISK"
+      },
+      {
+        "feature": "log_annual_spend",
+        "display_name": "Annual Insurance Spend (log)",
+        "raw_value": 0.0,
+        "shap_value": 0.1187,
         "direction": "INCREASES_RISK"
       },
       {
         "feature": "log_claim_amount",
         "display_name": "Claim Amount (log-scaled)",
         "raw_value": 0.8344298294399303,
-        "shap_value": -0.0963,
-        "direction": "DECREASES_RISK"
-      },
-      {
-        "feature": "subtype_claim_ratio_delta",
-        "display_name": "Deviation from Peer Group Average",
-        "raw_value": 2.349194121411186,
-        "shap_value": 0.0513,
+        "shap_value": 0.1068,
         "direction": "INCREASES_RISK"
       },
       {
         "feature": "purchasing_power_tier",
         "display_name": "Purchasing Power Tier",
         "raw_value": -0.3333333333333333,
-        "shap_value": 0.049,
-        "direction": "INCREASES_RISK"
-      },
-      {
-        "feature": "log_annual_spend",
-        "display_name": "Annual Insurance Spend (log)",
-        "raw_value": 0.0,
-        "shap_value": 0.0401,
+        "shap_value": 0.0989,
         "direction": "INCREASES_RISK"
       },
       {
         "feature": "household_size",
         "display_name": "Household Size",
         "raw_value": -1.0,
-        "shap_value": 0.0269,
+        "shap_value": 0.0367,
         "direction": "INCREASES_RISK"
-      }
-    ],
-    "base_value": 0.126
-  },
-  {
-    "claim_id": "CLM-2024-01109",
-    "xgb_risk_prob": 0.9781,
-    "xgb_risk_score": 98,
-    "top_factors": [
-      {
-        "feature": "filing_delay_days",
-        "display_name": "Filing Delay (days)",
-        "raw_value": 3.3333333333333335,
-        "shap_value": 1.6779,
-        "direction": "INCREASES_RISK"
-      },
-      {
-        "feature": "claim_to_limit_ratio",
-        "display_name": "Claim-to-Limit Ratio",
-        "raw_value": 3.2115182020367548,
-        "shap_value": 1.4601,
-        "direction": "INCREASES_RISK"
-      },
-      {
-        "feature": "claim_to_premium_ratio",
-        "display_name": "Claim-to-Premium Ratio",
-        "raw_value": 0.034655986346807596,
-        "shap_value": 0.2748,
-        "direction": "INCREASES_RISK"
-      },
-      {
-        "feature": "customer_total_policies",
-        "display_name": "Total Active Policies",
-        "raw_value": -1.0,
-        "shap_value": 0.2115,
-        "direction": "INCREASES_RISK"
-      },
-      {
-        "feature": "log_claim_amount",
-        "display_name": "Claim Amount (log-scaled)",
-        "raw_value": 0.8767367609373595,
-        "shap_value": -0.1004,
-        "direction": "DECREASES_RISK"
-      }
-    ],
-    "all_factors": [
-      {
-        "feature": "filing_delay_days",
-        "display_name": "Filing Delay (days)",
-        "raw_value": 3.3333333333333335,
-        "shap_value": 1.6779,
-        "direction": "INCREASES_RISK"
-      },
-      {
-        "feature": "claim_to_limit_ratio",
-        "display_name": "Claim-to-Limit Ratio",
-        "raw_value": 3.2115182020367548,
-        "shap_value": 1.4601,
-        "direction": "INCREASES_RISK"
-      },
-      {
-        "feature": "claim_to_premium_ratio",
-        "display_name": "Claim-to-Premium Ratio",
-        "raw_value": 0.034655986346807596,
-        "shap_value": 0.2748,
-        "direction": "INCREASES_RISK"
-      },
-      {
-        "feature": "customer_total_policies",
-        "display_name": "Total Active Policies",
-        "raw_value": -1.0,
-        "shap_value": 0.2115,
-        "direction": "INCREASES_RISK"
-      },
-      {
-        "feature": "log_claim_amount",
-        "display_name": "Claim Amount (log-scaled)",
-        "raw_value": 0.8767367609373595,
-        "shap_value": -0.1004,
-        "direction": "DECREASES_RISK"
       },
       {
         "feature": "subtype_claim_ratio_delta",
         "display_name": "Deviation from Peer Group Average",
-        "raw_value": 2.35366767344124,
-        "shap_value": 0.0472,
+        "raw_value": 2.9415676406238167,
+        "shap_value": 0.0116,
+        "direction": "INCREASES_RISK"
+      }
+    ],
+    "base_value": -2.1561
+  },
+  {
+    "claim_id": "CLM-2024-00025",
+    "xgb_risk_prob": 0.931,
+    "xgb_risk_score": 93,
+    "top_factors": [
+      {
+        "feature": "claim_to_limit_ratio",
+        "display_name": "Claim-to-Limit Ratio",
+        "raw_value": 1.9763549104530025,
+        "shap_value": 2.0174,
+        "direction": "INCREASES_RISK"
+      },
+      {
+        "feature": "filing_delay_days",
+        "display_name": "Filing Delay (days)",
+        "raw_value": 4.833333333333333,
+        "shap_value": 1.7505,
+        "direction": "INCREASES_RISK"
+      },
+      {
+        "feature": "claim_to_premium_ratio",
+        "display_name": "Claim-to-Premium Ratio",
+        "raw_value": -0.023425134536245663,
+        "shap_value": 0.3106,
+        "direction": "INCREASES_RISK"
+      },
+      {
+        "feature": "customer_total_policies",
+        "display_name": "Total Active Policies",
+        "raw_value": -1.0,
+        "shap_value": 0.2689,
+        "direction": "INCREASES_RISK"
+      },
+      {
+        "feature": "log_claim_amount",
+        "display_name": "Claim Amount (log-scaled)",
+        "raw_value": 0.6901224376917665,
+        "shap_value": 0.1249,
+        "direction": "INCREASES_RISK"
+      }
+    ],
+    "all_factors": [
+      {
+        "feature": "claim_to_limit_ratio",
+        "display_name": "Claim-to-Limit Ratio",
+        "raw_value": 1.9763549104530025,
+        "shap_value": 2.0174,
+        "direction": "INCREASES_RISK"
+      },
+      {
+        "feature": "filing_delay_days",
+        "display_name": "Filing Delay (days)",
+        "raw_value": 4.833333333333333,
+        "shap_value": 1.7505,
+        "direction": "INCREASES_RISK"
+      },
+      {
+        "feature": "claim_to_premium_ratio",
+        "display_name": "Claim-to-Premium Ratio",
+        "raw_value": -0.023425134536245663,
+        "shap_value": 0.3106,
+        "direction": "INCREASES_RISK"
+      },
+      {
+        "feature": "customer_total_policies",
+        "display_name": "Total Active Policies",
+        "raw_value": -1.0,
+        "shap_value": 0.2689,
+        "direction": "INCREASES_RISK"
+      },
+      {
+        "feature": "log_claim_amount",
+        "display_name": "Claim Amount (log-scaled)",
+        "raw_value": 0.6901224376917665,
+        "shap_value": 0.1249,
         "direction": "INCREASES_RISK"
       },
       {
         "feature": "log_annual_spend",
         "display_name": "Annual Insurance Spend (log)",
         "raw_value": 0.0,
-        "shap_value": 0.0412,
+        "shap_value": 0.113,
         "direction": "INCREASES_RISK"
       },
       {
         "feature": "purchasing_power_tier",
         "display_name": "Purchasing Power Tier",
-        "raw_value": 0.6666666666666666,
-        "shap_value": 0.0401,
+        "raw_value": -0.3333333333333333,
+        "shap_value": 0.1053,
+        "direction": "INCREASES_RISK"
+      },
+      {
+        "feature": "household_size",
+        "display_name": "Household Size",
+        "raw_value": 0.0,
+        "shap_value": 0.0424,
+        "direction": "INCREASES_RISK"
+      },
+      {
+        "feature": "subtype_claim_ratio_delta",
+        "display_name": "Deviation from Peer Group Average",
+        "raw_value": 1.1294294564357894,
+        "shap_value": 0.0251,
+        "direction": "INCREASES_RISK"
+      }
+    ],
+    "base_value": -2.1561
+  },
+  {
+    "claim_id": "CLM-2024-00048",
+    "xgb_risk_prob": 0.9256,
+    "xgb_risk_score": 93,
+    "top_factors": [
+      {
+        "feature": "claim_to_limit_ratio",
+        "display_name": "Claim-to-Limit Ratio",
+        "raw_value": 2.2615006438019427,
+        "shap_value": 2.0388,
+        "direction": "INCREASES_RISK"
+      },
+      {
+        "feature": "filing_delay_days",
+        "display_name": "Filing Delay (days)",
+        "raw_value": 8.5,
+        "shap_value": 1.7709,
+        "direction": "INCREASES_RISK"
+      },
+      {
+        "feature": "claim_to_premium_ratio",
+        "display_name": "Claim-to-Premium Ratio",
+        "raw_value": -0.010047208114840982,
+        "shap_value": 0.2897,
+        "direction": "INCREASES_RISK"
+      },
+      {
+        "feature": "customer_total_policies",
+        "display_name": "Total Active Policies",
+        "raw_value": -1.0,
+        "shap_value": 0.2615,
+        "direction": "INCREASES_RISK"
+      },
+      {
+        "feature": "log_annual_spend",
+        "display_name": "Annual Insurance Spend (log)",
+        "raw_value": 0.0,
+        "shap_value": 0.1063,
+        "direction": "INCREASES_RISK"
+      }
+    ],
+    "all_factors": [
+      {
+        "feature": "claim_to_limit_ratio",
+        "display_name": "Claim-to-Limit Ratio",
+        "raw_value": 2.2615006438019427,
+        "shap_value": 2.0388,
+        "direction": "INCREASES_RISK"
+      },
+      {
+        "feature": "filing_delay_days",
+        "display_name": "Filing Delay (days)",
+        "raw_value": 8.5,
+        "shap_value": 1.7709,
+        "direction": "INCREASES_RISK"
+      },
+      {
+        "feature": "claim_to_premium_ratio",
+        "display_name": "Claim-to-Premium Ratio",
+        "raw_value": -0.010047208114840982,
+        "shap_value": 0.2897,
+        "direction": "INCREASES_RISK"
+      },
+      {
+        "feature": "customer_total_policies",
+        "display_name": "Total Active Policies",
+        "raw_value": -1.0,
+        "shap_value": 0.2615,
+        "direction": "INCREASES_RISK"
+      },
+      {
+        "feature": "log_annual_spend",
+        "display_name": "Annual Insurance Spend (log)",
+        "raw_value": 0.0,
+        "shap_value": 0.1063,
+        "direction": "INCREASES_RISK"
+      },
+      {
+        "feature": "log_claim_amount",
+        "display_name": "Claim Amount (log-scaled)",
+        "raw_value": 0.7408191092000146,
+        "shap_value": 0.0903,
+        "direction": "INCREASES_RISK"
+      },
+      {
+        "feature": "purchasing_power_tier",
+        "display_name": "Purchasing Power Tier",
+        "raw_value": 0.0,
+        "shap_value": 0.0521,
+        "direction": "INCREASES_RISK"
+      },
+      {
+        "feature": "household_size",
+        "display_name": "Household Size",
+        "raw_value": 0.0,
+        "shap_value": 0.0424,
+        "direction": "INCREASES_RISK"
+      },
+      {
+        "feature": "subtype_claim_ratio_delta",
+        "display_name": "Deviation from Peer Group Average",
+        "raw_value": 1.2582545152255056,
+        "shap_value": 0.0247,
+        "direction": "INCREASES_RISK"
+      }
+    ],
+    "base_value": -2.1561
+  },
+  {
+    "claim_id": "CLM-2024-00692",
+    "xgb_risk_prob": 0.9192,
+    "xgb_risk_score": 92,
+    "top_factors": [
+      {
+        "feature": "claim_to_limit_ratio",
+        "display_name": "Claim-to-Limit Ratio",
+        "raw_value": 2.3509305864450427,
+        "shap_value": 2.0096,
+        "direction": "INCREASES_RISK"
+      },
+      {
+        "feature": "filing_delay_days",
+        "display_name": "Filing Delay (days)",
+        "raw_value": 2.8333333333333335,
+        "shap_value": 1.6681,
+        "direction": "INCREASES_RISK"
+      },
+      {
+        "feature": "customer_total_policies",
+        "display_name": "Total Active Policies",
+        "raw_value": -1.0,
+        "shap_value": 0.2755,
+        "direction": "INCREASES_RISK"
+      },
+      {
+        "feature": "claim_to_premium_ratio",
+        "display_name": "Claim-to-Premium Ratio",
+        "raw_value": -0.005863165283455146,
+        "shap_value": 0.2649,
+        "direction": "INCREASES_RISK"
+      },
+      {
+        "feature": "log_annual_spend",
+        "display_name": "Annual Insurance Spend (log)",
+        "raw_value": 0.0,
+        "shap_value": 0.1187,
+        "direction": "INCREASES_RISK"
+      }
+    ],
+    "all_factors": [
+      {
+        "feature": "claim_to_limit_ratio",
+        "display_name": "Claim-to-Limit Ratio",
+        "raw_value": 2.3509305864450427,
+        "shap_value": 2.0096,
+        "direction": "INCREASES_RISK"
+      },
+      {
+        "feature": "filing_delay_days",
+        "display_name": "Filing Delay (days)",
+        "raw_value": 2.8333333333333335,
+        "shap_value": 1.6681,
+        "direction": "INCREASES_RISK"
+      },
+      {
+        "feature": "customer_total_policies",
+        "display_name": "Total Active Policies",
+        "raw_value": -1.0,
+        "shap_value": 0.2755,
+        "direction": "INCREASES_RISK"
+      },
+      {
+        "feature": "claim_to_premium_ratio",
+        "display_name": "Claim-to-Premium Ratio",
+        "raw_value": -0.005863165283455146,
+        "shap_value": 0.2649,
+        "direction": "INCREASES_RISK"
+      },
+      {
+        "feature": "log_annual_spend",
+        "display_name": "Annual Insurance Spend (log)",
+        "raw_value": 0.0,
+        "shap_value": 0.1187,
+        "direction": "INCREASES_RISK"
+      },
+      {
+        "feature": "purchasing_power_tier",
+        "display_name": "Purchasing Power Tier",
+        "raw_value": -0.3333333333333333,
+        "shap_value": 0.1024,
+        "direction": "INCREASES_RISK"
+      },
+      {
+        "feature": "log_claim_amount",
+        "display_name": "Claim Amount (log-scaled)",
+        "raw_value": 0.7555083636085019,
+        "shap_value": 0.0886,
         "direction": "INCREASES_RISK"
       },
       {
         "feature": "household_size",
         "display_name": "Household Size",
         "raw_value": -1.0,
-        "shap_value": 0.0229,
+        "shap_value": 0.0367,
+        "direction": "INCREASES_RISK"
+      },
+      {
+        "feature": "subtype_claim_ratio_delta",
+        "display_name": "Deviation from Peer Group Average",
+        "raw_value": 0.8549122690145441,
+        "shap_value": 0.0228,
         "direction": "INCREASES_RISK"
       }
     ],
-    "base_value": 0.126
+    "base_value": -2.1561
   },
   {
     "claim_id": "CLM-2024-01332",
-    "xgb_risk_prob": 0.9766,
-    "xgb_risk_score": 98,
+    "xgb_risk_prob": 0.9118,
+    "xgb_risk_score": 91,
     "top_factors": [
       {
         "feature": "filing_delay_days",
         "display_name": "Filing Delay (days)",
         "raw_value": 6.0,
-        "shap_value": 1.8111,
+        "shap_value": 1.8966,
         "direction": "INCREASES_RISK"
       },
       {
         "feature": "claim_to_limit_ratio",
         "display_name": "Claim-to-Limit Ratio",
         "raw_value": 3.592648952358656,
-        "shap_value": 1.569,
+        "shap_value": 1.8313,
         "direction": "INCREASES_RISK"
-      },
-      {
-        "feature": "claim_to_premium_ratio",
-        "display_name": "Claim-to-Premium Ratio",
-        "raw_value": 2.6198989773869004,
-        "shap_value": -0.2057,
-        "direction": "DECREASES_RISK"
       },
       {
         "feature": "log_claim_amount",
         "display_name": "Claim Amount (log-scaled)",
         "raw_value": 1.4483933744783308,
-        "shap_value": 0.164,
+        "shap_value": 0.3519,
+        "direction": "INCREASES_RISK"
+      },
+      {
+        "feature": "subtype_claim_ratio_delta",
+        "display_name": "Deviation from Peer Group Average",
+        "raw_value": 7.629484727580562,
+        "shap_value": 0.2284,
         "direction": "INCREASES_RISK"
       },
       {
         "feature": "customer_total_policies",
         "display_name": "Total Active Policies",
         "raw_value": -1.0,
-        "shap_value": 0.1582,
+        "shap_value": 0.2086,
         "direction": "INCREASES_RISK"
       }
     ],
@@ -909,106 +693,106 @@
         "feature": "filing_delay_days",
         "display_name": "Filing Delay (days)",
         "raw_value": 6.0,
-        "shap_value": 1.8111,
+        "shap_value": 1.8966,
         "direction": "INCREASES_RISK"
       },
       {
         "feature": "claim_to_limit_ratio",
         "display_name": "Claim-to-Limit Ratio",
         "raw_value": 3.592648952358656,
-        "shap_value": 1.569,
+        "shap_value": 1.8313,
         "direction": "INCREASES_RISK"
-      },
-      {
-        "feature": "claim_to_premium_ratio",
-        "display_name": "Claim-to-Premium Ratio",
-        "raw_value": 2.6198989773869004,
-        "shap_value": -0.2057,
-        "direction": "DECREASES_RISK"
       },
       {
         "feature": "log_claim_amount",
         "display_name": "Claim Amount (log-scaled)",
         "raw_value": 1.4483933744783308,
-        "shap_value": 0.164,
+        "shap_value": 0.3519,
+        "direction": "INCREASES_RISK"
+      },
+      {
+        "feature": "subtype_claim_ratio_delta",
+        "display_name": "Deviation from Peer Group Average",
+        "raw_value": 7.629484727580562,
+        "shap_value": 0.2284,
         "direction": "INCREASES_RISK"
       },
       {
         "feature": "customer_total_policies",
         "display_name": "Total Active Policies",
         "raw_value": -1.0,
-        "shap_value": 0.1582,
+        "shap_value": 0.2086,
         "direction": "INCREASES_RISK"
       },
       {
-        "feature": "subtype_claim_ratio_delta",
-        "display_name": "Deviation from Peer Group Average",
-        "raw_value": 7.445549220157821,
-        "shap_value": 0.0847,
-        "direction": "INCREASES_RISK"
+        "feature": "claim_to_premium_ratio",
+        "display_name": "Claim-to-Premium Ratio",
+        "raw_value": 2.6198989773869004,
+        "shap_value": -0.1712,
+        "direction": "DECREASES_RISK"
       },
       {
         "feature": "purchasing_power_tier",
         "display_name": "Purchasing Power Tier",
         "raw_value": -0.3333333333333333,
-        "shap_value": 0.0471,
+        "shap_value": 0.09,
         "direction": "INCREASES_RISK"
       },
       {
         "feature": "log_annual_spend",
         "display_name": "Annual Insurance Spend (log)",
         "raw_value": -1.4138853439811798,
-        "shap_value": -0.0255,
-        "direction": "DECREASES_RISK"
+        "shap_value": 0.0425,
+        "direction": "INCREASES_RISK"
       },
       {
         "feature": "household_size",
         "display_name": "Household Size",
         "raw_value": -1.0,
-        "shap_value": 0.0035,
+        "shap_value": 0.0142,
         "direction": "INCREASES_RISK"
       }
     ],
-    "base_value": 0.126
+    "base_value": -2.1561
   },
   {
-    "claim_id": "CLM-2024-00692",
-    "xgb_risk_prob": 0.9761,
-    "xgb_risk_score": 98,
+    "claim_id": "CLM-2024-00687",
+    "xgb_risk_prob": 0.9111,
+    "xgb_risk_score": 91,
     "top_factors": [
       {
         "feature": "claim_to_limit_ratio",
         "display_name": "Claim-to-Limit Ratio",
-        "raw_value": 2.3509305864450427,
-        "shap_value": 1.861,
+        "raw_value": 2.8711225564789884,
+        "shap_value": 2.1424,
         "direction": "INCREASES_RISK"
       },
       {
         "feature": "filing_delay_days",
         "display_name": "Filing Delay (days)",
-        "raw_value": 2.8333333333333335,
-        "shap_value": 1.2344,
+        "raw_value": 4.5,
+        "shap_value": 1.8838,
         "direction": "INCREASES_RISK"
       },
       {
         "feature": "claim_to_premium_ratio",
         "display_name": "Claim-to-Premium Ratio",
-        "raw_value": -0.005863165283455146,
-        "shap_value": 0.2236,
-        "direction": "INCREASES_RISK"
-      },
-      {
-        "feature": "customer_total_policies",
-        "display_name": "Total Active Policies",
-        "raw_value": -1.0,
-        "shap_value": 0.2031,
+        "raw_value": 0.018635506558211862,
+        "shap_value": 0.278,
         "direction": "INCREASES_RISK"
       },
       {
         "feature": "log_claim_amount",
         "display_name": "Claim Amount (log-scaled)",
-        "raw_value": 0.7555083636085019,
-        "shap_value": -0.1253,
+        "raw_value": 0.8326976087590957,
+        "shap_value": 0.1042,
+        "direction": "INCREASES_RISK"
+      },
+      {
+        "feature": "log_annual_spend",
+        "display_name": "Annual Insurance Spend (log)",
+        "raw_value": 0.6166332343937238,
+        "shap_value": -0.0867,
         "direction": "DECREASES_RISK"
       }
     ],
@@ -1016,540 +800,108 @@
       {
         "feature": "claim_to_limit_ratio",
         "display_name": "Claim-to-Limit Ratio",
-        "raw_value": 2.3509305864450427,
-        "shap_value": 1.861,
+        "raw_value": 2.8711225564789884,
+        "shap_value": 2.1424,
         "direction": "INCREASES_RISK"
       },
       {
         "feature": "filing_delay_days",
         "display_name": "Filing Delay (days)",
-        "raw_value": 2.8333333333333335,
-        "shap_value": 1.2344,
+        "raw_value": 4.5,
+        "shap_value": 1.8838,
         "direction": "INCREASES_RISK"
       },
       {
         "feature": "claim_to_premium_ratio",
         "display_name": "Claim-to-Premium Ratio",
-        "raw_value": -0.005863165283455146,
-        "shap_value": 0.2236,
-        "direction": "INCREASES_RISK"
-      },
-      {
-        "feature": "customer_total_policies",
-        "display_name": "Total Active Policies",
-        "raw_value": -1.0,
-        "shap_value": 0.2031,
+        "raw_value": 0.018635506558211862,
+        "shap_value": 0.278,
         "direction": "INCREASES_RISK"
       },
       {
         "feature": "log_claim_amount",
         "display_name": "Claim Amount (log-scaled)",
-        "raw_value": 0.7555083636085019,
-        "shap_value": -0.1253,
-        "direction": "DECREASES_RISK"
+        "raw_value": 0.8326976087590957,
+        "shap_value": 0.1042,
+        "direction": "INCREASES_RISK"
       },
       {
-        "feature": "subtype_claim_ratio_delta",
-        "display_name": "Deviation from Peer Group Average",
-        "raw_value": 1.0476637018521995,
-        "shap_value": 0.0818,
-        "direction": "INCREASES_RISK"
+        "feature": "log_annual_spend",
+        "display_name": "Annual Insurance Spend (log)",
+        "raw_value": 0.6166332343937238,
+        "shap_value": -0.0867,
+        "direction": "DECREASES_RISK"
       },
       {
         "feature": "purchasing_power_tier",
         "display_name": "Purchasing Power Tier",
         "raw_value": -0.3333333333333333,
-        "shap_value": 0.046,
-        "direction": "INCREASES_RISK"
-      },
-      {
-        "feature": "log_annual_spend",
-        "display_name": "Annual Insurance Spend (log)",
-        "raw_value": 0.0,
-        "shap_value": 0.0323,
-        "direction": "INCREASES_RISK"
-      },
-      {
-        "feature": "household_size",
-        "display_name": "Household Size",
-        "raw_value": -1.0,
-        "shap_value": 0.0269,
-        "direction": "INCREASES_RISK"
-      }
-    ],
-    "base_value": 0.126
-  },
-  {
-    "claim_id": "CLM-2024-00040",
-    "xgb_risk_prob": 0.9754,
-    "xgb_risk_score": 98,
-    "top_factors": [
-      {
-        "feature": "claim_to_limit_ratio",
-        "display_name": "Claim-to-Limit Ratio",
-        "raw_value": 2.7994849584455106,
-        "shap_value": 1.8962,
-        "direction": "INCREASES_RISK"
-      },
-      {
-        "feature": "filing_delay_days",
-        "display_name": "Filing Delay (days)",
-        "raw_value": 7.333333333333333,
-        "shap_value": 1.5982,
-        "direction": "INCREASES_RISK"
-      },
-      {
-        "feature": "log_claim_amount",
-        "display_name": "Claim Amount (log-scaled)",
-        "raw_value": 1.2240180364007667,
-        "shap_value": 0.2279,
-        "direction": "INCREASES_RISK"
-      },
-      {
-        "feature": "claim_to_premium_ratio",
-        "display_name": "Claim-to-Premium Ratio",
-        "raw_value": 2.6198989773869004,
-        "shap_value": -0.2088,
-        "direction": "DECREASES_RISK"
-      },
-      {
-        "feature": "customer_total_policies",
-        "display_name": "Total Active Policies",
-        "raw_value": 0.0,
-        "shap_value": -0.1314,
-        "direction": "DECREASES_RISK"
-      }
-    ],
-    "all_factors": [
-      {
-        "feature": "claim_to_limit_ratio",
-        "display_name": "Claim-to-Limit Ratio",
-        "raw_value": 2.7994849584455106,
-        "shap_value": 1.8962,
-        "direction": "INCREASES_RISK"
-      },
-      {
-        "feature": "filing_delay_days",
-        "display_name": "Filing Delay (days)",
-        "raw_value": 7.333333333333333,
-        "shap_value": 1.5982,
-        "direction": "INCREASES_RISK"
-      },
-      {
-        "feature": "log_claim_amount",
-        "display_name": "Claim Amount (log-scaled)",
-        "raw_value": 1.2240180364007667,
-        "shap_value": 0.2279,
-        "direction": "INCREASES_RISK"
-      },
-      {
-        "feature": "claim_to_premium_ratio",
-        "display_name": "Claim-to-Premium Ratio",
-        "raw_value": 2.6198989773869004,
-        "shap_value": -0.2088,
-        "direction": "DECREASES_RISK"
-      },
-      {
-        "feature": "customer_total_policies",
-        "display_name": "Total Active Policies",
-        "raw_value": 0.0,
-        "shap_value": -0.1314,
-        "direction": "DECREASES_RISK"
-      },
-      {
-        "feature": "subtype_claim_ratio_delta",
-        "display_name": "Deviation from Peer Group Average",
-        "raw_value": 4.126409108407734,
-        "shap_value": 0.1073,
-        "direction": "INCREASES_RISK"
-      },
-      {
-        "feature": "purchasing_power_tier",
-        "display_name": "Purchasing Power Tier",
-        "raw_value": 0.0,
-        "shap_value": 0.0495,
+        "shap_value": 0.0734,
         "direction": "INCREASES_RISK"
       },
       {
         "feature": "household_size",
         "display_name": "Household Size",
         "raw_value": 0.0,
-        "shap_value": 0.0247,
-        "direction": "INCREASES_RISK"
-      },
-      {
-        "feature": "log_annual_spend",
-        "display_name": "Annual Insurance Spend (log)",
-        "raw_value": 0.037342933496594725,
-        "shap_value": -0.0107,
-        "direction": "DECREASES_RISK"
-      }
-    ],
-    "base_value": 0.126
-  },
-  {
-    "claim_id": "CLM-2024-00812",
-    "xgb_risk_prob": 0.9752,
-    "xgb_risk_score": 98,
-    "top_factors": [
-      {
-        "feature": "claim_to_limit_ratio",
-        "display_name": "Claim-to-Limit Ratio",
-        "raw_value": 1.8180966873463653,
-        "shap_value": 1.8785,
-        "direction": "INCREASES_RISK"
-      },
-      {
-        "feature": "filing_delay_days",
-        "display_name": "Filing Delay (days)",
-        "raw_value": 6.333333333333333,
-        "shap_value": 1.4267,
-        "direction": "INCREASES_RISK"
-      },
-      {
-        "feature": "claim_to_premium_ratio",
-        "display_name": "Claim-to-Premium Ratio",
-        "raw_value": -0.0309123690766203,
-        "shap_value": 0.2337,
-        "direction": "INCREASES_RISK"
-      },
-      {
-        "feature": "customer_total_policies",
-        "display_name": "Total Active Policies",
-        "raw_value": -0.5,
-        "shap_value": -0.1452,
-        "direction": "DECREASES_RISK"
-      },
-      {
-        "feature": "subtype_claim_ratio_delta",
-        "display_name": "Deviation from Peer Group Average",
-        "raw_value": 1.1223878109307812,
-        "shap_value": 0.1126,
-        "direction": "INCREASES_RISK"
-      }
-    ],
-    "all_factors": [
-      {
-        "feature": "claim_to_limit_ratio",
-        "display_name": "Claim-to-Limit Ratio",
-        "raw_value": 1.8180966873463653,
-        "shap_value": 1.8785,
-        "direction": "INCREASES_RISK"
-      },
-      {
-        "feature": "filing_delay_days",
-        "display_name": "Filing Delay (days)",
-        "raw_value": 6.333333333333333,
-        "shap_value": 1.4267,
-        "direction": "INCREASES_RISK"
-      },
-      {
-        "feature": "claim_to_premium_ratio",
-        "display_name": "Claim-to-Premium Ratio",
-        "raw_value": -0.0309123690766203,
-        "shap_value": 0.2337,
-        "direction": "INCREASES_RISK"
-      },
-      {
-        "feature": "customer_total_policies",
-        "display_name": "Total Active Policies",
-        "raw_value": -0.5,
-        "shap_value": -0.1452,
-        "direction": "DECREASES_RISK"
-      },
-      {
-        "feature": "subtype_claim_ratio_delta",
-        "display_name": "Deviation from Peer Group Average",
-        "raw_value": 1.1223878109307812,
-        "shap_value": 0.1126,
-        "direction": "INCREASES_RISK"
-      },
-      {
-        "feature": "log_claim_amount",
-        "display_name": "Claim Amount (log-scaled)",
-        "raw_value": 0.6592000414569078,
-        "shap_value": -0.0963,
-        "direction": "DECREASES_RISK"
-      },
-      {
-        "feature": "purchasing_power_tier",
-        "display_name": "Purchasing Power Tier",
-        "raw_value": 0.6666666666666666,
-        "shap_value": 0.0725,
-        "direction": "INCREASES_RISK"
-      },
-      {
-        "feature": "household_size",
-        "display_name": "Household Size",
-        "raw_value": 0.0,
-        "shap_value": 0.0346,
-        "direction": "INCREASES_RISK"
-      },
-      {
-        "feature": "log_annual_spend",
-        "display_name": "Annual Insurance Spend (log)",
-        "raw_value": 0.0,
-        "shap_value": 0.0292,
-        "direction": "INCREASES_RISK"
-      }
-    ],
-    "base_value": 0.126
-  },
-  {
-    "claim_id": "CLM-2024-00676",
-    "xgb_risk_prob": 0.9751,
-    "xgb_risk_score": 98,
-    "top_factors": [
-      {
-        "feature": "filing_delay_days",
-        "display_name": "Filing Delay (days)",
-        "raw_value": 13.666666666666666,
-        "shap_value": 1.8939,
-        "direction": "INCREASES_RISK"
-      },
-      {
-        "feature": "claim_to_limit_ratio",
-        "display_name": "Claim-to-Limit Ratio",
-        "raw_value": 3.278005384525342,
-        "shap_value": 1.5869,
-        "direction": "INCREASES_RISK"
-      },
-      {
-        "feature": "log_claim_amount",
-        "display_name": "Claim Amount (log-scaled)",
-        "raw_value": 1.2860138177649614,
-        "shap_value": 0.2337,
-        "direction": "INCREASES_RISK"
-      },
-      {
-        "feature": "claim_to_premium_ratio",
-        "display_name": "Claim-to-Premium Ratio",
-        "raw_value": 2.6198989773869004,
-        "shap_value": -0.2084,
-        "direction": "DECREASES_RISK"
-      },
-      {
-        "feature": "customer_total_policies",
-        "display_name": "Total Active Policies",
-        "raw_value": 0.0,
-        "shap_value": -0.1357,
-        "direction": "DECREASES_RISK"
-      }
-    ],
-    "all_factors": [
-      {
-        "feature": "filing_delay_days",
-        "display_name": "Filing Delay (days)",
-        "raw_value": 13.666666666666666,
-        "shap_value": 1.8939,
-        "direction": "INCREASES_RISK"
-      },
-      {
-        "feature": "claim_to_limit_ratio",
-        "display_name": "Claim-to-Limit Ratio",
-        "raw_value": 3.278005384525342,
-        "shap_value": 1.5869,
-        "direction": "INCREASES_RISK"
-      },
-      {
-        "feature": "log_claim_amount",
-        "display_name": "Claim Amount (log-scaled)",
-        "raw_value": 1.2860138177649614,
-        "shap_value": 0.2337,
-        "direction": "INCREASES_RISK"
-      },
-      {
-        "feature": "claim_to_premium_ratio",
-        "display_name": "Claim-to-Premium Ratio",
-        "raw_value": 2.6198989773869004,
-        "shap_value": -0.2084,
-        "direction": "DECREASES_RISK"
-      },
-      {
-        "feature": "customer_total_policies",
-        "display_name": "Total Active Policies",
-        "raw_value": 0.0,
-        "shap_value": -0.1357,
-        "direction": "DECREASES_RISK"
-      },
-      {
-        "feature": "subtype_claim_ratio_delta",
-        "display_name": "Deviation from Peer Group Average",
-        "raw_value": 4.4553102668605415,
-        "shap_value": 0.1005,
-        "direction": "INCREASES_RISK"
-      },
-      {
-        "feature": "purchasing_power_tier",
-        "display_name": "Purchasing Power Tier",
-        "raw_value": -0.3333333333333333,
-        "shap_value": 0.0559,
-        "direction": "INCREASES_RISK"
-      },
-      {
-        "feature": "household_size",
-        "display_name": "Household Size",
-        "raw_value": -1.0,
-        "shap_value": 0.0157,
-        "direction": "INCREASES_RISK"
-      },
-      {
-        "feature": "log_annual_spend",
-        "display_name": "Annual Insurance Spend (log)",
-        "raw_value": 0.04763481824850035,
-        "shap_value": 0.0006,
-        "direction": "INCREASES_RISK"
-      }
-    ],
-    "base_value": 0.126
-  },
-  {
-    "claim_id": "CLM-2024-00091",
-    "xgb_risk_prob": 0.9748,
-    "xgb_risk_score": 97,
-    "top_factors": [
-      {
-        "feature": "claim_to_limit_ratio",
-        "display_name": "Claim-to-Limit Ratio",
-        "raw_value": 1.704319325763783,
-        "shap_value": 1.8124,
-        "direction": "INCREASES_RISK"
-      },
-      {
-        "feature": "filing_delay_days",
-        "display_name": "Filing Delay (days)",
-        "raw_value": 9.166666666666666,
-        "shap_value": 1.313,
-        "direction": "INCREASES_RISK"
-      },
-      {
-        "feature": "customer_total_policies",
-        "display_name": "Total Active Policies",
-        "raw_value": -1.0,
-        "shap_value": 0.2174,
-        "direction": "INCREASES_RISK"
-      },
-      {
-        "feature": "log_claim_amount",
-        "display_name": "Claim Amount (log-scaled)",
-        "raw_value": 0.555822954610952,
-        "shap_value": -0.2117,
-        "direction": "DECREASES_RISK"
-      },
-      {
-        "feature": "claim_to_premium_ratio",
-        "display_name": "Claim-to-Premium Ratio",
-        "raw_value": 0.18897009235173487,
-        "shap_value": 0.1702,
-        "direction": "INCREASES_RISK"
-      }
-    ],
-    "all_factors": [
-      {
-        "feature": "claim_to_limit_ratio",
-        "display_name": "Claim-to-Limit Ratio",
-        "raw_value": 1.704319325763783,
-        "shap_value": 1.8124,
-        "direction": "INCREASES_RISK"
-      },
-      {
-        "feature": "filing_delay_days",
-        "display_name": "Filing Delay (days)",
-        "raw_value": 9.166666666666666,
-        "shap_value": 1.313,
-        "direction": "INCREASES_RISK"
-      },
-      {
-        "feature": "customer_total_policies",
-        "display_name": "Total Active Policies",
-        "raw_value": -1.0,
-        "shap_value": 0.2174,
-        "direction": "INCREASES_RISK"
-      },
-      {
-        "feature": "log_claim_amount",
-        "display_name": "Claim Amount (log-scaled)",
-        "raw_value": 0.555822954610952,
-        "shap_value": -0.2117,
-        "direction": "DECREASES_RISK"
-      },
-      {
-        "feature": "claim_to_premium_ratio",
-        "display_name": "Claim-to-Premium Ratio",
-        "raw_value": 0.18897009235173487,
-        "shap_value": 0.1702,
+        "shap_value": 0.0424,
         "direction": "INCREASES_RISK"
       },
       {
         "feature": "subtype_claim_ratio_delta",
         "display_name": "Deviation from Peer Group Average",
-        "raw_value": 0.8197023336221655,
-        "shap_value": 0.1202,
+        "raw_value": 1.6673463553693229,
+        "shap_value": 0.0284,
         "direction": "INCREASES_RISK"
       },
       {
-        "feature": "purchasing_power_tier",
-        "display_name": "Purchasing Power Tier",
-        "raw_value": 0.6666666666666666,
-        "shap_value": 0.0589,
-        "direction": "INCREASES_RISK"
-      },
-      {
-        "feature": "household_size",
-        "display_name": "Household Size",
-        "raw_value": 0.0,
-        "shap_value": 0.0398,
-        "direction": "INCREASES_RISK"
-      },
-      {
-        "feature": "log_annual_spend",
-        "display_name": "Annual Insurance Spend (log)",
-        "raw_value": -0.9127336900403806,
-        "shap_value": 0.0099,
+        "feature": "customer_total_policies",
+        "display_name": "Total Active Policies",
+        "raw_value": 2.0,
+        "shap_value": 0.0174,
         "direction": "INCREASES_RISK"
       }
     ],
-    "base_value": 0.126
+    "base_value": -2.1561
   },
   {
     "claim_id": "CLM-2024-00524",
-    "xgb_risk_prob": 0.9739,
-    "xgb_risk_score": 97,
+    "xgb_risk_prob": 0.9016,
+    "xgb_risk_score": 90,
     "top_factors": [
       {
         "feature": "filing_delay_days",
         "display_name": "Filing Delay (days)",
         "raw_value": 6.166666666666667,
-        "shap_value": 1.806,
+        "shap_value": 1.9558,
         "direction": "INCREASES_RISK"
       },
       {
         "feature": "claim_to_limit_ratio",
         "display_name": "Claim-to-Limit Ratio",
         "raw_value": 3.2840922392602123,
-        "shap_value": 1.6067,
+        "shap_value": 1.9433,
+        "direction": "INCREASES_RISK"
+      },
+      {
+        "feature": "log_claim_amount",
+        "display_name": "Claim Amount (log-scaled)",
+        "raw_value": 1.412689823878928,
+        "shap_value": 0.4076,
+        "direction": "INCREASES_RISK"
+      },
+      {
+        "feature": "subtype_claim_ratio_delta",
+        "display_name": "Deviation from Peer Group Average",
+        "raw_value": 7.011031235111771,
+        "shap_value": 0.2346,
         "direction": "INCREASES_RISK"
       },
       {
         "feature": "claim_to_premium_ratio",
         "display_name": "Claim-to-Premium Ratio",
         "raw_value": 2.6198989773869004,
-        "shap_value": -0.2155,
+        "shap_value": -0.2059,
         "direction": "DECREASES_RISK"
-      },
-      {
-        "feature": "log_claim_amount",
-        "display_name": "Claim Amount (log-scaled)",
-        "raw_value": 1.412689823878928,
-        "shap_value": 0.1813,
-        "direction": "INCREASES_RISK"
-      },
-      {
-        "feature": "subtype_claim_ratio_delta",
-        "display_name": "Deviation from Peer Group Average",
-        "raw_value": 6.837678187707878,
-        "shap_value": 0.0961,
-        "direction": "INCREASES_RISK"
       }
     ],
     "all_factors": [
@@ -1557,106 +909,106 @@
         "feature": "filing_delay_days",
         "display_name": "Filing Delay (days)",
         "raw_value": 6.166666666666667,
-        "shap_value": 1.806,
+        "shap_value": 1.9558,
         "direction": "INCREASES_RISK"
       },
       {
         "feature": "claim_to_limit_ratio",
         "display_name": "Claim-to-Limit Ratio",
         "raw_value": 3.2840922392602123,
-        "shap_value": 1.6067,
+        "shap_value": 1.9433,
+        "direction": "INCREASES_RISK"
+      },
+      {
+        "feature": "log_claim_amount",
+        "display_name": "Claim Amount (log-scaled)",
+        "raw_value": 1.412689823878928,
+        "shap_value": 0.4076,
+        "direction": "INCREASES_RISK"
+      },
+      {
+        "feature": "subtype_claim_ratio_delta",
+        "display_name": "Deviation from Peer Group Average",
+        "raw_value": 7.011031235111771,
+        "shap_value": 0.2346,
         "direction": "INCREASES_RISK"
       },
       {
         "feature": "claim_to_premium_ratio",
         "display_name": "Claim-to-Premium Ratio",
         "raw_value": 2.6198989773869004,
-        "shap_value": -0.2155,
+        "shap_value": -0.2059,
         "direction": "DECREASES_RISK"
-      },
-      {
-        "feature": "log_claim_amount",
-        "display_name": "Claim Amount (log-scaled)",
-        "raw_value": 1.412689823878928,
-        "shap_value": 0.1813,
-        "direction": "INCREASES_RISK"
-      },
-      {
-        "feature": "subtype_claim_ratio_delta",
-        "display_name": "Deviation from Peer Group Average",
-        "raw_value": 6.837678187707878,
-        "shap_value": 0.0961,
-        "direction": "INCREASES_RISK"
       },
       {
         "feature": "purchasing_power_tier",
         "display_name": "Purchasing Power Tier",
         "raw_value": -0.3333333333333333,
-        "shap_value": 0.0542,
+        "shap_value": 0.062,
         "direction": "INCREASES_RISK"
       },
       {
         "feature": "log_annual_spend",
         "display_name": "Annual Insurance Spend (log)",
         "raw_value": 0.08726630995961937,
-        "shap_value": -0.0434,
+        "shap_value": -0.0593,
         "direction": "DECREASES_RISK"
       },
       {
         "feature": "household_size",
         "display_name": "Household Size",
         "raw_value": -1.0,
-        "shap_value": 0.0157,
+        "shap_value": 0.0239,
         "direction": "INCREASES_RISK"
       },
       {
         "feature": "customer_total_policies",
         "display_name": "Total Active Policies",
         "raw_value": 0.5,
-        "shap_value": -0.0065,
-        "direction": "DECREASES_RISK"
+        "shap_value": 0.0092,
+        "direction": "INCREASES_RISK"
       }
     ],
-    "base_value": 0.126
+    "base_value": -2.1561
   },
   {
     "claim_id": "CLM-2024-01440",
-    "xgb_risk_prob": 0.9739,
-    "xgb_risk_score": 97,
+    "xgb_risk_prob": 0.8989,
+    "xgb_risk_score": 90,
     "top_factors": [
       {
         "feature": "claim_to_limit_ratio",
         "display_name": "Claim-to-Limit Ratio",
         "raw_value": 2.841624721994615,
-        "shap_value": 1.8476,
+        "shap_value": 2.2192,
         "direction": "INCREASES_RISK"
       },
       {
         "feature": "filing_delay_days",
         "display_name": "Filing Delay (days)",
         "raw_value": 4.333333333333333,
-        "shap_value": 1.4933,
-        "direction": "INCREASES_RISK"
-      },
-      {
-        "feature": "subtype_claim_ratio_delta",
-        "display_name": "Deviation from Peer Group Average",
-        "raw_value": 5.078567706646548,
-        "shap_value": 0.2365,
+        "shap_value": 1.8327,
         "direction": "INCREASES_RISK"
       },
       {
         "feature": "log_claim_amount",
         "display_name": "Claim Amount (log-scaled)",
         "raw_value": 1.2298827798944594,
-        "shap_value": 0.2271,
+        "shap_value": 0.3917,
+        "direction": "INCREASES_RISK"
+      },
+      {
+        "feature": "subtype_claim_ratio_delta",
+        "display_name": "Deviation from Peer Group Average",
+        "raw_value": 5.573381534390605,
+        "shap_value": 0.231,
         "direction": "INCREASES_RISK"
       },
       {
         "feature": "claim_to_premium_ratio",
         "display_name": "Claim-to-Premium Ratio",
         "raw_value": 2.6198989773869004,
-        "shap_value": -0.209,
+        "shap_value": -0.1922,
         "direction": "DECREASES_RISK"
       }
     ],
@@ -1665,430 +1017,430 @@
         "feature": "claim_to_limit_ratio",
         "display_name": "Claim-to-Limit Ratio",
         "raw_value": 2.841624721994615,
-        "shap_value": 1.8476,
+        "shap_value": 2.2192,
         "direction": "INCREASES_RISK"
       },
       {
         "feature": "filing_delay_days",
         "display_name": "Filing Delay (days)",
         "raw_value": 4.333333333333333,
-        "shap_value": 1.4933,
-        "direction": "INCREASES_RISK"
-      },
-      {
-        "feature": "subtype_claim_ratio_delta",
-        "display_name": "Deviation from Peer Group Average",
-        "raw_value": 5.078567706646548,
-        "shap_value": 0.2365,
+        "shap_value": 1.8327,
         "direction": "INCREASES_RISK"
       },
       {
         "feature": "log_claim_amount",
         "display_name": "Claim Amount (log-scaled)",
         "raw_value": 1.2298827798944594,
-        "shap_value": 0.2271,
+        "shap_value": 0.3917,
+        "direction": "INCREASES_RISK"
+      },
+      {
+        "feature": "subtype_claim_ratio_delta",
+        "display_name": "Deviation from Peer Group Average",
+        "raw_value": 5.573381534390605,
+        "shap_value": 0.231,
         "direction": "INCREASES_RISK"
       },
       {
         "feature": "claim_to_premium_ratio",
         "display_name": "Claim-to-Premium Ratio",
         "raw_value": 2.6198989773869004,
-        "shap_value": -0.209,
+        "shap_value": -0.1922,
         "direction": "DECREASES_RISK"
       },
       {
         "feature": "customer_total_policies",
         "display_name": "Total Active Policies",
         "raw_value": 0.0,
-        "shap_value": -0.1352,
+        "shap_value": -0.1498,
         "direction": "DECREASES_RISK"
-      },
-      {
-        "feature": "purchasing_power_tier",
-        "display_name": "Purchasing Power Tier",
-        "raw_value": 0.0,
-        "shap_value": 0.0533,
-        "direction": "INCREASES_RISK"
       },
       {
         "feature": "log_annual_spend",
         "display_name": "Annual Insurance Spend (log)",
         "raw_value": -0.7400714343314964,
-        "shap_value": -0.0467,
+        "shap_value": -0.0543,
         "direction": "DECREASES_RISK"
       },
       {
         "feature": "household_size",
         "display_name": "Household Size",
         "raw_value": 0.0,
-        "shap_value": 0.0251,
+        "shap_value": 0.0353,
         "direction": "INCREASES_RISK"
-      }
-    ],
-    "base_value": 0.126
-  },
-  {
-    "claim_id": "CLM-2024-01153",
-    "xgb_risk_prob": 0.9737,
-    "xgb_risk_score": 97,
-    "top_factors": [
-      {
-        "feature": "claim_to_limit_ratio",
-        "display_name": "Claim-to-Limit Ratio",
-        "raw_value": 2.290998478286316,
-        "shap_value": 1.8891,
-        "direction": "INCREASES_RISK"
-      },
-      {
-        "feature": "filing_delay_days",
-        "display_name": "Filing Delay (days)",
-        "raw_value": 5.166666666666667,
-        "shap_value": 1.4246,
-        "direction": "INCREASES_RISK"
-      },
-      {
-        "feature": "claim_to_premium_ratio",
-        "display_name": "Claim-to-Premium Ratio",
-        "raw_value": -0.008670878236095643,
-        "shap_value": 0.2288,
-        "direction": "INCREASES_RISK"
-      },
-      {
-        "feature": "customer_total_policies",
-        "display_name": "Total Active Policies",
-        "raw_value": 0.0,
-        "shap_value": -0.1375,
-        "direction": "DECREASES_RISK"
-      },
-      {
-        "feature": "subtype_claim_ratio_delta",
-        "display_name": "Deviation from Peer Group Average",
-        "raw_value": 1.5844177615931303,
-        "shap_value": 0.1285,
-        "direction": "INCREASES_RISK"
-      }
-    ],
-    "all_factors": [
-      {
-        "feature": "claim_to_limit_ratio",
-        "display_name": "Claim-to-Limit Ratio",
-        "raw_value": 2.290998478286316,
-        "shap_value": 1.8891,
-        "direction": "INCREASES_RISK"
-      },
-      {
-        "feature": "filing_delay_days",
-        "display_name": "Filing Delay (days)",
-        "raw_value": 5.166666666666667,
-        "shap_value": 1.4246,
-        "direction": "INCREASES_RISK"
-      },
-      {
-        "feature": "claim_to_premium_ratio",
-        "display_name": "Claim-to-Premium Ratio",
-        "raw_value": -0.008670878236095643,
-        "shap_value": 0.2288,
-        "direction": "INCREASES_RISK"
-      },
-      {
-        "feature": "customer_total_policies",
-        "display_name": "Total Active Policies",
-        "raw_value": 0.0,
-        "shap_value": -0.1375,
-        "direction": "DECREASES_RISK"
-      },
-      {
-        "feature": "subtype_claim_ratio_delta",
-        "display_name": "Deviation from Peer Group Average",
-        "raw_value": 1.5844177615931303,
-        "shap_value": 0.1285,
-        "direction": "INCREASES_RISK"
-      },
-      {
-        "feature": "log_claim_amount",
-        "display_name": "Claim Amount (log-scaled)",
-        "raw_value": 0.7457134377892441,
-        "shap_value": -0.1161,
-        "direction": "DECREASES_RISK"
       },
       {
         "feature": "purchasing_power_tier",
         "display_name": "Purchasing Power Tier",
-        "raw_value": 0.3333333333333333,
-        "shap_value": 0.0527,
-        "direction": "INCREASES_RISK"
-      },
-      {
-        "feature": "household_size",
-        "display_name": "Household Size",
         "raw_value": 0.0,
-        "shap_value": 0.0361,
+        "shap_value": 0.0272,
         "direction": "INCREASES_RISK"
-      },
-      {
-        "feature": "log_annual_spend",
-        "display_name": "Annual Insurance Spend (log)",
-        "raw_value": 0.08726630995961937,
-        "shap_value": -0.0188,
-        "direction": "DECREASES_RISK"
       }
     ],
-    "base_value": 0.126
+    "base_value": -2.1561
   },
   {
     "claim_id": "CLM-2024-01112",
-    "xgb_risk_prob": 0.9734,
-    "xgb_risk_score": 97,
+    "xgb_risk_prob": 0.8984,
+    "xgb_risk_score": 90,
     "top_factors": [
       {
         "feature": "claim_to_limit_ratio",
         "display_name": "Claim-to-Limit Ratio",
         "raw_value": 2.913730539623083,
-        "shap_value": 1.7898,
+        "shap_value": 2.1073,
         "direction": "INCREASES_RISK"
       },
       {
         "feature": "filing_delay_days",
         "display_name": "Filing Delay (days)",
         "raw_value": 4.333333333333333,
-        "shap_value": 1.4486,
+        "shap_value": 1.854,
         "direction": "INCREASES_RISK"
       },
       {
         "feature": "claim_to_premium_ratio",
         "display_name": "Claim-to-Premium Ratio",
         "raw_value": 0.020617421583605147,
-        "shap_value": 0.2735,
+        "shap_value": 0.2978,
         "direction": "INCREASES_RISK"
       },
       {
         "feature": "customer_total_policies",
         "display_name": "Total Active Policies",
         "raw_value": -0.5,
-        "shap_value": -0.1473,
+        "shap_value": -0.1637,
         "direction": "DECREASES_RISK"
-      },
-      {
-        "feature": "subtype_claim_ratio_delta",
-        "display_name": "Deviation from Peer Group Average",
-        "raw_value": 1.6107150355563329,
-        "shap_value": 0.1348,
-        "direction": "INCREASES_RISK"
-      }
-    ],
-    "all_factors": [
-      {
-        "feature": "claim_to_limit_ratio",
-        "display_name": "Claim-to-Limit Ratio",
-        "raw_value": 2.913730539623083,
-        "shap_value": 1.7898,
-        "direction": "INCREASES_RISK"
-      },
-      {
-        "feature": "filing_delay_days",
-        "display_name": "Filing Delay (days)",
-        "raw_value": 4.333333333333333,
-        "shap_value": 1.4486,
-        "direction": "INCREASES_RISK"
-      },
-      {
-        "feature": "claim_to_premium_ratio",
-        "display_name": "Claim-to-Premium Ratio",
-        "raw_value": 0.020617421583605147,
-        "shap_value": 0.2735,
-        "direction": "INCREASES_RISK"
-      },
-      {
-        "feature": "customer_total_policies",
-        "display_name": "Total Active Policies",
-        "raw_value": -0.5,
-        "shap_value": -0.1473,
-        "direction": "DECREASES_RISK"
-      },
-      {
-        "feature": "subtype_claim_ratio_delta",
-        "display_name": "Deviation from Peer Group Average",
-        "raw_value": 1.6107150355563329,
-        "shap_value": 0.1348,
-        "direction": "INCREASES_RISK"
       },
       {
         "feature": "log_claim_amount",
         "display_name": "Claim Amount (log-scaled)",
         "raw_value": 0.8384788849179129,
-        "shap_value": -0.111,
+        "shap_value": 0.0987,
+        "direction": "INCREASES_RISK"
+      }
+    ],
+    "all_factors": [
+      {
+        "feature": "claim_to_limit_ratio",
+        "display_name": "Claim-to-Limit Ratio",
+        "raw_value": 2.913730539623083,
+        "shap_value": 2.1073,
+        "direction": "INCREASES_RISK"
+      },
+      {
+        "feature": "filing_delay_days",
+        "display_name": "Filing Delay (days)",
+        "raw_value": 4.333333333333333,
+        "shap_value": 1.854,
+        "direction": "INCREASES_RISK"
+      },
+      {
+        "feature": "claim_to_premium_ratio",
+        "display_name": "Claim-to-Premium Ratio",
+        "raw_value": 0.020617421583605147,
+        "shap_value": 0.2978,
+        "direction": "INCREASES_RISK"
+      },
+      {
+        "feature": "customer_total_policies",
+        "display_name": "Total Active Policies",
+        "raw_value": -0.5,
+        "shap_value": -0.1637,
         "direction": "DECREASES_RISK"
+      },
+      {
+        "feature": "log_claim_amount",
+        "display_name": "Claim Amount (log-scaled)",
+        "raw_value": 0.8384788849179129,
+        "shap_value": 0.0987,
+        "direction": "INCREASES_RISK"
       },
       {
         "feature": "purchasing_power_tier",
         "display_name": "Purchasing Power Tier",
         "raw_value": -0.3333333333333333,
-        "shap_value": 0.0607,
+        "shap_value": 0.09,
         "direction": "INCREASES_RISK"
       },
       {
         "feature": "household_size",
         "display_name": "Household Size",
         "raw_value": -1.0,
-        "shap_value": 0.0271,
+        "shap_value": 0.0367,
+        "direction": "INCREASES_RISK"
+      },
+      {
+        "feature": "subtype_claim_ratio_delta",
+        "display_name": "Deviation from Peer Group Average",
+        "raw_value": 1.6930715958358098,
+        "shap_value": 0.0284,
         "direction": "INCREASES_RISK"
       },
       {
         "feature": "log_annual_spend",
         "display_name": "Annual Insurance Spend (log)",
         "raw_value": 0.03213607010236836,
-        "shap_value": -0.0012,
+        "shap_value": -0.0131,
         "direction": "DECREASES_RISK"
       }
     ],
-    "base_value": 0.126
+    "base_value": -2.1561
   },
   {
-    "claim_id": "CLM-2024-00475",
-    "xgb_risk_prob": 0.9718,
-    "xgb_risk_score": 97,
+    "claim_id": "CLM-2024-00139",
+    "xgb_risk_prob": 0.8978,
+    "xgb_risk_score": 90,
     "top_factors": [
       {
         "feature": "filing_delay_days",
         "display_name": "Filing Delay (days)",
-        "raw_value": 9.333333333333334,
-        "shap_value": 1.9192,
+        "raw_value": 10.5,
+        "shap_value": 1.8953,
         "direction": "INCREASES_RISK"
       },
       {
         "feature": "claim_to_limit_ratio",
         "display_name": "Claim-to-Limit Ratio",
-        "raw_value": 3.1932576378321427,
-        "shap_value": 1.5457,
-        "direction": "INCREASES_RISK"
-      },
-      {
-        "feature": "claim_to_premium_ratio",
-        "display_name": "Claim-to-Premium Ratio",
-        "raw_value": 2.6198989773869004,
-        "shap_value": -0.2136,
-        "direction": "DECREASES_RISK"
-      },
-      {
-        "feature": "log_claim_amount",
-        "display_name": "Claim Amount (log-scaled)",
-        "raw_value": 1.4016061558935842,
-        "shap_value": 0.169,
+        "raw_value": 3.238206718951188,
+        "shap_value": 1.7927,
         "direction": "INCREASES_RISK"
       },
       {
         "feature": "customer_total_policies",
         "display_name": "Total Active Policies",
-        "raw_value": 0.0,
-        "shap_value": -0.1324,
-        "direction": "DECREASES_RISK"
+        "raw_value": -1.0,
+        "shap_value": 0.2269,
+        "direction": "INCREASES_RISK"
+      },
+      {
+        "feature": "claim_to_premium_ratio",
+        "display_name": "Claim-to-Premium Ratio",
+        "raw_value": 0.03586715664010349,
+        "shap_value": 0.2261,
+        "direction": "INCREASES_RISK"
+      },
+      {
+        "feature": "log_claim_amount",
+        "display_name": "Claim Amount (log-scaled)",
+        "raw_value": 0.8799746586031996,
+        "shap_value": 0.1308,
+        "direction": "INCREASES_RISK"
       }
     ],
     "all_factors": [
       {
         "feature": "filing_delay_days",
         "display_name": "Filing Delay (days)",
-        "raw_value": 9.333333333333334,
-        "shap_value": 1.9192,
+        "raw_value": 10.5,
+        "shap_value": 1.8953,
         "direction": "INCREASES_RISK"
       },
       {
         "feature": "claim_to_limit_ratio",
         "display_name": "Claim-to-Limit Ratio",
-        "raw_value": 3.1932576378321427,
-        "shap_value": 1.5457,
-        "direction": "INCREASES_RISK"
-      },
-      {
-        "feature": "claim_to_premium_ratio",
-        "display_name": "Claim-to-Premium Ratio",
-        "raw_value": 2.6198989773869004,
-        "shap_value": -0.2136,
-        "direction": "DECREASES_RISK"
-      },
-      {
-        "feature": "log_claim_amount",
-        "display_name": "Claim Amount (log-scaled)",
-        "raw_value": 1.4016061558935842,
-        "shap_value": 0.169,
+        "raw_value": 3.238206718951188,
+        "shap_value": 1.7927,
         "direction": "INCREASES_RISK"
       },
       {
         "feature": "customer_total_policies",
         "display_name": "Total Active Policies",
-        "raw_value": 0.0,
-        "shap_value": -0.1324,
-        "direction": "DECREASES_RISK"
-      },
-      {
-        "feature": "subtype_claim_ratio_delta",
-        "display_name": "Deviation from Peer Group Average",
-        "raw_value": 5.86354099417007,
-        "shap_value": 0.0931,
+        "raw_value": -1.0,
+        "shap_value": 0.2269,
         "direction": "INCREASES_RISK"
       },
       {
-        "feature": "purchasing_power_tier",
-        "display_name": "Purchasing Power Tier",
-        "raw_value": 0.6666666666666666,
-        "shap_value": 0.0433,
+        "feature": "claim_to_premium_ratio",
+        "display_name": "Claim-to-Premium Ratio",
+        "raw_value": 0.03586715664010349,
+        "shap_value": 0.2261,
+        "direction": "INCREASES_RISK"
+      },
+      {
+        "feature": "log_claim_amount",
+        "display_name": "Claim Amount (log-scaled)",
+        "raw_value": 0.8799746586031996,
+        "shap_value": 0.1308,
         "direction": "INCREASES_RISK"
       },
       {
         "feature": "log_annual_spend",
         "display_name": "Annual Insurance Spend (log)",
-        "raw_value": 0.08726630995961937,
-        "shap_value": -0.025,
+        "raw_value": 0.0,
+        "shap_value": 0.0731,
+        "direction": "INCREASES_RISK"
+      },
+      {
+        "feature": "purchasing_power_tier",
+        "display_name": "Purchasing Power Tier",
+        "raw_value": -1.0,
+        "shap_value": -0.0608,
         "direction": "DECREASES_RISK"
       },
       {
         "feature": "household_size",
         "display_name": "Household Size",
         "raw_value": -1.0,
-        "shap_value": 0.0139,
+        "shap_value": 0.0297,
+        "direction": "INCREASES_RISK"
+      },
+      {
+        "feature": "subtype_claim_ratio_delta",
+        "display_name": "Deviation from Peer Group Average",
+        "raw_value": 3.4023556978375837,
+        "shap_value": 0.0149,
         "direction": "INCREASES_RISK"
       }
     ],
-    "base_value": 0.126
+    "base_value": -2.1561
   },
   {
-    "claim_id": "CLM-2024-00343",
-    "xgb_risk_prob": 0.968,
-    "xgb_risk_score": 97,
+    "claim_id": "CLM-2024-01458",
+    "xgb_risk_prob": 0.8968,
+    "xgb_risk_score": 90,
     "top_factors": [
       {
         "feature": "claim_to_limit_ratio",
         "display_name": "Claim-to-Limit Ratio",
-        "raw_value": 1.6893362987241016,
-        "shap_value": 1.837,
+        "raw_value": 2.905302586913262,
+        "shap_value": 2.1941,
         "direction": "INCREASES_RISK"
       },
       {
         "feature": "filing_delay_days",
         "display_name": "Filing Delay (days)",
-        "raw_value": 3.8333333333333335,
-        "shap_value": 1.1846,
-        "direction": "INCREASES_RISK"
-      },
-      {
-        "feature": "claim_to_premium_ratio",
-        "display_name": "Claim-to-Premium Ratio",
-        "raw_value": -0.03696822054309979,
-        "shap_value": 0.2285,
+        "raw_value": 2.6666666666666665,
+        "shap_value": 1.7646,
         "direction": "INCREASES_RISK"
       },
       {
         "feature": "log_claim_amount",
         "display_name": "Claim Amount (log-scaled)",
-        "raw_value": 0.6323806003956057,
-        "shap_value": -0.128,
-        "direction": "DECREASES_RISK"
+        "raw_value": 1.3644686320917934,
+        "shap_value": 0.3755,
+        "direction": "INCREASES_RISK"
       },
       {
         "feature": "subtype_claim_ratio_delta",
         "display_name": "Deviation from Peer Group Average",
-        "raw_value": 0.6887931943193207,
-        "shap_value": 0.1003,
+        "raw_value": 5.0277615854597535,
+        "shap_value": 0.2146,
+        "direction": "INCREASES_RISK"
+      },
+      {
+        "feature": "claim_to_premium_ratio",
+        "display_name": "Claim-to-Premium Ratio",
+        "raw_value": 2.6198989773869004,
+        "shap_value": -0.1776,
+        "direction": "DECREASES_RISK"
+      }
+    ],
+    "all_factors": [
+      {
+        "feature": "claim_to_limit_ratio",
+        "display_name": "Claim-to-Limit Ratio",
+        "raw_value": 2.905302586913262,
+        "shap_value": 2.1941,
+        "direction": "INCREASES_RISK"
+      },
+      {
+        "feature": "filing_delay_days",
+        "display_name": "Filing Delay (days)",
+        "raw_value": 2.6666666666666665,
+        "shap_value": 1.7646,
+        "direction": "INCREASES_RISK"
+      },
+      {
+        "feature": "log_claim_amount",
+        "display_name": "Claim Amount (log-scaled)",
+        "raw_value": 1.3644686320917934,
+        "shap_value": 0.3755,
+        "direction": "INCREASES_RISK"
+      },
+      {
+        "feature": "subtype_claim_ratio_delta",
+        "display_name": "Deviation from Peer Group Average",
+        "raw_value": 5.0277615854597535,
+        "shap_value": 0.2146,
+        "direction": "INCREASES_RISK"
+      },
+      {
+        "feature": "claim_to_premium_ratio",
+        "display_name": "Claim-to-Premium Ratio",
+        "raw_value": 2.6198989773869004,
+        "shap_value": -0.1776,
+        "direction": "DECREASES_RISK"
+      },
+      {
+        "feature": "customer_total_policies",
+        "display_name": "Total Active Policies",
+        "raw_value": -0.5,
+        "shap_value": -0.1475,
+        "direction": "DECREASES_RISK"
+      },
+      {
+        "feature": "log_annual_spend",
+        "display_name": "Annual Insurance Spend (log)",
+        "raw_value": -1.286292517433341,
+        "shap_value": 0.0713,
+        "direction": "INCREASES_RISK"
+      },
+      {
+        "feature": "household_size",
+        "display_name": "Household Size",
+        "raw_value": -2.0,
+        "shap_value": 0.0212,
+        "direction": "INCREASES_RISK"
+      },
+      {
+        "feature": "purchasing_power_tier",
+        "display_name": "Purchasing Power Tier",
+        "raw_value": 0.6666666666666666,
+        "shap_value": 0.0025,
+        "direction": "INCREASES_RISK"
+      }
+    ],
+    "base_value": -2.1561
+  },
+  {
+    "claim_id": "CLM-2024-00091",
+    "xgb_risk_prob": 0.8959,
+    "xgb_risk_score": 90,
+    "top_factors": [
+      {
+        "feature": "claim_to_limit_ratio",
+        "display_name": "Claim-to-Limit Ratio",
+        "raw_value": 1.704319325763783,
+        "shap_value": 2.0515,
+        "direction": "INCREASES_RISK"
+      },
+      {
+        "feature": "filing_delay_days",
+        "display_name": "Filing Delay (days)",
+        "raw_value": 9.166666666666666,
+        "shap_value": 1.6186,
+        "direction": "INCREASES_RISK"
+      },
+      {
+        "feature": "customer_total_policies",
+        "display_name": "Total Active Policies",
+        "raw_value": -1.0,
+        "shap_value": 0.2489,
+        "direction": "INCREASES_RISK"
+      },
+      {
+        "feature": "claim_to_premium_ratio",
+        "display_name": "Claim-to-Premium Ratio",
+        "raw_value": 0.18897009235173487,
+        "shap_value": 0.2163,
+        "direction": "INCREASES_RISK"
+      },
+      {
+        "feature": "log_annual_spend",
+        "display_name": "Annual Insurance Spend (log)",
+        "raw_value": -0.9127336900403806,
+        "shap_value": 0.0666,
         "direction": "INCREASES_RISK"
       }
     ],
@@ -2096,67 +1448,715 @@
       {
         "feature": "claim_to_limit_ratio",
         "display_name": "Claim-to-Limit Ratio",
-        "raw_value": 1.6893362987241016,
-        "shap_value": 1.837,
+        "raw_value": 1.704319325763783,
+        "shap_value": 2.0515,
         "direction": "INCREASES_RISK"
       },
       {
         "feature": "filing_delay_days",
         "display_name": "Filing Delay (days)",
-        "raw_value": 3.8333333333333335,
-        "shap_value": 1.1846,
+        "raw_value": 9.166666666666666,
+        "shap_value": 1.6186,
+        "direction": "INCREASES_RISK"
+      },
+      {
+        "feature": "customer_total_policies",
+        "display_name": "Total Active Policies",
+        "raw_value": -1.0,
+        "shap_value": 0.2489,
         "direction": "INCREASES_RISK"
       },
       {
         "feature": "claim_to_premium_ratio",
         "display_name": "Claim-to-Premium Ratio",
-        "raw_value": -0.03696822054309979,
-        "shap_value": 0.2285,
+        "raw_value": 0.18897009235173487,
+        "shap_value": 0.2163,
         "direction": "INCREASES_RISK"
       },
       {
-        "feature": "log_claim_amount",
-        "display_name": "Claim Amount (log-scaled)",
-        "raw_value": 0.6323806003956057,
-        "shap_value": -0.128,
-        "direction": "DECREASES_RISK"
-      },
-      {
-        "feature": "subtype_claim_ratio_delta",
-        "display_name": "Deviation from Peer Group Average",
-        "raw_value": 0.6887931943193207,
-        "shap_value": 0.1003,
-        "direction": "INCREASES_RISK"
-      },
-      {
-        "feature": "purchasing_power_tier",
-        "display_name": "Purchasing Power Tier",
-        "raw_value": 0.6666666666666666,
-        "shap_value": 0.0705,
+        "feature": "log_annual_spend",
+        "display_name": "Annual Insurance Spend (log)",
+        "raw_value": -0.9127336900403806,
+        "shap_value": 0.0666,
         "direction": "INCREASES_RISK"
       },
       {
         "feature": "household_size",
         "display_name": "Household Size",
         "raw_value": 0.0,
-        "shap_value": 0.0321,
+        "shap_value": 0.0498,
         "direction": "INCREASES_RISK"
+      },
+      {
+        "feature": "log_claim_amount",
+        "display_name": "Claim Amount (log-scaled)",
+        "raw_value": 0.555822954610952,
+        "shap_value": 0.0399,
+        "direction": "INCREASES_RISK"
+      },
+      {
+        "feature": "subtype_claim_ratio_delta",
+        "display_name": "Deviation from Peer Group Average",
+        "raw_value": 0.8087847221844715,
+        "shap_value": 0.0117,
+        "direction": "INCREASES_RISK"
+      },
+      {
+        "feature": "purchasing_power_tier",
+        "display_name": "Purchasing Power Tier",
+        "raw_value": 0.6666666666666666,
+        "shap_value": 0.0051,
+        "direction": "INCREASES_RISK"
+      }
+    ],
+    "base_value": -2.1561
+  },
+  {
+    "claim_id": "CLM-2024-00676",
+    "xgb_risk_prob": 0.8956,
+    "xgb_risk_score": 90,
+    "top_factors": [
+      {
+        "feature": "filing_delay_days",
+        "display_name": "Filing Delay (days)",
+        "raw_value": 13.666666666666666,
+        "shap_value": 1.9955,
+        "direction": "INCREASES_RISK"
+      },
+      {
+        "feature": "claim_to_limit_ratio",
+        "display_name": "Claim-to-Limit Ratio",
+        "raw_value": 3.278005384525342,
+        "shap_value": 1.9294,
+        "direction": "INCREASES_RISK"
+      },
+      {
+        "feature": "log_claim_amount",
+        "display_name": "Claim Amount (log-scaled)",
+        "raw_value": 1.2860138177649614,
+        "shap_value": 0.4106,
+        "direction": "INCREASES_RISK"
+      },
+      {
+        "feature": "subtype_claim_ratio_delta",
+        "display_name": "Deviation from Peer Group Average",
+        "raw_value": 5.365500370132327,
+        "shap_value": 0.232,
+        "direction": "INCREASES_RISK"
+      },
+      {
+        "feature": "claim_to_premium_ratio",
+        "display_name": "Claim-to-Premium Ratio",
+        "raw_value": 2.6198989773869004,
+        "shap_value": -0.2002,
+        "direction": "DECREASES_RISK"
+      }
+    ],
+    "all_factors": [
+      {
+        "feature": "filing_delay_days",
+        "display_name": "Filing Delay (days)",
+        "raw_value": 13.666666666666666,
+        "shap_value": 1.9955,
+        "direction": "INCREASES_RISK"
+      },
+      {
+        "feature": "claim_to_limit_ratio",
+        "display_name": "Claim-to-Limit Ratio",
+        "raw_value": 3.278005384525342,
+        "shap_value": 1.9294,
+        "direction": "INCREASES_RISK"
+      },
+      {
+        "feature": "log_claim_amount",
+        "display_name": "Claim Amount (log-scaled)",
+        "raw_value": 1.2860138177649614,
+        "shap_value": 0.4106,
+        "direction": "INCREASES_RISK"
+      },
+      {
+        "feature": "subtype_claim_ratio_delta",
+        "display_name": "Deviation from Peer Group Average",
+        "raw_value": 5.365500370132327,
+        "shap_value": 0.232,
+        "direction": "INCREASES_RISK"
+      },
+      {
+        "feature": "claim_to_premium_ratio",
+        "display_name": "Claim-to-Premium Ratio",
+        "raw_value": 2.6198989773869004,
+        "shap_value": -0.2002,
+        "direction": "DECREASES_RISK"
       },
       {
         "feature": "customer_total_policies",
         "display_name": "Total Active Policies",
-        "raw_value": 0.5,
-        "shap_value": -0.0221,
+        "raw_value": 0.0,
+        "shap_value": -0.156,
         "direction": "DECREASES_RISK"
+      },
+      {
+        "feature": "purchasing_power_tier",
+        "display_name": "Purchasing Power Tier",
+        "raw_value": -0.3333333333333333,
+        "shap_value": 0.0782,
+        "direction": "INCREASES_RISK"
+      },
+      {
+        "feature": "household_size",
+        "display_name": "Household Size",
+        "raw_value": -1.0,
+        "shap_value": 0.0239,
+        "direction": "INCREASES_RISK"
+      },
+      {
+        "feature": "log_annual_spend",
+        "display_name": "Annual Insurance Spend (log)",
+        "raw_value": 0.04763481824850035,
+        "shap_value": -0.0081,
+        "direction": "DECREASES_RISK"
+      }
+    ],
+    "base_value": -2.1561
+  },
+  {
+    "claim_id": "CLM-2024-00475",
+    "xgb_risk_prob": 0.8936,
+    "xgb_risk_score": 89,
+    "top_factors": [
+      {
+        "feature": "filing_delay_days",
+        "display_name": "Filing Delay (days)",
+        "raw_value": 9.333333333333334,
+        "shap_value": 2.0204,
+        "direction": "INCREASES_RISK"
+      },
+      {
+        "feature": "claim_to_limit_ratio",
+        "display_name": "Claim-to-Limit Ratio",
+        "raw_value": 3.1932576378321427,
+        "shap_value": 1.9329,
+        "direction": "INCREASES_RISK"
+      },
+      {
+        "feature": "log_claim_amount",
+        "display_name": "Claim Amount (log-scaled)",
+        "raw_value": 1.4016061558935842,
+        "shap_value": 0.4012,
+        "direction": "INCREASES_RISK"
+      },
+      {
+        "feature": "subtype_claim_ratio_delta",
+        "display_name": "Deviation from Peer Group Average",
+        "raw_value": 7.25070081146134,
+        "shap_value": 0.2246,
+        "direction": "INCREASES_RISK"
+      },
+      {
+        "feature": "claim_to_premium_ratio",
+        "display_name": "Claim-to-Premium Ratio",
+        "raw_value": 2.6198989773869004,
+        "shap_value": -0.2053,
+        "direction": "DECREASES_RISK"
+      }
+    ],
+    "all_factors": [
+      {
+        "feature": "filing_delay_days",
+        "display_name": "Filing Delay (days)",
+        "raw_value": 9.333333333333334,
+        "shap_value": 2.0204,
+        "direction": "INCREASES_RISK"
+      },
+      {
+        "feature": "claim_to_limit_ratio",
+        "display_name": "Claim-to-Limit Ratio",
+        "raw_value": 3.1932576378321427,
+        "shap_value": 1.9329,
+        "direction": "INCREASES_RISK"
+      },
+      {
+        "feature": "log_claim_amount",
+        "display_name": "Claim Amount (log-scaled)",
+        "raw_value": 1.4016061558935842,
+        "shap_value": 0.4012,
+        "direction": "INCREASES_RISK"
+      },
+      {
+        "feature": "subtype_claim_ratio_delta",
+        "display_name": "Deviation from Peer Group Average",
+        "raw_value": 7.25070081146134,
+        "shap_value": 0.2246,
+        "direction": "INCREASES_RISK"
+      },
+      {
+        "feature": "claim_to_premium_ratio",
+        "display_name": "Claim-to-Premium Ratio",
+        "raw_value": 2.6198989773869004,
+        "shap_value": -0.2053,
+        "direction": "DECREASES_RISK"
+      },
+      {
+        "feature": "customer_total_policies",
+        "display_name": "Total Active Policies",
+        "raw_value": 0.0,
+        "shap_value": -0.1216,
+        "direction": "DECREASES_RISK"
+      },
+      {
+        "feature": "household_size",
+        "display_name": "Household Size",
+        "raw_value": -1.0,
+        "shap_value": 0.0239,
+        "direction": "INCREASES_RISK"
+      },
+      {
+        "feature": "purchasing_power_tier",
+        "display_name": "Purchasing Power Tier",
+        "raw_value": 0.6666666666666666,
+        "shap_value": 0.0139,
+        "direction": "INCREASES_RISK"
       },
       {
         "feature": "log_annual_spend",
         "display_name": "Annual Insurance Spend (log)",
         "raw_value": 0.08726630995961937,
-        "shap_value": -0.0188,
+        "shap_value": -0.0056,
         "direction": "DECREASES_RISK"
       }
     ],
-    "base_value": 0.126
+    "base_value": -2.1561
+  },
+  {
+    "claim_id": "CLM-2024-01212",
+    "xgb_risk_prob": 0.8918,
+    "xgb_risk_score": 89,
+    "top_factors": [
+      {
+        "feature": "claim_to_limit_ratio",
+        "display_name": "Claim-to-Limit Ratio",
+        "raw_value": 2.6777478637480976,
+        "shap_value": 2.1585,
+        "direction": "INCREASES_RISK"
+      },
+      {
+        "feature": "filing_delay_days",
+        "display_name": "Filing Delay (days)",
+        "raw_value": 2.8333333333333335,
+        "shap_value": 1.6973,
+        "direction": "INCREASES_RISK"
+      },
+      {
+        "feature": "log_claim_amount",
+        "display_name": "Claim Amount (log-scaled)",
+        "raw_value": 1.206771835071358,
+        "shap_value": 0.362,
+        "direction": "INCREASES_RISK"
+      },
+      {
+        "feature": "customer_total_policies",
+        "display_name": "Total Active Policies",
+        "raw_value": -1.0,
+        "shap_value": 0.2426,
+        "direction": "INCREASES_RISK"
+      },
+      {
+        "feature": "claim_to_premium_ratio",
+        "display_name": "Claim-to-Premium Ratio",
+        "raw_value": 2.6198989773869004,
+        "shap_value": -0.193,
+        "direction": "DECREASES_RISK"
+      }
+    ],
+    "all_factors": [
+      {
+        "feature": "claim_to_limit_ratio",
+        "display_name": "Claim-to-Limit Ratio",
+        "raw_value": 2.6777478637480976,
+        "shap_value": 2.1585,
+        "direction": "INCREASES_RISK"
+      },
+      {
+        "feature": "filing_delay_days",
+        "display_name": "Filing Delay (days)",
+        "raw_value": 2.8333333333333335,
+        "shap_value": 1.6973,
+        "direction": "INCREASES_RISK"
+      },
+      {
+        "feature": "log_claim_amount",
+        "display_name": "Claim Amount (log-scaled)",
+        "raw_value": 1.206771835071358,
+        "shap_value": 0.362,
+        "direction": "INCREASES_RISK"
+      },
+      {
+        "feature": "customer_total_policies",
+        "display_name": "Total Active Policies",
+        "raw_value": -1.0,
+        "shap_value": 0.2426,
+        "direction": "INCREASES_RISK"
+      },
+      {
+        "feature": "claim_to_premium_ratio",
+        "display_name": "Claim-to-Premium Ratio",
+        "raw_value": 2.6198989773869004,
+        "shap_value": -0.193,
+        "direction": "DECREASES_RISK"
+      },
+      {
+        "feature": "purchasing_power_tier",
+        "display_name": "Purchasing Power Tier",
+        "raw_value": -1.0,
+        "shap_value": -0.0773,
+        "direction": "DECREASES_RISK"
+      },
+      {
+        "feature": "log_annual_spend",
+        "display_name": "Annual Insurance Spend (log)",
+        "raw_value": -1.9696489822115453,
+        "shap_value": 0.0664,
+        "direction": "INCREASES_RISK"
+      },
+      {
+        "feature": "household_size",
+        "display_name": "Household Size",
+        "raw_value": -2.0,
+        "shap_value": 0.0212,
+        "direction": "INCREASES_RISK"
+      },
+      {
+        "feature": "subtype_claim_ratio_delta",
+        "display_name": "Deviation from Peer Group Average",
+        "raw_value": 1.480954536920874,
+        "shap_value": -0.0123,
+        "direction": "DECREASES_RISK"
+      }
+    ],
+    "base_value": -2.1561
+  },
+  {
+    "claim_id": "CLM-2024-00812",
+    "xgb_risk_prob": 0.8908,
+    "xgb_risk_score": 89,
+    "top_factors": [
+      {
+        "feature": "claim_to_limit_ratio",
+        "display_name": "Claim-to-Limit Ratio",
+        "raw_value": 1.8180966873463653,
+        "shap_value": 2.0268,
+        "direction": "INCREASES_RISK"
+      },
+      {
+        "feature": "filing_delay_days",
+        "display_name": "Filing Delay (days)",
+        "raw_value": 6.333333333333333,
+        "shap_value": 1.7816,
+        "direction": "INCREASES_RISK"
+      },
+      {
+        "feature": "claim_to_premium_ratio",
+        "display_name": "Claim-to-Premium Ratio",
+        "raw_value": -0.0309123690766203,
+        "shap_value": 0.3131,
+        "direction": "INCREASES_RISK"
+      },
+      {
+        "feature": "customer_total_policies",
+        "display_name": "Total Active Policies",
+        "raw_value": -0.5,
+        "shap_value": -0.1643,
+        "direction": "DECREASES_RISK"
+      },
+      {
+        "feature": "log_claim_amount",
+        "display_name": "Claim Amount (log-scaled)",
+        "raw_value": 0.6592000414569078,
+        "shap_value": 0.1157,
+        "direction": "INCREASES_RISK"
+      }
+    ],
+    "all_factors": [
+      {
+        "feature": "claim_to_limit_ratio",
+        "display_name": "Claim-to-Limit Ratio",
+        "raw_value": 1.8180966873463653,
+        "shap_value": 2.0268,
+        "direction": "INCREASES_RISK"
+      },
+      {
+        "feature": "filing_delay_days",
+        "display_name": "Filing Delay (days)",
+        "raw_value": 6.333333333333333,
+        "shap_value": 1.7816,
+        "direction": "INCREASES_RISK"
+      },
+      {
+        "feature": "claim_to_premium_ratio",
+        "display_name": "Claim-to-Premium Ratio",
+        "raw_value": -0.0309123690766203,
+        "shap_value": 0.3131,
+        "direction": "INCREASES_RISK"
+      },
+      {
+        "feature": "customer_total_policies",
+        "display_name": "Total Active Policies",
+        "raw_value": -0.5,
+        "shap_value": -0.1643,
+        "direction": "DECREASES_RISK"
+      },
+      {
+        "feature": "log_claim_amount",
+        "display_name": "Claim Amount (log-scaled)",
+        "raw_value": 0.6592000414569078,
+        "shap_value": 0.1157,
+        "direction": "INCREASES_RISK"
+      },
+      {
+        "feature": "log_annual_spend",
+        "display_name": "Annual Insurance Spend (log)",
+        "raw_value": 0.0,
+        "shap_value": 0.107,
+        "direction": "INCREASES_RISK"
+      },
+      {
+        "feature": "household_size",
+        "display_name": "Household Size",
+        "raw_value": 0.0,
+        "shap_value": 0.0424,
+        "direction": "INCREASES_RISK"
+      },
+      {
+        "feature": "purchasing_power_tier",
+        "display_name": "Purchasing Power Tier",
+        "raw_value": 0.6666666666666666,
+        "shap_value": 0.0242,
+        "direction": "INCREASES_RISK"
+      },
+      {
+        "feature": "subtype_claim_ratio_delta",
+        "display_name": "Deviation from Peer Group Average",
+        "raw_value": 1.155172458875702,
+        "shap_value": 0.0085,
+        "direction": "INCREASES_RISK"
+      }
+    ],
+    "base_value": -2.1561
+  },
+  {
+    "claim_id": "CLM-2024-01109",
+    "xgb_risk_prob": 0.89,
+    "xgb_risk_score": 89,
+    "top_factors": [
+      {
+        "feature": "filing_delay_days",
+        "display_name": "Filing Delay (days)",
+        "raw_value": 3.3333333333333335,
+        "shap_value": 1.8505,
+        "direction": "INCREASES_RISK"
+      },
+      {
+        "feature": "claim_to_limit_ratio",
+        "display_name": "Claim-to-Limit Ratio",
+        "raw_value": 3.2115182020367548,
+        "shap_value": 1.7616,
+        "direction": "INCREASES_RISK"
+      },
+      {
+        "feature": "claim_to_premium_ratio",
+        "display_name": "Claim-to-Premium Ratio",
+        "raw_value": 0.034655986346807596,
+        "shap_value": 0.2283,
+        "direction": "INCREASES_RISK"
+      },
+      {
+        "feature": "customer_total_policies",
+        "display_name": "Total Active Policies",
+        "raw_value": -1.0,
+        "shap_value": 0.2092,
+        "direction": "INCREASES_RISK"
+      },
+      {
+        "feature": "log_claim_amount",
+        "display_name": "Claim Amount (log-scaled)",
+        "raw_value": 0.8767367609373595,
+        "shap_value": 0.0954,
+        "direction": "INCREASES_RISK"
+      }
+    ],
+    "all_factors": [
+      {
+        "feature": "filing_delay_days",
+        "display_name": "Filing Delay (days)",
+        "raw_value": 3.3333333333333335,
+        "shap_value": 1.8505,
+        "direction": "INCREASES_RISK"
+      },
+      {
+        "feature": "claim_to_limit_ratio",
+        "display_name": "Claim-to-Limit Ratio",
+        "raw_value": 3.2115182020367548,
+        "shap_value": 1.7616,
+        "direction": "INCREASES_RISK"
+      },
+      {
+        "feature": "claim_to_premium_ratio",
+        "display_name": "Claim-to-Premium Ratio",
+        "raw_value": 0.034655986346807596,
+        "shap_value": 0.2283,
+        "direction": "INCREASES_RISK"
+      },
+      {
+        "feature": "customer_total_policies",
+        "display_name": "Total Active Policies",
+        "raw_value": -1.0,
+        "shap_value": 0.2092,
+        "direction": "INCREASES_RISK"
+      },
+      {
+        "feature": "log_claim_amount",
+        "display_name": "Claim Amount (log-scaled)",
+        "raw_value": 0.8767367609373595,
+        "shap_value": 0.0954,
+        "direction": "INCREASES_RISK"
+      },
+      {
+        "feature": "log_annual_spend",
+        "display_name": "Annual Insurance Spend (log)",
+        "raw_value": 0.0,
+        "shap_value": 0.0699,
+        "direction": "INCREASES_RISK"
+      },
+      {
+        "feature": "household_size",
+        "display_name": "Household Size",
+        "raw_value": -1.0,
+        "shap_value": 0.0297,
+        "direction": "INCREASES_RISK"
+      },
+      {
+        "feature": "subtype_claim_ratio_delta",
+        "display_name": "Deviation from Peer Group Average",
+        "raw_value": 2.5123274475541266,
+        "shap_value": 0.0015,
+        "direction": "INCREASES_RISK"
+      },
+      {
+        "feature": "purchasing_power_tier",
+        "display_name": "Purchasing Power Tier",
+        "raw_value": 0.6666666666666666,
+        "shap_value": 0.0003,
+        "direction": "INCREASES_RISK"
+      }
+    ],
+    "base_value": -2.1561
+  },
+  {
+    "claim_id": "CLM-2024-00630",
+    "xgb_risk_prob": 0.8846,
+    "xgb_risk_score": 88,
+    "top_factors": [
+      {
+        "feature": "claim_to_limit_ratio",
+        "display_name": "Claim-to-Limit Ratio",
+        "raw_value": 2.823364157790003,
+        "shap_value": 2.1515,
+        "direction": "INCREASES_RISK"
+      },
+      {
+        "feature": "filing_delay_days",
+        "display_name": "Filing Delay (days)",
+        "raw_value": 3.3333333333333335,
+        "shap_value": 1.8119,
+        "direction": "INCREASES_RISK"
+      },
+      {
+        "feature": "claim_to_premium_ratio",
+        "display_name": "Claim-to-Premium Ratio",
+        "raw_value": 0.016378325557069508,
+        "shap_value": 0.2952,
+        "direction": "INCREASES_RISK"
+      },
+      {
+        "feature": "customer_total_policies",
+        "display_name": "Total Active Policies",
+        "raw_value": 0.0,
+        "shap_value": -0.1692,
+        "direction": "DECREASES_RISK"
+      },
+      {
+        "feature": "log_claim_amount",
+        "display_name": "Claim Amount (log-scaled)",
+        "raw_value": 0.8261636470585638,
+        "shap_value": 0.1277,
+        "direction": "INCREASES_RISK"
+      }
+    ],
+    "all_factors": [
+      {
+        "feature": "claim_to_limit_ratio",
+        "display_name": "Claim-to-Limit Ratio",
+        "raw_value": 2.823364157790003,
+        "shap_value": 2.1515,
+        "direction": "INCREASES_RISK"
+      },
+      {
+        "feature": "filing_delay_days",
+        "display_name": "Filing Delay (days)",
+        "raw_value": 3.3333333333333335,
+        "shap_value": 1.8119,
+        "direction": "INCREASES_RISK"
+      },
+      {
+        "feature": "claim_to_premium_ratio",
+        "display_name": "Claim-to-Premium Ratio",
+        "raw_value": 0.016378325557069508,
+        "shap_value": 0.2952,
+        "direction": "INCREASES_RISK"
+      },
+      {
+        "feature": "customer_total_policies",
+        "display_name": "Total Active Policies",
+        "raw_value": 0.0,
+        "shap_value": -0.1692,
+        "direction": "DECREASES_RISK"
+      },
+      {
+        "feature": "log_claim_amount",
+        "display_name": "Claim Amount (log-scaled)",
+        "raw_value": 0.8261636470585638,
+        "shap_value": 0.1277,
+        "direction": "INCREASES_RISK"
+      },
+      {
+        "feature": "purchasing_power_tier",
+        "display_name": "Purchasing Power Tier",
+        "raw_value": -1.0,
+        "shap_value": -0.0788,
+        "direction": "DECREASES_RISK"
+      },
+      {
+        "feature": "household_size",
+        "display_name": "Household Size",
+        "raw_value": 0.0,
+        "shap_value": 0.0424,
+        "direction": "INCREASES_RISK"
+      },
+      {
+        "feature": "subtype_claim_ratio_delta",
+        "display_name": "Deviation from Peer Group Average",
+        "raw_value": 1.8867808889580346,
+        "shap_value": 0.0349,
+        "direction": "INCREASES_RISK"
+      },
+      {
+        "feature": "log_annual_spend",
+        "display_name": "Annual Insurance Spend (log)",
+        "raw_value": 0.03213607010236836,
+        "shap_value": -0.0223,
+        "direction": "DECREASES_RISK"
+      }
+    ],
+    "base_value": -2.1561
   }
 ]

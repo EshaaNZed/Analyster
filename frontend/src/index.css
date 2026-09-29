@@ -949,3 +949,32 @@ a:hover {
     grid-template-columns: 1fr;
   }
 }
+
+/* ─── Website Navigation & Multi-Page Classes ────────────────────── */
+.nav-item-inactive:hover {
+  background: rgba(255, 255, 255, 0.06) !important;
+  color: #ffffff !important;
+  transform: translateY(-1px);
+}
+
+.nav-item-active {
+  color: #ffffff !important;
+  font-weight: 600;
+}
+
+/* Smooth page fade transition */
+main {
+  animation: fadeInPage 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes fadeInPage {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+

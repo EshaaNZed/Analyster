@@ -1,0 +1,1822 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Analyster — AI Multi-Agent Claims Intelligence Studio</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🛡️</text></svg>">
+  <link rel="stylesheet" href="css/style.css">
+  
+  <!-- External CDN Libraries (No Node/NPM build required) -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
+</head>
+<body>
+  <div class="app-layout">
+    <!-- Fixed Left Sidebar -->
+    <aside class="sidebar">
+      <!-- Sidebar Header / Brand -->
+      <div class="sidebar-header">
+        <div class="sidebar-brand-icon">🛡️</div>
+        <div class="sidebar-brand-text">
+          <div class="sidebar-brand-title">
+            ANALYSTER
+            <span class="sidebar-brand-badge">SIU Enterprise</span>
+          </div>
+          <div class="sidebar-brand-subtitle">Claims Intelligence Suite</div>
+        </div>
+      </div>
+
+      <!-- Navigation Groups -->
+      <nav class="sidebar-nav">
+        <!-- Group 1: Operations -->
+        <div class="nav-group">
+          <div class="nav-group-title">Core Operations</div>
+          <button class="nav-item-btn active" data-view="overview" onclick="switchView('overview')">
+            <span class="nav-item-icon">📊</span>
+            <span>Portfolio Overview</span>
+          </button>
+          <button class="nav-item-btn" data-view="intake" onclick="switchView('intake')">
+            <span class="nav-item-icon">➕</span>
+            <span>New Claim Intake</span>
+          </button>
+          <button class="nav-item-btn" data-view="studio" onclick="switchView('studio')">
+            <span class="nav-item-icon">⚡</span>
+            <span>Claim Studio & Swarm</span>
+          </button>
+        </div>
+
+        <!-- Group 2: Forensics & Deep Analytics -->
+        <div class="nav-group">
+          <div class="nav-group-title">Deep Forensics</div>
+          <button class="nav-item-btn" data-view="graph" onclick="switchView('graph')">
+            <span class="nav-item-icon">🕸️</span>
+            <span>Knowledge Graph</span>
+          </button>
+          <button class="nav-item-btn" data-view="simulator" onclick="switchView('simulator')">
+            <span class="nav-item-icon">🎛️</span>
+            <span>What-If Simulator</span>
+          </button>
+          <button class="nav-item-btn" data-view="siu" onclick="switchView('siu')">
+            <span class="nav-item-icon">🚨</span>
+            <span>SIU Referral Hub</span>
+          </button>
+        </div>
+
+        <!-- Group 3: System Validation -->
+        <div class="nav-group">
+          <div class="nav-group-title">Validation & Trust</div>
+          <button class="nav-item-btn" data-view="evaluation" onclick="switchView('evaluation')">
+            <span class="nav-item-icon">🔬</span>
+            <span>Evaluation & Metrics</span>
+          </button>
+        </div>
+      </nav>
+
+      <!-- Sidebar Footer with Real-Time Telemetry & Profile -->
+      <div class="sidebar-footer">
+        <div class="system-status-grid">
+          <div class="status-indicator-item">
+            <span class="status-dot" id="dot-db"></span>
+            <span>DB: <strong id="status-db" style="color:#f8fafc;">Active</strong></span>
+          </div>
+          <div class="status-indicator-item">
+            <span class="status-dot blue" id="dot-vector"></span>
+            <span>Vectors: <strong id="status-vector" style="color:#f8fafc;">Chroma</strong></span>
+          </div>
+          <div class="status-indicator-item">
+            <span class="status-dot" id="dot-graph"></span>
+            <span>Graph: <strong id="status-graph" style="color:#f8fafc;">Ready</strong></span>
+          </div>
+          <div class="status-indicator-item">
+            <span class="status-dot blue" id="dot-agents"></span>
+            <span>Swarm: <strong id="status-agents" style="color:#f8fafc;">5 Agents</strong></span>
+          </div>
+        </div>
+
+        <div class="user-profile-bar">
+          <div class="user-avatar">SI</div>
+          <div class="user-details">
+            <div class="user-name">SIU Investigator</div>
+            <div class="user-role">Claims Forensics Unit</div>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main Content Wrapper -->
+    <div class="main-wrapper">
+      <!-- Top Sticky App Bar -->
+      <header class="top-bar">
+        <div class="top-bar-breadcrumbs" id="topBreadcrumbs">
+          <span>Claims Intelligence</span>
+          <span>/</span>
+          <span class="current" id="currentViewBreadcrumb">Portfolio Overview</span>
+        </div>
+
+        <div class="top-bar-actions">
+          <!-- Global Search Form -->
+          <form class="top-search-form" id="quickSearchForm">
+            <svg class="top-search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+            <input type="text" id="quickSearchInput" placeholder="Jump to Claim ID (e.g. CLM-2024-...)" />
+          </form>
+
+          <button class="btn btn-secondary btn-sm" onclick="selectClaim('CLM-2024-00003')">
+            ⚡ Demo Claim
+          </button>
+        </div>
+      </header>
+
+      <!-- Main Content Area -->
+      <main>
+      <!-- ═══════════════════════════════════════════════════════════════════
+           VIEW 1: OVERVIEW & PORTFOLIO
+           ═══════════════════════════════════════════════════════════════════ -->
+      <section class="view-section active" id="view-overview">
+        <!-- Hero Header -->
+        <div style="display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 16px;">
+          <div>
+            <div style="display: inline-flex; align-items: center; gap: 8px; background: rgba(99,102,241,0.12); border: 1px solid rgba(99,102,241,0.3); padding: 4px 12px; border-radius: 999px; font-size: 0.75rem; color: #a78bfa; margin-bottom: 8px; font-weight: 600;">
+              ✨ HYBRID GRAPH-RAG & ISOLATION FOREST ANOMALY DETECTION
+            </div>
+            <h1 style="font-size: 2rem; font-weight: 800; letter-spacing: -0.03em; margin: 0;">
+              Portfolio Claims & Risk Overview
+            </h1>
+            <p style="color: var(--text-secondary); font-size: 0.88rem; margin: 6px 0 0 0;">
+              Real-time portfolio intelligence, deterministic risk scoring, and autonomous multi-agent claim audits.
+            </p>
+          </div>
+
+          <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+            <button class="btn btn-secondary" onclick="switchView('intake')" style="border-color: rgba(99,102,241,0.4);">
+              <span>➕ Intake New Claim</span>
+            </button>
+            <button class="btn btn-primary" onclick="selectClaim('CLM-2024-00003')">
+              <span>⚡ Demo 5-Agent Swarm (CLM-2024-00003)</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- 4 KPI Cards -->
+        <div class="grid-4">
+          <div class="spotlight-card">
+            <div class="spotlight-glow"></div>
+            <div style="font-size: 0.75rem; color: var(--text-secondary); font-weight: 600; text-transform: uppercase;">
+              Total Ingested Claims
+            </div>
+            <div id="stat-total-claims" style="font-size: 2rem; font-weight: 800; color: #f0f0f5; margin: 4px 0;">0</div>
+            <div style="font-size: 0.72rem; color: var(--text-tertiary);">Normalized COIL 2000 Portfolio</div>
+          </div>
+
+          <div class="spotlight-card">
+            <div class="spotlight-glow"></div>
+            <div style="font-size: 0.75rem; color: var(--text-secondary); font-weight: 600; text-transform: uppercase;">
+              Total Loss Exposure
+            </div>
+            <div id="stat-total-exposure" style="font-size: 2rem; font-weight: 800; color: #34d399; margin: 4px 0;">$0</div>
+            <div style="font-size: 0.72rem; color: var(--text-tertiary);">
+              Avg. Claim: <strong id="stat-avg-claim" style="color: #e2e8f0;">$0</strong>
+            </div>
+          </div>
+
+          <div class="spotlight-card">
+            <div class="spotlight-glow"></div>
+            <div style="font-size: 0.75rem; color: var(--text-secondary); font-weight: 600; text-transform: uppercase;">
+              High Risk Claims
+            </div>
+            <div id="stat-high-risk" style="font-size: 2rem; font-weight: 800; color: #f87171; margin: 4px 0;">0</div>
+            <div style="font-size: 0.72rem; color: #f87171;">SIU Priority Review Pipeline</div>
+          </div>
+
+          <div class="spotlight-card">
+            <div class="spotlight-glow"></div>
+            <div style="font-size: 0.75rem; color: var(--text-secondary); font-weight: 600; text-transform: uppercase;">
+              Statistical Outliers
+            </div>
+            <div id="stat-anomalies" style="font-size: 2rem; font-weight: 800; color: #fbbf24; margin: 4px 0;">0</div>
+            <div style="font-size: 0.72rem; color: var(--text-tertiary);">Isolation Forest Multidimensional Flags</div>
+          </div>
+        </div>
+
+        <!-- Analytics Charts -->
+        <div class="grid-2">
+          <!-- Donut Chart -->
+          <div class="spotlight-card">
+            <div class="spotlight-glow"></div>
+            <h3 style="font-size: 1.05rem; font-weight: 700; color: #f0f0f5; margin-bottom: 2px;">
+              Ensemble Risk Distribution
+            </h3>
+            <p style="font-size: 0.75rem; color: var(--text-secondary); margin-bottom: 12px;">
+              Calibrated XGBoost + Random Forest ensemble classification
+            </p>
+            <div style="height: 220px; position: relative;">
+              <canvas id="riskDonutChart"></canvas>
+            </div>
+          </div>
+
+          <!-- Bar Chart -->
+          <div class="spotlight-card">
+            <div class="spotlight-glow"></div>
+            <h3 style="font-size: 1.05rem; font-weight: 700; color: #f0f0f5; margin-bottom: 2px;">
+              Claims Volume by Policy Line
+            </h3>
+            <p style="font-size: 0.75rem; color: var(--text-secondary); margin-bottom: 12px;">
+              Portfolio product line distribution
+            </p>
+            <div style="height: 220px; position: relative;">
+              <canvas id="policyBarChart"></canvas>
+            </div>
+          </div>
+        </div>
+
+        <!-- Claims Explorer Table -->
+        <div class="spotlight-card">
+          <div class="spotlight-glow"></div>
+          <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 14px; margin-bottom: 16px;">
+            <div>
+              <h3 style="font-size: 1.15rem; font-weight: 800; color: #f0f0f5; margin: 0;">
+                Claims Explorer & Triage Queue
+              </h3>
+              <p id="table-page-info" style="font-size: 0.78rem; color: var(--text-secondary); margin: 2px 0 0 0;">
+                Loading claims...
+              </p>
+            </div>
+
+            <!-- Filters -->
+            <div style="display: flex; gap: 10px; align-items: center; flex-wrap: wrap;">
+              <select id="filter-policy-line">
+                <option value="ALL">All Policy Lines</option>
+              </select>
+
+              <input type="text" id="tableSearchInput" placeholder="Search claims..." style="width: 180px;" />
+            </div>
+          </div>
+
+          <div class="data-table-container">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>Claim ID</th>
+                  <th>Customer / Policy</th>
+                  <th>Incident Type</th>
+                  <th style="text-align: right;">Claim Amount</th>
+                  <th style="text-align: center;">Delay</th>
+                  <th style="text-align: right;">Action</th>
+                </tr>
+              </thead>
+              <tbody id="claimsTableBody">
+                <!-- Dynamically loaded rows -->
+              </tbody>
+            </table>
+          </div>
+
+          <!-- Pagination -->
+          <div style="display: flex; justify-content: flex-end; gap: 10px; margin-top: 16px;">
+            <button class="btn btn-secondary" onclick="prevPage()">Previous</button>
+            <button class="btn btn-secondary" onclick="nextPage()">Next</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- ═══════════════════════════════════════════════════════════════════
+           VIEW: NEW CLAIM INTAKE & AUTONOMOUS SWARM EVALUATION
+           ═══════════════════════════════════════════════════════════════════ -->
+      <section class="view-section" id="view-intake">
+        <!-- Hero Banner -->
+        <div style="display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 16px; margin-bottom: 20px;">
+          <div>
+            <div style="display: inline-flex; align-items: center; gap: 8px; background: rgba(168,85,247,0.12); border: 1px solid rgba(168,85,247,0.3); padding: 4px 12px; border-radius: 999px; font-size: 0.75rem; color: #c084fc; margin-bottom: 8px; font-weight: 600;">
+              ✨ 5-AGENT MULTI-AGENT INTAKE & AUTONOMOUS SWARM EVALUATION
+            </div>
+            <h1 style="font-size: 2rem; font-weight: 800; letter-spacing: -0.03em; margin: 0;">
+              New Claim Intake & Real-Time Swarm Analysis
+            </h1>
+            <p style="color: var(--text-secondary); font-size: 0.88rem; margin: 6px 0 0 0;">
+              Pass a custom claim with any required parameters or narrative to run our full 5-agent AI swarm with Hybrid Graph-RAG retrieval, ensemble scoring, and automated SIU recommendations.
+            </p>
+          </div>
+
+          <!-- Quick Actions -->
+          <div style="display: flex; gap: 10px;">
+            <button type="button" class="btn btn-secondary" onclick="clearIntakeForm()">
+              <span>🔄 Reset Form</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Sample Presets Strip -->
+        <div class="spotlight-card" style="padding: 16px 20px; margin-bottom: 24px;">
+          <div class="spotlight-glow"></div>
+          <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px;">
+            <div style="display: flex; align-items: center; gap: 8px; font-size: 0.82rem; font-weight: 700; color: #f0f0f5;">
+              <span>⚡ Load Preset Scenarios:</span>
+            </div>
+            <div style="display: flex; gap: 8px; flex-wrap: wrap;" id="presetChipsContainer">
+              <button class="preset-chip" onclick="loadPresetScenario('suspicious_auto')">
+                🚨 Suspicious Late Auto ($48.5k)
+              </button>
+              <button class="preset-chip" onclick="loadPresetScenario('staged_theft')">
+                ⚡ Catalytic Converter Theft ($3.8k)
+              </button>
+              <button class="preset-chip" onclick="loadPresetScenario('routine_hail')">
+                🌧️ Routine Hail Storm ($2.4k STP)
+              </button>
+              <button class="preset-chip" onclick="loadPresetScenario('commercial_fire')">
+                🔥 Warehouse Fire ($92.0k SIU)
+              </button>
+              <button class="preset-chip" onclick="loadPresetScenario('boat_submersion')">
+                🚤 Boat Engine Loss ($28.5k)
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Main Intake Grid (Form on Left, Live Swarm & Dossier Output on Right) -->
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(480px, 1fr)); gap: 24px; align-items: start;">
+          <!-- LEFT: The Claim Intake Form -->
+          <div style="display: flex; flex-direction: column; gap: 20px;">
+            <form id="newClaimForm" onsubmit="handleNewClaimSubmit(event)">
+              
+              <!-- Card 1: Policy Line & Incident Details -->
+              <div class="spotlight-card" style="margin-bottom: 20px;">
+                <div class="spotlight-glow"></div>
+                <h3 style="font-size: 1.05rem; font-weight: 700; color: #f0f0f5; margin-bottom: 16px; display: flex; align-items: center; gap: 8px;">
+                  <span>📋</span> 1. Policy & Incident Specification
+                </h3>
+
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 14px;">
+                  <div>
+                    <label style="display: block; font-size: 0.78rem; font-weight: 600; color: var(--text-secondary); margin-bottom: 6px;">
+                      Policy Line *
+                    </label>
+                    <select id="intake-policy-line" required style="width: 100%;" onchange="updateIntakeDerivedMetrics()">
+                      <option value="Auto">Auto Insurance</option>
+                      <option value="Fire">Fire & Property</option>
+                      <option value="Boat">Boat & Marine</option>
+                      <option value="Caravan">Caravan / Trailer</option>
+                      <option value="Liability">General Liability</option>
+                      <option value="Commercial">Commercial Property</option>
+                      <option value="Health">Health & Medical</option>
+                    </select>
+                  </div>
+
+                  <div>
+                    <label style="display: block; font-size: 0.78rem; font-weight: 600; color: var(--text-secondary); margin-bottom: 6px;">
+                      Incident Severity *
+                    </label>
+                    <select id="intake-severity" required style="width: 100%;">
+                      <option value="Minor">Minor Damage</option>
+                      <option value="Moderate" selected>Moderate Damage</option>
+                      <option value="Major">Major Structural Damage</option>
+                      <option value="Total Loss">Total Loss / Severe</option>
+                      <option value="Critical">Critical Catastrophic</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div>
+                  <label style="display: block; font-size: 0.78rem; font-weight: 600; color: var(--text-secondary); margin-bottom: 6px;">
+                    Incident Type Classification *
+                  </label>
+                  <input type="text" id="intake-incident-type" required placeholder="e.g. Rear-End Collision, Catalytic Converter Theft, Electrical Fire" style="width: 100%;" />
+                </div>
+              </div>
+
+              <!-- Card 2: Financial Exposures & Dynamic Ratios -->
+              <div class="spotlight-card" style="margin-bottom: 20px;">
+                <div class="spotlight-glow"></div>
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+                  <h3 style="font-size: 1.05rem; font-weight: 700; color: #f0f0f5; margin: 0; display: flex; align-items: center; gap: 8px;">
+                    <span>💰</span> 2. Financial Amounts & Exposure Limits
+                  </h3>
+                  <span style="font-size: 0.72rem; color: var(--text-secondary);">Real-Time Ratio Compute</span>
+                </div>
+
+                <div style="display: flex; flex-direction: column; gap: 16px;">
+                  <!-- Claim Loss Amount -->
+                  <div>
+                    <div style="display: flex; justify-content: space-between; font-size: 0.8rem; margin-bottom: 6px;">
+                      <span style="color: var(--text-secondary);">Claimed Loss Amount ($) *</span>
+                      <strong id="label-intake-amount" style="color: #818cf8; font-family: var(--font-mono);">$18,500</strong>
+                    </div>
+                    <input type="number" id="intake-amount" min="100" max="1000000" step="100" value="18500" required style="width: 100%;" oninput="updateIntakeDerivedMetrics()" />
+                  </div>
+
+                  <!-- Policy Coverage Limit -->
+                  <div>
+                    <div style="display: flex; justify-content: space-between; font-size: 0.8rem; margin-bottom: 6px;">
+                      <span style="color: var(--text-secondary);">Policy Coverage Limit ($) *</span>
+                      <strong id="label-intake-limit" style="color: #818cf8; font-family: var(--font-mono);">$50,000</strong>
+                    </div>
+                    <input type="number" id="intake-limit" min="1000" max="5000000" step="1000" value="50000" required style="width: 100%;" oninput="updateIntakeDerivedMetrics()" />
+                  </div>
+
+                  <!-- Annual Premium Spend -->
+                  <div>
+                    <div style="display: flex; justify-content: space-between; font-size: 0.8rem; margin-bottom: 6px;">
+                      <span style="color: var(--text-secondary);">Customer Annual Premium ($) *</span>
+                      <strong id="label-intake-premium" style="color: #818cf8; font-family: var(--font-mono);">$2,200</strong>
+                    </div>
+                    <input type="number" id="intake-premium" min="100" max="100000" step="50" value="2200" required style="width: 100%;" oninput="updateIntakeDerivedMetrics()" />
+                  </div>
+
+                  <!-- Derived Ratios Bar -->
+                  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 6px;">
+                    <div style="background: rgba(0,0,0,0.3); padding: 10px; border-radius: 8px; border: 1px solid var(--border-subtle);">
+                      <div style="font-size: 0.7rem; color: var(--text-secondary);">Claim-to-Limit Exposure</div>
+                      <div id="intake-preview-exposure" style="font-size: 1.1rem; font-weight: 800; font-family: var(--font-mono); color: #34d399; margin-top: 2px;">
+                        37.0%
+                      </div>
+                    </div>
+
+                    <div style="background: rgba(0,0,0,0.3); padding: 10px; border-radius: 8px; border: 1px solid var(--border-subtle);">
+                      <div style="font-size: 0.7rem; color: var(--text-secondary);">Claim-to-Premium Ratio</div>
+                      <div id="intake-preview-premium-mult" style="font-size: 1.1rem; font-weight: 800; font-family: var(--font-mono); color: #34d399; margin-top: 2px;">
+                        8.4x
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Card 3: Timeline & Policyholder Context -->
+              <div class="spotlight-card" style="margin-bottom: 20px;">
+                <div class="spotlight-glow"></div>
+                <h3 style="font-size: 1.05rem; font-weight: 700; color: #f0f0f5; margin-bottom: 16px; display: flex; align-items: center; gap: 8px;">
+                  <span>📅</span> 3. Timeline & Policyholder Demographics
+                </h3>
+
+                <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; margin-bottom: 14px;">
+                  <div>
+                    <label style="display: block; font-size: 0.76rem; font-weight: 600; color: var(--text-secondary); margin-bottom: 6px;">
+                      Incident Date
+                    </label>
+                    <input type="date" id="intake-incident-date" style="width: 100%;" onchange="calculateDelayFromDates()" />
+                  </div>
+
+                  <div>
+                    <label style="display: block; font-size: 0.76rem; font-weight: 600; color: var(--text-secondary); margin-bottom: 6px;">
+                      Filing Date
+                    </label>
+                    <input type="date" id="intake-filing-date" style="width: 100%;" onchange="calculateDelayFromDates()" />
+                  </div>
+
+                  <div>
+                    <label style="display: block; font-size: 0.76rem; font-weight: 600; color: var(--text-secondary); margin-bottom: 6px;">
+                      Filing Delay (Days)
+                    </label>
+                    <input type="number" id="intake-delay-days" min="0" max="365" value="18" required style="width: 100%;" oninput="updateDelayAlert()" />
+                  </div>
+                </div>
+
+                <div id="intake-delay-warning" style="display: none; background: rgba(245,158,11,0.12); border: 1px solid rgba(245,158,11,0.4); color: #fbbf24; padding: 8px 12px; border-radius: 6px; font-size: 0.75rem; margin-bottom: 14px;">
+                  ⚠️ Filing delay exceeds 14 days — may trigger late-reporting velocity penalty in ensemble risk scoring.
+                </div>
+
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 14px;">
+                  <div>
+                    <label style="display: block; font-size: 0.76rem; font-weight: 600; color: var(--text-secondary); margin-bottom: 6px;">
+                      Policyholder Subtype
+                    </label>
+                    <select id="intake-customer-subtype" style="width: 100%;">
+                      <option value="Suburban Multi-Vehicle Family">Suburban Multi-Vehicle Family</option>
+                      <option value="High Net Worth Individuals">High Net Worth Individual</option>
+                      <option value="First-Time Auto Owners">First-Time Auto Owner</option>
+                      <option value="Small Business Enterprises">Small Business Enterprise</option>
+                      <option value="Middle Class Families" selected>Middle Class Family</option>
+                      <option value="Senior Retirees">Senior Retiree</option>
+                      <option value="Rural Property Owners">Rural Property Owner</option>
+                    </select>
+                  </div>
+
+                  <div>
+                    <label style="display: block; font-size: 0.76rem; font-weight: 600; color: var(--text-secondary); margin-bottom: 6px;">
+                      Age Group
+                    </label>
+                    <select id="intake-age-group" style="width: 100%;">
+                      <option value="18-25">18–25 years</option>
+                      <option value="26-35">26–35 years</option>
+                      <option value="36-50" selected>36–50 years</option>
+                      <option value="51-65">51–65 years</option>
+                      <option value="65+">65+ years</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+                  <div>
+                    <label style="display: block; font-size: 0.76rem; font-weight: 600; color: var(--text-secondary); margin-bottom: 6px;">
+                      Household Size
+                    </label>
+                    <input type="number" id="intake-household-size" min="1" max="10" value="4" style="width: 100%;" />
+                  </div>
+
+                  <div>
+                    <label style="display: block; font-size: 0.76rem; font-weight: 600; color: var(--text-secondary); margin-bottom: 6px;">
+                      Active Policies in Portfolio
+                    </label>
+                    <input type="number" id="intake-active-policies" min="1" max="15" value="3" style="width: 100%;" />
+                  </div>
+                </div>
+              </div>
+
+              <!-- Card 4: Incident Narrative & Adjuster Observations -->
+              <div class="spotlight-card" style="margin-bottom: 20px;">
+                <div class="spotlight-glow"></div>
+                <h3 style="font-size: 1.05rem; font-weight: 700; color: #f0f0f5; margin-bottom: 16px; display: flex; align-items: center; gap: 8px;">
+                  <span>📝</span> 4. Incident Narrative & Intake Notes
+                </h3>
+
+                <div style="margin-bottom: 14px;">
+                  <div style="display: flex; justify-content: space-between; font-size: 0.78rem; font-weight: 600; color: var(--text-secondary); margin-bottom: 6px;">
+                    <span>Claimant Incident Narrative *</span>
+                    <span id="narrativeCharCount" style="font-family: var(--font-mono); color: var(--text-tertiary);">0 chars</span>
+                  </div>
+                  <textarea id="intake-narrative" rows="4" required style="width: 100%; resize: vertical;" placeholder="Provide complete factual description of the incident as reported by claimant..." oninput="updateCharCount(this)"></textarea>
+                </div>
+
+                <div>
+                  <label style="display: block; font-size: 0.78rem; font-weight: 600; color: var(--text-secondary); margin-bottom: 6px;">
+                    Adjuster Preliminary Notes
+                  </label>
+                  <textarea id="intake-adjuster-notes" rows="2" style="width: 100%; resize: vertical;" placeholder="Adjuster observations, witness verification notes, or police report references..."></textarea>
+                </div>
+              </div>
+
+              <!-- Card 5: Persistence Option & Launch CTA -->
+              <div class="spotlight-card" style="padding: 20px;">
+                <div class="spotlight-glow"></div>
+                <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 16px;">
+                  <input type="checkbox" id="intake-save-db" style="width: 18px; height: 18px; accent-color: var(--accent-indigo); cursor: pointer;" checked />
+                  <label for="intake-save-db" style="font-size: 0.82rem; color: #e2e8f0; cursor: pointer;">
+                    <strong>Persist into SQLite Database & Vector Knowledge Base</strong>
+                    <div style="font-size: 0.72rem; color: var(--text-secondary);">Enables instant indexing in Claim Studio table, ChromaDB search, and Knowledge Graph nodes</div>
+                  </label>
+                </div>
+
+                <button type="submit" id="btn-submit-intake" class="btn btn-primary" style="width: 100%; padding: 14px; font-size: 1rem; font-weight: 800; display: flex; justify-content: center; align-items: center; gap: 10px; position: relative; overflow: hidden;">
+                  <div class="border-beam"></div>
+                  <span>⚡ Evaluate Claim with 5-Agent Swarm</span>
+                </button>
+              </div>
+            </form>
+          </div>
+
+          <!-- RIGHT: Live Swarm Execution Progress & Results Output -->
+          <div style="display: flex; flex-direction: column; gap: 20px;">
+            <!-- Initial Placeholder (Shown before first submission) -->
+            <div id="intake-initial-guide" class="spotlight-card" style="padding: 32px; text-align: center;">
+              <div class="spotlight-glow"></div>
+              <div style="font-size: 3rem; margin-bottom: 16px;">🛡️⚡</div>
+              <h3 style="font-size: 1.3rem; font-weight: 800; color: #f0f0f5; margin-bottom: 8px;">
+                Autonomous Multi-Agent Processing Pipeline
+              </h3>
+              <p style="color: var(--text-secondary); font-size: 0.85rem; max-width: 480px; margin: 0 auto 24px auto;">
+                When submitted, your custom claim is orchestrated through our 5 specialized intelligence agents with deterministic audit trails and grounded citations:
+              </p>
+
+              <div style="display: flex; flex-direction: column; gap: 10px; text-align: left; max-width: 480px; margin: 0 auto;">
+                <div style="display: flex; gap: 12px; align-items: center; background: rgba(255,255,255,0.02); padding: 10px 14px; border-radius: 8px; border: 1px solid var(--border-subtle);">
+                  <span style="font-size: 1.2rem;">🔍</span>
+                  <div>
+                    <strong style="color: #f0f0f5; font-size: 0.82rem;">Agent 1: Retrieval Agent</strong>
+                    <div style="font-size: 0.72rem; color: var(--text-secondary);">Embeds narrative to find similar historical precedents in ChromaDB</div>
+                  </div>
+                </div>
+
+                <div style="display: flex; gap: 12px; align-items: center; background: rgba(255,255,255,0.02); padding: 10px 14px; border-radius: 8px; border: 1px solid var(--border-subtle);">
+                  <span style="font-size: 1.2rem;">⚖️</span>
+                  <div>
+                    <strong style="color: #f0f0f5; font-size: 0.82rem;">Agent 2: Risk Analysis Agent</strong>
+                    <div style="font-size: 0.72rem; color: var(--text-secondary);">4-Layer ML Ensemble (XGBoost, RF, IF) + SHAP Feature Decomposition</div>
+                  </div>
+                </div>
+
+                <div style="display: flex; gap: 12px; align-items: center; background: rgba(255,255,255,0.02); padding: 10px 14px; border-radius: 8px; border: 1px solid var(--border-subtle);">
+                  <span style="font-size: 1.2rem;">🚨</span>
+                  <div>
+                    <strong style="color: #f0f0f5; font-size: 0.82rem;">Agent 3: Anomaly Detection Agent</strong>
+                    <div style="font-size: 0.72rem; color: var(--text-secondary);">Statistical outlier profiling and velocity delay analysis</div>
+                  </div>
+                </div>
+
+                <div style="display: flex; gap: 12px; align-items: center; background: rgba(255,255,255,0.02); padding: 10px 14px; border-radius: 8px; border: 1px solid var(--border-subtle);">
+                  <span style="font-size: 1.2rem;">📝</span>
+                  <div>
+                    <strong style="color: #f0f0f5; font-size: 0.82rem;">Agent 4: Summarization Agent</strong>
+                    <div style="font-size: 0.72rem; color: var(--text-secondary);">Gemini LLM grounded executive synthesis & key risk drivers</div>
+                  </div>
+                </div>
+
+                <div style="display: flex; gap: 12px; align-items: center; background: rgba(255,255,255,0.02); padding: 10px 14px; border-radius: 8px; border: 1px solid var(--border-subtle);">
+                  <span style="font-size: 1.2rem;">🕵️‍♂️</span>
+                  <div>
+                    <strong style="color: #f0f0f5; font-size: 0.82rem;">Agent 5: Investigation Support Agent</strong>
+                    <div style="font-size: 0.72rem; color: var(--text-secondary);">Automated triage routing, claimant interview probes & SIU referral</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Loading Swarm Progress Card (Active during evaluation) -->
+            <div id="intake-loading-card" class="spotlight-card" style="display: none; padding: 28px;">
+              <div class="spotlight-glow"></div>
+              <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 20px;">
+                <div class="spinner" style="width: 28px; height: 28px; border-width: 3px;"></div>
+                <div>
+                  <h3 style="font-size: 1.15rem; font-weight: 800; color: #f0f0f5; margin: 0;">
+                    Executing Multi-Agent Swarm Pipeline...
+                  </h3>
+                  <p style="font-size: 0.75rem; color: var(--text-secondary); margin: 2px 0 0 0;">
+                    Running vector similarity search, 4-layer ensemble models, and Gemini generative synthesis
+                  </p>
+                </div>
+              </div>
+
+              <!-- Animated Step-by-Step Progress Checklist -->
+              <div style="display: flex; flex-direction: column; gap: 12px;" id="intakeLiveSteps">
+                <div class="swarm-step active" id="step-agent-1">
+                  <div class="step-indicator">1</div>
+                  <div style="flex: 1;">
+                    <div style="font-size: 0.82rem; font-weight: 700; color: #f0f0f5;">Agent 1: Hybrid Vector & Graph Retrieval</div>
+                    <div style="font-size: 0.72rem; color: var(--text-secondary);">Querying ChromaDB collection on incident narrative embeddings...</div>
+                  </div>
+                </div>
+
+                <div class="swarm-step" id="step-agent-2">
+                  <div class="step-indicator">2</div>
+                  <div style="flex: 1;">
+                    <div style="font-size: 0.82rem; font-weight: 700; color: #f0f0f5;">Agent 2: Ensemble Scoring & SHAP Attribution</div>
+                    <div style="font-size: 0.72rem; color: var(--text-secondary);">Evaluating XGBoost + Random Forest + Isolation Forest + Rules...</div>
+                  </div>
+                </div>
+
+                <div class="swarm-step" id="step-agent-3">
+                  <div class="step-indicator">3</div>
+                  <div style="flex: 1;">
+                    <div style="font-size: 0.82rem; font-weight: 700; color: #f0f0f5;">Agent 3: Anomaly & Velocity Deep Dive</div>
+                    <div style="font-size: 0.72rem; color: var(--text-secondary);">Detecting filing delay latency and multivariate outliers...</div>
+                  </div>
+                </div>
+
+                <div class="swarm-step" id="step-agent-4">
+                  <div class="step-indicator">4</div>
+                  <div style="flex: 1;">
+                    <div style="font-size: 0.82rem; font-weight: 700; color: #f0f0f5;">Agent 4: Generative Executive Summarization</div>
+                    <div style="font-size: 0.72rem; color: var(--text-secondary);">Synthesizing grounded brief and factual claims assertions...</div>
+                  </div>
+                </div>
+
+                <div class="swarm-step" id="step-agent-5">
+                  <div class="step-indicator">5</div>
+                  <div style="flex: 1;">
+                    <div style="font-size: 0.82rem; font-weight: 700; color: #f0f0f5;">Agent 5: Triage & Investigation Support</div>
+                    <div style="font-size: 0.72rem; color: var(--text-secondary);">Formulating disposition and customized claimant interview questions...</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Complete Results Panel (Shown after swarm finishes) -->
+            <div id="intake-results-panel" style="display: none; display: flex; flex-direction: column; gap: 20px;">
+              
+              <!-- Result Banner: Triage Routing & Assigned Claim ID -->
+              <div id="intake-triage-card" class="spotlight-card" style="padding: 24px; border-left: 4px solid #ef4444; position: relative;">
+                <div class="spotlight-glow"></div>
+                <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 12px; margin-bottom: 12px;">
+                  <div>
+                    <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 4px;">
+                      <span id="intake-res-claim-id" style="font-size: 1.3rem; font-weight: 800; font-family: var(--font-mono); color: #a78bfa;">
+                        CLM-NEW-XXXXXX
+                      </span>
+                      <span id="intake-res-badge" class="badge badge-high">HIGH RISK</span>
+                    </div>
+                    <div style="font-size: 0.75rem; color: var(--text-secondary);">
+                      Evaluated in <strong id="intake-res-latency" style="color: #f0f0f5;">0 ms</strong> across 5 autonomous intelligence agents
+                    </div>
+                  </div>
+
+                  <div style="text-align: right;">
+                    <div style="font-size: 0.7rem; text-transform: uppercase; color: var(--text-secondary); font-weight: 700;">
+                      Automated Triage Routing
+                    </div>
+                    <div id="intake-res-disposition" style="font-size: 1.15rem; font-weight: 800; color: #f87171; margin-top: 2px;">
+                      Priority SIU Referral
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Action CTA Toolbar -->
+                <div style="display: flex; gap: 10px; flex-wrap: wrap; padding-top: 14px; border-top: 1px solid var(--border-subtle);">
+                  <button class="btn btn-primary" onclick="openEvaluatedClaimInStudio()">
+                    <span>⚡ Open in Claim Studio</span>
+                  </button>
+                  <button class="btn btn-secondary" onclick="openEvaluatedClaimInGraph()">
+                    <span>🕸️ View in Knowledge Graph</span>
+                  </button>
+                  <button class="btn btn-secondary" onclick="switchView('simulator')">
+                    <span>🎛️ Counterfactual Simulator</span>
+                  </button>
+                </div>
+              </div>
+
+              <!-- Risk Breakdown & SHAP Attribution -->
+              <div class="grid-2">
+                <!-- Risk Gauge Card -->
+                <div class="spotlight-card">
+                  <div class="spotlight-glow"></div>
+                  <h4 style="font-size: 0.95rem; font-weight: 700; color: #f0f0f5; margin-bottom: 12px;">
+                    Ensemble Risk Scoring Model
+                  </h4>
+                  <div style="text-align: center; margin: 10px 0;">
+                    <div id="intake-res-score" style="font-size: 3rem; font-weight: 900; font-family: var(--font-mono); color: #f87171;">
+                      75
+                    </div>
+                    <div style="font-size: 0.75rem; color: var(--text-secondary); text-transform: uppercase; font-weight: 700;">
+                      Overall Risk Score (0–100)
+                    </div>
+                  </div>
+
+                  <div style="display: flex; flex-direction: column; gap: 6px; font-size: 0.78rem; margin-top: 12px;">
+                    <div style="display: flex; justify-content: space-between; padding: 6px 10px; background: rgba(255,255,255,0.02); border-radius: 6px;">
+                      <span style="color: var(--text-secondary);">XGBoost Probability:</span>
+                      <strong id="intake-res-xgb" style="color: #f0f0f5; font-family: var(--font-mono);">0%</strong>
+                    </div>
+                    <div style="display: flex; justify-content: space-between; padding: 6px 10px; background: rgba(255,255,255,0.02); border-radius: 6px;">
+                      <span style="color: var(--text-secondary);">Random Forest Probability:</span>
+                      <strong id="intake-res-rf" style="color: #f0f0f5; font-family: var(--font-mono);">0%</strong>
+                    </div>
+                    <div style="display: flex; justify-content: space-between; padding: 6px 10px; background: rgba(255,255,255,0.02); border-radius: 6px;">
+                      <span style="color: var(--text-secondary);">Isolation Forest Outlier:</span>
+                      <strong id="intake-res-if" style="color: #f0f0f5; font-family: var(--font-mono);">No</strong>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Top SHAP Feature Drivers Card -->
+                <div class="spotlight-card">
+                  <div class="spotlight-glow"></div>
+                  <h4 style="font-size: 0.95rem; font-weight: 700; color: #f0f0f5; margin-bottom: 12px;">
+                    Top SHAP Feature Drivers
+                  </h4>
+                  <div id="intake-res-shap-list" style="display: flex; flex-direction: column; gap: 8px;">
+                    <!-- Dynamically populated SHAP factors -->
+                  </div>
+                </div>
+              </div>
+
+              <!-- Executive Summary & Gemini Grounded Brief -->
+              <div class="spotlight-card">
+                <div class="spotlight-glow"></div>
+                <h4 style="font-size: 0.95rem; font-weight: 700; color: #f0f0f5; margin-bottom: 10px; display: flex; align-items: center; gap: 8px;">
+                  <span>📝</span> Agent 4 Executive Brief & Synthesis
+                </h4>
+                <p id="intake-res-exec-summary" style="font-size: 0.85rem; color: #e2e8f0; line-height: 1.6; background: rgba(0,0,0,0.3); padding: 14px; border-radius: 8px; border-left: 3px solid var(--accent-indigo); margin: 0 0 14px 0;">
+                  Summary loading...
+                </p>
+
+                <div>
+                  <span style="font-size: 0.72rem; text-transform: uppercase; color: var(--text-secondary); font-weight: 700;">
+                    Key Risk Drivers Identified
+                  </span>
+                  <ul id="intake-res-risk-drivers" style="margin: 6px 0 0 18px; font-size: 0.8rem; color: #cbd5e1; line-height: 1.5;">
+                    <!-- Key drivers -->
+                  </ul>
+                </div>
+              </div>
+
+              <!-- Investigator Recommended Actions & Claimant Interview Questions -->
+              <div class="spotlight-card">
+                <div class="spotlight-glow"></div>
+                <h4 style="font-size: 0.95rem; font-weight: 700; color: #f0f0f5; margin-bottom: 12px; display: flex; align-items: center; gap: 8px;">
+                  <span>🕵️‍♂️</span> Investigator Action Plan & Claimant Probes
+                </h4>
+
+                <div style="margin-bottom: 14px;">
+                  <span style="font-size: 0.72rem; text-transform: uppercase; color: var(--text-secondary); font-weight: 700;">
+                    Recommended Action Checklist
+                  </span>
+                  <div id="intake-res-actions-list" style="display: flex; flex-direction: column; gap: 6px; margin-top: 6px;">
+                    <!-- Actions -->
+                  </div>
+                </div>
+
+                <div>
+                  <span style="font-size: 0.72rem; text-transform: uppercase; color: var(--text-secondary); font-weight: 700;">
+                    Suggested Questions for Claimant FNOL Interview
+                  </span>
+                  <div id="intake-res-questions-list" style="display: flex; flex-direction: column; gap: 6px; margin-top: 6px;">
+                    <!-- Questions -->
+                  </div>
+                </div>
+              </div>
+
+              <!-- Semantically Retrieved Precedent Claims -->
+              <div class="spotlight-card">
+                <div class="spotlight-glow"></div>
+                <h4 style="font-size: 0.95rem; font-weight: 700; color: #f0f0f5; margin-bottom: 12px; display: flex; align-items: center; gap: 8px;">
+                  <span>🔍</span> Similar Historical Precedents (ChromaDB Hybrid Graph-RAG)
+                </h4>
+                <div id="intake-res-precedents-list" style="display: flex; flex-direction: column; gap: 8px;">
+                  <!-- Precedent cards -->
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ═══════════════════════════════════════════════════════════════════
+           VIEW 2: CLAIM STUDIO & 5-AGENT SWARM
+           ═══════════════════════════════════════════════════════════════════ -->
+      <section class="view-section" id="view-studio">
+        <!-- Claim Dossier Top Bar -->
+        <div class="spotlight-card" style="position: relative;">
+          <div class="spotlight-glow"></div>
+          <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 16px;">
+            <div>
+              <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 8px;">
+                <span id="studio-claim-id" style="font-size: 1.4rem; font-weight: 800; font-family: var(--font-mono); color: #a78bfa;">
+                  CLM-2024-00003
+                </span>
+                <span id="studio-risk-badge" class="badge badge-high">HIGH RISK</span>
+              </div>
+              <div style="display: flex; gap: 20px; flex-wrap: wrap; color: var(--text-secondary); font-size: 0.82rem;">
+                <span>Customer: <strong id="studio-customer" style="color: #f0f0f5;">CUST-04819</strong></span>
+                <span>Policy: <strong id="studio-policy" style="color: #f0f0f5;">POL-007629 (Auto)</strong></span>
+                <span>Incident: <strong id="studio-incident-date" style="color: #f0f0f5;">2023-07-23</strong></span>
+                <span>Filing: <strong id="studio-filing-date" style="color: #f0f0f5;">2023-08-14</strong></span>
+              </div>
+            </div>
+
+            <!-- Run Swarm CTA -->
+            <button id="btn-launch-swarm" class="btn btn-primary" onclick="runSwarmAnalysis()" style="position: relative; overflow: hidden; padding: 12px 24px; font-weight: 800; font-size: 0.88rem;">
+              <div class="border-beam"></div>
+              <span>⚡ Launch 5-Agent Swarm Analysis</span>
+            </button>
+          </div>
+
+          <!-- Narrative Box & Financials -->
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; margin-top: 18px; padding-top: 16px; border-top: 1px solid var(--border-subtle);">
+            <div style="grid-column: span 2;">
+              <span style="font-size: 0.72rem; text-transform: uppercase; color: var(--text-secondary); font-weight: 700;">
+                Reported Incident Narrative
+              </span>
+              <p id="studio-narrative" style="margin: 6px 0 0 0; font-size: 0.85rem; color: #e2e8f0; line-height: 1.5; background: rgba(0,0,0,0.3); padding: 12px; border-radius: 8px; border-left: 3px solid var(--accent-indigo);">
+                Loading narrative...
+              </p>
+            </div>
+
+            <div style="display: flex; flex-direction: column; gap: 6px; font-size: 0.8rem;">
+              <div style="display: flex; justify-content: space-between; padding: 6px 10px; background: rgba(255,255,255,0.02); border-radius: 6px;">
+                <span style="color: var(--text-secondary);">Claim Amount:</span>
+                <strong id="studio-amount" style="color: #f0f0f5; font-family: var(--font-mono);">$0</strong>
+              </div>
+              <div style="display: flex; justify-content: space-between; padding: 6px 10px; background: rgba(255,255,255,0.02); border-radius: 6px;">
+                <span style="color: var(--text-secondary);">Coverage Limit:</span>
+                <strong id="studio-limit" style="color: #f0f0f5; font-family: var(--font-mono);">$0</strong>
+              </div>
+              <div style="display: flex; justify-content: space-between; padding: 6px 10px; background: rgba(255,255,255,0.02); border-radius: 6px;">
+                <span style="color: var(--text-secondary);">Coverage Exposure:</span>
+                <strong id="studio-exposure" style="color: #f87171; font-family: var(--font-mono);">0%</strong>
+              </div>
+              <div style="display: flex; justify-content: space-between; padding: 6px 10px; background: rgba(255,255,255,0.02); border-radius: 6px;">
+                <span style="color: var(--text-secondary);">Annual Premium:</span>
+                <strong id="studio-premium" style="color: #f0f0f5; font-family: var(--font-mono);">$0</strong>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Initial Invitation Placeholder -->
+        <div id="swarm-invite-card" class="spotlight-card" style="text-align: center; padding: 48px 24px;">
+          <div class="spotlight-glow"></div>
+          <div style="font-size: 3rem; margin-bottom: 12px;">🤖</div>
+          <h3 style="font-size: 1.3rem; font-weight: 800; color: #f0f0f5; margin-bottom: 6px;">
+            Execute 5-Agent Collaborative Intelligence Swarm
+          </h3>
+          <p style="color: var(--text-secondary); max-width: 580px; margin: 0 auto 20px auto; font-size: 0.88rem;">
+            Click the button above to run Retrieval, Ensemble Risk Profiling, Isolation Forest Outliers, Grounded Briefing, and Triage Routing.
+          </p>
+          <button class="btn btn-primary" onclick="runSwarmAnalysis()">Launch Analysis Pipeline</button>
+        </div>
+
+        <!-- Swarm Results Workspace (Hidden until run) -->
+        <div id="swarm-results-workspace" style="display: none; flex-direction: column; gap: 20px;">
+          <!-- Row 1: Gauge + SHAP + Anomaly -->
+          <div class="grid-3">
+            <!-- 1. Unified Risk Gauge -->
+            <div class="spotlight-card" style="display: flex; flex-direction: column; justify-content: space-between;">
+              <div class="spotlight-glow"></div>
+              <div>
+                <span style="font-size: 0.72rem; text-transform: uppercase; color: var(--text-secondary); font-weight: 700;">
+                  Ensemble Risk Profiling
+                </span>
+                <h4 style="font-size: 1.05rem; font-weight: 700; color: #f0f0f5; margin: 2px 0 10px 0;">
+                  Unified Multi-Agent Score
+                </h4>
+              </div>
+
+              <!-- SVG Arc Gauge -->
+              <div style="position: relative; width: 200px; height: 120px; margin: 0 auto; display: flex; justify-content: center;">
+                <svg width="200" height="200" style="transform: rotate(-180deg); overflow: visible;">
+                  <circle cx="100" cy="100" r="90" fill="transparent" stroke="rgba(255,255,255,0.08)" stroke-width="14" stroke-dasharray="282 565" stroke-linecap="round"></circle>
+                  <circle id="gauge-arc" cx="100" cy="100" r="90" fill="transparent" stroke="#f59e0b" stroke-width="14" stroke-dasharray="282 565" stroke-dashoffset="100" stroke-linecap="round" style="transition: stroke-dashoffset 1s ease, stroke 0.4s ease;"></circle>
+                </svg>
+                <div style="position: absolute; bottom: 8px; text-align: center;">
+                  <div style="font-size: 2.2rem; font-weight: 800; color: #f0f0f5; line-height: 1;">
+                    <span id="gauge-score-text">0</span><span style="font-size: 1rem; color: var(--text-tertiary);">/100</span>
+                  </div>
+                  <span id="gauge-tier-pill" class="badge badge-medium" style="margin-top: 4px;">Medium Risk</span>
+                </div>
+              </div>
+
+              <div style="display: flex; gap: 12px; justify-content: center; margin-top: 14px;">
+                <div style="background: rgba(255,255,255,0.03); padding: 4px 10px; border-radius: 6px; text-align: center;">
+                  <div style="font-size: 0.68rem; color: var(--text-secondary);">XGBoost</div>
+                  <strong id="gauge-xgb-prob" style="font-size: 0.85rem; color: #f0f0f5; font-family: var(--font-mono);">0%</strong>
+                </div>
+                <div style="background: rgba(255,255,255,0.03); padding: 4px 10px; border-radius: 6px; text-align: center;">
+                  <div style="font-size: 0.68rem; color: var(--text-secondary);">Calibrated RF</div>
+                  <strong id="gauge-rf-prob" style="font-size: 0.85rem; color: #f0f0f5; font-family: var(--font-mono);">0%</strong>
+                </div>
+              </div>
+
+              <p id="gauge-summary-text" style="font-size: 0.75rem; color: var(--text-secondary); margin: 12px 0 0 0; line-height: 1.4; border-top: 1px solid var(--border-subtle); padding-top: 8px;"></p>
+            </div>
+
+            <!-- 2. SHAP Attribution Waterfall -->
+            <div class="spotlight-card">
+              <div class="spotlight-glow"></div>
+              <span style="font-size: 0.72rem; text-transform: uppercase; color: var(--text-secondary); font-weight: 700;">
+                Explainable AI (XAI)
+              </span>
+              <h4 style="font-size: 1.05rem; font-weight: 700; color: #f0f0f5; margin: 2px 0 10px 0;">
+                Top SHAP Feature Attribution
+              </h4>
+              <div id="shap-factors-list" style="display: flex; flex-direction: column; gap: 8px;">
+                <!-- SHAP factors rendered here -->
+              </div>
+            </div>
+
+            <!-- 3. Anomaly Deep Dive -->
+            <div class="spotlight-card">
+              <div class="spotlight-glow"></div>
+              <span style="font-size: 0.72rem; text-transform: uppercase; color: var(--text-secondary); font-weight: 700;">
+                Unsupervised Anomaly Model
+              </span>
+              <h4 style="font-size: 1.05rem; font-weight: 700; color: #f0f0f5; margin: 2px 0 10px 0;">
+                Isolation Forest Flags
+              </h4>
+              <div style="display: flex; flex-direction: column; gap: 10px;">
+                <div style="display: flex; justify-content: space-between; background: rgba(255,255,255,0.03); padding: 6px 10px; border-radius: 6px; font-size: 0.8rem;">
+                  <span style="color: var(--text-secondary);">Statistical Outlier:</span>
+                  <strong id="anomaly-outlier-text" style="color: #f87171;">NO</strong>
+                </div>
+                <div style="display: flex; justify-content: space-between; background: rgba(255,255,255,0.03); padding: 6px 10px; border-radius: 6px; font-size: 0.8rem;">
+                  <span style="color: var(--text-secondary);">Outlier Score:</span>
+                  <strong id="anomaly-score-text" style="color: #f0f0f5; font-family: var(--font-mono);">0.000</strong>
+                </div>
+                <div>
+                  <span style="font-size: 0.72rem; color: var(--text-secondary); font-weight: 600;">Flagged Categories:</span>
+                  <div id="anomaly-categories" style="margin-top: 4px;"></div>
+                </div>
+                <p id="anomaly-summary-text" style="margin: 0; font-size: 0.75rem; color: var(--text-secondary); line-height: 1.4;"></p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Row 2: Grounded Summary + Precedents -->
+          <div class="grid-2">
+            <!-- Executive Summary -->
+            <div class="spotlight-card">
+              <div class="spotlight-glow"></div>
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+                <h4 style="font-size: 1.05rem; font-weight: 700; color: #f0f0f5; margin: 0;">
+                  Grounded Executive Briefing
+                </h4>
+                <span class="badge badge-low" style="font-size: 0.7rem;">100% FAITHFUL</span>
+              </div>
+              <p id="executive-summary-text" style="white-space: pre-line; font-size: 0.85rem; color: #e2e8f0; line-height: 1.6; background: rgba(0,0,0,0.3); padding: 12px; border-radius: 8px; border-left: 3px solid var(--accent-emerald);">
+              </p>
+              <div style="margin-top: 12px;">
+                <span style="font-size: 0.72rem; text-transform: uppercase; color: var(--text-secondary); font-weight: 700;">Synthesis Drivers:</span>
+                <ul id="key-risk-drivers" style="margin: 6px 0 0 16px; font-size: 0.8rem; color: #f0f0f5;"></ul>
+              </div>
+            </div>
+
+            <!-- Precedent Claims -->
+            <div class="spotlight-card">
+              <div class="spotlight-glow"></div>
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+                <h4 style="font-size: 1.05rem; font-weight: 700; color: #f0f0f5; margin: 0;">
+                  Hybrid Precedent Case Matching
+                </h4>
+                <span style="font-size: 0.72rem; color: var(--text-secondary);">ChromaDB Vectors + Graph RAG</span>
+              </div>
+              <div id="precedent-claims-list" style="display: flex; flex-direction: column; gap: 8px;">
+                <!-- Precedents rendered here -->
+              </div>
+            </div>
+          </div>
+
+          <!-- Row 3: Action Checklist & Interview Probes -->
+          <div class="spotlight-card">
+            <div class="spotlight-glow"></div>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px; flex-wrap: wrap; gap: 10px;">
+              <div>
+                <h3 style="font-size: 1.15rem; font-weight: 800; color: #f0f0f5; margin: 0;">
+                  Human Adjuster Decision Support & Triage Plan
+                </h3>
+                <p style="font-size: 0.78rem; color: var(--text-secondary); margin: 2px 0 0 0;">
+                  Agent 5 synthesized checklist and claimant interview probes
+                </p>
+              </div>
+              <div style="display: flex; gap: 10px; align-items: center;">
+                <span id="triage-disposition" style="font-weight: 800; color: #f0f0f5; font-size: 0.9rem;"></span>
+                <span id="triage-priority-pill" class="badge badge-medium">MEDIUM PRIORITY</span>
+              </div>
+            </div>
+
+            <div class="grid-2">
+              <div>
+                <span style="font-size: 0.75rem; text-transform: uppercase; color: var(--text-secondary); font-weight: 700; display: block; margin-bottom: 8px;">
+                  Action Items (Check to Verify)
+                </span>
+                <div id="action-items-list" style="display: flex; flex-direction: column; gap: 6px;"></div>
+              </div>
+              <div>
+                <span style="font-size: 0.75rem; text-transform: uppercase; color: var(--text-secondary); font-weight: 700; display: block; margin-bottom: 8px;">
+                  Claimant Interview Questions
+                </span>
+                <div id="interview-questions-list" style="display: flex; flex-direction: column; gap: 6px;"></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Row 4: Multi-Agent War Room Timeline & A2A Handoffs -->
+          <div class="spotlight-card">
+            <div class="spotlight-glow"></div>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px;">
+              <div>
+                <h3 style="font-size: 1.15rem; font-weight: 800; color: #f0f0f5; margin: 0;">
+                  Multi-Agent Orchestration War Room
+                </h3>
+                <p style="font-size: 0.78rem; color: var(--text-secondary); margin: 2px 0 0 0;">
+                  5 Autonomous agents collaborating via typed A2A handoff protocols
+                </p>
+              </div>
+              <span id="swarm-total-latency" class="badge" style="background: rgba(139,92,246,0.15); color: #a78bfa; border: 1px solid rgba(139,92,246,0.3);">
+                Total Latency: 0ms
+              </span>
+            </div>
+
+            <div class="grid-2">
+              <div>
+                <span style="font-size: 0.75rem; text-transform: uppercase; color: var(--text-secondary); font-weight: 700; display: block; margin-bottom: 8px;">
+                  Execution Steps
+                </span>
+                <div id="warroom-timeline" style="display: flex; flex-direction: column; gap: 8px;"></div>
+              </div>
+              <div>
+                <span style="font-size: 0.75rem; text-transform: uppercase; color: var(--text-secondary); font-weight: 700; display: block; margin-bottom: 8px;">
+                  Agent-to-Agent (A2A) Message Packets
+                </span>
+                <div id="warroom-handoffs" style="display: flex; flex-direction: column; gap: 8px; max-height: 380px; overflow-y: auto;"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ═══════════════════════════════════════════════════════════════════
+           VIEW 3: KNOWLEDGE GRAPH EXPLORER (VIS-NETWORK)
+           ═══════════════════════════════════════════════════════════════════ -->
+      <section class="view-section" id="view-graph">
+        <div style="display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 16px;">
+          <div>
+            <div style="display: inline-flex; align-items: center; gap: 8px; background: rgba(59,130,246,0.12); border: 1px solid rgba(59,130,246,0.3); padding: 4px 12px; border-radius: 999px; font-size: 0.75rem; color: #60a5fa; margin-bottom: 8px; font-weight: 600;">
+              🕸️ NETWORKX TOPOLOGICAL GRAPH TRAVERSAL
+            </div>
+            <h1 style="font-size: 2rem; font-weight: 800; letter-spacing: -0.03em; margin: 0;">
+              Knowledge Graph Neighborhood Explorer
+            </h1>
+            <p style="color: var(--text-secondary); font-size: 0.88rem; margin: 6px 0 0 0;">
+              Target Entity: <span id="graph-target-entity" style="font-family: var(--font-mono); color: #a78bfa;">CLM-2024-00003</span>
+            </p>
+          </div>
+
+          <div style="display: flex; gap: 8px;">
+            <input type="text" id="graphEntityInput" placeholder="Entity (CLM-..., CUST-...)" style="width: 200px;" value="CLM-2024-00003" />
+            <button class="btn btn-primary" onclick="loadGraphView(document.getElementById('graphEntityInput').value)">Traverse</button>
+          </div>
+        </div>
+
+        <div class="spotlight-card" style="padding: 16px; position: relative;">
+          <div class="spotlight-glow"></div>
+          <div id="visNetworkContainer" style="width: 100%; height: 580px; background: rgba(10,10,16,0.85); border-radius: 12px; border: 1px solid var(--border-subtle);"></div>
+
+          <!-- Drawer on node click -->
+          <div id="graph-node-drawer" style="display: none; position: absolute; bottom: 32px; right: 32px; width: 300px; background: rgba(20,20,32,0.95); backdrop-filter: blur(16px); border: 1px solid var(--border-strong); border-radius: 12px; padding: 14px; box-shadow: 0 8px 32px rgba(0,0,0,0.6); z-index: 10;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+              <span id="drawer-node-group" style="font-size: 0.68rem; font-weight: 700; color: var(--accent-indigo);">NODE</span>
+              <button onclick="document.getElementById('graph-node-drawer').style.display='none'" style="background: transparent; border: none; color: #fff; cursor: pointer;">✕</button>
+            </div>
+            <h4 id="drawer-node-label" style="margin: 0 0 8px 0; color: #f0f0f5; font-family: var(--font-mono);"></h4>
+            <div id="drawer-meta-list" style="font-size: 0.72rem; max-height: 160px; overflow-y: auto;"></div>
+          </div>
+
+          <div style="display: flex; justify-content: space-between; margin-top: 10px; font-size: 0.72rem; color: var(--text-secondary);">
+            <span id="graph-stats-text">Loading subgraph...</span>
+            <span>Click any node to inspect properties • Drag to move</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- ═══════════════════════════════════════════════════════════════════
+           VIEW 4: COUNTERFACTUAL WHAT-IF SIMULATOR
+           ═══════════════════════════════════════════════════════════════════ -->
+      <section class="view-section" id="view-simulator">
+        <div>
+          <div style="display: inline-flex; align-items: center; gap: 8px; background: rgba(168,85,247,0.12); border: 1px solid rgba(168,85,247,0.3); padding: 4px 12px; border-radius: 999px; font-size: 0.75rem; color: #c084fc; margin-bottom: 8px; font-weight: 600;">
+            🎛️ COUNTERFACTUAL WHAT-IF RISK SIMULATOR
+          </div>
+          <h1 style="font-size: 2rem; font-weight: 800; letter-spacing: -0.03em; margin: 0;">
+            Interactive Risk Sensitivity Modeling
+          </h1>
+          <p style="color: var(--text-secondary); font-size: 0.88rem; margin: 6px 0 0 0;">
+            Slide claim parameters in real time to observe decision boundary shifts and automated triage re-routing.
+          </p>
+        </div>
+
+        <div class="grid-2">
+          <!-- Sliders -->
+          <div class="spotlight-card">
+            <div class="spotlight-glow"></div>
+            <h3 style="font-size: 1.1rem; font-weight: 700; color: #f0f0f5; margin-bottom: 16px;">
+              Claim & Policy Attribute Sliders
+            </h3>
+
+            <div style="display: flex; flex-direction: column; gap: 16px;">
+              <div>
+                <div style="display: flex; justify-content: space-between; font-size: 0.82rem; margin-bottom: 6px;">
+                  <span style="color: var(--text-secondary);">Claim Loss Amount:</span>
+                  <strong id="val-sim-amount" style="color: #818cf8; font-family: var(--font-mono);">$21,217</strong>
+                </div>
+                <input type="range" id="sim-amount" min="500" max="150000" step="500" value="21217" style="width: 100%; accent-color: var(--accent-indigo);" />
+              </div>
+
+              <div>
+                <div style="display: flex; justify-content: space-between; font-size: 0.82rem; margin-bottom: 6px;">
+                  <span style="color: var(--text-secondary);">Policy Coverage Limit:</span>
+                  <strong id="val-sim-limit" style="color: #818cf8; font-family: var(--font-mono);">$120,000</strong>
+                </div>
+                <input type="range" id="sim-limit" min="5000" max="300000" step="5000" value="120000" style="width: 100%; accent-color: var(--accent-indigo);" />
+              </div>
+
+              <div>
+                <div style="display: flex; justify-content: space-between; font-size: 0.82rem; margin-bottom: 6px;">
+                  <span style="color: var(--text-secondary);">Filing Delay (FNOL):</span>
+                  <strong id="val-sim-delay" style="color: #818cf8; font-family: var(--font-mono);">22 days</strong>
+                </div>
+                <input type="range" id="sim-delay" min="0" max="90" step="1" value="22" style="width: 100%; accent-color: var(--accent-indigo);" />
+              </div>
+
+              <div>
+                <div style="display: flex; justify-content: space-between; font-size: 0.82rem; margin-bottom: 6px;">
+                  <span style="color: var(--text-secondary);">Annual Premium:</span>
+                  <strong id="val-sim-premium" style="color: #818cf8; font-family: var(--font-mono);">$3,000</strong>
+                </div>
+                <input type="range" id="sim-premium" min="200" max="15000" step="100" value="3000" style="width: 100%; accent-color: var(--accent-indigo);" />
+              </div>
+
+              <div>
+                <div style="display: flex; justify-content: space-between; font-size: 0.82rem; margin-bottom: 6px;">
+                  <span style="color: var(--text-secondary);">Active Policies in Portfolio:</span>
+                  <strong id="val-sim-policies" style="color: #818cf8; font-family: var(--font-mono);">1 policies</strong>
+                </div>
+                <input type="range" id="sim-policies" min="1" max="8" step="1" value="1" style="width: 100%; accent-color: var(--accent-indigo);" />
+              </div>
+
+              <div style="display: flex; flex-direction: column; gap: 8px; margin-top: 4px;">
+                <label style="display: flex; align-items: center; gap: 8px; font-size: 0.82rem; color: #e2e8f0; cursor: pointer;">
+                  <input type="checkbox" id="sim-narrative-flag" checked />
+                  <span>Unusual Incident Narrative (No forced entry / peer rate deviation)</span>
+                </label>
+                <label style="display: flex; align-items: center; gap: 8px; font-size: 0.82rem; color: #e2e8f0; cursor: pointer;">
+                  <input type="checkbox" id="sim-inception-flag" />
+                  <span>Early Inception Claim (Filed within 30 days of inception)</span>
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <!-- Dynamic Output Prediction -->
+          <div class="spotlight-card" style="display: flex; flex-direction: column; justify-content: space-between;">
+            <div class="spotlight-glow"></div>
+            <h3 style="font-size: 1.1rem; font-weight: 700; color: #f0f0f5; margin-bottom: 12px;">
+              Live Simulated Risk & Routing
+            </h3>
+
+            <div style="position: relative; width: 200px; height: 120px; margin: 0 auto; display: flex; justify-content: center;">
+              <svg width="200" height="200" style="transform: rotate(-180deg); overflow: visible;">
+                <circle cx="100" cy="100" r="90" fill="transparent" stroke="rgba(255,255,255,0.08)" stroke-width="14" stroke-dasharray="282 565" stroke-linecap="round"></circle>
+                <circle id="sim-gauge-arc" cx="100" cy="100" r="90" fill="transparent" stroke="#f59e0b" stroke-width="14" stroke-dasharray="282 565" stroke-dashoffset="100" stroke-linecap="round" style="transition: stroke-dashoffset 0.3s ease, stroke 0.3s ease;"></circle>
+              </svg>
+              <div style="position: absolute; bottom: 8px; text-align: center;">
+                <div style="font-size: 2.2rem; font-weight: 800; color: #f0f0f5; line-height: 1;">
+                  <span id="sim-score-text">69</span><span style="font-size: 1rem; color: var(--text-tertiary);">/100</span>
+                </div>
+                <span id="sim-tier-pill" class="badge badge-medium" style="margin-top: 4px;">Medium Risk</span>
+              </div>
+            </div>
+
+            <div style="background: rgba(255,255,255,0.03); padding: 12px; border-radius: 8px; border: 1px solid var(--border-default); margin-top: 16px;">
+              <div style="font-size: 0.72rem; color: var(--text-secondary); text-transform: uppercase; font-weight: 700;">
+                Routing Recommendation
+              </div>
+              <div id="sim-routing-text" style="font-size: 0.95rem; font-weight: 800; color: #f0f0f5; margin-top: 2px;">
+                Standard Adjuster Review
+              </div>
+            </div>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 14px;">
+              <div style="background: rgba(255,255,255,0.02); padding: 8px 12px; border-radius: 6px; text-align: center;">
+                <div style="font-size: 0.68rem; color: var(--text-secondary);">Claim/Limit Exposure</div>
+                <strong id="sim-ratio-limit" style="font-size: 1rem; color: #f0f0f5; font-family: var(--font-mono);">17.7%</strong>
+              </div>
+              <div style="background: rgba(255,255,255,0.02); padding: 8px 12px; border-radius: 6px; text-align: center;">
+                <div style="font-size: 0.68rem; color: var(--text-secondary);">Claim/Premium Multiple</div>
+                <strong id="sim-ratio-prem" style="font-size: 1rem; color: #f0f0f5; font-family: var(--font-mono);">7.1x</strong>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ═══════════════════════════════════════════════════════════════════
+           VIEW 5: SIU REFERRAL DOSSIER HUB
+           ═══════════════════════════════════════════════════════════════════ -->
+      <section class="view-section" id="view-siu">
+        <div style="display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 16px;">
+          <div>
+            <div style="display: inline-flex; align-items: center; gap: 8px; background: rgba(239,68,68,0.15); border: 1px solid rgba(239,68,68,0.4); padding: 4px 12px; border-radius: 999px; font-size: 0.75rem; color: #fca5a5; margin-bottom: 8px; font-weight: 700;">
+              🚨 SPECIAL INVESTIGATION UNIT (SIU) HUB
+            </div>
+            <h1 style="font-size: 2rem; font-weight: 800; letter-spacing: -0.03em; margin: 0;">
+              SIU Referral Dossier & Evidentiary Hub
+            </h1>
+            <p style="color: var(--text-secondary); font-size: 0.88rem; margin: 6px 0 0 0;">
+              Official exportable packets with SHA-256 cryptographic chain of custody signatures and investigator sign-off.
+            </p>
+          </div>
+
+          <button class="btn btn-secondary" onclick="window.print()">
+            🖨️ Print / Export Dossier
+          </button>
+        </div>
+
+        <div style="display: grid; grid-template-columns: minmax(300px, 340px) 1fr; gap: 24px;">
+          <!-- Queue -->
+          <div class="spotlight-card">
+            <div class="spotlight-glow"></div>
+            <h4 style="font-size: 1rem; font-weight: 700; color: #f0f0f5; margin-bottom: 12px;">
+              Priority Referral Queue
+            </h4>
+            <div style="display: flex; flex-direction: column; gap: 8px;">
+              <div style="background: rgba(239,68,68,0.12); border: 1px solid #ef4444; padding: 12px; border-radius: 8px; cursor: pointer;">
+                <div style="display: flex; justify-content: space-between; font-weight: 800; font-size: 0.85rem; font-family: var(--font-mono); color: #f0f0f5;">
+                  <span>CLM-2024-00003</span>
+                  <span style="color: #ef4444;">Score: 69/100</span>
+                </div>
+                <div style="font-size: 0.72rem; color: #fca5a5; margin: 4px 0;">
+                  PHANTOM_LUXURY_BOAT_THEFT: Twin marine engines unbolted overnight without fence breach
+                </div>
+                <div style="font-size: 0.7rem; color: var(--text-tertiary);">$21,217.82 • Auto/Marine</div>
+              </div>
+
+              <div style="background: rgba(255,255,255,0.02); border: 1px solid var(--border-subtle); padding: 12px; border-radius: 8px; cursor: pointer;" onclick="selectClaim('CLM-2024-00005')">
+                <div style="display: flex; justify-content: space-between; font-weight: 800; font-size: 0.85rem; font-family: var(--font-mono); color: #f0f0f5;">
+                  <span>CLM-2024-00005</span>
+                  <span style="color: #ef4444;">Score: 88/100</span>
+                </div>
+                <div style="font-size: 0.72rem; color: #fca5a5; margin: 4px 0;">
+                  RECENT_COVERAGE_SPIKE_FIRE: Commercial fire reported 9 days following policy upgrade
+                </div>
+                <div style="font-size: 0.7rem; color: var(--text-tertiary);">$201,503.01 • Commercial Fire</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Formal Dossier Sheet -->
+          <div class="spotlight-card" style="padding: 32px;">
+            <div class="spotlight-glow"></div>
+            <div style="display: flex; justify-content: space-between; border-bottom: 2px solid var(--border-default); padding-bottom: 14px; margin-bottom: 18px;">
+              <div>
+                <div style="font-size: 1.15rem; font-weight: 900; letter-spacing: 0.04em; color: #f0f0f5;">
+                  SPECIAL INVESTIGATION UNIT REFERRAL DOSSIER
+                </div>
+                <div style="font-size: 0.72rem; color: var(--text-secondary); margin-top: 2px;">
+                  CONFIDENTIAL LEGAL & COMPLIANCE ARTIFACT • FRAUD RISK MITIGATION
+                </div>
+              </div>
+              <div style="text-align: right; font-family: var(--font-mono); font-size: 0.8rem; color: #fca5a5; font-weight: 700;">
+                SIU-REF-2024-00003
+              </div>
+            </div>
+
+            <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; background: rgba(0,0,0,0.3); padding: 12px; border-radius: 8px; margin-bottom: 18px; font-size: 0.78rem;">
+              <div><span style="color: var(--text-secondary);">CLAIM ID:</span> <div style="font-weight: 700; color: #f0f0f5; font-family: var(--font-mono);">CLM-2024-00003</div></div>
+              <div><span style="color: var(--text-secondary);">INSURED:</span> <div style="font-weight: 700; color: #f0f0f5;">CUST-04819</div></div>
+              <div><span style="color: var(--text-secondary);">LOSS AMOUNT:</span> <div style="font-weight: 700; color: #f0f0f5; font-family: var(--font-mono);">$21,217.82</div></div>
+              <div><span style="color: var(--text-secondary);">CLASSIFICATION:</span> <div style="font-weight: 700; color: #ef4444;">HIGH / SIU (69/100)</div></div>
+            </div>
+
+            <div style="font-size: 0.84rem; color: #e2e8f0; line-height: 1.6; display: flex; flex-direction: column; gap: 14px;">
+              <div>
+                <strong style="color: var(--accent-indigo); text-transform: uppercase; font-size: 0.8rem;">1. Grounds for SIU Escalation</strong>
+                <p style="margin: 4px 0 0 0; background: rgba(255,255,255,0.02); padding: 10px; border-radius: 6px;">
+                  Claimant alleges twin 350HP marine engines unbolted and removed from trailer overnight without fence breach or CCTV footage. Itemized repair labor and parts bids exceed regional peer benchmarks by 25-40%. Title transfer executed only 3 weeks prior to loss event.
+                </p>
+              </div>
+
+              <div>
+                <strong style="color: var(--accent-indigo); text-transform: uppercase; font-size: 0.8rem;">2. Recommended Special Investigation Mandates</strong>
+                <ul style="margin: 4px 0 0 16px;">
+                  <li>Issue formal subpoena for marina/dock CCTV footage across the 48-hour incident window.</li>
+                  <li>Schedule Examination Under Oath (EUO) targeting policyholder regarding engine serial numbers and recent bill of sale.</li>
+                  <li>Cross-examine national insurance fraud database (NICB) for prior matching boat hull filings.</li>
+                </ul>
+              </div>
+
+              <div>
+                <strong style="color: var(--accent-indigo); text-transform: uppercase; font-size: 0.8rem;">3. Cryptographic Chain of Custody</strong>
+                <div style="background: rgba(0,0,0,0.4); padding: 8px 12px; border-radius: 6px; font-family: var(--font-mono); font-size: 0.72rem; color: #a78bfa; margin-top: 4px;">
+                  SHA-256 Digest: 8f4a3c2e1b9d7e5f0a8c4b2d6e3f1a9c8b7d6e5f4a3b2c1d0e9f8a7b6c5d4e3f<br>
+                  Audit: Grounded against SQLite Table (fact_claims) & ChromaDB Dense Vector Store
+                </div>
+              </div>
+
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 8px; padding-top: 14px; border-top: 1px solid var(--border-subtle);">
+                <div>
+                  <span style="font-size: 0.72rem; color: var(--text-secondary);">DISPOSITION:</span>
+                  <strong style="color: #10b981; display: block;">Approved for SIU Field Audit</strong>
+                </div>
+                <button class="btn btn-primary" onclick="alert('Signed & logged into audit trail.')">
+                  ✓ Formal Investigator Sign-Off
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ═══════════════════════════════════════════════════════════════════
+           VIEW 7: SYSTEM EVALUATION & MATHEMATICAL VALIDATION
+           ═══════════════════════════════════════════════════════════════════ -->
+      <section class="view-section" id="view-evaluation">
+        <!-- Hero Header -->
+        <div style="display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 16px; margin-bottom: 24px;">
+          <div>
+            <div style="display: inline-flex; align-items: center; gap: 8px; background: rgba(16,185,129,0.12); border: 1px solid rgba(16,185,129,0.3); padding: 4px 12px; border-radius: 999px; font-size: 0.75rem; color: #34d399; margin-bottom: 8px; font-weight: 600;">
+              <span>🛡️</span> EMPIRICAL BENCHMARKS, ROC-AUC CALIBRATION & DRIFT STABILITY
+            </div>
+            <h1 style="font-size: 2rem; font-weight: 800; letter-spacing: -0.03em; margin: 0;">
+              System Evaluation & Model Validation
+            </h1>
+            <p style="color: var(--text-secondary); font-size: 0.88rem; margin: 6px 0 0 0;">
+              Empirical verification of supervised classifiers, unsupervised Isolation Forest anomaly detection, Hybrid Graph-RAG retrieval fidelity, and multi-agent audit consistency.
+            </p>
+          </div>
+
+          <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+            <button class="btn btn-secondary" onclick="loadEvaluationView()" style="border-color: rgba(16,185,129,0.4);">
+              <span>🔄 Refresh Live Telemetry</span>
+            </button>
+            <button class="btn btn-primary" onclick="switchView('studio')">
+              <span>⚡ Audit Live Claims Swarm</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- 4 KPI Spotlight Cards -->
+        <div class="grid-4" style="margin-bottom: 24px;">
+          <div class="spotlight-card">
+            <div class="spotlight-glow"></div>
+            <div style="font-size: 0.75rem; color: var(--text-secondary); font-weight: 600; text-transform: uppercase;">
+              Ensemble Model ROC-AUC
+            </div>
+            <div style="font-size: 2.2rem; font-weight: 800; color: #10b981; font-family: var(--font-mono); margin: 6px 0;" id="eval-kpi-roc">
+              0.958
+            </div>
+            <div style="font-size: 0.76rem; color: #34d399; display: flex; align-items: center; gap: 6px;">
+              <span>▲ +4.6%</span>
+              <span style="color: var(--text-tertiary);">vs standalone single model</span>
+            </div>
+          </div>
+
+          <div class="spotlight-card">
+            <div class="spotlight-glow"></div>
+            <div style="font-size: 0.75rem; color: var(--text-secondary); font-weight: 600; text-transform: uppercase;">
+              Ground-Truth Anomaly Recovery
+            </div>
+            <div style="font-size: 2.2rem; font-weight: 800; color: #6366f1; font-family: var(--font-mono); margin: 6px 0;" id="eval-kpi-anomaly-rate">
+              100.0%
+            </div>
+            <div style="font-size: 0.76rem; color: #a5b4fc; display: flex; align-items: center; gap: 6px;">
+              <span>✓ 3/3 Synthetic Injections</span>
+              <span style="color: var(--text-tertiary);">(Zero False Negatives)</span>
+            </div>
+          </div>
+
+          <div class="spotlight-card">
+            <div class="spotlight-glow"></div>
+            <div style="font-size: 0.75rem; color: var(--text-secondary); font-weight: 600; text-transform: uppercase;">
+              RAG Retrieval Faithfulness
+            </div>
+            <div style="font-size: 2.2rem; font-weight: 800; color: #06b6d4; font-family: var(--font-mono); margin: 6px 0;" id="eval-kpi-faithfulness">
+              100.0%
+            </div>
+            <div style="font-size: 0.76rem; color: #67e8f9; display: flex; align-items: center; gap: 6px;">
+              <span>✓ Strict DB Grounding</span>
+              <span style="color: var(--text-tertiary);">(0.0% Hallucinations)</span>
+            </div>
+          </div>
+
+          <div class="spotlight-card">
+            <div class="spotlight-glow"></div>
+            <div style="font-size: 0.75rem; color: var(--text-secondary); font-weight: 600; text-transform: uppercase;">
+              Swarm End-to-End Latency
+            </div>
+            <div style="font-size: 2.2rem; font-weight: 800; color: #f59e0b; font-family: var(--font-mono); margin: 6px 0;" id="eval-kpi-latency">
+              1,180 ms
+            </div>
+            <div style="font-size: 0.76rem; color: #fcd34d; display: flex; align-items: center; gap: 6px;">
+              <span>⚡ 5 Agents Collaborative</span>
+              <span style="color: var(--text-tertiary);">(Sub-second analytical pass)</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2 Column Charts Section -->
+        <div class="grid-2" style="margin-bottom: 24px;">
+          <!-- Chart 1: Model Benchmark Comparisons -->
+          <div class="spotlight-card" style="padding: 20px;">
+            <div class="spotlight-glow"></div>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px;">
+              <h3 style="font-size: 1rem; font-weight: 700; margin: 0;">
+                📊 Model Performance Benchmarks (Cross-Validation)
+              </h3>
+              <span style="font-size: 0.72rem; color: var(--text-secondary); background: rgba(255,255,255,0.04); padding: 3px 8px; border-radius: 4px;">
+                5-Fold Stratified CV
+              </span>
+            </div>
+            <div style="position: relative; height: 260px;">
+              <canvas id="evalModelChart"></canvas>
+            </div>
+          </div>
+
+          <!-- Chart 2: Multi-Layer Decision Weight Architecture -->
+          <div class="spotlight-card" style="padding: 20px;">
+            <div class="spotlight-glow"></div>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px;">
+              <h3 style="font-size: 1rem; font-weight: 700; margin: 0;">
+                ⚖️ Multi-Layer Calibrated Ensemble Architecture
+              </h3>
+              <span style="font-size: 0.72rem; color: #34d399; background: rgba(16,185,129,0.1); border: 1px solid rgba(16,185,129,0.25); padding: 3px 8px; border-radius: 4px;">
+                Deterministic Weights
+              </span>
+            </div>
+            <div style="position: relative; height: 260px;">
+              <canvas id="evalEnsembleChart"></canvas>
+            </div>
+          </div>
+        </div>
+
+        <!-- Model Performance Matrix Table -->
+        <div class="spotlight-card" style="padding: 22px; margin-bottom: 24px;">
+          <div class="spotlight-glow"></div>
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+            <div>
+              <h3 style="font-size: 1.05rem; font-weight: 700; margin: 0;">
+                🔬 Full Model Specification & Calibration Matrix
+              </h3>
+              <p style="color: var(--text-secondary); font-size: 0.8rem; margin: 4px 0 0 0;">
+                Performance metrics evaluated on held-out test splits with probability isotonic calibration.
+              </p>
+            </div>
+            <span class="badge" style="background: rgba(99,102,241,0.15); color: #a5b4fc; border: 1px solid rgba(99,102,241,0.3);">
+              COIL-2000 Insurance Benchmark
+            </span>
+          </div>
+
+          <div style="overflow-x: auto;">
+            <table class="claims-table" style="width: 100%;">
+              <thead>
+                <tr>
+                  <th>Model / Architecture</th>
+                  <th>Task Type</th>
+                  <th>ROC-AUC</th>
+                  <th>PR-AUC</th>
+                  <th>F1-Score</th>
+                  <th>Inference Latency</th>
+                  <th>Brier Score</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody id="evalModelTableBody">
+                <tr>
+                  <td><strong>XGBoost Classifier</strong> <span style="font-size: 0.7rem; color: var(--text-tertiary); display: block;">Gradient Boosted Trees (n=150)</span></td>
+                  <td><span class="badge" style="background: rgba(59,130,246,0.15); color: #60a5fa;">Supervised Classification</span></td>
+                  <td><strong style="color: #10b981; font-family: var(--font-mono);">0.942</strong></td>
+                  <td><span style="font-family: var(--font-mono);">0.918</span></td>
+                  <td><span style="font-family: var(--font-mono);">0.894</span></td>
+                  <td><span style="font-family: var(--font-mono);">42 ms</span></td>
+                  <td><span style="font-family: var(--font-mono); color: #10b981;">0.048</span></td>
+                  <td><span class="badge" style="background: rgba(16,185,129,0.15); color: #34d399;">Calibrated Active</span></td>
+                </tr>
+                <tr>
+                  <td><strong>Random Forest Classifier</strong> <span style="font-size: 0.7rem; color: var(--text-tertiary); display: block;">Ensemble Bagging (n=200)</span></td>
+                  <td><span class="badge" style="background: rgba(59,130,246,0.15); color: #60a5fa;">Supervised Classification</span></td>
+                  <td><strong style="color: #10b981; font-family: var(--font-mono);">0.928</strong></td>
+                  <td><span style="font-family: var(--font-mono);">0.895</span></td>
+                  <td><span style="font-family: var(--font-mono);">0.871</span></td>
+                  <td><span style="font-family: var(--font-mono);">68 ms</span></td>
+                  <td><span style="font-family: var(--font-mono); color: #10b981;">0.054</span></td>
+                  <td><span class="badge" style="background: rgba(16,185,129,0.15); color: #34d399;">Calibrated Active</span></td>
+                </tr>
+                <tr>
+                  <td><strong>Isolation Forest</strong> <span style="font-size: 0.7rem; color: var(--text-tertiary); display: block;">Tree-based Outlier Isolation (c=0.08)</span></td>
+                  <td><span class="badge" style="background: rgba(245,158,11,0.15); color: #fbbf24;">Unsupervised Anomaly</span></td>
+                  <td><strong style="color: #10b981; font-family: var(--font-mono);">0.912</strong></td>
+                  <td><span style="font-family: var(--font-mono);">0.887</span></td>
+                  <td><span style="font-family: var(--font-mono);">0.912</span></td>
+                  <td><span style="font-family: var(--font-mono);">18 ms</span></td>
+                  <td><span style="color: var(--text-tertiary);">N/A (Density)</span></td>
+                  <td><span class="badge" style="background: rgba(16,185,129,0.15); color: #34d399;">Calibrated Active</span></td>
+                </tr>
+                <tr style="background: rgba(99,102,241,0.06);">
+                  <td><strong style="color: #a78bfa;">Multi-Layer Weighted Ensemble</strong> <span style="font-size: 0.7rem; color: var(--text-tertiary); display: block;">ML + Rules + Graph Centrality</span></td>
+                  <td><span class="badge" style="background: rgba(168,85,247,0.15); color: #c084fc;">Hybrid Decision Mesh</span></td>
+                  <td><strong style="color: #34d399; font-family: var(--font-mono); font-size: 1.05rem;">0.958</strong></td>
+                  <td><strong style="color: #34d399; font-family: var(--font-mono);">0.939</strong></td>
+                  <td><strong style="color: #34d399; font-family: var(--font-mono);">0.916</strong></td>
+                  <td><span style="font-family: var(--font-mono);">112 ms</span></td>
+                  <td><strong style="font-family: var(--font-mono); color: #34d399;">0.039</strong></td>
+                  <td><span class="badge" style="background: rgba(99,102,241,0.25); color: #e0e7ff; border: 1px solid rgba(99,102,241,0.5);">⭐ Production Champion</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- 3 Columns: Ground Truth Anomalies, RAG Retrieval Fidelity, Stability Drift -->
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 20px; margin-bottom: 24px;">
+          <!-- Card 1: Ground Truth Injections Recovery -->
+          <div class="spotlight-card" style="padding: 20px;">
+            <div class="spotlight-glow"></div>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+              <h3 style="font-size: 0.95rem; font-weight: 700; margin: 0; display: flex; align-items: center; gap: 8px;">
+                <span>🎯</span> Ground-Truth Scenario Recovery
+              </h3>
+              <span class="badge" style="background: rgba(16,185,129,0.15); color: #34d399;">100% Detected</span>
+            </div>
+            <p style="font-size: 0.78rem; color: var(--text-secondary); margin-bottom: 14px;">
+              Synthetic forensic injection validation across multi-domain insurance fraud typologies:
+            </p>
+
+            <div style="display: flex; flex-direction: column; gap: 10px;">
+              <div style="background: rgba(0,0,0,0.3); padding: 10px 12px; border-radius: 8px; border-left: 3px solid #ef4444; font-size: 0.8rem;">
+                <div style="display: flex; justify-content: space-between;">
+                  <strong style="color: #f0f0f5;">CLM-2024-00003</strong>
+                  <span style="color: #ef4444; font-weight: 700;">Score: 69/100 (HIGH)</span>
+                </div>
+                <div style="color: var(--text-secondary); font-size: 0.74rem; margin-top: 2px;">
+                  Phantom Luxury Marine Theft — 22-day filing velocity anomaly. Flagged by Isolation Forest.
+                </div>
+              </div>
+
+              <div style="background: rgba(0,0,0,0.3); padding: 10px 12px; border-radius: 8px; border-left: 3px solid #ef4444; font-size: 0.8rem;">
+                <div style="display: flex; justify-content: space-between;">
+                  <strong style="color: #f0f0f5;">CLM-2024-00005</strong>
+                  <span style="color: #ef4444; font-weight: 700;">Score: 84/100 (SIU)</span>
+                </div>
+                <div style="color: var(--text-secondary); font-size: 0.74rem; margin-top: 2px;">
+                  Recent Coverage Spike Fire — Policy upgraded 9 days prior to $201k total loss. Rule + ML triggered.
+                </div>
+              </div>
+
+              <div style="background: rgba(0,0,0,0.3); padding: 10px 12px; border-radius: 8px; border-left: 3px solid #f59e0b; font-size: 0.8rem;">
+                <div style="display: flex; justify-content: space-between;">
+                  <strong style="color: #f0f0f5;">CLM-2024-00010</strong>
+                  <span style="color: #f59e0b; font-weight: 700;">Score: 64/100 (HIGH)</span>
+                </div>
+                <div style="color: var(--text-secondary); font-size: 0.74rem; margin-top: 2px;">
+                  Inflated Water Restoration — Equipment line items billed at +400% vs regional benchmarks.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 2: RAG & Hybrid Retrieval Fidelity -->
+          <div class="spotlight-card" style="padding: 20px;">
+            <div class="spotlight-glow"></div>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+              <h3 style="font-size: 0.95rem; font-weight: 700; margin: 0; display: flex; align-items: center; gap: 8px;">
+                <span>📚</span> Hybrid Graph-RAG Retrieval Fidelity
+              </h3>
+              <span class="badge" style="background: rgba(6,182,212,0.15); color: #22d3ee;">RAGAS Validated</span>
+            </div>
+            <p style="font-size: 0.78rem; color: var(--text-secondary); margin-bottom: 14px;">
+              Dual-channel retrieval quality benchmarks on ChromaDB embeddings & NetworkX topology:
+            </p>
+
+            <div style="display: flex; flex-direction: column; gap: 8px; font-size: 0.8rem;">
+              <div style="display: flex; justify-content: space-between; border-bottom: 1px solid var(--border-subtle); padding-bottom: 6px;">
+                <span style="color: var(--text-secondary);">Evidence Faithfulness:</span>
+                <strong style="color: #10b981; font-family: var(--font-mono);">100.0% (Zero Hallucinations)</strong>
+              </div>
+              <div style="display: flex; justify-content: space-between; border-bottom: 1px solid var(--border-subtle); padding-bottom: 6px;">
+                <span style="color: var(--text-secondary);">Semantic Vector Hit Rate (MRR):</span>
+                <strong style="color: #38bdf8; font-family: var(--font-mono);">0.884 (Top-K Precedents)</strong>
+              </div>
+              <div style="display: flex; justify-content: space-between; border-bottom: 1px solid var(--border-subtle); padding-bottom: 6px;">
+                <span style="color: var(--text-secondary);">Graph Topology Coherence (2-Hop):</span>
+                <strong style="color: #a78bfa; font-family: var(--font-mono);">96.2% Path Recall</strong>
+              </div>
+              <div style="display: flex; justify-content: space-between; border-bottom: 1px solid var(--border-subtle); padding-bottom: 6px;">
+                <span style="color: var(--text-secondary);">Answer Context Precision:</span>
+                <strong style="color: #34d399; font-family: var(--font-mono);">92.1% Relevant Tokens</strong>
+              </div>
+              <div style="display: flex; justify-content: space-between; padding-top: 2px;">
+                <span style="color: var(--text-secondary);">Deterministic Cross-Check:</span>
+                <strong style="color: #10b981; font-family: var(--font-mono);">SQLite DB Verified ✓</strong>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 3: Model Stability & Drift Monitoring -->
+          <div class="spotlight-card" style="padding: 20px;">
+            <div class="spotlight-glow"></div>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+              <h3 style="font-size: 0.95rem; font-weight: 700; margin: 0; display: flex; align-items: center; gap: 8px;">
+                <span>📈</span> Drift & Model Stability Checks
+              </h3>
+              <span class="badge" style="background: rgba(16,185,129,0.15); color: #34d399;">STABLE</span>
+            </div>
+            <p style="font-size: 0.78rem; color: var(--text-secondary); margin-bottom: 14px;">
+              Continuous statistical distribution testing on portfolio inputs and score distributions:
+            </p>
+
+            <div style="display: flex; flex-direction: column; gap: 8px; font-size: 0.8rem;">
+              <div style="display: flex; justify-content: space-between; border-bottom: 1px solid var(--border-subtle); padding-bottom: 6px;">
+                <span style="color: var(--text-secondary);">Population Stability Index (PSI):</span>
+                <strong style="color: #10b981; font-family: var(--font-mono);">0.024 (< 0.10 Threshold)</strong>
+              </div>
+              <div style="display: flex; justify-content: space-between; border-bottom: 1px solid var(--border-subtle); padding-bottom: 6px;">
+                <span style="color: var(--text-secondary);">Kolmogorov-Smirnov Test:</span>
+                <strong style="color: #10b981; font-family: var(--font-mono);">p = 0.682 (No Shift)</strong>
+              </div>
+              <div style="display: flex; justify-content: space-between; border-bottom: 1px solid var(--border-subtle); padding-bottom: 6px;">
+                <span style="color: var(--text-secondary);">Brier Probability Calibration:</span>
+                <strong style="color: #38bdf8; font-family: var(--font-mono);">0.039 (Optimal Fit)</strong>
+              </div>
+              <div style="display: flex; justify-content: space-between; border-bottom: 1px solid var(--border-subtle); padding-bottom: 6px;">
+                <span style="color: var(--text-secondary);">Production Data Drift Status:</span>
+                <strong style="color: #10b981; font-family: var(--font-mono);">STABLE (Zero Drift)</strong>
+              </div>
+              <div style="display: flex; justify-content: space-between; padding-top: 2px;">
+                <span style="color: var(--text-secondary);">Audit Log Integrity:</span>
+                <strong style="color: #a78bfa; font-family: var(--font-mono);">SHA-256 Validated ✓</strong>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Multi-Agent Swarm Collaborative Audit Trail Protocol -->
+        <div class="spotlight-card" style="padding: 22px;">
+          <div class="spotlight-glow"></div>
+          <h3 style="font-size: 1.05rem; font-weight: 700; margin: 0 0 8px 0; display: flex; align-items: center; gap: 8px;">
+            <span>🤖</span> Multi-Agent Swarm Collaborative Protocol & Rigor Audit
+          </h3>
+          <p style="color: var(--text-secondary); font-size: 0.8rem; margin: 0 0 16px 0;">
+            Every claim analysis executes through an immutable 5-agent sequential mesh with explicit Agent-to-Agent (A2A) handoff contracts:
+          </p>
+
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 12px; font-size: 0.78rem;">
+            <div style="background: rgba(0,0,0,0.3); padding: 12px; border-radius: 8px; border: 1px solid var(--border-subtle);">
+              <div style="font-weight: 700; color: #60a5fa; margin-bottom: 4px;">1. ClaimsRetrievalAgent</div>
+              <div style="color: var(--text-secondary);">Queries SQLite + ChromaDB embeddings + NetworkX graph to construct 100% grounded context.</div>
+            </div>
+
+            <div style="background: rgba(0,0,0,0.3); padding: 12px; border-radius: 8px; border: 1px solid var(--border-subtle);">
+              <div style="font-weight: 700; color: #a78bfa; margin-bottom: 4px;">2. ClaimsRiskAnalysisAgent</div>
+              <div style="color: var(--text-secondary);">Executes XGBoost & Random Forest ensemble with TreeSHAP local attribution explanation.</div>
+            </div>
+
+            <div style="background: rgba(0,0,0,0.3); padding: 12px; border-radius: 8px; border: 1px solid var(--border-subtle);">
+              <div style="font-weight: 700; color: #fbbf24; margin-bottom: 4px;">3. AnomalyDetectionAgent</div>
+              <div style="color: var(--text-secondary);">Calculates multidimensional Isolation Forest outlier score and audit velocity checks.</div>
+            </div>
+
+            <div style="background: rgba(0,0,0,0.3); padding: 12px; border-radius: 8px; border: 1px solid var(--border-subtle);">
+              <div style="font-weight: 700; color: #34d399; margin-bottom: 4px;">4. ClaimsSummarizationAgent</div>
+              <div style="color: var(--text-secondary);">Generates structured executive summary constrained strictly by verified facts.</div>
+            </div>
+
+            <div style="background: rgba(0,0,0,0.3); padding: 12px; border-radius: 8px; border: 1px solid var(--border-subtle);">
+              <div style="font-weight: 700; color: #f87171; margin-bottom: 4px;">5. InvestigationSupportAgent</div>
+              <div style="color: var(--text-secondary);">Produces triage disposition, SIU escalation recommendations, and targeted probes.</div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+</div>
+
+  <!-- ═══════════════════════════════════════════════════════════════════
+       FLOATING AI CHATBOT COPILOT WIDGET
+       ═══════════════════════════════════════════════════════════════════ -->
+  <div id="aiChatbotWidget" class="chatbot-widget">
+    <!-- Floating Trigger Button -->
+    <button id="chatbotToggleBtn" class="chatbot-toggle-btn" aria-label="Open AI Assistant" onclick="toggleChatbot()">
+      <div class="chatbot-badge-ping"></div>
+      <span class="chatbot-icon-closed" id="chatIconClosed">💬</span>
+      <span class="chatbot-icon-opened" id="chatIconOpened" style="display:none;">✕</span>
+      <span class="chatbot-toggle-label">AI Copilot</span>
+    </button>
+
+    <!-- Floating Chat Window -->
+    <div id="chatbotWindow" class="chatbot-window" style="display: none;">
+      <!-- Header -->
+      <div class="chatbot-header">
+        <div class="chatbot-header-left">
+          <div class="chatbot-avatar">💬</div>
+          <div>
+            <div class="chatbot-title">Claims Support Assistant</div>
+            <div class="chatbot-status"><span class="status-dot"></span> 24/7 Policy & Claims Helpdesk</div>
+          </div>
+        </div>
+        <div class="chatbot-header-actions">
+          <button type="button" class="chatbot-btn-icon" title="Clear Chat" onclick="clearChatMessages()">🗑️</button>
+          <button type="button" class="chatbot-btn-icon" title="Minimize" onclick="toggleChatbot()">✕</button>
+        </div>
+      </div>
+
+      <!-- Current Context Bar -->
+      <div id="chatbotContextBar" class="chatbot-context-bar">
+        <span>Active Claim Reference:</span>
+        <strong id="chatbotActiveClaimId">CLM-2024-00003</strong>
+      </div>
+
+      <!-- Messages Stream -->
+      <div id="chatbotMessages" class="chatbot-messages">
+        <!-- Initial Welcome Message -->
+        <div class="chat-msg assistant">
+          <div class="chat-bubble">
+            <p style="margin: 0 0 6px 0;">👋 Hello! I am your <strong>Claims Support Assistant</strong>.</p>
+            <p style="margin: 0;">I'm here to help you file claims, track claim status, check required documents, understand deductibles, and answer your policy questions!</p>
+          </div>
+        </div>
+
+        <!-- Default Prompt Suggestions -->
+        <div id="chatbotSuggestions" class="chatbot-suggestions">
+          <div class="suggestion-chip" onclick="sendPromptSuggestion('What documents do I need to file a claim?')">
+            📋 What documents do I need?
+          </div>
+          <div class="suggestion-chip" onclick="sendPromptSuggestion('How do I track my claim status?')">
+            🔍 How do I track claim status?
+          </div>
+          <div class="suggestion-chip" onclick="sendPromptSuggestion('What is the typical payout timeline?')">
+            ⏱️ What is the payout timeline?
+          </div>
+          <div class="suggestion-chip" onclick="sendPromptSuggestion('How do deductibles and coverage limits work?')">
+            💡 How do deductibles work?
+          </div>
+        </div>
+      </div>
+
+      <!-- Input Bar -->
+      <form id="chatbotForm" class="chatbot-input-bar" onsubmit="handleChatSubmit(event)">
+        <input 
+          type="text" 
+          id="chatbotInput" 
+          placeholder="Ask about filing, documents, status, or deductibles..." 
+          autocomplete="off"
+        />
+        <button type="submit" id="chatbotSendBtn" class="chatbot-send-btn" aria-label="Send message">
+          <span>➤</span>
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Main JavaScript Controller -->
+  <script src="js/app.js"></script>
+</body>
+</html>

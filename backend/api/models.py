@@ -40,6 +40,50 @@ class ClaimListResponse(BaseModel):
     total_pages: int
 
 
+# ─── Policyholder 360 Models ──────────────────────────────────────────────────
+
+class CustomerPolicySummary(BaseModel):
+    policy_id: str
+    policy_line: str
+    annual_premium_usd: float
+    coverage_limit_usd: float
+    policy_status: str
+
+
+class CustomerPriorClaim(BaseModel):
+    claim_id: str
+    policy_line: str
+    incident_type: str
+    claim_amount_usd: float
+    incident_date: str
+    filing_date: str
+    claim_status: str
+    risk_label: str
+
+
+class PolicyholderProfile360(BaseModel):
+    customer_id: str
+    customer_subtype: str
+    customer_main_type: str
+    age_group: str
+    household_size: int
+    purchasing_power_tier: int
+    purchasing_power_desc: str
+    number_of_houses: int
+    est_annual_insurance_spend_usd: float
+    total_active_policies: int
+    customer_lifetime_value_usd: float
+    all_policies: List[CustomerPolicySummary] = Field(default_factory=list)
+    prior_claims: List[CustomerPriorClaim] = Field(default_factory=list)
+    claims_last_12m: int = 0
+    claims_last_24m: int = 0
+    claims_last_36m: int = 0
+    total_prior_claims: int = 0
+    cumulative_payout_usd: float = 0.0
+    lifetime_premium_paid_usd: float = 0.0
+    net_loss_ratio: float = 0.0
+
+
 # ─── Full Claim Detail Response ──────────────────────────────────────────────
 
 class ClaimDetailResponse(BaseModel):
@@ -71,6 +115,7 @@ class ClaimDetailResponse(BaseModel):
     household_size: Optional[int] = None
     annual_premium_usd: Optional[float] = None
     total_active_policies: Optional[int] = None
+    customer_profile: Optional[PolicyholderProfile360] = None
 
 
 # ─── Graph Visualization Responses ───────────────────────────────────────────
@@ -173,3 +218,47 @@ class HealthResponse(BaseModel):
     llm_provider: str = "Google Gemini"
     llm_active: bool = False
     llm_model: str = "gemini-1.5-flash"
+
+
+# ─── Custom Claim Intake Request ─────────────────────────────────────────────
+
+class CustomClaimRequest(BaseModel):
+    """Payload for analyzing and optionally saving a brand-new, unindexed claim."""
+    claim_id: Optional[str] = Field(None, description="Custom Claim ID or auto-generated if omitted")
+    customer_id: Optional[str] = Field(None, description="Customer ID or auto-generated if omitted")
+    policy_line: str = Field("Auto", description="Policy line: Auto, Fire, Caravan, Boat, Liability, Health, Commercial, etc.")
+    incident_type: str = Field("Vehicle Collision", description="Type of incident: Vehicle Collision, Theft, Fire, Water Damage, Hail, etc.")
+    incident_severity: str = Field("Moderate", description="Severity: Minor, Moderate, Major, Total Loss, Critical")
+    claim_amount_usd: float = Field(12500.0, gt=0.0, description="Total claimed loss in USD")
+    coverage_limit_usd: Optional[float] = Field(None, description="Policy coverage limit (defaults to 2.5x claim amount if omitted)")
+    annual_premium_usd: Optional[float] = Field(None, description="Annual premium spend (defaults to realistic bracket)")
+    filing_delay_days: int = Field(4, ge=0, description="Days elapsed between incident date and claim filing date")
+    incident_date: Optional[str] = Field(None, description="Incident date in YYYY-MM-DD format")
+    filing_date: Optional[str] = Field(None, description="Filing date in YYYY-MM-DD format")
+    incident_narrative: str = Field(..., min_length=10, description="Full detailed description of the loss incident")
+    adjuster_notes: Optional[str] = Field("First Notice of Loss (FNOL) intake review.", description="Notes from the intake adjuster")
+    customer_subtype: Optional[str] = Field("Suburban Multi-Vehicle Family", description="Demographic/behavioral customer group")
+    customer_main_type: Optional[str] = Field("Family with Children", description="Customer main classification")
+    age_group: Optional[str] = Field("36-50", description="Age bracket of policyholder: 18-25, 26-35, 36-50, 51-65, 65+")
+    household_size: Optional[int] = Field(3, ge=1, le=10, description="Household member count")
+    total_active_policies: Optional[int] = Field(2, ge=1, le=15, description="Number of active policies in customer portfolio")
+    purchasing_power_tier: Optional[int] = Field(4, ge=1, le=8, description="Income / purchasing power bracket 1-8")
+    save_to_database: bool = Field(False, description="Whether to persist the new claim into SQLite and ChromaDB vector store")
+
+
+# ─── Chatbot Assistant Request / Response ────────────────────────────────────
+
+class ChatQueryRequest(BaseModel):
+    """User message sent to the interactive Claims Copilot chatbot."""
+    query: str = Field(..., min_length=1, description="User question or inquiry")
+    claim_id: Optional[str] = Field(None, description="Optional active claim ID context")
+
+
+class ChatQueryResponse(BaseModel):
+    """Grounded AI response from the Claims Copilot assistant."""
+    response: str = Field(..., description="Markdown-formatted assistant response")
+    sources: List[str] = Field(default_factory=list, description="Referenced data sources or claims")
+    suggested_followups: List[str] = Field(default_factory=list, description="Helpful follow-up prompt chips")
+    model: str = Field("Google Gemini / Grounded KB", description="Model or source used for response")
+
+

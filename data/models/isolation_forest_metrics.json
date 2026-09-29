@@ -1,7 +1,7 @@
 {
   "model": "Isolation Forest",
-  "roc_auc": 0.7386,
-  "avg_precision": 0.3398,
+  "roc_auc": 0.7425,
+  "avg_precision": 0.3439,
   "contamination": 0.12,
   "n_estimators": 200,
   "flagged_as_anomaly": 180,

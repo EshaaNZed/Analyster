@@ -217,25 +217,45 @@ class HybridGraphRAGRetriever:
     # Claim-ID-based retrieval (given a specific claim under review)
     # ------------------------------------------------------------------ #
 
-    def retrieve_claim_context(
+    def retrieve_claim_dossier_context(
         self,
-        claim_id: str,
+        claim_data: Dict[str, Any],
         top_k: int = 5,
     ) -> HybridRetrievalResult:
         """
-        Given a claim_id under review, retrieves:
-        1. k semantically similar historical claims (vector)
-        2. 2-hop graph context (customer + policy + risk cluster neighbours)
+        Given a full or partial claim dictionary (including brand new / unindexed claims),
+        retrieves:
+        1. k semantically similar historical claims via dense vector embedding
+        2. Graph relational neighborhood
         3. Household co-cluster risk flags
         """
-        from backend.knowledge_base.vector_store import get_similar_claims
+        from backend.knowledge_base.vector_store import get_similar_claims, semantic_search
         from backend.knowledge_base.graph_store import get_claim_context_subgraph
 
-        # --- 1. Vector: similar historical claims ---
-        vector_results = get_similar_claims(
-            claim_id=claim_id, top_k=top_k * 2,
-            exclude_self=True, collection=self.collection
-        )
+        claim_id = claim_data.get("claim_id", "CLM-NEW")
+        policy_line = claim_data.get("policy_line", "Auto")
+        incident_type = claim_data.get("incident_type", "")
+        narrative = claim_data.get("incident_narrative", "")
+        customer_id = claim_data.get("customer_id", "")
+
+        vector_results = []
+        # Attempt claim ID retrieval first
+        try:
+            vector_results = get_similar_claims(
+                claim_id=claim_id, top_k=top_k * 2,
+                exclude_self=True, collection=self.collection
+            )
+        except Exception:
+            # Fallback for new/unindexed claims: search on narrative text + policy context
+            search_query = f"{policy_line} {incident_type}. {narrative}".strip()
+            if not search_query:
+                search_query = f"{policy_line} insurance claim"
+            vector_results = semantic_search(
+                query=search_query,
+                top_k=top_k * 2,
+                collection=self.collection
+            )
+
         vector_ids  = [r["claim_id"] for r in vector_results]
         vector_meta = {r["claim_id"]: r for r in vector_results}
 
@@ -245,7 +265,14 @@ class HybridGraphRAGRetriever:
         if self.graph and self.graph.has_node(claim_id):
             graph_ctx       = get_claim_context_subgraph(self.graph, claim_id)
             graph_neighbors = self._graph_claim_neighbors(claim_id)
-        
+        elif self.graph and customer_id and self.graph.has_node(customer_id):
+            graph_neighbors = [
+                n for n in self.graph.neighbors(customer_id)
+                if self.graph.nodes[n].get("node_type") == "Claim"
+            ]
+        else:
+            graph_neighbors = self._graph_keyword_neighbors(f"{policy_line} {incident_type}", top_k=top_k * 2)
+
         # --- 3. RRF fusion ---
         fused     = _reciprocal_rank_fusion(vector_ids, graph_neighbors)[:top_k]
         final_ids = [cid for cid, _ in fused]
@@ -255,7 +282,7 @@ class HybridGraphRAGRetriever:
         detail_map = _fetch_claim_details(final_ids, self.db_path)
 
         # --- 5. Household risk flags ---
-        household_flags = self._detect_household_risk_flags(claim_id)
+        household_flags = self._detect_household_risk_flags(claim_id) if claim_id else []
 
         # --- 6. Build result ---
         similar_claims = []
@@ -285,7 +312,7 @@ class HybridGraphRAGRetriever:
             ))
 
         return HybridRetrievalResult(
-            query=f"Similar claims to {claim_id}",
+            query=f"Context for {claim_id}",
             query_claim_id=claim_id,
             top_k=top_k,
             total_vector_hits=len(vector_ids),
@@ -299,6 +326,19 @@ class HybridGraphRAGRetriever:
                 "graph_nodes_in_context": graph_ctx.get("node_count", 0),
             }
         )
+
+    def retrieve_claim_context(
+        self,
+        claim_id: str,
+        top_k: int = 5,
+    ) -> HybridRetrievalResult:
+        """
+        Given a claim_id under review, retrieves:
+        1. k semantically similar historical claims (vector)
+        2. 2-hop graph context (customer + policy + risk cluster neighbours)
+        3. Household co-cluster risk flags
+        """
+        return self.retrieve_claim_dossier_context({"claim_id": claim_id}, top_k=top_k)
 
     # ------------------------------------------------------------------ #
     # Graph helpers

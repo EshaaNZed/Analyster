@@ -93,7 +93,6 @@ def train_xgboost(
         gamma=0.3,
         reg_alpha=1.0,     # L1 Lasso penalty on leaf weights
         reg_lambda=2.0,    # L2 Ridge penalty on leaf weights
-        scale_pos_weight=scale_pos_weight,
         eval_metric="auc",
         use_label_encoder=False,
         random_state=random_state,

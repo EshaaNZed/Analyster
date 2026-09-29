@@ -1,15 +1,20 @@
 """
-Weighted Ensemble Fusion Engine + Risk Triage
+2-Model Risk & Outlier Scoring Engine + Triage
 ==============================================
-Combines all 4 layers into one final explainable risk score (0–100).
+Pure Machine Learning Architecture:
+1. Supervised Risk Classification (XGBoost):
+   - Calculates fraud probability (0.0 to 1.0) directly from trained gradient boosting trees.
+   - Primary Risk Score = int(round(XGBoost Fraud Probability * 100))
+   - Direct, transparent 0–100 scale with zero arbitrary rule weights.
 
-Ensemble weights:
-  XGBoost        : 50%  — highest AUC, label-aware
-  Random Forest  : 25%  — calibration / stability validator
-  Isolation Forest: 15% — novel unseen pattern detector
-  Rule Engine    : 10%  — deterministic regulatory audit trail
+2. Unsupervised Anomaly Detection (Isolation Forest):
+   - Evaluates multi-dimensional statistical feature eccentricity.
+   - Operates independently as an Outlier Detector without distorting the XGBoost risk score.
 
-Final triage:
+3. Cross-Validation & Stability (Calibrated Random Forest):
+   - Provides probability calibration and model agreement verification.
+
+Final Triage Actions:
   0–39  : Low Risk    — Fast-Track Approval
   40–69 : Medium Risk — Standard Adjuster Review
   70–100: High Risk   — Priority Manual Investigation / SIU Referral
@@ -28,14 +33,6 @@ BASE_DIR      = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(
 PROCESSED_DIR = os.path.join(BASE_DIR, "data", "processed")
 MODELS_DIR    = os.path.join(BASE_DIR, "data", "models")
 DB_PATH       = os.path.join(PROCESSED_DIR, "claims_intelligence.db")
-
-# Ensemble weights (must sum to 1.0)
-WEIGHTS = {
-    "xgboost":          0.50,
-    "random_forest":    0.25,
-    "isolation_forest": 0.15,
-    "rules":            0.10,
-}
 
 # Triage thresholds
 TRIAGE_THRESHOLDS = {
@@ -76,7 +73,7 @@ def _triage_action(label: str) -> str:
 class EnsembleRiskScorer:
     """
     Production inference engine. Loaded once, used for all claim scoring.
-    Holds references to all 4 trained models + scaler metadata.
+    Evaluates XGBoost supervised fraud risk and Isolation Forest outlier detection.
     """
 
     def __init__(self, xgb_model, rf_model, if_model, scaler_meta: Dict):
@@ -84,9 +81,7 @@ class EnsembleRiskScorer:
         self.rf  = rf_model
         self.ifo = if_model
         self.scaler_meta = scaler_meta
-
-        from backend.analytics.rule_engine import evaluate_rules
-        self._evaluate_rules = evaluate_rules
+        self._explainer = None
 
     def _build_feature_vector(self, claim_data: Dict[str, Any]) -> np.ndarray:
         """
@@ -114,40 +109,29 @@ class EnsembleRiskScorer:
 
     def score_claim(self, claim_data: Dict[str, Any]) -> Dict[str, Any]:
         """
-        Runs the full 4-layer ensemble on a single claim dossier dict.
-        Returns a complete, explainable risk scoring packet.
+        Calculates pure Machine Learning risk score directly from trained XGBoost model (prob * 100),
+        alongside Isolation Forest anomaly outlier detection and Random Forest validation.
         """
         from backend.analytics.isolation_forest import get_if_score
 
         X = self._build_feature_vector(claim_data)
 
-        # 1. XGBoost score
-        xgb_prob   = float(self.xgb.predict_proba(X.reshape(1, -1))[0, 1])
+        # 1. XGBoost Supervised Fraud Probability (Direct Primary Risk Score)
+        xgb_prob = float(self.xgb.predict_proba(X.reshape(1, -1))[0, 1])
 
-        # 2. Random Forest score
-        rf_prob    = float(self.rf.predict_proba(X.reshape(1, -1))[0, 1])
+        # 2. Random Forest Validation Probability
+        rf_prob = float(self.rf.predict_proba(X.reshape(1, -1))[0, 1])
 
-        # 3. Isolation Forest score
-        if_prob    = get_if_score(self.ifo, X)
+        # 3. Isolation Forest Unsupervised Anomaly Score
+        if_prob = get_if_score(self.ifo, X)
 
-        # 4. Rule engine score
-        rule_result = self._evaluate_rules(claim_data)
-        rule_prob   = rule_result["rule_score_pct"]
-
-        # 5. Weighted ensemble fusion
-        ensemble_prob = (
-            WEIGHTS["xgboost"]          * xgb_prob +
-            WEIGHTS["random_forest"]    * rf_prob  +
-            WEIGHTS["isolation_forest"] * if_prob  +
-            WEIGHTS["rules"]            * rule_prob
-        )
-        final_score = int(round(ensemble_prob * 100))
+        # Direct, transparent 0-100 score derived from XGBoost probability
+        final_score = int(round(xgb_prob * 100))
         final_score = max(0, min(100, final_score))
-
-        triage_label  = _triage_label(final_score)
+        triage_label = _triage_label(final_score)
         triage_action = _triage_action(triage_label)
 
-        # SHAP explanations (if model supports it)
+        # SHAP explanations
         shap_factors = self._get_shap_factors(X)
 
         return {
@@ -157,17 +141,15 @@ class EnsembleRiskScorer:
             "triage_action":    triage_action,
             "ensemble_breakdown": {
                 "xgb_score":     int(round(xgb_prob * 100)),
-                "xgb_weight":    "50%",
+                "xgb_prob":      round(xgb_prob, 4),
                 "rf_score":      int(round(rf_prob * 100)),
-                "rf_weight":     "25%",
+                "rf_prob":       round(rf_prob, 4),
                 "if_score":      int(round(if_prob * 100)),
-                "if_weight":     "15%",
-                "rule_score":    int(round(rule_prob * 100)),
-                "rule_weight":   "10%",
-                "ensemble_prob": round(ensemble_prob, 4),
+                "if_prob":       round(if_prob, 4),
+                "primary_model": "XGBoost Classifier",
             },
-            "rule_flags":       rule_result["triggered_rules"],
-            "rule_flags_count": rule_result["rule_flags_count"],
+            "rule_flags":       [],
+            "rule_flags_count": 0,
             "shap_top_factors": shap_factors,
             "model_agreement": {
                 "xgb_rf_gap_pts":  abs(int(round(xgb_prob * 100)) - int(round(rf_prob * 100))),
@@ -178,9 +160,10 @@ class EnsembleRiskScorer:
     def _get_shap_factors(self, X: np.ndarray) -> List[Dict[str, Any]]:
         """Computes SHAP values for this single claim vector."""
         try:
-            import shap
-            explainer = shap.TreeExplainer(self.xgb)
-            shap_vals = explainer.shap_values(X.reshape(1, -1))[0]
+            if self._explainer is None:
+                import shap
+                self._explainer = shap.TreeExplainer(self.xgb)
+            shap_vals = self._explainer.shap_values(X.reshape(1, -1))[0]
             factors = [
                 {
                     "feature":      FEATURE_NAMES[i],
@@ -200,10 +183,10 @@ def score_all_claims_batch(
     db_path: str = DB_PATH,
 ) -> pd.DataFrame:
     """
-    Scores all 1,500 claims in a single batch pass.
+    Scores all claims in a single batch pass.
     Saves results to data/processed/risk_scores.csv
     """
-    print("[ENSEMBLE] Batch scoring all claims in database...")
+    print("[SCORER] Batch scoring all claims in database with 2-model architecture...")
     conn = sqlite3.connect(db_path)
     df   = pd.read_sql_query("SELECT * FROM v_claims_full_dossier", conn)
     conn.close()
@@ -224,8 +207,6 @@ def score_all_claims_batch(
             "xgb_score":          scored["ensemble_breakdown"]["xgb_score"],
             "rf_score":           scored["ensemble_breakdown"]["rf_score"],
             "if_score":           scored["ensemble_breakdown"]["if_score"],
-            "rule_score":         scored["ensemble_breakdown"]["rule_score"],
-            "rule_flags_count":   scored["rule_flags_count"],
             "xgb_rf_agreement":   scored["model_agreement"]["agreement"],
             "is_anomaly_gt":      row["is_anomaly_ground_truth"],
         })
@@ -237,8 +218,8 @@ def score_all_claims_batch(
 
     # Summary
     triage_dist = df_scores["risk_level"].value_counts().to_dict()
-    print(f"[ENSEMBLE] Scoring complete. Distribution: {triage_dist}")
-    print(f"[ENSEMBLE] Risk scores saved -> {output_path}")
+    print(f"[SCORER] Scoring complete. Distribution: {triage_dist}")
+    print(f"[SCORER] Risk scores saved -> {output_path}")
     return df_scores
 
 

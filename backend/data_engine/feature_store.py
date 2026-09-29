@@ -44,9 +44,15 @@ def build_ml_feature_matrix(
     merged = df_claims.merge(df_customers, on="customer_id", how="left")
     merged = merged.merge(df_policies[["policy_id", "annual_premium_usd"]], on="policy_id", how="left")
 
-    # Compute subtype average claim benchmarks
-    subtype_avg_claim = merged.groupby("MOSTYPE")["claim_amount_usd"].transform("mean")
-    subtype_claim_ratio_delta = (merged["claim_amount_usd"] - subtype_avg_claim) / (subtype_avg_claim + 1.0)
+    # Compute subtype median and spread benchmarks (v2.0 Brief Update)
+    subtype_median = merged.groupby("MOSTYPE")["claim_amount_usd"].transform("median")
+    subtype_std = merged.groupby("MOSTYPE")["claim_amount_usd"].transform("std").fillna(0.0)
+    subtype_iqr = merged.groupby("MOSTYPE")["claim_amount_usd"].transform(
+        lambda x: (x.quantile(0.75) - x.quantile(0.25)) if len(x) > 1 else 0.0
+    ).fillna(0.0)
+
+    subtype_claim_ratio_delta = (merged["claim_amount_usd"] - subtype_median) / (subtype_iqr + subtype_std + 1.0)
+    subtype_claim_ratio_delta = subtype_claim_ratio_delta.clip(lower=-3.0, upper=10.0)
 
     # Build raw feature matrix
     df_feat = pd.DataFrame()

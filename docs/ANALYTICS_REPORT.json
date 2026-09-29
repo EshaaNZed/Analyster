@@ -1,56 +1,56 @@
 {
   "pipeline": "Task 2 \u2014 4-Layer Ensemble Anomaly Detection",
-  "elapsed_sec": 190.46,
+  "elapsed_sec": 135.14,
   "models": {
     "xgboost": {
-      "cv_mean_auc": 0.9184,
-      "cv_std": 0.0246,
-      "cv_pr_auc": 0.6454,
-      "f1": 0.6354,
-      "precision": 0.4685,
-      "recall": 0.9873
+      "cv_mean_auc": 0.9196,
+      "cv_std": 0.0232,
+      "cv_pr_auc": 0.6415,
+      "f1": 0.626,
+      "precision": 0.875,
+      "recall": 0.4873
     },
     "random_forest": {
-      "cv_mean_auc": 0.9123,
-      "train_auc": 0.9552,
-      "f1": 0.583,
+      "cv_mean_auc": 0.9114,
+      "train_auc": 0.9544,
+      "f1": 0.5968,
       "top_features": [
         [
           "log_claim_amount",
-          0.286
+          0.3116
         ],
         [
           "claim_to_limit_ratio",
-          0.2465
+          0.26
         ],
         [
           "subtype_claim_ratio_delta",
-          0.233
+          0.1871
         ]
       ]
     },
     "isolation_forest": {
-      "roc_auc": 0.7386,
-      "avg_precision": 0.3398,
+      "roc_auc": 0.7425,
+      "avg_precision": 0.3439,
       "flagged_anomaly": 180
     }
   },
   "stability_check": {
-    "xgb_cv_auc": 0.9184,
-    "rf_cv_auc": 0.9123,
-    "gap": 0.0061,
+    "xgb_cv_auc": 0.9196,
+    "rf_cv_auc": 0.9114,
+    "gap": 0.0082,
     "stability_check": "STABLE",
     "recommendation": "Models are in agreement. XGBoost selected as primary."
   },
   "triage_distribution": {
-    "Low": 1165,
-    "Medium": 283,
-    "High": 52
+    "Low": 1404,
+    "Medium": 57,
+    "High": 39
   },
   "gt_anomaly_triage": {
-    "Medium": 102,
-    "High": 49,
-    "Low": 7
+    "Low": 79,
+    "Medium": 40,
+    "High": 39
   },
   "ensemble_weights": {
     "xgboost": "50%",
