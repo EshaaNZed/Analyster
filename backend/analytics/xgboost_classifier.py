@@ -32,29 +32,9 @@ os.makedirs(MODELS_DIR, exist_ok=True)
 XGB_MODEL_PATH  = os.path.join(MODELS_DIR, "xgboost_anomaly.pkl")
 XGB_METRICS_PATH = os.path.join(MODELS_DIR, "xgboost_metrics.json")
 
-FEATURE_NAMES = [
-    "log_claim_amount",
-    "filing_delay_days",
-    "claim_to_limit_ratio",
-    "claim_to_premium_ratio",
-    "customer_total_policies",
-    "log_annual_spend",
-    "household_size",
-    "purchasing_power_tier",
-    "subtype_claim_ratio_delta"
-]
+from backend.analytics.triage_features import FEATURE_DISPLAY_NAMES, PATTERN_FEATURES
 
-FEATURE_DISPLAY_NAMES = {
-    "log_claim_amount":          "Claim Amount (log-scaled)",
-    "filing_delay_days":         "Filing Delay (days)",
-    "claim_to_limit_ratio":      "Claim-to-Limit Ratio",
-    "claim_to_premium_ratio":    "Claim-to-Premium Ratio",
-    "customer_total_policies":   "Total Active Policies",
-    "log_annual_spend":          "Annual Insurance Spend (log)",
-    "household_size":            "Household Size",
-    "purchasing_power_tier":     "Purchasing Power Tier",
-    "subtype_claim_ratio_delta": "Deviation from Peer Group Average"
-}
+FEATURE_NAMES = PATTERN_FEATURES
 
 
 def load_feature_matrix() -> Tuple[np.ndarray, np.ndarray, np.ndarray]:
@@ -67,6 +47,7 @@ def load_feature_matrix() -> Tuple[np.ndarray, np.ndarray, np.ndarray]:
 def train_xgboost(
     X: np.ndarray,
     y: np.ndarray,
+    groups: np.ndarray = None,
     n_cv_folds: int = 5,
     random_state: int = 42,
 ) -> Tuple[Any, Dict[str, Any]]:
@@ -91,19 +72,25 @@ def train_xgboost(
         colsample_bytree=0.85,
         min_child_weight=3,
         gamma=0.3,
-        reg_alpha=1.0,     # L1 Lasso penalty on leaf weights
-        reg_lambda=2.0,    # L2 Ridge penalty on leaf weights
+        reg_alpha=1.0,
+        reg_lambda=2.0,
+        scale_pos_weight=scale_pos_weight,
         eval_metric="auc",
-        use_label_encoder=False,
         random_state=random_state,
         n_jobs=-1,
         verbosity=0,
     )
 
-    # 5-fold stratified cross validation
-    cv = StratifiedKFold(n_splits=n_cv_folds, shuffle=True, random_state=random_state)
-    cv_aucs = cross_val_score(model, X, y, cv=cv, scoring="roc_auc")
-    cv_pr_aucs = cross_val_score(model, X, y, cv=cv, scoring="average_precision")
+    # Customer-grouped folds so one person's claims stay on one side of the split.
+    if groups is not None:
+        from sklearn.model_selection import StratifiedGroupKFold
+        cv = StratifiedGroupKFold(n_splits=n_cv_folds, shuffle=True, random_state=random_state)
+        cv_aucs = cross_val_score(model, X, y, cv=cv, groups=groups, scoring="roc_auc")
+        cv_pr_aucs = cross_val_score(model, X, y, cv=cv, groups=groups, scoring="average_precision")
+    else:
+        cv = StratifiedKFold(n_splits=n_cv_folds, shuffle=True, random_state=random_state)
+        cv_aucs = cross_val_score(model, X, y, cv=cv, scoring="roc_auc")
+        cv_pr_aucs = cross_val_score(model, X, y, cv=cv, scoring="average_precision")
 
     # Fit final model
     model.fit(X, y)

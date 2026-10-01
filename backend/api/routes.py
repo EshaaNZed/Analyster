@@ -515,7 +515,7 @@ def evaluate_new_claim(payload: CustomClaimRequest):
 
     claim_to_limit = round(claim_amt / max(cov_limit, 1.0), 4)
     claim_to_prem = round(claim_amt / max(ann_prem, 1.0), 2)
-    active_pols = int(payload.total_active_policies or 1)
+    active_pols = 1 if payload.total_active_policies is None else int(payload.total_active_policies)
     household_sz = int(payload.household_size or 3)
     p_tier = int(payload.purchasing_power_tier or 4)
 
@@ -1061,6 +1061,7 @@ def get_evaluation_metrics():
         "stability_check": stability,
         "triage_distribution": triage_dist,
         "gt_anomaly_triage": gt_anomaly_triage,
+        "triage_quality": report.get("triage_quality", {}),
         "ensemble_weights": report.get("ensemble_weights", {
             "xgboost": "50%",
             "random_forest": "25%",

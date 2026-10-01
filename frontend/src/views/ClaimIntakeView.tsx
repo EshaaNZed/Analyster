@@ -17,9 +17,9 @@ export const ClaimIntakeView: React.FC = () => {
   // Form state
   const [claimId, setClaimId] = useState('');
   const [customerId, setCustomerId] = useState('');
-  const [policyLine, setPolicyLine] = useState('Auto Insurance');
+  const [policyLine, setPolicyLine] = useState('Auto');
   const [incidentSeverity, setIncidentSeverity] = useState('Minor');
-  const [incidentType, setIncidentType] = useState('Rear Collision & Minor Bumper Damage');
+  const [incidentType, setIncidentType] = useState('Rear-End Collision');
   const [claimAmount, setClaimAmount] = useState<number>(4500);
   const [coverageLimit, setCoverageLimit] = useState<number>(25000);
   const [annualPremium, setAnnualPremium] = useState<number>(1200);
@@ -113,7 +113,7 @@ export const ClaimIntakeView: React.FC = () => {
             New Claim Intake & Live Swarm Evaluator
           </h1>
           <p style={{ color: 'var(--text-secondary)', fontSize: '0.92rem', margin: '8px 0 0 0', maxWidth: '800px' }}>
-            Submit an unindexed First Notice of Loss (FNOL) claim to instantly trigger real-time feature extraction, dense Graph-RAG retrieval, 4-tier ML scoring, and autonomous 5-Agent dossier generation.
+            Submit a new claim. The score is 65% within-line severity, 35% pattern probability, plus 1 point for each day filed after day 14.
           </p>
         </div>
 
@@ -158,11 +158,11 @@ export const ClaimIntakeView: React.FC = () => {
                       outline: 'none',
                     }}
                   >
-                    <option value="Auto Insurance" style={{ background: '#1a1a24' }}>Auto Insurance (Car/Fleet)</option>
-                    <option value="Home & Property" style={{ background: '#1a1a24' }}>Home & Property Insurance</option>
-                    <option value="Boat & Marine" style={{ background: '#1a1a24' }}>Boat & Marine Coverage</option>
-                    <option value="Commercial Liability" style={{ background: '#1a1a24' }}>Commercial Liability</option>
-                    <option value="Life & Disability" style={{ background: '#1a1a24' }}>Life & Disability</option>
+                    <option value="Auto" style={{ background: '#1a1a24' }}>Auto</option>
+                    <option value="Fire" style={{ background: '#1a1a24' }}>Fire</option>
+                    <option value="Boat" style={{ background: '#1a1a24' }}>Boat</option>
+                    <option value="Caravan" style={{ background: '#1a1a24' }}>Caravan</option>
+                    <option value="Private Accident" style={{ background: '#1a1a24' }}>Private Accident</option>
                   </select>
                 </div>
 
@@ -450,7 +450,7 @@ export const ClaimIntakeView: React.FC = () => {
 
               {filingDelayDays > 14 && (
                 <div style={{ background: 'rgba(245, 158, 11, 0.12)', border: '1px solid rgba(245, 158, 11, 0.3)', padding: '8px 12px', borderRadius: '8px', fontSize: '0.75rem', color: '#fbbf24', display: 'flex', alignItems: 'center', gap: '8px' }}>
-                  <AlertTriangle size={14} /> Delay of {filingDelayDays} days exceeds standard 14-day threshold. This will trigger the Late Filing Anomaly audit.
+                  <AlertTriangle size={14} /> Filed {filingDelayDays} days after the loss. That adds {Math.min(46, filingDelayDays - 14)} points: 1 point per day after day 14, capped at 46.
                 </div>
               )}
             </div>
@@ -460,13 +460,14 @@ export const ClaimIntakeView: React.FC = () => {
           <SpotlightCard spotlightColor="rgba(168, 85, 247, 0.15)">
             <div style={{ padding: '24px', display: 'flex', flexDirection: 'column', gap: '16px' }}>
               <div style={{ fontSize: '0.95rem', fontWeight: 700, color: '#f0f0f5', display: 'flex', alignItems: 'center', gap: '8px' }}>
-                <User size={18} color="#c084fc" /> Policyholder Demographics & Household Profile
+                <User size={18} color="#c084fc" /> Policyholder profile
+                <span style={{ fontSize: '0.72rem', fontWeight: 500, color: 'var(--text-secondary)' }}>Not used in the score</span>
               </div>
 
               <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '16px' }}>
                 <div>
                   <label style={{ display: 'block', fontSize: '0.75rem', color: 'var(--text-secondary)', marginBottom: '6px' }}>
-                    Purchasing Power Bracket (1: Low to 8: High Net Worth) *
+                    Purchasing power bracket (profile only)
                   </label>
                   <select
                     value={purchasingPowerTier}
@@ -525,7 +526,7 @@ export const ClaimIntakeView: React.FC = () => {
               <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(130px, 1fr))', gap: '16px' }}>
                 <div>
                   <label style={{ display: 'block', fontSize: '0.75rem', color: 'var(--text-secondary)', marginBottom: '6px' }}>
-                    Household Size
+                    Household size (profile only)
                   </label>
                   <input
                     type="number"
@@ -549,12 +550,12 @@ export const ClaimIntakeView: React.FC = () => {
 
                 <div>
                   <label style={{ display: 'block', fontSize: '0.75rem', color: 'var(--text-secondary)', marginBottom: '6px' }}>
-                    Total Active Policies
+                    Active policies (profile only)
                   </label>
                   <input
                     type="number"
                     value={activePolicies}
-                    min="1"
+                    min="0"
                     max="15"
                     onChange={(e) => setActivePolicies(Number(e.target.value))}
                     style={{
@@ -754,9 +755,19 @@ export const ClaimIntakeView: React.FC = () => {
                   </span>
                 </div>
 
+                <RiskGauge
+                  score={dossier.risk_analysis?.risk_score || 0}
+                  tier={dossier.risk_analysis?.risk_tier || 'Low'}
+                  xgbProb={dossier.risk_analysis?.xgb_probability || 0}
+                  rfProb={dossier.risk_analysis?.rf_probability || 0}
+                  severityScore={dossier.risk_analysis?.severity_score}
+                  delayNoticePoints={dossier.risk_analysis?.delay_notice_points}
+                  size={220}
+                />
+
                 <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: '16px', background: 'rgba(0, 0, 0, 0.3)', padding: '16px', borderRadius: '12px', border: '1px solid rgba(255, 255, 255, 0.05)' }}>
                   <div>
-                    <span style={{ fontSize: '0.7rem', color: 'var(--text-tertiary)' }}>CALIBRATED ENSEMBLE SCORE</span>
+                    <span style={{ fontSize: '0.7rem', color: 'var(--text-tertiary)' }}>TRIAGE SCORE</span>
                     <div style={{ fontSize: '1.8rem', fontWeight: 900, color: '#a78bfa', fontFamily: 'var(--font-mono)' }}>
                       {dossier.risk_analysis?.risk_score ?? 0}<span style={{ fontSize: '0.9rem', color: 'var(--text-tertiary)' }}>/100</span>
                     </div>

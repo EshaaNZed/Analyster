@@ -6,6 +6,8 @@ interface RiskGaugeProps {
   tier: 'Low' | 'Medium' | 'High';
   xgbProb?: number;
   rfProb?: number;
+  severityScore?: number;
+  delayNoticePoints?: number;
   size?: number;
 }
 
@@ -14,6 +16,8 @@ export const RiskGauge: React.FC<RiskGaugeProps> = ({
   tier,
   xgbProb = 0,
   rfProb = 0,
+  severityScore,
+  delayNoticePoints,
   size = 200,
 }) => {
   const strokeWidth = 14;
@@ -104,8 +108,24 @@ export const RiskGauge: React.FC<RiskGaugeProps> = ({
 
       {/* Model Probability Breakdown */}
       <div style={{ display: 'flex', gap: '16px', marginTop: '14px', width: '100%', justifyContent: 'center' }}>
+        {severityScore !== undefined && (
+          <div style={{ textAlign: 'center', background: 'rgba(255,255,255,0.03)', padding: '6px 12px', borderRadius: '8px', border: '1px solid rgba(255,255,255,0.06)' }}>
+            <div style={{ fontSize: '0.7rem', color: 'var(--text-secondary)' }}>Severity 65%</div>
+            <div style={{ fontSize: '0.9rem', fontWeight: 700, color: '#e2e8f0', fontFamily: 'var(--font-mono)' }}>
+              {severityScore}
+            </div>
+          </div>
+        )}
+        {delayNoticePoints !== undefined && delayNoticePoints > 0 && (
+          <div style={{ textAlign: 'center', background: 'rgba(255,255,255,0.03)', padding: '6px 12px', borderRadius: '8px', border: '1px solid rgba(255,255,255,0.06)' }}>
+            <div style={{ fontSize: '0.7rem', color: 'var(--text-secondary)' }}>Late notice</div>
+            <div style={{ fontSize: '0.9rem', fontWeight: 700, color: '#e2e8f0', fontFamily: 'var(--font-mono)' }}>
+              +{delayNoticePoints}
+            </div>
+          </div>
+        )}
         <div style={{ textAlign: 'center', background: 'rgba(255,255,255,0.03)', padding: '6px 12px', borderRadius: '8px', border: '1px solid rgba(255,255,255,0.06)' }}>
-          <div style={{ fontSize: '0.7rem', color: 'var(--text-secondary)' }}>XGBoost Prob</div>
+          <div style={{ fontSize: '0.7rem', color: 'var(--text-secondary)' }}>Pattern 35%</div>
           <div style={{ fontSize: '0.9rem', fontWeight: 700, color: '#e2e8f0', fontFamily: 'var(--font-mono)' }}>
             {(xgbProb * 100).toFixed(1)}%
           </div>

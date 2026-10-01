@@ -1,13 +1,13 @@
 {
-  "total_nodes": 25543,
-  "total_edges": 22184,
+  "total_nodes": 25541,
+  "total_edges": 22181,
   "is_directed": true,
   "node_types": {
     "Customer": 2000,
     "Policy": 15546,
     "Unknown": 6358,
     "Claim": 1500,
-    "IncidentType": 25,
+    "IncidentType": 23,
     "RiskCluster": 4,
     "HouseholdCluster": 110
   },
@@ -16,6 +16,6 @@
     "BELONGS_TO_HOUSEHOLD": 1955,
     "HAS_CLAIM": 3000,
     "INCIDENT_OF_TYPE": 1500,
-    "FLAGGED_BY_RISK_CLUSTER": 183
+    "FLAGGED_BY_RISK_CLUSTER": 180
   }
 }

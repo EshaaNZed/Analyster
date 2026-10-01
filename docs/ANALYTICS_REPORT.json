@@ -1,61 +1,66 @@
 {
   "pipeline": "Task 2 \u2014 4-Layer Ensemble Anomaly Detection",
-  "elapsed_sec": 135.14,
+  "elapsed_sec": 283.34,
   "models": {
     "xgboost": {
-      "cv_mean_auc": 0.9196,
-      "cv_std": 0.0232,
-      "cv_pr_auc": 0.6415,
-      "f1": 0.626,
-      "precision": 0.875,
-      "recall": 0.4873
+      "cv_mean_auc": 0.8577,
+      "cv_std": 0.0207,
+      "cv_pr_auc": 0.5927,
+      "f1": 0.51,
+      "precision": 0.3804,
+      "recall": 0.7735
     },
     "random_forest": {
-      "cv_mean_auc": 0.9114,
-      "train_auc": 0.9544,
-      "f1": 0.5968,
+      "cv_mean_auc": 0.8652,
+      "train_auc": 0.8877,
+      "f1": 0.4754,
       "top_features": [
         [
-          "log_claim_amount",
-          0.3116
+          "delay_vs_line_median",
+          0.3182
         ],
         [
-          "claim_to_limit_ratio",
-          0.26
+          "loss_type_mismatch",
+          0.3129
         ],
         [
-          "subtype_claim_ratio_delta",
-          0.1871
+          "recent_coverage_increase",
+          0.1324
         ]
       ]
     },
     "isolation_forest": {
-      "roc_auc": 0.7425,
-      "avg_precision": 0.3439,
-      "flagged_anomaly": 180
+      "roc_auc": 0.7084,
+      "avg_precision": 0.4762,
+      "flagged_anomaly": 179
     }
   },
   "stability_check": {
-    "xgb_cv_auc": 0.9196,
-    "rf_cv_auc": 0.9114,
-    "gap": 0.0082,
+    "xgb_cv_auc": 0.8577,
+    "rf_cv_auc": 0.8652,
+    "gap": 0.0075,
     "stability_check": "STABLE",
     "recommendation": "Models are in agreement. XGBoost selected as primary."
   },
   "triage_distribution": {
-    "Low": 1404,
-    "Medium": 57,
-    "High": 39
+    "Low": 837,
+    "Medium": 483,
+    "High": 184
   },
   "gt_anomaly_triage": {
-    "Low": 79,
-    "Medium": 40,
-    "High": 39
+    "High": 111,
+    "Medium": 70
+  },
+  "triage_quality": {
+    "anomaly_high_recall": 0.6133,
+    "anomaly_not_low_recall": 1.0,
+    "low_tier_precision_vs_rubric": 0.9725,
+    "quadratic_weighted_kappa": 0.7795
   },
   "ensemble_weights": {
-    "xgboost": "50%",
-    "random_forest": "25%",
-    "isolation_forest": "15%",
-    "rule_engine": "10%"
+    "severity": "65%",
+    "xgboost_pattern": "35%",
+    "random_forest": "validator only",
+    "isolation_forest": "outlier flag only"
   }
 }

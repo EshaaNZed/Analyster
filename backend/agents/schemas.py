@@ -54,6 +54,8 @@ class RiskAgentOutput(BaseModel):
     """Output contract for Agent 2: Claims Risk Analysis Agent."""
     risk_score: int = Field(..., description="Unified risk score (0-100)")
     risk_tier: str = Field(..., description="Low, Medium, or High")
+    severity_score: int = Field(0, description="Within-line severity, 0-100, before blending")
+    delay_notice_points: int = Field(0, description="Fixed points for filing after the 14-day notice window")
     xgb_probability: float
     rf_probability: float
     rule_violations: List[str] = Field(default_factory=list)

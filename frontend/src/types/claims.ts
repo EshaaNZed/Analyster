@@ -133,6 +133,8 @@ export interface ShapFactor {
 export interface RiskAnalysis {
   risk_score: number;
   risk_tier: 'Low' | 'Medium' | 'High';
+  severity_score?: number;
+  delay_notice_points?: number;
   xgb_probability: number;
   rf_probability: number;
   rule_violations: string[];

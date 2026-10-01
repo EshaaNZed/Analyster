@@ -217,6 +217,12 @@ def synthesize_claims_knowledge_base(
                 tier_factor = max(0.5, tier * 0.4)
                 policy_limit = round(default_limit * tier_factor, -2)
 
+                inception = datetime.date(2018, 1, 1) + datetime.timedelta(days=random.randint(0, 2300))
+                coverage_change = ""
+                if random.random() < 0.12:
+                    change = inception + datetime.timedelta(days=random.randint(90, 800))
+                    if change < datetime.date(2024, 9, 1):
+                        coverage_change = change.isoformat()
                 policies.append({
                     "policy_id": f"POL-{policy_id_counter:06d}",
                     "customer_id": cust_id,
@@ -225,7 +231,8 @@ def synthesize_claims_knowledge_base(
                     "contribution_tier": tier,
                     "annual_premium_usd": annual_spend,
                     "coverage_limit_usd": policy_limit,
-                    "policy_inception_date": "2022-01-15",
+                    "policy_inception_date": inception.isoformat(),
+                    "coverage_change_date": coverage_change,
                     "policy_status": "Active"
                 })
                 policy_id_counter += 1
@@ -233,134 +240,9 @@ def synthesize_claims_knowledge_base(
     df_policies = pd.DataFrame(policies)
     print(f"[CLAIMS SYNTHESIZER] Created {len(df_policies)} active policy contracts across {df_customers['customer_id'].nunique()} customers.")
 
-    # 2. Build Claims linked strictly to existing policyholders
-    # Filter policies for lines where incident templates exist
-    eligible_policies = df_policies[df_policies["policy_line"].isin(INCIDENT_TEMPLATES.keys())].copy()
-    if len(eligible_policies) == 0:
-        eligible_policies = df_policies.copy()
+    from backend.data_engine.claim_factory import build_claim_facts
+    df_claims = build_claim_facts(df_policies, target_claims_count, anomaly_ratio)
 
-    # Pre-select customers/policies for claim generation
-    sampled_indices = np.random.choice(
-        eligible_policies.index,
-        size=target_claims_count,
-        replace=True
-    )
-
-    claims = []
-    base_date = datetime.date(2023, 1, 1)
-
-    for i, idx in enumerate(sampled_indices):
-        pol = eligible_policies.loc[idx]
-        cust_id = pol["customer_id"]
-        pol_id = pol["policy_id"]
-        line = pol["policy_line"]
-        limit = pol["coverage_limit_usd"]
-        annual_premium = pol["annual_premium_usd"]
-
-        claim_id = f"CLM-2024-{i+1:05d}"
-        
-        # Decide if this claim should be a controlled anomaly / high risk test case
-        is_anomaly = (random.random() < anomaly_ratio)
-        
-        # Incident date between 2023-01-01 and 2024-09-30
-        day_offset = random.randint(0, 600)
-        inc_date = base_date + datetime.timedelta(days=day_offset)
-
-        if is_anomaly:
-            # 3 Anomaly sub-types: Blatant (35%), Subtle/Borderline (45%), Rapid/Recent Spike (20%)
-            anomaly_subtype = random.choices(["blatant", "subtle", "spike"], weights=[0.35, 0.45, 0.20])[0]
-            anom_tpl = random.choice(ANOMALOUS_NARRATIVE_TEMPLATES)
-            inc_type = anom_tpl["type"]
-            narrative = anom_tpl["narrative"]
-            anomaly_reasons = [anom_tpl["category"]]
-
-            if anomaly_subtype == "blatant":
-                # Blatant fraud / staged rings: higher amount, delayed or extreme filing
-                inc_severity = "Major"
-                filing_delay = int(np.clip(np.random.lognormal(mean=3.2, sigma=0.6), 5, 90)) # ~25-60 days
-                claim_amt = round(random.uniform(limit * 0.40, limit * 0.85), 2)
-                claim_status = "Under Investigation"
-                risk_label = "High"
-                adjuster_notes = f"SIU Audit Triggered: Indicator matches {anom_tpl['category']}. Significant inconsistencies in physical damage inspection vs reported narrative."
-            elif anomaly_subtype == "subtle":
-                # Subtle / Borderline fraud: padded invoices, moderate inflation overlapping normal claims
-                inc_severity = random.choice(["Moderate", "Major"])
-                filing_delay = int(np.clip(np.random.lognormal(mean=2.3, sigma=0.7), 2, 45)) # ~10-25 days
-                # Modest inflation overlapping high legitimate claims
-                base_line_max = min(limit * 0.45, 22000.0)
-                claim_amt = round(random.uniform(base_line_max * 0.65, base_line_max * 1.35), 2)
-                claim_status = random.choice(["Under Investigation", "Open", "Settled"])
-                risk_label = "Medium" if claim_amt < 15000 else "High"
-                adjuster_notes = f"Potential Billing Discrepancy: Itemized labor and parts estimates exceed regional peer averages by 25-40%."
-            else:
-                # Early inception / Rapid spike claim
-                inc_severity = random.choice(["Moderate", "Major"])
-                filing_delay = int(np.clip(np.random.lognormal(mean=0.8, sigma=0.5), 1, 5)) # 1-3 days
-                claim_amt = round(random.uniform(limit * 0.30, limit * 0.70), 2)
-                claim_status = "Under Investigation"
-                risk_label = "High"
-                adjuster_notes = "Policy Inception Audit: High-severity claim filed immediately following policy coverage modification."
-        else:
-            # Normal authentic claim with continuous distributions & legitimate large losses
-            line_templates = INCIDENT_TEMPLATES.get(line, INCIDENT_TEMPLATES["Auto"])
-            tpl = random.choice(line_templates)
-            inc_type = tpl["type"]
-            inc_severity = random.choice(tpl["severities"])
-            narrative = random.choice(tpl["narratives"])
-            
-            # Continuous log-normal filing delay: mean ~ 6 days, long tail up to 40 days (e.g. hospitalization)
-            filing_delay = int(np.clip(np.random.lognormal(mean=1.6, sigma=0.75), 1, 55))
-            
-            # 6% of normal claims are legitimate catastrophic/total losses (testing model specificity)
-            is_legitimate_total_loss = (random.random() < 0.06)
-            if is_legitimate_total_loss and inc_severity in ["Major", "Total Loss"]:
-                claim_amt = round(random.uniform(limit * 0.50, limit * 0.85), 2)
-                adjuster_notes = "Comprehensive field adjuster verification complete. Police report, independent surveyor report, and official repair bids on file. Verified genuine catastrophic loss."
-            else:
-                base_val = random.uniform(tpl["base_min"], tpl["base_max"])
-                severity_mult = {"Minor": 0.6, "Moderate": 1.0, "Major": 1.7, "Total Loss": 2.3}.get(inc_severity, 1.0)
-                # Add Gaussian noise around amount
-                noise = np.random.normal(1.0, 0.15)
-                claim_amt = round(min(max(base_val * severity_mult * noise, 450.0), limit * 0.75), 2)
-                adjuster_notes = "Standard verification complete. Estimates match third-party independent inspection. Documentation verified."
-            
-            # Status distribution for normal claims
-            claim_status = random.choices(
-                ["Settled", "Approved", "Open", "Under Investigation"],
-                weights=[0.65, 0.22, 0.09, 0.04]
-            )[0]
-            
-            risk_label = "Low" if claim_amt < 12000 else "Medium"
-            anomaly_reasons = []
-
-        filing_date = inc_date + datetime.timedelta(days=filing_delay)
-        claim_to_limit_ratio = round(claim_amt / max(limit, 1.0), 4)
-        claim_to_premium_ratio = round(claim_amt / max(annual_premium, 1.0), 2)
-
-        claims.append({
-            "claim_id": claim_id,
-            "customer_id": cust_id,
-            "policy_id": pol_id,
-            "policy_line": line,
-            "incident_date": inc_date.isoformat(),
-            "filing_date": filing_date.isoformat(),
-            "filing_delay_days": filing_delay,
-            "incident_type": inc_type,
-            "incident_severity": inc_severity,
-            "claim_amount_usd": claim_amt,
-            "coverage_limit_usd": limit,
-            "claim_to_limit_ratio": claim_to_limit_ratio,
-            "estimated_annual_premium_usd": annual_premium,
-            "claim_to_premium_ratio": claim_to_premium_ratio,
-            "claim_status": claim_status,
-            "risk_label": risk_label,
-            "is_anomaly_ground_truth": is_anomaly,
-            "anomaly_reasons": ",".join(anomaly_reasons) if anomaly_reasons else "NONE",
-            "incident_narrative": narrative,
-            "adjuster_notes": adjuster_notes
-        })
-
-    df_claims = pd.DataFrame(claims)
     print(f"[CLAIMS SYNTHESIZER] Successfully synthesized {len(df_claims)} claims.")
     print(f"  - Anomaly distribution: {df_claims['is_anomaly_ground_truth'].sum()} anomalous, {(~df_claims['is_anomaly_ground_truth']).sum()} normal.")
     print(f"  - Policy line breakdown: {df_claims['policy_line'].value_counts().to_dict()}")

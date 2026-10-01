@@ -1,40 +1,38 @@
 {
   "model": "Random Forest (Calibrated)",
   "cv_auc_scores": [
-    0.928,
-    0.952,
-    0.9276,
-    0.87,
-    0.8795
+    0.8953,
+    0.8078,
+    0.8471,
+    0.8699,
+    0.9058
   ],
-  "cv_mean_auc": 0.9114,
-  "cv_std_auc": 0.0314,
-  "train_auc": 0.9544,
-  "precision": 0.8222,
-  "recall": 0.4684,
-  "f1_score": 0.5968,
+  "cv_mean_auc": 0.8652,
+  "cv_std_auc": 0.0352,
+  "train_auc": 0.8877,
+  "precision": 0.9206,
+  "recall": 0.3204,
+  "f1_score": 0.4754,
   "feature_importances": {
-    "log_claim_amount": 0.3116,
-    "claim_to_limit_ratio": 0.26,
-    "subtype_claim_ratio_delta": 0.1871,
-    "claim_to_premium_ratio": 0.1157,
-    "filing_delay_days": 0.0942,
-    "log_annual_spend": 0.0136,
-    "purchasing_power_tier": 0.0063,
-    "household_size": 0.006,
-    "customer_total_policies": 0.0055
+    "delay_vs_line_median": 0.3182,
+    "loss_type_mismatch": 0.3129,
+    "recent_coverage_increase": 0.1324,
+    "line_auto": 0.1238,
+    "line_other": 0.0713,
+    "line_fire": 0.0414,
+    "prior_claims_24m": 0.0,
+    "linked_claims_90d": 0.0
   },
   "calibration_method": "isotonic",
-  "n_train_samples": 1500,
+  "n_train_samples": 1504,
   "feature_names": [
-    "log_claim_amount",
-    "filing_delay_days",
-    "claim_to_limit_ratio",
-    "claim_to_premium_ratio",
-    "customer_total_policies",
-    "log_annual_spend",
-    "household_size",
-    "purchasing_power_tier",
-    "subtype_claim_ratio_delta"
+    "delay_vs_line_median",
+    "prior_claims_24m",
+    "linked_claims_90d",
+    "loss_type_mismatch",
+    "recent_coverage_increase",
+    "line_auto",
+    "line_fire",
+    "line_other"
   ]
 }

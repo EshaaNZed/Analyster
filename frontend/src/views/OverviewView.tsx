@@ -109,7 +109,7 @@ export const OverviewView: React.FC<OverviewViewProps> = ({ onSelectClaim }) => 
             <SplitText text="Portfolio Claims & Risk Overview" delay={30} />
           </h1>
           <p style={{ color: 'var(--text-secondary)', fontSize: '0.88rem', margin: '6px 0 0 0' }}>
-            Empowering human adjusters with verifiable Hybrid Graph-RAG analytics, Isolation Forest anomaly scoring, and 5-agent swarms.
+            Adjuster triage from within-line severity, a pattern model, and a 14-day notice rule. Isolation Forest is reported beside the tier.
           </p>
         </div>
 
@@ -212,7 +212,7 @@ export const OverviewView: React.FC<OverviewViewProps> = ({ onSelectClaim }) => 
               </div>
             </div>
             <div style={{ fontSize: '0.72rem', color: 'var(--text-secondary)', marginTop: '8px' }}>
-              Isolation Forest Multidimensional Flags
+              Planted schemes in the claim book
             </div>
           </SpotlightCard>
         </div>
@@ -225,10 +225,10 @@ export const OverviewView: React.FC<OverviewViewProps> = ({ onSelectClaim }) => 
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '14px' }}>
             <div>
               <h3 style={{ fontSize: '1rem', fontWeight: 700, color: '#f0f0f5', margin: 0 }}>
-                Ensemble Risk Tier Distribution
+                Stored scenario labels
               </h3>
               <p style={{ fontSize: '0.75rem', color: 'var(--text-secondary)', margin: 0 }}>
-                XGBoost + Calibrated Random Forest Classification
+                Label written when the claim was generated. The swarm score can differ.
               </p>
             </div>
           </div>

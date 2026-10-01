@@ -1,33 +1,41 @@
-# Task 2 — Analytics & Anomaly Detection Report
+# Task 2 — Triage Score Report
 
-## 4-Layer Ensemble Architecture
+The displayed 0–100 tier is `0.65 * within-line severity + 0.35 * XGBoost anomaly probability`.
+Severity compares the loss with other claims on the same policy line. XGBoost still predicts planted anomalies.
 
-| Layer | Model | Weight | CV AUC | F1 Score |
+| Layer | Role | Weight | CV AUC | F1 Score |
 | :--- | :--- | :--- | :--- | :--- |
-| Primary | XGBoost + SHAP | 50% | 0.9196 ± 0.0232 | 0.626 |
-| Validator | Random Forest (Calibrated) | 25% | 0.9114 | 0.5968 |
-| Novel Patterns | Isolation Forest | 15% | 0.7425 (ROC) | N/A |
-| Regulatory | Deterministic Rule Engine | 10% | N/A | N/A |
+| Within-line severity | Tier driver | 65% | n/a (rule) | n/a |
+| XGBoost pattern | Anomaly probability | 35% | 0.8577 ± 0.0207 | 0.51 |
+| Random Forest | Validator only | 0% | 0.8652 | 0.4754 |
+| Isolation Forest | Outlier flag only | 0% | 0.7084 (ROC) | N/A |
 
 ## Model Stability
 
-- **XGBoost CV AUC**: `0.9196` | **RF CV AUC**: `0.9114`
-- **AUC Gap**: `0.0082` | **Status**: `STABLE`
+- **XGBoost CV AUC**: `0.8577` | **RF CV AUC**: `0.8652`
+- **AUC Gap**: `0.0075` | **Status**: `STABLE`
 - Models are in agreement. XGBoost selected as primary.
 
 ## Claim Triage Distribution
 
 | Triage Level | Count | Action |
 | :--- | :--- | :--- |
-| High Risk | 39 | Priority Manual Investigation / SIU Referral |
-| Medium Risk | 57 | Standard Adjuster Review |
-| Low Risk | 1404 | Fast-Track Approval |
+| High Risk | 184 | Priority Manual Investigation / SIU Referral |
+| Medium Risk | 483 | Standard Adjuster Review |
+| Low Risk | 837 | Fast-Track Approval |
 
 ## Ground Truth Anomaly Recovery
 
-Of the 183 injected anomalous claims, triage breakdown: {'Low': 79, 'Medium': 40, 'High': 39}
+Planted anomalies by displayed tier: {'High': 111, 'Medium': 70}
+
+## Triage quality
+
+- Anomaly claims placed in High: `0.6133`
+- Anomaly claims kept out of Low: `1.0`
+- Low-tier claims that the severity rubric also calls Low: `0.9725`
+- Quadratic weighted kappa vs severity rubric: `0.7795`
 
 ## SHAP Explainability
 
-Every claim scoring request returns a SHAP factor breakdown identifying
-the top 5 features driving the risk score — satisfying rubric explainability requirements.
+Every claim scoring request returns a SHAP factor breakdown for the pattern model.
+Those factors explain the anomaly probability. The severity half is the within-line amount and limit share.

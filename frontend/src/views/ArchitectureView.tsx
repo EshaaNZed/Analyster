@@ -23,15 +23,15 @@ export const ArchitectureView: React.FC = () => {
       color: '#818cf8',
       inputs: 'Claim & Policy Metrics, Precedents',
       outputs: 'Calibrated Risk Score (0-100), SHAP Feature Attributions',
-      desc: 'Executes XGBoost + Calibrated Random Forest models with TreeSHAP to calculate composite risk probability and extract top driving risk factors with exact percentage influence.',
+      desc: 'Builds the triage score: 65% within-line severity, 35% XGBoost pattern probability, plus 1 point per day filed after day 14. TreeSHAP explains the pattern half only.',
     },
     {
       name: 'AnomalyDetectionAgent',
       role: 'Unsupervised Outlier & Velocity Auditing',
       color: '#c084fc',
-      inputs: '86 Demographic & Claim Features',
-      outputs: 'Isolation Forest Score, Velocity Anomalies, Cluster Outliers',
-      desc: 'Detects out-of-distribution feature combinations such as extreme income-to-loss mismatch, inception-to-claim latency under 14 days, and rapid multi-line claim bursts.',
+      inputs: 'Behavior features shared with the pattern model',
+      outputs: 'Isolation Forest outlier flag, filing-delay flag, graph cluster flag',
+      desc: 'Flags unusual behavior. The outlier flag does not set the 0–100 tier. A filing after 40 days and a household cluster are reported as separate flags.',
     },
     {
       name: 'ClaimsSummarizationAgent',
@@ -64,7 +64,7 @@ export const ArchitectureView: React.FC = () => {
             System Blueprint & Multi-Agent Mesh
           </h1>
           <p style={{ color: 'var(--text-secondary)', fontSize: '0.92rem', margin: '8px 0 0 0', maxWidth: '800px' }}>
-            Technical specifications for the 5-Agent Swarm, 4-Tier ML Ensemble, Hybrid Graph-RAG Pipeline, and Human-in-the-Loop Governance framework.
+            Technical specifications for the 5-agent swarm, the triage score, Hybrid Graph-RAG, and human-in-the-loop review.
           </p>
         </div>
 
@@ -209,7 +209,7 @@ export const ArchitectureView: React.FC = () => {
               Transparent 2-Model Risk & Outlier Architecture
             </h3>
             <p style={{ fontSize: '0.88rem', color: 'var(--text-secondary)', margin: 0, lineHeight: 1.6 }}>
-              A clean separation of duties between Supervised Machine Learning (XGBoost for direct 0–100 Fraud Risk Scoring) and Unsupervised Anomaly Detection (Isolation Forest for statistical outlier detection).
+              The number on the claim is 65% within-line severity plus 35% pattern probability, then 1 point for each day filed after day 14. Isolation Forest flags outliers and does not change that number. Random Forest checks that the pattern model is stable.
             </p>
 
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '20px' }}>
@@ -217,7 +217,7 @@ export const ArchitectureView: React.FC = () => {
                 <div style={{ fontSize: '1.8rem', fontWeight: 900, color: '#818cf8', fontFamily: 'var(--font-mono)' }}>Direct Risk Score</div>
                 <div style={{ fontSize: '0.95rem', fontWeight: 700, color: '#fff', marginTop: '4px' }}>XGBoost Classifier</div>
                 <p style={{ fontSize: '0.78rem', color: 'var(--text-secondary)', marginTop: '8px', lineHeight: 1.5 }}>
-                  <strong>Risk Score = XGBoost Prob × 100</strong>. Pure statistical probability without arbitrary heuristic weights. Includes TreeSHAP feature attribution for transparent explainability.
+                  Pattern half of the triage score. TreeSHAP names the behavior features that moved this probability. Amount and the 14-day notice rule are outside this model.
                 </p>
               </div>
 

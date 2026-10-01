@@ -8,22 +8,13 @@ import json
 import numpy as np
 import pandas as pd
 from typing import Dict, Any, Tuple
-from sklearn.preprocessing import StandardScaler, RobustScaler
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 PROCESSED_DIR = os.path.join(BASE_DIR, "data", "processed")
 
-FEATURE_NAMES = [
-    "log_claim_amount",
-    "filing_delay_days",
-    "claim_to_limit_ratio",
-    "claim_to_premium_ratio",
-    "customer_total_policies",
-    "log_annual_spend",
-    "household_size",
-    "purchasing_power_tier",
-    "subtype_claim_ratio_delta"
-]
+from backend.analytics.triage_features import PATTERN_FEATURES, build_training_matrix, save_baselines
+
+FEATURE_NAMES = PATTERN_FEATURES
 
 def build_ml_feature_matrix(
     df_claims: pd.DataFrame,
@@ -38,58 +29,20 @@ def build_ml_feature_matrix(
     - y_anomaly: Ground truth anomaly labels (N,)
     - feature_metadata: JSON-serializable scaler parameters and statistics
     """
-    print("[FEATURE STORE] Constructing ML analytical feature store...")
+    print("[FEATURE STORE] Constructing behavior pattern feature store...")
+    del df_customers, df_policies
 
-    # Merge claims with customer and policy attributes
-    merged = df_claims.merge(df_customers, on="customer_id", how="left")
-    merged = merged.merge(df_policies[["policy_id", "annual_premium_usd"]], on="policy_id", how="left")
+    X_scaled, y_anomaly, claim_ids, baselines = build_training_matrix(df_claims)
+    save_baselines(baselines)
+    scaler = baselines["scaler"]
 
-    # Compute subtype median and spread benchmarks (v2.0 Brief Update)
-    subtype_median = merged.groupby("MOSTYPE")["claim_amount_usd"].transform("median")
-    subtype_std = merged.groupby("MOSTYPE")["claim_amount_usd"].transform("std").fillna(0.0)
-    subtype_iqr = merged.groupby("MOSTYPE")["claim_amount_usd"].transform(
-        lambda x: (x.quantile(0.75) - x.quantile(0.25)) if len(x) > 1 else 0.0
-    ).fillna(0.0)
-
-    subtype_claim_ratio_delta = (merged["claim_amount_usd"] - subtype_median) / (subtype_iqr + subtype_std + 1.0)
-    subtype_claim_ratio_delta = subtype_claim_ratio_delta.clip(lower=-3.0, upper=10.0)
-
-    # Build raw feature matrix
-    df_feat = pd.DataFrame()
-    df_feat["log_claim_amount"] = np.log1p(merged["claim_amount_usd"].clip(lower=0))
-    df_feat["filing_delay_days"] = merged["filing_delay_days"].astype(float)
-    df_feat["claim_to_limit_ratio"] = merged["claim_to_limit_ratio"].astype(float)
-    df_feat["claim_to_premium_ratio"] = merged["claim_to_premium_ratio"].clip(upper=500.0).astype(float)
-    df_feat["customer_total_policies"] = merged["total_active_policies_count"].astype(float)
-    df_feat["log_annual_spend"] = np.log1p(merged["est_annual_insurance_spend_usd"].clip(lower=0))
-    df_feat["household_size"] = merged["household_size"].astype(float)
-    df_feat["purchasing_power_tier"] = merged["purchasing_power_tier"].astype(float)
-    df_feat["subtype_claim_ratio_delta"] = subtype_claim_ratio_delta.astype(float)
-
-    X_raw = df_feat[FEATURE_NAMES].values
-    y_anomaly = merged["is_anomaly_ground_truth"].values.astype(int)
-
-    # Apply RobustScaler (uses median and IQR, ideal for financial anomaly detection)
-    scaler = RobustScaler()
-    X_scaled = scaler.fit_transform(X_raw)
-
-    # Serialize metadata for inference
     feature_metadata = {
         "feature_names": FEATURE_NAMES,
         "n_samples": int(X_scaled.shape[0]),
         "n_features": int(X_scaled.shape[1]),
-        "center_medians": [float(m) for m in scaler.center_],
-        "scale_iqrs": [float(s) for s in scaler.scale_],
-        "raw_summary_stats": {
-            col: {
-                "mean": float(df_feat[col].mean()),
-                "std": float(df_feat[col].std()),
-                "min": float(df_feat[col].min()),
-                "max": float(df_feat[col].max()),
-                "median": float(df_feat[col].median())
-            }
-            for col in FEATURE_NAMES
-        }
+        "center_medians": scaler["center"],
+        "scale_iqrs": scaler["scale"],
+        "note": "Pattern features exclude claim amount. Severity is scored separately.",
     }
 
     # Save to disk
@@ -97,9 +50,8 @@ def build_ml_feature_matrix(
     np.savez_compressed(
         npz_path,
         X_scaled=X_scaled,
-        X_raw=X_raw,
         y_anomaly=y_anomaly,
-        claim_ids=merged["claim_id"].values
+        claim_ids=claim_ids,
     )
 
     meta_path = os.path.join(PROCESSED_DIR, "feature_store_metadata.json")

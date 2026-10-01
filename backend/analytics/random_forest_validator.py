@@ -31,17 +31,9 @@ os.makedirs(MODELS_DIR, exist_ok=True)
 RF_MODEL_PATH   = os.path.join(MODELS_DIR, "random_forest_calibrated.pkl")
 RF_METRICS_PATH = os.path.join(MODELS_DIR, "random_forest_metrics.json")
 
-FEATURE_NAMES = [
-    "log_claim_amount",
-    "filing_delay_days",
-    "claim_to_limit_ratio",
-    "claim_to_premium_ratio",
-    "customer_total_policies",
-    "log_annual_spend",
-    "household_size",
-    "purchasing_power_tier",
-    "subtype_claim_ratio_delta"
-]
+from backend.analytics.triage_features import PATTERN_FEATURES
+
+FEATURE_NAMES = PATTERN_FEATURES
 
 
 def train_random_forest(

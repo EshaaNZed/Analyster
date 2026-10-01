@@ -1,5 +1,5 @@
 {
-  "audit_timestamp": "2026-09-29T16:40:21.229756",
+  "audit_timestamp": "2026-09-29T21:34:11.866909",
   "overall_status": "PASSED",
   "total_assertions": 11,
   "passed_count": 11,
@@ -83,11 +83,11 @@
     },
     "fact_claims": {
       "row_count": 1500,
-      "anomalous_claims_count": 158,
-      "total_claimed_usd": 52881011.129999995,
-      "avg_claim_usd": 35254.01,
-      "min_claim_usd": 724.65,
-      "max_claim_usd": 367151.75
+      "anomalous_claims_count": 180,
+      "total_claimed_usd": 60786896.46,
+      "avg_claim_usd": 40524.6,
+      "min_claim_usd": 746.19,
+      "max_claim_usd": 400000.0
     }
   }
 }

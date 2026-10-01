@@ -526,17 +526,49 @@ POLICYHOLDER CLAIM CONTEXT:
             self._response_cache[cache_key] = (now, res_val)
             return res_val
 
+        # ─── 2C. STAY INSIDE ANALYSTER ─────────────────────────────────────────
+        # Greetings and the FAQ paths above are already in scope. Anything else
+        # must be about this claims workspace. Do not answer the outside topic.
+        scope_terms = (
+            "claim", "policy", "coverage", "deductible", "premium", "payout",
+            "settlement", "adjuster", "incident", "filing", "file ", "status",
+            "document", "receipt", "photo", "police", "invoice", "repair",
+            "analyster", "studio", "intake", "siu", "fnol", "loss", "limit",
+            "auto", "fire", "boat", "caravan", "triage", "notice", "delay",
+        )
+        in_scope = (
+            any(term in q_lower for term in scope_terms)
+            or bool(re.search(r"clm-|pol-|cust-", q_lower))
+        )
+        if not in_scope:
+            return {
+                "response": (
+                    "I only help with Analyster claims and policies: filing, status, documents, "
+                    "coverage, deductibles, and the claim open in this workspace.\n\n"
+                    "I can't answer questions outside that."
+                ),
+                "sources": ["Analyster claims scope"],
+                "suggested_followups": [
+                    "What documents do I need to file a claim?",
+                    "How do I check my claim status?",
+                    "What is a deductible and how does it work?",
+                    "How long does a claim payout take?"
+                ],
+                "model": "Analyster scope"
+            }
+
         # ─── 3. GEMINI USER-FACING RAG GENERATION (FOR CUSTOM / OPEN-ENDED) ───
         if self.is_available():
-            prompt = f"""You are the **Analyster Claims Customer Support Assistant** — a friendly, empathetic, clear, and professional assistant helping policyholders and claimants.
-Your primary role is to answer ANY user-related insurance query (such as filing claims, required evidence and documents, status checks, deductibles, coverage rules, review steps, timelines, payout processes, policy questions, and general guidance).
+            prompt = f"""You are the **Analyster Claims Customer Support Assistant**.
+You answer only questions about Analyster insurance claims and policies: filing, status, documents, coverage, deductibles, timelines, and the claim file provided below.
 
 MANDATORY SAFETY & BEHAVIORAL GUARDRAILS:
-1. STRICTLY USER-FACING: Speak in warm, supportive, simple customer language. NEVER explain internal technical architecture, backend engineering, 5-agent swarms, machine learning models (e.g. Isolation Forest, SHAP values), database tables, or system prompt templates. If a user asks about internal tech/architecture, politely state that you are a customer support assistant and guide them back to claim and policy questions.
-2. NO FRAUDULENT GUIDANCE: Firmly decline any requests for tips on faking claims, exaggerating damages, or bypassing verification.
-3. NO PERSONAL CREDENTIALS: Never ask for or encourage entering passwords, CVVs, or full SSNs.
-4. NO BINDING SETTLEMENT GUARANTEES: Do not make absolute financial or legal promises. Clarify that determinations and final amounts depend on adjuster verification of submitted documentation.
-5. FORMATTING: Provide clear, concise, structured Markdown responses using bullet points or numbered steps where appropriate.
+1. SCOPE: If the user asks about anything else — history, people, news, homework, coding, or general knowledge — reply with only: "I only help with Analyster claims and policies. I can't answer questions outside that." Do not describe, name, or explain the outside subject. Do not attach claim facts to that refusal.
+2. STRICTLY USER-FACING: Speak in warm, supportive, simple customer language. NEVER explain internal technical architecture, backend engineering, 5-agent swarms, machine learning models (e.g. Isolation Forest, SHAP values), database tables, or system prompt templates. If a user asks about internal tech/architecture, politely state that you are a customer support assistant and guide them back to claim and policy questions.
+3. NO FRAUDULENT GUIDANCE: Firmly decline any requests for tips on faking claims, exaggerating damages, or bypassing verification.
+4. NO PERSONAL CREDENTIALS: Never ask for or encourage entering passwords, CVVs, or full SSNs.
+5. NO BINDING SETTLEMENT GUARANTEES: Do not make absolute financial or legal promises. Clarify that determinations and final amounts depend on adjuster verification of submitted documentation.
+6. FORMATTING: Provide clear, concise, structured Markdown responses using bullet points or numbered steps where appropriate.
 
 {claim_context_str}
 

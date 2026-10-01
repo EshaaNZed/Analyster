@@ -53,19 +53,37 @@ class ClaimsRiskAnalysisAgent:
         claim_id = claim_data["claim_id"]
         claim_amt = float(claim_data.get("claim_amount_usd", 0.0))
         limit = float(claim_data.get("coverage_limit_usd", 1.0))
-        premium = float(claim_data.get("estimated_annual_premium_usd", 1.0))
+        premium = float(
+            claim_data.get("estimated_annual_premium_usd")
+            or claim_data.get("annual_premium_usd")
+            or 1.0
+        )
 
-        # 1. Compute Direct ML Risk Score (XGBoost Prob * 100) & Model Outputs
+        # 1. Triage score: 65% within-line severity + 35% anomaly probability
         score_dict = self.scorer.score_claim(claim_data)
         risk_score = int(score_dict["risk_score"])
         risk_tier = score_dict.get("risk_level", "Low")
+        severity = int(score_dict.get("severity_score", 0))
+        notice_points = int(score_dict.get("delay_notice_points") or 0)
         breakdown = score_dict.get("ensemble_breakdown", {})
         xgb_prob = float(breakdown.get("xgb_prob", float(risk_score) / 100.0))
         rf_prob = float(breakdown.get("rf_prob", 0.0))
+        severity_reasons = list(score_dict.get("severity_reasons") or [])
 
-        # 2. Extract SHAP Factors
+        # 2. Pattern-model SHAP from the live scorer
         shap_factors = []
-        if claim_id in self.shap_cache:
+        for tf in score_dict.get("shap_top_factors") or []:
+            abs_val = abs(tf["shap_value"])
+            impact = "High" if abs_val > 0.4 else ("Medium" if abs_val > 0.15 else "Low")
+            shap_factors.append(ShapFactor(
+                feature_name=tf["feature"],
+                display_name=tf.get("display_name", tf["feature"]),
+                raw_value=float(tf.get("raw_value", 0.0)),
+                shap_value=float(tf["shap_value"]),
+                direction=tf["direction"],
+                impact_level=impact
+            ))
+        if not shap_factors and claim_id in self.shap_cache:
             top_factors = self.shap_cache[claim_id].get("top_factors", [])
             for tf in top_factors:
                 abs_val = abs(tf["shap_value"])
@@ -205,18 +223,25 @@ class ClaimsRiskAnalysisAgent:
 
         # 5. Generate Risk Summary
         top_driver = shap_factors[0].display_name if shap_factors else "Claim Amount"
+        notice_clause = (
+            f", plus {notice_points} points for filing after the 14-day notice window"
+            if notice_points else ""
+        )
         summary = (
-            f"Assigned statistical ML risk score of {risk_score}/100 ({risk_tier} Risk) derived from XGBoost fraud probability ({xgb_prob:.1%}). "
-            f"Coverage exposure is {coverage_ratio:.1%} of policy limit and {prem_ratio:.1f}x annual premium. "
-            f"Primary risk driver identified via TreeSHAP: '{top_driver}'."
+            f"Triage score {risk_score}/100 ({risk_tier}) is 65% within-line severity ({severity}/100) "
+            f"plus 35% anomaly probability ({xgb_prob:.1%}){notice_clause}. "
+            f"Coverage exposure is {coverage_ratio:.1%} of the policy limit. "
+            + (" ".join(severity_reasons))
         )
 
         output = RiskAgentOutput(
             risk_score=risk_score,
             risk_tier=risk_tier,
+            severity_score=severity,
+            delay_notice_points=notice_points,
             xgb_probability=round(xgb_prob, 4),
             rf_probability=round(rf_prob, 4),
-            rule_violations=[],
+            rule_violations=severity_reasons,
             top_shap_factors=shap_factors,
             coverage_exposure_ratio=coverage_ratio,
             claim_to_premium_ratio=prem_ratio,

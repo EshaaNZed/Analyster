@@ -241,7 +241,7 @@ class CustomClaimRequest(BaseModel):
     customer_main_type: Optional[str] = Field("Family with Children", description="Customer main classification")
     age_group: Optional[str] = Field("36-50", description="Age bracket of policyholder: 18-25, 26-35, 36-50, 51-65, 65+")
     household_size: Optional[int] = Field(3, ge=1, le=10, description="Household member count")
-    total_active_policies: Optional[int] = Field(2, ge=1, le=15, description="Number of active policies in customer portfolio")
+    total_active_policies: Optional[int] = Field(2, ge=0, le=15, description="Number of active policies in customer portfolio")
     purchasing_power_tier: Optional[int] = Field(4, ge=1, le=8, description="Income / purchasing power bracket 1-8")
     save_to_database: bool = Field(False, description="Whether to persist the new claim into SQLite and ChromaDB vector store")
 

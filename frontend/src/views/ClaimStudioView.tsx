@@ -441,9 +441,9 @@ export const ClaimStudioView: React.FC<ClaimStudioViewProps> = ({
               <strong
                 style={{
                   color:
-                    claim.claim_to_limit_ratio >= 0.85
+                    claim.claim_to_limit_ratio >= 0.60
                       ? '#ef4444'
-                      : claim.claim_to_limit_ratio >= 0.60
+                      : claim.claim_to_limit_ratio >= 0.25
                       ? '#f59e0b'
                       : '#10b981',
                   fontFamily: 'var(--font-mono)',
@@ -511,7 +511,8 @@ export const ClaimStudioView: React.FC<ClaimStudioViewProps> = ({
                 {/* 1. Household Demographics & Purchasing Power */}
                 <div style={{ background: 'rgba(255, 255, 255, 0.02)', border: '1px solid rgba(255, 255, 255, 0.05)', borderRadius: '10px', padding: '16px' }}>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '6px', color: '#a78bfa', fontSize: '0.75rem', fontWeight: 700, textTransform: 'uppercase', marginBottom: '8px' }}>
-                    <Users size={14} /> Household Demographics
+                    <Users size={14} /> Household profile
+                    <span style={{ fontWeight: 500, textTransform: 'none', color: 'var(--text-secondary)' }}>Not used in the score</span>
                   </div>
                   <div style={{ fontSize: '1.15rem', fontWeight: 800, color: '#f0f0f5', marginBottom: '6px' }}>
                     {claim.customer_profile.customer_subtype || claim.customer_profile.customer_main_type}
@@ -695,6 +696,8 @@ export const ClaimStudioView: React.FC<ClaimStudioViewProps> = ({
                       tier={dossier.risk_analysis?.risk_tier || 'Low'}
                       xgbProb={dossier.risk_analysis?.xgb_probability || 0}
                       rfProb={dossier.risk_analysis?.rf_probability || 0}
+                      severityScore={dossier.risk_analysis?.severity_score}
+                      delayNoticePoints={dossier.risk_analysis?.delay_notice_points}
                       size={230}
                     />
                   </div>
@@ -702,7 +705,7 @@ export const ClaimStudioView: React.FC<ClaimStudioViewProps> = ({
                   {dossier.risk_analysis?.rule_violations && dossier.risk_analysis.rule_violations.length > 0 && (
                     <div style={{ marginTop: '16px', paddingTop: '16px', borderTop: '1px solid rgba(255,255,255,0.06)', width: '100%', maxWidth: '750px', textAlign: 'left' }}>
                       <span style={{ fontSize: '0.75rem', color: '#f87171', fontWeight: 700, textTransform: 'uppercase', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '6px', marginBottom: '8px' }}>
-                        <ShieldAlert size={14} /> Triggered Fraud Rules ({dossier.risk_analysis.rule_violations.length}):
+                        <ShieldAlert size={14} /> Why this tier ({dossier.risk_analysis.rule_violations.length}):
                       </span>
                       <div style={{ display: 'flex', flexDirection: 'column', gap: '6px', marginTop: '8px' }}>
                         {dossier.risk_analysis.rule_violations.map((violation, i) => (

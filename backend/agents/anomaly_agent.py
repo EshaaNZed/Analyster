@@ -51,18 +51,20 @@ class AnomalyDetectionAgent:
         claim_id = claim_data["claim_id"]
         filing_delay = int(claim_data.get("filing_delay_days", 0))
         anomaly_reasons_str = claim_data.get("anomaly_reasons", "NONE")
-        is_gt_anomaly = bool(claim_data.get("is_anomaly_ground_truth", False))
 
-        # 1. Isolation Forest Evaluation
+        # 1. Isolation Forest on the same pattern features as the triage model.
+        # The planted-anomaly flag is an evaluation label and is not used here.
         if_score = 0.0
         is_outlier = False
-        if self.if_model is not None:
-            try:
-                # Approximate standardized vector or predict
-                is_outlier = is_gt_anomaly or (risk_output and risk_output.risk_score >= 70)
-                if_score = 0.78 if is_outlier else 0.22
-            except Exception:
-                pass
+        try:
+            from backend.analytics.ensemble_scorer import get_default_scorer
+            scored = get_default_scorer().score_claim(claim_data)
+            breakdown = scored.get("ensemble_breakdown", {})
+            if_score = float(breakdown.get("if_prob", 0.0))
+            is_outlier = bool(breakdown.get("if_outlier", False))
+        except Exception:
+            is_outlier = bool(risk_output and risk_output.risk_score >= 70)
+            if_score = 0.7 if is_outlier else 0.2
 
         # 2. Flagged Categories
         categories = []

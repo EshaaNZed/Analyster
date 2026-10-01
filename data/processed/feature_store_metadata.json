@@ -1,102 +1,28 @@
 {
   "feature_names": [
-    "log_claim_amount",
-    "filing_delay_days",
-    "claim_to_limit_ratio",
-    "claim_to_premium_ratio",
-    "customer_total_policies",
-    "log_annual_spend",
-    "household_size",
-    "purchasing_power_tier",
-    "subtype_claim_ratio_delta"
+    "delay_vs_line_median",
+    "days_since_inception",
+    "prior_claims_24m",
+    "linked_claims_90d",
+    "loss_type_mismatch",
+    "recent_coverage_increase",
+    "line_auto",
+    "line_fire",
+    "line_other"
   ],
   "n_samples": 1500,
   "n_features": 9,
   "center_medians": [
-    9.418686904520673,
-    5.0,
-    0.0743,
-    24.115000000000002,
-    3.0,
-    8.006700845440367,
-    3.0,
-    4.0,
+    0.0,
+    1330.5,
+    0.0,
     0.0
   ],
   "scale_iqrs": [
-    2.2839670973506987,
-    6.0,
-    0.21357500000000001,
-    181.64249999999998,
-    2.0,
-    1.5177430271199315,
+    5.0,
+    858.0,
     1.0,
-    3.0,
-    0.4244287370977685
+    1.0
   ],
-  "raw_summary_stats": {
-    "log_claim_amount": {
-      "mean": 9.5381331827067,
-      "std": 1.4157261183369696,
-      "min": 6.587067804916372,
-      "max": 12.813533252978356,
-      "median": 9.418686904520673
-    },
-    "filing_delay_days": {
-      "mean": 7.376666666666667,
-      "std": 8.358789892554274,
-      "min": 1.0,
-      "max": 90.0,
-      "median": 5.0
-    },
-    "claim_to_limit_ratio": {
-      "mean": 0.17020933333333332,
-      "std": 0.20027415943862584,
-      "min": 0.004,
-      "max": 0.8416,
-      "median": 0.0743
-    },
-    "claim_to_premium_ratio": {
-      "mean": 121.68443333333333,
-      "std": 171.98277568126673,
-      "min": 0.1,
-      "max": 500.0,
-      "median": 24.115000000000002
-    },
-    "customer_total_policies": {
-      "mean": 2.794,
-      "std": 1.5508602274103584,
-      "min": 1.0,
-      "max": 11.0,
-      "median": 3.0
-    },
-    "log_annual_spend": {
-      "mean": 7.356121456468979,
-      "std": 1.28719112140982,
-      "min": 0.0,
-      "max": 10.389026137075234,
-      "median": 8.006700845440367
-    },
-    "household_size": {
-      "mean": 2.699333333333333,
-      "std": 0.7814559090446132,
-      "min": 1.0,
-      "max": 5.0,
-      "median": 3.0
-    },
-    "purchasing_power_tier": {
-      "mean": 4.338666666666667,
-      "std": 2.04452723548338,
-      "min": 1.0,
-      "max": 8.0,
-      "median": 4.0
-    },
-    "subtype_claim_ratio_delta": {
-      "mean": 0.24152507036915896,
-      "std": 0.5749449411917207,
-      "min": -0.4245710578577632,
-      "max": 3.9767571691306918,
-      "median": 0.0
-    }
-  }
+  "note": "Pattern features exclude claim amount. Severity is scored separately."
 }

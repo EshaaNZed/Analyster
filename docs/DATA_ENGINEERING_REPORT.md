@@ -1,7 +1,7 @@
 # Insurance Claims Intelligence — Data Engineering & Normalization Report
 
 **Audit Status**: `PASSED` | **Passed Checks**: `11/11`
-**Timestamp**: `2026-09-29T16:40:21.229756`
+**Timestamp**: `2026-09-29T21:34:11.866909`
 
 ---
 
@@ -46,9 +46,9 @@
 
 ## 4. Analytical Metrics & Distribution Summary
 
-- **Total Claim Volume**: $52,881,011.13
-- **Average Claim Amount**: $35,254.01
-- **Claim Range**: $724.65 – $367,151.75
-- **Ground Truth Anomalous Claims**: 158 (10.5%)
+- **Total Claim Volume**: $60,786,896.46
+- **Average Claim Amount**: $40,524.60
+- **Claim Range**: $746.19 – $400,000.00
+- **Ground Truth Anomalous Claims**: 180 (12.0%)
 
 This data foundation is fully indexed in SQLite (`claims_intelligence.db`) and ready for vectorization and multi-agent ingestion.

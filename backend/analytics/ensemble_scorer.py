@@ -1,23 +1,21 @@
 """
-2-Model Risk & Outlier Scoring Engine + Triage
-==============================================
-Pure Machine Learning Architecture:
-1. Supervised Risk Classification (XGBoost):
-   - Calculates fraud probability (0.0 to 1.0) directly from trained gradient boosting trees.
-   - Primary Risk Score = int(round(XGBoost Fraud Probability * 100))
-   - Direct, transparent 0–100 scale with zero arbitrary rule weights.
+Triage score = within-line severity + anomaly pattern
+=====================================================
+The number on the screen is not the anomaly probability by itself.
 
-2. Unsupervised Anomaly Detection (Isolation Forest):
-   - Evaluates multi-dimensional statistical feature eccentricity.
-   - Operates independently as an Outlier Detector without distorting the XGBoost risk score.
+  triage = 0.65 * severity + 0.35 * XGBoost anomaly probability
+          + late-notice points
 
-3. Cross-Validation & Stability (Calibrated Random Forest):
-   - Provides probability calibration and model agreement verification.
+Severity (0-100) compares the loss with other claims on the same policy
+line and the share of the limit. Late notice is a fixed rule: 0 points
+through day 14, then 1 point per day, capped at 46.
+Random Forest is a stability check. Isolation Forest flags outliers.
+Neither of those two replaces the triage score.
 
-Final Triage Actions:
-  0–39  : Low Risk    — Fast-Track Approval
-  40–69 : Medium Risk — Standard Adjuster Review
-  70–100: High Risk   — Priority Manual Investigation / SIU Referral
+Bands:
+  0–39  Low     fast-track
+  40–69 Medium  standard review
+  70–100 High   priority investigation
 """
 import os
 import json
@@ -25,7 +23,7 @@ import sqlite3
 import numpy as np
 import pandas as pd
 import warnings
-from typing import Dict, Any, List, Optional
+from typing import Dict, Any, List, Optional, Tuple
 
 warnings.filterwarnings("ignore")
 
@@ -41,25 +39,19 @@ TRIAGE_THRESHOLDS = {
     "High":   (70, 100),
 }
 
-FEATURE_NAMES = [
-    "log_claim_amount",
-    "filing_delay_days",
-    "claim_to_limit_ratio",
-    "claim_to_premium_ratio",
-    "customer_total_policies",
-    "log_annual_spend",
-    "household_size",
-    "purchasing_power_tier",
-    "subtype_claim_ratio_delta"
-]
+from backend.analytics.triage_features import (
+    PATTERN_FEATURES,
+    FEATURE_DISPLAY_NAMES,
+    combine_scores,
+    delay_notice_points,
+    delay_notice_reason,
+    load_baselines,
+    pattern_vector,
+    severity_score,
+    triage_label,
+)
 
-
-def _triage_label(score: int) -> str:
-    if score >= 70:
-        return "High"
-    elif score >= 40:
-        return "Medium"
-    return "Low"
+FEATURE_NAMES = PATTERN_FEATURES
 
 
 def _triage_action(label: str) -> str:
@@ -76,69 +68,49 @@ class EnsembleRiskScorer:
     Evaluates XGBoost supervised fraud risk and Isolation Forest outlier detection.
     """
 
-    def __init__(self, xgb_model, rf_model, if_model, scaler_meta: Dict):
+    def __init__(self, xgb_model, rf_model, if_model, baselines: Dict):
         self.xgb = xgb_model
         self.rf  = rf_model
         self.ifo = if_model
-        self.scaler_meta = scaler_meta
+        self.baselines = baselines
         self._explainer = None
 
-    def _build_feature_vector(self, claim_data: Dict[str, Any]) -> np.ndarray:
-        """
-        Constructs a scaled feature vector from a raw claim dossier dict
-        using the RobustScaler parameters saved during Step 2.
-        """
-        centers = self.scaler_meta["center_medians"]
-        scales  = self.scaler_meta["scale_iqrs"]
-
-        raw_feats = [
-            np.log1p(max(0.0, float(claim_data.get("claim_amount_usd", 0)))),
-            float(claim_data.get("filing_delay_days", 0)),
-            float(claim_data.get("claim_to_limit_ratio", 0)),
-            min(500.0, float(claim_data.get("claim_to_premium_ratio", 0))),
-            float(claim_data.get("total_active_policies_count", 0)),
-            np.log1p(max(0.0, float(claim_data.get("est_annual_insurance_spend_usd", 0)))),
-            float(claim_data.get("household_size", 3)),
-            float(claim_data.get("purchasing_power_tier", 4)),
-            0.0,   # subtype_claim_ratio_delta — requires population stats, default 0
-        ]
-
-        X_raw    = np.array(raw_feats, dtype=float)
-        X_scaled = (X_raw - np.array(centers)) / (np.array(scales) + 1e-9)
-        return X_scaled
+    def _build_feature_vector(self, claim_data: Dict[str, Any]) -> Tuple[np.ndarray, Dict[str, float]]:
+        return pattern_vector(claim_data, self.baselines)
 
     def score_claim(self, claim_data: Dict[str, Any]) -> Dict[str, Any]:
-        """
-        Calculates pure Machine Learning risk score directly from trained XGBoost model (prob * 100),
-        alongside Isolation Forest anomaly outlier detection and Random Forest validation.
-        """
+        """Blend within-line severity with the XGBoost anomaly probability."""
         from backend.analytics.isolation_forest import get_if_score
 
-        X = self._build_feature_vector(claim_data)
+        X, raw = self._build_feature_vector(claim_data)
+        severity = severity_score(claim_data, self.baselines)
 
-        # 1. XGBoost Supervised Fraud Probability (Direct Primary Risk Score)
         xgb_prob = float(self.xgb.predict_proba(X.reshape(1, -1))[0, 1])
-
-        # 2. Random Forest Validation Probability
         rf_prob = float(self.rf.predict_proba(X.reshape(1, -1))[0, 1])
-
-        # 3. Isolation Forest Unsupervised Anomaly Score
         if_prob = get_if_score(self.ifo, X)
+        if_outlier = int(self.ifo.predict(X.reshape(1, -1))[0]) == -1
 
-        # Direct, transparent 0-100 score derived from XGBoost probability
-        final_score = int(round(xgb_prob * 100))
-        final_score = max(0, min(100, final_score))
-        triage_label = _triage_label(final_score)
-        triage_action = _triage_action(triage_label)
-
-        # SHAP explanations
-        shap_factors = self._get_shap_factors(X)
+        delay_days = float(claim_data.get("filing_delay_days") or 0)
+        notice_points = delay_notice_points(delay_days)
+        final_score = combine_scores(severity["severity_score"], xgb_prob, delay_days)
+        label = triage_label(final_score)
+        reasons = list(severity["reasons"])
+        if notice_points:
+            reasons.append(delay_notice_reason(delay_days))
+        if xgb_prob >= 0.80:
+            reasons.append(
+                "Anomaly probability is high enough to queue this claim for priority review even when the loss itself is not large."
+            )
 
         return {
             "claim_id":         claim_data.get("claim_id", "UNKNOWN"),
             "risk_score":       final_score,
-            "risk_level":       triage_label,
-            "triage_action":    triage_action,
+            "risk_level":       label,
+            "triage_action":    _triage_action(label),
+            "severity_score":   severity["severity_score"],
+            "delay_notice_points": notice_points,
+            "rubric_tier":      severity["rubric_tier"],
+            "severity_reasons": reasons,
             "ensemble_breakdown": {
                 "xgb_score":     int(round(xgb_prob * 100)),
                 "xgb_prob":      round(xgb_prob, 4),
@@ -146,19 +118,24 @@ class EnsembleRiskScorer:
                 "rf_prob":       round(rf_prob, 4),
                 "if_score":      int(round(if_prob * 100)),
                 "if_prob":       round(if_prob, 4),
-                "primary_model": "XGBoost Classifier",
+                "if_outlier":    if_outlier,
+                "severity_score": severity["severity_score"],
+                "severity_weight": 0.65,
+                "pattern_weight": 0.35,
+                "delay_notice_points": notice_points,
+                "primary_model": "Severity 65% + XGBoost pattern 35%",
             },
-            "rule_flags":       [],
-            "rule_flags_count": 0,
-            "shap_top_factors": shap_factors,
+            "rule_flags":       reasons,
+            "rule_flags_count": len(reasons),
+            "shap_top_factors": self._get_shap_factors(X, raw),
             "model_agreement": {
                 "xgb_rf_gap_pts":  abs(int(round(xgb_prob * 100)) - int(round(rf_prob * 100))),
                 "agreement":       "STRONG" if abs(xgb_prob - rf_prob) < 0.15 else "DIVERGENT",
             }
         }
 
-    def _get_shap_factors(self, X: np.ndarray) -> List[Dict[str, Any]]:
-        """Computes SHAP values for this single claim vector."""
+    def _get_shap_factors(self, X: np.ndarray, raw: Dict[str, float]) -> List[Dict[str, Any]]:
+        """SHAP on the anomaly model. Values explain the pattern probability, not the full tier."""
         try:
             if self._explainer is None:
                 import shap
@@ -167,6 +144,8 @@ class EnsembleRiskScorer:
             factors = [
                 {
                     "feature":      FEATURE_NAMES[i],
+                    "display_name": FEATURE_DISPLAY_NAMES[FEATURE_NAMES[i]],
+                    "raw_value":    round(float(raw[FEATURE_NAMES[i]]), 4),
                     "shap_value":   round(float(shap_vals[i]), 4),
                     "direction":    "INCREASES_RISK" if shap_vals[i] > 0 else "DECREASES_RISK",
                 }
@@ -203,6 +182,8 @@ def score_all_claims_batch(
             "claim_status":       row["claim_status"],
             "risk_score":         scored["risk_score"],
             "risk_level":         scored["risk_level"],
+            "severity_score":     scored["severity_score"],
+            "rubric_tier":        scored["rubric_tier"],
             "triage_action":      scored["triage_action"],
             "xgb_score":          scored["ensemble_breakdown"]["xgb_score"],
             "rf_score":           scored["ensemble_breakdown"]["rf_score"],
@@ -232,14 +213,10 @@ def get_default_scorer() -> EnsembleRiskScorer:
         from backend.analytics.xgboost_classifier import load_xgboost_model
         from backend.analytics.random_forest_validator import load_rf_model
         from backend.analytics.isolation_forest import load_if_model
-        
+
         xgb_model = load_xgboost_model()
         rf_model = load_rf_model()
         if_model = load_if_model()
-        
-        meta_path = os.path.join(PROCESSED_DIR, "feature_store_metadata.json")
-        with open(meta_path, "r", encoding="utf-8") as f:
-            scaler_meta = json.load(f)
-            
-        _default_ensemble_scorer = EnsembleRiskScorer(xgb_model, rf_model, if_model, scaler_meta)
+        baselines = load_baselines()
+        _default_ensemble_scorer = EnsembleRiskScorer(xgb_model, rf_model, if_model, baselines)
     return _default_ensemble_scorer

@@ -53,7 +53,7 @@ export const HomeView: React.FC = () => {
     },
     {
       title: 'Quantitative System Evaluation',
-      description: 'Inspect empirical benchmarks across 6 dimensions: ROC-AUC (0.9184), Precision@3 (88%), 0% Hallucination, and Sub-second Latency.',
+      description: 'Pattern-model ROC-AUC 0.9218, Isolation Forest outlier flag, and the triage split of severity, pattern, and late notice.',
       icon: <FlaskConical size={26} color="#fbbf24" />,
       link: '/evaluation',
       badge: 'Task 4 Benchmarks',
@@ -63,28 +63,28 @@ export const HomeView: React.FC = () => {
 
   const showcaseCases = [
     {
-      id: 'CLM-2024-00003',
-      riskScore: 84,
+      id: 'CLM-2024-01323',
+      riskScore: 93,
       riskLabel: 'HIGH',
-      anomalyScore: -0.74,
-      tag: 'Severe Income-to-Loss Mismatch & Rapid Inception Fire',
-      loss: '$124,500',
+      anomalyScore: 0.58,
+      tag: 'Fire filed within days of a coverage increase',
+      loss: '$283,872',
     },
     {
-      id: 'CLM-2024-00725',
-      riskScore: 78,
-      riskLabel: 'HIGH',
-      anomalyScore: -0.68,
-      tag: 'Policy Inception Fire & Synthetic Ring Pattern',
-      loss: '$89,200',
+      id: 'CLM-2024-01322',
+      riskScore: 50,
+      riskLabel: 'MEDIUM',
+      anomalyScore: 0.34,
+      tag: 'Padded water invoice that overlaps a normal fire',
+      loss: '$78,063',
     },
     {
       id: 'CLM-2024-00001',
-      riskScore: 68,
-      riskLabel: 'MEDIUM',
-      anomalyScore: -0.42,
-      tag: 'Commercial Fleet Incident with Disputed Timestamps',
-      loss: '$45,000',
+      riskScore: 27,
+      riskLabel: 'LOW',
+      anomalyScore: 0.59,
+      tag: 'Ordinary caravan hail, filed within 14 days',
+      loss: '$4,668',
     },
   ];
 
@@ -207,7 +207,7 @@ export const HomeView: React.FC = () => {
           </button>
 
           <button
-            onClick={() => navigate('/studio/CLM-2024-00003')}
+            onClick={() => navigate('/studio/CLM-2024-01323')}
             style={{
               display: 'flex',
               alignItems: 'center',
@@ -281,10 +281,10 @@ export const HomeView: React.FC = () => {
 
           <div>
             <div style={{ fontSize: '1.8rem', fontWeight: 900, color: '#34d399', fontFamily: 'var(--font-mono)' }}>
-              0.9184
+              0.9218
             </div>
             <div style={{ fontSize: '0.75rem', color: 'var(--text-tertiary)', textTransform: 'uppercase', letterSpacing: '0.04em' }}>
-              Ensemble ROC-AUC Score
+              Pattern model ROC-AUC
             </div>
           </div>
 
@@ -423,7 +423,7 @@ export const HomeView: React.FC = () => {
               Ready-to-Analyze Case Studies
             </div>
             <h3 style={{ fontSize: '1.3rem', fontWeight: 800, color: '#f0f0f5', margin: '4px 0 0 0' }}>
-              Jump Directly to Flagged High-Risk Claims
+              Open a claim and run the swarm
             </h3>
           </div>
           <Link to="/portfolio" style={{ color: '#818cf8', fontSize: '0.85rem', textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '4px', fontWeight: 600 }}>
@@ -467,9 +467,9 @@ export const HomeView: React.FC = () => {
                     borderRadius: '6px',
                     fontSize: '0.72rem',
                     fontWeight: 700,
-                    background: item.riskLabel === 'HIGH' ? 'rgba(239, 68, 68, 0.2)' : 'rgba(245, 158, 11, 0.2)',
-                    color: item.riskLabel === 'HIGH' ? '#f87171' : '#fbbf24',
-                    border: `1px solid ${item.riskLabel === 'HIGH' ? 'rgba(239, 68, 68, 0.4)' : 'rgba(245, 158, 11, 0.4)'}`,
+                    background: item.riskLabel === 'HIGH' ? 'rgba(239, 68, 68, 0.2)' : item.riskLabel === 'LOW' ? 'rgba(16, 185, 129, 0.2)' : 'rgba(245, 158, 11, 0.2)',
+                    color: item.riskLabel === 'HIGH' ? '#f87171' : item.riskLabel === 'LOW' ? '#34d399' : '#fbbf24',
+                    border: `1px solid ${item.riskLabel === 'HIGH' ? 'rgba(239, 68, 68, 0.4)' : item.riskLabel === 'LOW' ? 'rgba(16, 185, 129, 0.4)' : 'rgba(245, 158, 11, 0.4)'}`,
                   }}
                 >
                   Risk: {item.riskScore}/100 ({item.riskLabel})
@@ -544,9 +544,9 @@ export const HomeView: React.FC = () => {
 
           <div style={{ background: 'rgba(255, 255, 255, 0.02)', padding: '20px', borderRadius: '12px', border: '1px solid rgba(255, 255, 255, 0.05)' }}>
             <div style={{ color: '#38bdf8', fontWeight: 800, fontSize: '0.8rem', marginBottom: '8px' }}>2. ANALYTICAL ENGINES</div>
-            <div style={{ color: '#fff', fontWeight: 700, fontSize: '0.95rem', marginBottom: '6px' }}>4-Tier Calibrated ML</div>
+            <div style={{ color: '#fff', fontWeight: 700, fontSize: '0.95rem', marginBottom: '6px' }}>Triage score</div>
             <div style={{ color: 'var(--text-secondary)', fontSize: '0.78rem', lineHeight: 1.5 }}>
-              XGBoost (50%) + Calibrated Random Forest (25%) + Isolation Forest (15%) + Rule Engine (10%) with TreeSHAP explainability.
+              65% within-line severity, 35% XGBoost pattern probability, plus 1 point per day filed after day 14. Isolation Forest is the outlier flag only.
             </div>
           </div>
 
